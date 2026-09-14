@@ -8,6 +8,9 @@ type View =
   | { type: "article"; slug: string }
   | { type: "about" }
   | { type: "privacy" }
+  | { type: "cookies" }
+  | { type: "legal" }
+  | { type: "dmca" }
   | { type: "contact" };
 
 type NavState = {
@@ -17,6 +20,9 @@ type NavState = {
   goArticle: (slug: string) => void;
   goAbout: () => void;
   goPrivacy: () => void;
+  goCookies: () => void;
+  goLegal: () => void;
+  goDmca: () => void;
   goContact: () => void;
 };
 
@@ -48,6 +54,24 @@ export const useNav = create<NavState>((set) => ({
   },
   goPrivacy: () => {
     set({ view: { type: "privacy" } });
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  },
+  goCookies: () => {
+    set({ view: { type: "cookies" } });
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  },
+  goLegal: () => {
+    set({ view: { type: "legal" } });
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  },
+  goDmca: () => {
+    set({ view: { type: "dmca" } });
     if (typeof window !== "undefined") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }

@@ -6,6 +6,7 @@ import { HomeView } from "@/components/site/HomeView";
 import { CategoryView } from "@/components/site/CategoryView";
 import { ArticleView } from "@/components/site/ArticleView";
 import { StaticPage } from "@/components/site/StaticPage";
+import { CookieBanner } from "@/components/site/CookieBanner";
 import { useNav } from "@/lib/nav";
 
 export default function Home() {
@@ -20,9 +21,13 @@ export default function Home() {
         {view.type === "article" && <ArticleView slug={view.slug} />}
         {view.type === "about" && <StaticPage type="about" />}
         {view.type === "privacy" && <StaticPage type="privacy" />}
+        {view.type === "cookies" && <StaticPage type="cookies" />}
+        {view.type === "legal" && <StaticPage type="legal" />}
+        {view.type === "dmca" && <StaticPage type="dmca" />}
         {view.type === "contact" && <StaticPage type="contact" />}
       </main>
       <Footer />
+      <CookieBanner />
     </div>
   );
 }

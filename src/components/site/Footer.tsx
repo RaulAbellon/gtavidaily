@@ -96,10 +96,10 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => nav.goPrivacy()}
+                  onClick={() => nav.goLegal()}
                   className="text-zinc-400 transition-colors hover:text-white"
                 >
-                  Política de privacidad
+                  Aviso Legal
                 </button>
               </li>
               <li>
@@ -107,15 +107,23 @@ export function Footer() {
                   onClick={() => nav.goPrivacy()}
                   className="text-zinc-400 transition-colors hover:text-white"
                 >
-                  Política de cookies
+                  Política de Privacidad
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => nav.goPrivacy()}
+                  onClick={() => nav.goCookies()}
                   className="text-zinc-400 transition-colors hover:text-white"
                 >
-                  Aviso legal
+                  Política de Cookies
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => nav.goDmca()}
+                  className="text-zinc-400 transition-colors hover:text-white"
+                >
+                  DMCA / Copyright
                 </button>
               </li>
             </ul>
