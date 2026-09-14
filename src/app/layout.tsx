@@ -56,10 +56,10 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: [
       {
-        url: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&h=630&fit=crop",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "GTA VI Hub - Noticias de Grand Theft Auto VI",
+        alt: "GTA VI Hub - Noticias de Grand Theft Auto VI en español",
       },
     ],
   },
@@ -69,9 +69,7 @@ export const metadata: Metadata = {
     creator: "@gtavihub",
     title: "GTA VI Hub · Noticias de Grand Theft Auto VI en español",
     description: SITE_DESCRIPTION,
-    images: [
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&h=630&fit=crop",
-    ],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

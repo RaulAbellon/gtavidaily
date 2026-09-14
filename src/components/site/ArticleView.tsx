@@ -8,6 +8,7 @@ import {
   Share2,
   Tag,
   User,
+  FileText,
 } from "lucide-react";
 import { useNav } from "@/lib/nav";
 import {
@@ -274,6 +275,38 @@ export function ArticleView({ slug }: ArticleViewProps) {
           </span>
         ))}
       </div>
+
+      {/* Fuentes citadas */}
+      {article.sources && article.sources.length > 0 && (
+        <section className="mt-8 rounded-xl border border-white/5 bg-zinc-900/40 p-6">
+          <h2 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-pink-400">
+            <FileText className="h-4 w-4" />
+            Fuentes citadas
+          </h2>
+          <ul className="space-y-2.5">
+            {article.sources.map((source, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm">
+                <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded bg-pink-500/20 text-[10px] font-bold text-pink-400">
+                  {i + 1}
+                </span>
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-cyan-400 underline-offset-2 hover:underline"
+                >
+                  {source.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 border-t border-white/5 pt-3 text-xs text-zinc-500">
+            Este artículo se basa en información pública verificada de las
+            fuentes citadas. Las opiniones y análisis editoriales son propios
+            de GTA VI Hub.
+          </p>
+        </section>
+      )}
 
       {/* Bio del autor */}
       {author && (

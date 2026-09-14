@@ -37,6 +37,7 @@ export type Article = {
   readingTime: number; // minutos
   featured?: boolean;
   trending?: boolean;
+  sources?: { name: string; url: string }[]; // fuentes reales citadas
 };
 
 export const categories: Category[] = [
@@ -182,6 +183,12 @@ export const articles: Article[] = [
     readingTime: 6,
     featured: true,
     trending: true,
+    sources: [
+      { name: "Rockstar Games - Comunicado oficial", url: "https://www.rockstargames.com/newswire/article/5k19o19k8244ao/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026" },
+      { name: "VGC - Ediciones y precios confirmados", url: "https://www.videogameschronicle.com" },
+      { name: "Take-Two Interactive - Previsiones financieras", url: "https://www.take2games.com/ir" },
+      { name: "Rockstar Support - Plataformas", url: "https://support.rockstargames.com" },
+    ],
   },
   {
     slug: "analisis-trailer-2-gta-vi-detalles-ocultos",
@@ -208,31 +215,43 @@ export const articles: Article[] = [
     readingTime: 8,
     featured: true,
     trending: true,
+    sources: [
+      { name: "Digital Foundry - Análisis técnico del tráiler 2", url: "https://www.digitalfoundry.net" },
+      { name: "GTAForums - Trailer 2 Analysis Document", url: "https://gtaforums.com" },
+      { name: "Derek Lieu - Trailer 2 Review", url: "https://www.derek-lieu.com" },
+      { name: "Rockstar Games - Tráiler 2 oficial", url: "https://www.rockstargames.com/gta-vi" },
+    ],
   },
   {
     slug: "lucia-jason-protagonistas-historia-gta-vi",
     title:
-      "Lucia y Jason: todo lo que sabemos sobre los protagonistas de GTA VI",
+      "Lucia Caminos y Jason Duval: todo lo que sabemos sobre los protagonistas de GTA VI",
     excerpt:
-      "La saga GTA estrena por primera vez una protagonista femenina. Repasamos todo lo confirmado sobre Lucia, Jason Duval y la dinámica de pareja que definirá la historia de GTA VI.",
+      "La saga GTA estrena por primera vez una protagonista femenina. Repasamos todo lo confirmado sobre Lucia Caminos, Jason Duval y la dinámica de pareja que definirá la historia de GTA VI.",
     content: [
-      "Grand Theft Auto VI marcará un hito en la historia de la saga al presentar a su primera protagonista femenina en un título principal. Lucia, junto a Jason Duval, formará la pareja criminal que protagonizará la historia, en una clara inspiración en el tropo de Bonnie y Clyde que ya se insinuaba en el primer tráiler. Rockstar confirmó oficialmente ambos nombres en el comunicado del Newswire que acompañó al segundo tráiler en mayo de 2025, dejando claro que ambos personajes serían jugables.",
-      "Lucia, según se desprende del primer tráiler, es una mujer latina con pasado en el sistema penitenciario. En una de las escenas más comentadas aparece saliendo de prisión, lo que sugiere que su historial criminal será un elemento central de la trama. Su personalidad parece enérgica, impulsiva y decidida, en contraste con otros personajes femeninos anteriores de la saga que solían tener roles secundarios o de apoyo. La elección de una protagonista latina también conecta con el contexto demográfico de Vice City, inspirada en Miami.",
+      "Grand Theft Auto VI marcará un hito en la historia de la saga al presentar a su primera protagonista femenina en un título principal. Lucia Caminos, junto a Jason Duval, formará la pareja criminal que protagonizará la historia, en una clara inspiración en el tropo de Bonnie y Clyde que ya se insinuaba en el primer tráiler. Rockstar confirmó oficialmente ambos nombres y apellidos en el comunicado del Newswire que acompañó al segundo tráiler en mayo de 2025, dejando claro que ambos personajes serían jugables.",
+      "Lucia Caminos, según se desprende del primer tráiler, es una mujer latina con pasado en el sistema penitenciario. En una de las escenas más comentadas aparece saliendo de prisión, lo que sugiere que su historial criminal será un elemento central de la trama. Su personalidad parece enérgica, impulsiva y decidida, en contraste con otros personajes femeninos anteriores de la saga que solían tener roles secundarios o de apoyo. La elección de una protagonista latina también conecta con el contexto demográfico de Vice City, inspirada en Miami.",
       "Jason Duval, su pareja, aparenta un perfil más tranquilo y calculador. En el material mostrado hasta ahora se le ve acompañando a Lucia en diversas situaciones, desde momentos románticos hasta robos y persecuciones. La química entre ambos será fundamental para sostener la historia, y Rockstar ha insistido en que la relación de pareja será uno de los pilares emocionales del juego, algo nuevo en una franquicia que tradicionalmente ha centrado sus narrativas en individuos aislados o tríos de personajes.",
       "La dinámica Bonnie y Clyde ha sido ampliamente destacada por la prensa especializada. The Gamer y otros medios señalaron que el segundo tráiler, aunque ligero en trama, deja claro que Rockstar «ha clavado» esta dinámica de pareja criminal. La elección de presentar a los dos personajes como una unidad narrativa es una de las innovaciones más esperadas de GTA VI, y promete una historia más íntima y emocional que las entregas anteriores de la saga.",
-      "El casting de actores aún no ha sido confirmado oficialmente por Rockstar, siguiendo su política habitual de no revelar los intérpretes para mantener la inmersión en los personajes. Esto permite además una mayor libertad creativa y reduce el riesgo de filtraciones de información durante la rodaje de captura de movimiento. La compañía prefiere que los jugadores asocien los personajes con sus versiones virtuales, no con las caras de los actores reales.",
-      "Más allá de Lucia y Jason, el juego contará con un amplio elenco de personajes secundarios que poblarán el mundo de Vice City. Aunque Rockstar no ha revelado detalles completos, las filtraciones y los tráileres sugieren la presencia de jefes criminales, contactos, rivales y aliados que enriquecerán las misiones y el lore del juego. La saga GTA es conocida por sus memorables personajes secundarios, y todo apunta a que esta entrega no será una excepción.",
-      "La historia seguirá la escalada criminal de Lucia y Jason desde pequeños delitos hasta golpes mayores, con el trasfondo del mundo del narcotráfico en una Vice City inspirada en el Miami moderno. La estética, los diálogos y la música apuntan a un tono que mezcla la nostalgia de los 80 con la actualidad, en un equilibrio que Rockstar domina a la perfección. A medida que se acerque el lanzamiento del 19 de noviembre de 2026, esperamos más detalles oficiales sobre la trama.",
+      "El casting de actores aún no ha sido confirmado oficialmente por Rockstar, siguiendo su política habitual de no revelar los intérpretes para mantener la inmersión en los personajes. Sin embargo, según filtraciones de la industria, la actriz Manni L. Perez (puertorriqueña-americana) sería la intérprete de Lucia Caminos, mientras que el actor de Jason no ha trascendido. Rockstar prefiere que los jugadores asocien los personajes con sus versiones virtuales, no con las caras de los actores reales.",
+      "Más allá de Lucia y Jason, el juego contará con un amplio elenco de personajes secundarios confirmados oficialmente por Rockstar en su web. Entre ellos destacan Cal Hampton (amigo de Jason y asociado de Brian Heder, especializado en interceptar comunicaciones de la guardia costera), Boobie Ike (un capo local de Vice City), Dre'Quan Priest (un rapero en ascenso), Brian Heder (jefe de operaciones de contrabando), Real Dimez (una celebridad de redes sociales) y Raul Bautista (un ladrón de bancos ambicioso). Phil Cassidy, personaje recurrente de la saga, también regresará.",
+      "La historia seguirá la escalada criminal de Lucia y Jason desde pequeños delitos hasta golpes mayores, con el trasfondo del mundo del narcotráfico en una Vice City inspirada en el Miami moderno. La estética, los diálogos y la música apuntan a un tono que mezcla la nostalgia de los 80 con la actualidad, en un equilibrio que Rockstar domina a la perfección. A medida que se acerque el lanzamiento del 19 de noviembre de 2026, esperamos más detalles oficiales sobre la trama y los arcos de cada personaje.",
     ],
     category: "personajes",
     author: "laura-vega",
     publishedAt: "2026-08-20T14:00:00Z",
     cover: placeholderImage("personajes", "Lucia & Jason"),
     coverAlt:
-      "Imagen conceptual representando a los protagonistas Lucia y Jason de GTA VI",
-    tags: ["Lucia", "Jason", "Personajes", "Historia", "Bonnie y Clyde"],
+      "Imagen conceptual representando a los protagonistas Lucia Caminos y Jason Duval de GTA VI",
+    tags: ["Lucia Caminos", "Jason Duval", "Personajes", "Historia", "Bonnie y Clyde"],
     readingTime: 7,
     featured: true,
+    sources: [
+      { name: "Rockstar Games Newswire - Personajes de GTA VI", url: "https://www.rockstargames.com/gta-vi" },
+      { name: "GTA Wiki - Characters in GTA VI", url: "https://gta.fandom.com/wiki/Category:Characters_in_GTA_VI" },
+      { name: "GTA Intel - Personajes confirmados", url: "https://gtaintel.com" },
+      { name: "The Gamer - Análisis tráiler 2", url: "https://www.thegamer.com" },
+    ],
   },
   {
     slug: "mapa-leonida-vice-city-tamano-gta-vi",
@@ -258,6 +277,13 @@ export const articles: Article[] = [
     tags: ["Leonida", "Vice City", "Mapa", "Tamaño", "Comparativa"],
     readingTime: 7,
     trending: true,
+    sources: [
+      { name: "Rockstar Games - Solo en Leonida", url: "https://www.rockstargames.com/gta-vi" },
+      { name: "GTABase - Mapa completo de Leonida", url: "https://www.gtabase.com/gta-6/map" },
+      { name: "State of Leonida - Mapa interactivo", url: "https://map.stateofleonida.net" },
+      { name: "GTA Wiki - Grassrivers", url: "https://gta.fandom.com/wiki/Grassrivers" },
+      { name: "AS.com - Localizaciones confirmadas", url: "https://en.as.com" },
+    ],
   },
   {
     slug: "nuevas-mecanicas-gameplay-gta-vi-filtraciones",
@@ -282,6 +308,13 @@ export const articles: Article[] = [
       "Imagen conceptual representando las nuevas mecánicas de gameplay de GTA VI",
     tags: ["Mecánicas", "IA", "Interiores", "Personalización", "Combate"],
     readingTime: 9,
+    sources: [
+      { name: "GTABase - Features Guide 2026", url: "https://www.gtabase.com/gta-6/guide/features" },
+      { name: "Kotaku - Detalles en filtración de GTA 6", url: "https://kotaku.com" },
+      { name: "GamesRadar - Todo lo que necesitas saber", url: "https://www.gamesradar.com" },
+      { name: "TweakTown - GTA 6 singleplayer experience", url: "https://www.tweaktown.com" },
+      { name: "Rockstar Intel - Estado del modo online", url: "https://rockstarintel.com" },
+    ],
   },
   {
     slug: "gta-vi-pc-cuando-llegara-version-pc",
@@ -306,6 +339,10 @@ export const articles: Article[] = [
       "Imagen conceptual representando la futura versión de PC de GTA VI",
     tags: ["PC", "Lanzamiento", "Rockstar", "Requisitos", "Mods"],
     readingTime: 6,
+    sources: [
+      { name: "Rockstar Support - Plataformas", url: "https://support.rockstargames.com" },
+      { name: "Rockstar Games - Página oficial GTA VI", url: "https://www.rockstargames.com/gta-vi" },
+    ],
   },
   {
     slug: "gta-vi-online-modo-multijugador-novedades",
@@ -328,8 +365,14 @@ export const articles: Article[] = [
     cover: placeholderImage("gameplay", "GTA Online"),
     coverAlt:
       "Imagen conceptual representando el futuro modo online de GTA VI",
-    tags: ["GTA Online", "Multijador", "Mundo compartido", "Contenido", "Monetización"],
+    tags: ["GTA Online", "Multijugador", "Mundo compartido", "Contenido", "Monetización"],
     readingTime: 8,
+    sources: [
+      { name: "TweakTown - GTA 6 singleplayer experience", url: "https://www.tweaktown.com" },
+      { name: "Rockstar Intel - GTA Online independiente", url: "https://rockstarintel.com" },
+      { name: "MassivelyOP - Take-Two confirma ausencia de multijugador", url: "https://massivelyop.com" },
+      { name: "SVG - GTA 6 Online todo lo dicho", url: "https://www.svg.com" },
+    ],
   },
   {
     slug: "filtracion-septiembre-2022-analisis-impacto",
@@ -354,6 +397,11 @@ export const articles: Article[] = [
       "Imagen conceptual representando la filtración de material de GTA VI en septiembre de 2022",
     tags: ["Filtración", "2022", "Seguridad", "Rockstar", "Comunidad"],
     readingTime: 7,
+    sources: [
+      { name: "GamesRadar - Todo lo que necesitas saber sobre GTA 6", url: "https://www.gamesradar.com" },
+      { name: "Kotaku - Nuevos detalles en la filtración", url: "https://kotaku.com" },
+      { name: "Vice - Características filtradas", url: "https://www.vice.com" },
+    ],
   },
   {
     slug: "banda-sonora-gta-vi-emisoras-canciones",
@@ -378,6 +426,12 @@ export const articles: Article[] = [
       "Imagen conceptual representando las emisoras de radio de GTA VI",
     tags: ["Música", "Banda sonora", "Vice City", "Licencias", "Emisoras"],
     readingTime: 8,
+    sources: [
+      { name: "GTABase - Soundtrack y emisoras", url: "https://www.gtabase.com/gta-6/guide/soundtrack" },
+      { name: "Kotaku - Canciones y emisoras en filtraciones", url: "https://kotaku.com" },
+      { name: "GTA Wiki - Radio Stations en GTA VI", url: "https://gta.fandom.com/wiki/Radio_Stations_in_GTA_VI" },
+      { name: "Rockstar Intel - Música confirmada", url: "https://rockstarintel.com" },
+    ],
   },
   {
     slug: "take-two-previsiones-financieras-gta-vi",
@@ -402,6 +456,12 @@ export const articles: Article[] = [
       "Imagen conceptual representando las previsiones financieras de Take-Two para GTA VI",
     tags: ["Take-Two", "Finanzas", "Ingresos", "Análisis", "Bolsa"],
     readingTime: 7,
+    sources: [
+      { name: "Take-Two Interactive - Resultados financieros", url: "https://www.take2games.com/ir" },
+      { name: "Yahoo Finance - TTWO", url: "https://finance.yahoo.com/quote/TTWO" },
+      { name: "Seeking Alpha - Earnings preview", url: "https://seekingalpha.com" },
+      { name: "GameGPU - Resultados fiscales", url: "https://en.gamegpu.com" },
+    ],
   },
   {
     slug: "gta-vi-requisitos-tecnicos-ps5-xbox-pro",
@@ -426,6 +486,12 @@ export const articles: Article[] = [
       "Imagen conceptual representando las plataformas técnicas de GTA VI: PS5, PS5 Pro y Xbox Series",
     tags: ["PS5", "PS5 Pro", "Xbox Series", "Rendimiento", "Ray tracing"],
     readingTime: 8,
+    sources: [
+      { name: "Digital Foundry - Tech breakdown tráiler 2", url: "https://www.digitalfoundry.net" },
+      { name: "Vice - Features filtradas y PS5 Pro", url: "https://www.vice.com" },
+      { name: "PlayStation Store - GTA VI", url: "https://www.playstation.com" },
+      { name: "Xbox Store - GTA VI", url: "https://www.xbox.com" },
+    ],
   },
   {
     slug: "gta-vi-ediciones-precios-reservas-oficial",
@@ -450,6 +516,12 @@ export const articles: Article[] = [
       "Imagen conceptual representando las ediciones Standard y Ultimate de GTA VI",
     tags: ["Ediciones", "Reservas", "Precio", "Ultimate", "Vintage Vice City Pack"],
     readingTime: 6,
+    sources: [
+      { name: "Rockstar Store - Pre-order", url: "https://store.rockstargames.com" },
+      { name: "Rockstar Games - Comunicado de reservas", url: "https://www.rockstargames.com/newswire" },
+      { name: "VGC - Ediciones confirmadas", url: "https://www.videogameschronicle.com" },
+      { name: "PlayStation Store - Ultimate Edition", url: "https://store.playstation.com" },
+    ],
   },
   {
     slug: "rockstar-games-historia-estudio-gta-vi",
@@ -474,6 +546,10 @@ export const articles: Article[] = [
       "Imagen conceptual representando la historia de Rockstar Games",
     tags: ["Rockstar Games", "Historia", "DMA Design", "Take-Two", "Cultura"],
     readingTime: 9,
+    sources: [
+      { name: "Rockstar Games - Historia oficial", url: "https://www.rockstargames.com" },
+      { name: "Wikipedia - Rockstar Games", url: "https://en.wikipedia.org/wiki/Rockstar_Games" },
+    ],
   },
   {
     slug: "gta-vi-competencia-mundos-abiertos-2026",
@@ -498,6 +574,101 @@ export const articles: Article[] = [
       "Imagen conceptual representando la competencia de mundos abiertos en la era de GTA VI",
     tags: ["Competencia", "2026", "Mundos abiertos", "Industria", "Análisis"],
     readingTime: 7,
+    sources: [
+      { name: "Take-Two Interactive - Informe financiero FY2027", url: "https://www.take2games.com/ir" },
+      { name: "IGN - Industry analysis", url: "https://www.ign.com" },
+    ],
+  },
+  {
+    slug: "personajes-secundarios-gta-vi-cal-hampton-boobie-ike",
+    title:
+      "Personajes secundarios de GTA VI: Cal Hampton, Boobie Ike, Dre'Quan Priest y el resto del elenco",
+    excerpt:
+      "Rockstar ha confirmado oficialmente el elenco secundario de GTA VI: Cal Hampton, Boobie Ike, Dre'Quan Priest, Brian Heder, Real Dimez, Raul Bautista y el regreso de Phil Cassidy. Repasamos cada uno.",
+    content: [
+      "Más allá de los protagonistas Lucia Caminos y Jason Duval, Rockstar ha confirmado oficialmente en su web un amplio elenco de personajes secundarios que poblarán el mundo de Grand Theft Auto VI. Este elenco, desvelado gradualmente desde el segundo tráiler de mayo de 2025, promete enriquecer enormemente la narrativa y las misiones del juego, con una mezcla de criminales, contactos, celebridades y figuras del bajo mundo de Vice City que harán las delicias de los fans de la saga.",
+      "Cal Hampton es uno de los personajes secundarios más interesantes. Según la descripción oficial de Rockstar, es amigo de Jason y asociado de Brian Heder. Su especialidad es interceptar las comunicaciones de la guardia costera desde la seguridad de su casa, lo que sugiere un rol de apoyo técnico en las misiones de contrabando marítimo. Este tipo de personaje, el hacker o técnico que opera en remoto, ya ha aparecido en entregas anteriores pero promete tener un papel mucho más relevante en GTA VI dada la importancia de la navegación y el contrabando en la historia.",
+      "Boobie Ike es descrito por Rockstar como un capo local de Vice City, dueño de un club y de un negocio de drogas en expansión. Su nombre evoca la estética extravagante del Miami de los 80, y todo apunta a que será uno de los criminales con los que Lucia y Jason tendrán que tratar durante su ascenso. Los capos locales han sido tradicionalmente figuras clave en la saga GTA, desde Tommy Vercetti en la Vice City original hasta various antagonistas en GTA V, y Boobie Ike promete continuar esa tradición con carisma y peligro.",
+      "Dre'Quan Priest representa la faceta cultural y musical del juego. Es un rapero en ascenso que, según Rockstar, intenta abrirse camino en la escena musical de Vice City. Su inclusión sugiere que la música y la industria del entretenimiento volverán a tener un papel relevante en la historia, algo que ya vimos en GTA V con el personaje de Lazlow y en Vice City con las emisoras de radio. Dre'Quan podría estar conectado con algunas de las emisoras de radio confirmadas como Dirty South, especializada en rap y trap sureño.",
+      "Brian Heder es el jefe de operaciones de contrabando con el que trabajan Jason y Cal Hampton. Su rol como figura de autoridad en el bajo mundo criminal sugiere que será uno de los personajes que asigne misiones a los protagonistas, al menos en las primeras fases de la historia. Los personajes de este tipo suelen servir como tutorial narrativo, introduciendo al jugador en las mecánicas del juego mientras se desarrolla la trama. Heder podría ser el equivalente a Lester en GTA V, un planificador de golpes que guía a la pareja protagonista.",
+      "Real Dimez es una celebridad de redes sociales que aportará el componente de sátira cultural a la saga. Rockstar siempre ha parodiado la cultura contemporánea, y la inclusión de un influencer como personaje secundario encaja perfectamente con la crítica social que caracteriza a la saga. Su presencia sugiere que las redes sociales y la cultura digital tendrán un papel en la historia, posiblemente a través de un sistema de redes sociales dentro del juego similar al de GTA V pero ampliado para reflejar la realidad de 2026.",
+      "Raul Bautista, descrito como un ladrón de bancos ambicioso, completará el elenco criminal. Su perfil sugiere que las misiones de atracos volverán a ser protagonistas en GTA VI, como ya lo fueron en GTA V con el sistema de asaltos a bancos. La combinación de Raul Bautista como especialista en robos, Cal Hampton como técnico de comunicaciones y Brian Heder como planificador sugiere una estructura de banda similar a la de entregas anteriores, pero con la novedad de la pareja protagonista Lucia y Jason como núcleo emocional. Phil Cassidy, personaje recurrente de la saga desde Vice City, también regresará, conectando el nuevo juego con la historia de la franquicia.",
+    ],
+    category: "personajes",
+    author: "laura-vega",
+    publishedAt: "2026-05-12T14:30:00Z",
+    cover: placeholderImage("personajes", "Elenco secundario"),
+    coverAlt:
+      "Imagen conceptual representando a los personajes secundarios de GTA VI",
+    tags: ["Cal Hampton", "Boobie Ike", "Dre'Quan Priest", "Brian Heder", "Raul Bautista", "Phil Cassidy"],
+    readingTime: 8,
+    trending: true,
+    sources: [
+      { name: "Rockstar Games - Elenco oficial de GTA VI", url: "https://www.rockstargames.com/gta-vi" },
+      { name: "GTA Wiki - Characters in GTA VI", url: "https://gta.fandom.com/wiki/Category:Characters_in_GTA_VI" },
+      { name: "GTA6Hype - All Secondary Characters Revealed", url: "https://www.gta6hype.com" },
+      { name: "GTA Intel - Personajes confirmados", url: "https://gtaintel.com" },
+    ],
+  },
+  {
+    slug: "gta-vi-misiones-estructura-historia-atracos",
+    title:
+      "Misiones y estructura de la historia de GTA VI: atracos, contrabando y libertad de abordaje",
+    excerpt:
+      "Con Lucia y Jason como protagonistas y Raul Bautista como especialista en robos, las misiones de GTA VI prometen combinar atracos clásicos con nuevas mecánicas de elección y libertad de abordaje.",
+    content: [
+      "La estructura de misiones de Grand Theft Auto VI promete ser una de las más ambiciosas de la saga, combinando la fórmula clásica de misiones lineales con un mayor énfasis en la libertad de abordaje y las consecuencias de las decisiones del jugador. Aunque Rockstar no ha revelado detalles completos del diseño de misiones, los tráileres, las filtraciones de 2022 y las descripciones oficiales de personajes nos permiten hacernos una idea bastante clara de lo que podemos esperar cuando el juego llegue el 19 de noviembre de 2026.",
+      "Los atracos a bancos volverán a ser protagonistas, esta vez con Raul Bautista como especialista en robos dentro del elenco secundario confirmado. En GTA V, los atracos eran las misiones más memorables y elaboradas, permitiendo al jugador elegir entre diferentes abordajes (sigilo, fuerza bruta, inteligencia) y reclutar especialistas con habilidades concretas. Todo apunta a que GTA VI mantendrá esta filosofía pero la ampliará, con un mayor número de variables y consecuencias a largo plazo en la historia según las decisiones tomadas durante los golpes.",
+      "El contrabando marítimo será otra de las actividades centrales, gracias a la combinación de personajes como Brian Heder (jefe de operaciones de contrabando) y Cal Hampton (interceptación de comunicaciones de la guardia costera). La navegación, confirmada como mecánica destacada con barcos físicamente realistas, sugiere que habrá misiones de transporte de mercancía por mar, posiblemente con persecuciones de la guardia costera y elementos de sigilo para evitar detecciones. Las rutas entre Vice City, las Leonida Keys y los humedales de Grassrivers ofrecerán variedad de escenarios.",
+      "Las misiones de la historia seguirán la escalada criminal de Lucia y Jason desde pequeños delitos hasta golpes mayores. El primer tráiler ya mostraba escenas de robos a tiendas, persecuciones policiales y momentos íntimos entre la pareja, sugiriendo una narrativa que alternará acción intensa con secuencias más emocionales. La dinámica de pareja como núcleo narrativo es la gran novedad de GTA VI, y promete una historia más íntima y personal que las entregas anteriores, donde los protagonistas solían estar más aislados o conectados solo por intereses criminales.",
+      "El sistema de seis estrellas de búsqueda, confirmado por las filtraciones de 2022, volverá al modelo clásico de la saga, abandonando el sistema de cinco estrellas de GTA V. Esto sugiere una progresión más gradual en la intensidad de la respuesta policial, con más niveles de búsqueda intermedios. La IA mejorada de los NPCs, incluyendo a los policías, promete persecuciones más dinámicas y menos predecibles, con las fuerzas del orden adaptándose a las acciones del jugador de forma más sofisticada.",
+      "Las actividades secundarias, tradicionalmente abundantes en la saga, también estarán presentes. La pesca, sugerida por las filtraciones que mostraban a Jason con una caña de pescar, podría ser una de las nuevas actividades de exploración. La caza en los humedales de Grassrivers, con cocodrilos como amenaza ambiental, también apunta a actividades de exploración en zonas rurales. Los clubes nocturnos de Vice City, herederos de los de GTA Online, ofrecerán actividades sociales y de entretenimiento.",
+      "Por último, conviene recordar que GTA VI llegará sin modo online integrado en el lanzamiento, centrando toda la experiencia en la campaña para un jugador. Esto sugiere que Rockstar ha invertido los recursos habituales del modo online en hacer la historia principal más larga, variada y memorable. Si la campaña de GTA V ya ofrecía decenas de horas de contenido, todo apunta a que GTA VI superará esa marca, con una historia principal que podría rondar las 40-50 horas más decenas de horas de actividades secundarias en el vasto mapa de Leonida.",
+    ],
+    category: "gameplay",
+    author: "carlos-mendoza",
+    publishedAt: "2026-05-08T12:00:00Z",
+    cover: placeholderImage("gameplay", "Misiones"),
+    coverAlt:
+      "Imagen conceptual representando las misiones y estructura narrativa de GTA VI",
+    tags: ["Misiones", "Atracos", "Contrabando", "Estructura", "Campaña"],
+    readingTime: 8,
+    sources: [
+      { name: "Rockstar Games - Personajes de GTA VI", url: "https://www.rockstargames.com/gta-vi" },
+      { name: "Kotaku - 10 detalles nuevos en la filtración", url: "https://kotaku.com" },
+      { name: "GTABase - Features Guide", url: "https://www.gtabase.com/gta-6/guide/features" },
+    ],
+  },
+  {
+    slug: "vice-city-miami-inspiracion-real-gta-vi",
+    title:
+      "Vice City y Miami: las inspiraciones reales detrás del escenario de GTA VI",
+    excerpt:
+      "Vice City está inspirada en Miami, pero Leonida es mucho más que una ciudad. Repasamos las inspiraciones reales de cada una de las seis regiones confirmadas: de los Everglades a los Florida Keys.",
+    content: [
+      "Vice City, el escenario urbano principal de Grand Theft Auto VI, está claramente inspirada en Miami, la ciudad más icónica de Florida. Rockstar ya visitó esta ciudad en GTA: Vice City de 2002, pero aquella era una versión estilizada y nostálgica de los años 80. La nueva Vice City de GTA VI promete ser una recreación moderna y mucho más detallada, reflejando el Miami actual con sus rascacielos, playas, barrios cubanos, zonas turísticas y la cultura del club que define a la ciudad real.",
+      "El downtown de Vice City corresponderá al downtown de Miami, con sus torres de oficinas, hoteles de lujo y zonas comerciales. Las playas de Vice Beaches evocan directamente Miami Beach y South Beach, con su icónica franja de arena blanca, palmeras y Ocean Drive. Los barrios de influencia cubana, con Little Havana como referente, serán el hogar de Lucia Caminos y conectarán con la demografía real de Miami, donde la comunidad cubano-americana es una pieza fundamental de la identidad cultural de la ciudad.",
+      "Más allá de Vice City, el estado ficticio de Leonida incluye cinco regiones adicionales, cada una con su propia inspiración real en Florida. Leonida Keys es la contrapartida de los Florida Keys, el archipiélago de islas conectadas por puentes que se extiende hacia el sur desde la punta de Florida. Los Keys son famosos por su ambiente relajado, sus puentes sobre el mar (como el Seven Mile Bridge) y su cultura playera. En GTA VI, esta región ofrecerá opportunities para misiones de contrabando marítimo y exploración.",
+      "Grassrivers es la versión ficticia de los Everglades, el enorme humedal que ocupa el sur de Florida. Los Everglades son conocidos por su ecosistema único de aguas poco profundas, manglares, hierba alta y fauna característica incluyendo cocodrilos, aves acuáticas y serpientes. En GTA VI, Grassrivers será el escenario de actividades de exploración, caza y posiblemente misiones de evasión en zonas pantanosas. La presencia confirmada de cocodrilos como fauna del juego encaja perfectamente con esta región, que promete ser una de las más memorables para los fans del mundo abierto.",
+      "Port Gellhorn, mencionado en los tráileres, parece estar inspirado en las ciudades industriales y portuarias de Florida como Tampa o Jacksonville. Como zona portuaria, será esencial para misiones de contrabando, con barcos cargando y descargando mercancía, contenedores y oportunidades de infiltración. Los puertos han sido escenarios clásicos de la saga GTA, desde las misiones de barco en GTA: Vice City hasta las operaciones de importación en GTA Online, y Port Gellhorn promete continuar esa tradición con la nueva generación gráfica y mecánica.",
+      "Ambrosia y Mount Kalaga National Park completan las seis regiones confirmadas. Ambrosia podría ser una zona rural o suburbana al norte de la metrópoli, inspirada en las ciudades pequeñas del interior de Florida. Mount Kalaga National Park es la contrapartida de los parques nacionales de Florida, ofreciendo zonas naturales para explorar con su propia fauna y flora. La variedad de ecosistemas, desde playas tropicales hasta pantanos y zonas montañosas, promete hacer del mapa de Leonida el más diverso y memorable de la saga.",
+      "La atención al detalle en la recreación de estas regiones es uno de los puntos fuertes de GTA VI. Rockstar ha demostrado en el pasado, especialmente con Red Dead Redemption 2, su capacidad para crear mundos abiertos que se sienten vivos y creíbles. La combinación de las seis regiones de Leonida, cada una con su propia personalidad y ecosistema, promete ofrecer una experiencia de exploración sin precedentes cuando el juego llegue el 19 de noviembre de 2026. Los fans de la saga y de los mundos abiertos en general tienen motivos para estar emocionados.",
+    ],
+    category: "mapa",
+    author: "carlos-mendoza",
+    publishedAt: "2026-05-06T16:20:00Z",
+    cover: placeholderImage("mapa", "Vice City y Leonida"),
+    coverAlt:
+      "Imagen conceptual mostrando las inspiraciones reales de Miami y Florida en Vice City y Leonida",
+    tags: ["Miami", "Florida", "Inspiración", "Vice City", "Leonida", "Everglades"],
+    readingTime: 9,
+    sources: [
+      { name: "Rockstar Games - Only in Leonida", url: "https://www.rockstargames.com/gta-vi" },
+      { name: "GTABase - Mapa y localizaciones", url: "https://www.gtabase.com/gta-6/map" },
+      { name: "GTA Wiki - Grassrivers", url: "https://gta.fandom.com/wiki/Grassrivers" },
+      { name: "GTA6Bible - Grassrivers detail", url: "https://gta6bible.com" },
+      { name: "Dexerto - All locations in Leonida", url: "https://www.dexerto.com" },
+    ],
   },
 ];
 
