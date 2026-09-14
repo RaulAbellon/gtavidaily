@@ -23,13 +23,16 @@ export function Footer() {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-400">
               Tu fuente independiente de noticias, análisis y rumores sobre
               Grand Theft Auto VI. Cubrimos todo lo relacionado con el regreso a
-              Vice City, los protagonistas Lucia y Juan, y el lanzamiento en
+              Vice City, los protagonistas Lucia y Jason, y el lanzamiento en
               PS5, Xbox Series y PC.
             </p>
             <p className="mt-4 text-xs text-zinc-500">
               Sitio fan no oficial. Grand Theft Auto y Rockstar Games son
               marcas registradas de Take-Two Interactive. No estamos afiliados
-              con Rockstar Games ni Take-Two.
+              con Rockstar Games ni Take-Two. Las imágenes son ilustraciones
+              conceptuales generadas localmente y no representan arte oficial
+              del juego. Todo el contenido editorial es propio y se publica
+              bajo fair use con propósito informativo.
             </p>
           </div>
 

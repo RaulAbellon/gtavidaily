@@ -44,6 +44,15 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-pink-500/20 bg-zinc-950/90 backdrop-blur-md">
+      {/* Banner de disclaimer fan-site */}
+      <div className="bg-gradient-to-r from-pink-600/20 via-zinc-950 to-cyan-500/20 px-4 py-1.5 text-center">
+        <p className="text-[11px] text-zinc-300">
+          <span className="font-semibold text-pink-400">Sitio fan no oficial</span>{" "}
+          · No afiliado con Rockstar Games ni Take-Two Interactive · Las
+          imágenes son ilustraciones conceptuales generadas localmente
+        </p>
+      </div>
+
       {/* Barra superior con marca y fecha */}
       <div className="border-b border-white/5 bg-gradient-to-r from-pink-600/10 via-zinc-950 to-cyan-500/10">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1.5 text-xs text-zinc-400">
