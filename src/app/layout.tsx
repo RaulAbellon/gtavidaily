@@ -2,7 +2,10 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
-const SITE_URL = "https://gtavihub.example";
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://gtavihub.example";
+const ADSENSE_CLIENT =
+  process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-0000000000000000";
 const SITE_NAME = "GTA VI Hub";
 const SITE_DESCRIPTION =
   "Las últimas noticias, análisis, tráileres y rumores sobre Grand Theft Auto VI (GTA 6) de Rockstar Games. Cobertura en español de Vice City, Lucia y Juan, fecha de lanzamiento y mucho más.";
@@ -91,8 +94,9 @@ export const metadata: Metadata = {
     google: "google-site-verification-token",
   },
   other: {
-    // AdSense verification (reemplazar por tu ca-pub real una vez aprobado)
-    "google-adsense-account": "ca-pub-0000000000000000",
+    // AdSense verification: se carga desde NEXT_PUBLIC_ADSENSE_CLIENT.
+    // Sustituye el valor en el panel de Runable cuando aprueben el sitio.
+    "google-adsense-account": ADSENSE_CLIENT,
   },
 };
 
@@ -153,11 +157,11 @@ export default function RootLayout({
     <html lang="es" suppressHydrationWarning>
       <head>
         {/* Google AdSense - script principal.
-            Sustituye ca-pub-0000000000000000 por tu ID real cuando
-            AdSense apruebe el sitio. */}
+            El ID de cliente se controla con NEXT_PUBLIC_ADSENSE_CLIENT
+            para no tener que tocar código al publicar. */}
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
           crossOrigin="anonymous"
         />
         {/* JSON-LD estructurado global */}

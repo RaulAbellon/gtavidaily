@@ -56,7 +56,9 @@ export function AdSense({
         ref={adRef}
         className="adsbygoogle block min-h-[90px]"
         style={{ display: "block", width: "100%", ...style }}
-        data-ad-client="ca-pub-0000000000000000"
+        data-ad-client={
+          process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-0000000000000000"
+        }
         data-ad-slot={slot}
         data-ad-format={format}
         data-full-width-responsive={responsive ? "true" : "false"}
