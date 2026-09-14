@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { articles, categories } from "@/lib/data";
 
-const SITE_URL = "https://gtavihub.example";
+const SITE_URL = "https://gtavidaily.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [

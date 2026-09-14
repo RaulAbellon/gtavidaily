@@ -1,8 +1,8 @@
 {
-  "name": "gta-vi-hub",
+  "name": "gta-vi-daily",
   "version": "1.0.0",
   "private": true,
-  "description": "Sitio de noticias de Grand Theft Auto VI en español, optimizado para SEO y Google AdSense.",
+  "description": "GTA VI Daily — Sitio de noticias de Grand Theft Auto VI en español, optimizado para SEO y Google AdSense.",
   "engines": {
     "node": ">=20.0.0"
   },

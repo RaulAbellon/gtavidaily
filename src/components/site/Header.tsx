@@ -77,7 +77,7 @@ export function Header() {
         <button
           onClick={handleNavHome}
           className="group flex items-center gap-2"
-          aria-label="Ir al inicio de GTA VI Hub"
+          aria-label="Ir al inicio de GTA VI Daily"
         >
           <span className="flex h-9 w-9 items-center justify-center rounded-md bg-gradient-to-br from-pink-500 to-purple-600 font-black text-white shadow-[0_0_20px_-2px] shadow-pink-500/50 transition-transform group-hover:scale-105">
             VI

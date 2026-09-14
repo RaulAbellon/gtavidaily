@@ -3,18 +3,18 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://gtavihub.example";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://gtavidaily.com";
 const ADSENSE_CLIENT =
   process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-0000000000000000";
-const SITE_NAME = "GTA VI Hub";
+const SITE_NAME = "GTA VI Daily";
 const SITE_DESCRIPTION =
-  "Las últimas noticias, análisis, tráileres y rumores sobre Grand Theft Auto VI (GTA 6) de Rockstar Games. Cobertura en español de Vice City, Lucia y Juan, fecha de lanzamiento y mucho más.";
+  "Las últimas noticias, análisis, tráileres y rumores sobre Grand Theft Auto VI (GTA 6) de Rockstar Games. Cobertura en español de Vice City, Lucia Caminos y Jason Duval, fecha de lanzamiento y mucho más.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "GTA VI Hub · Noticias de Grand Theft Auto VI en español",
-    template: "%s | GTA VI Hub",
+    default: "GTA VI Daily · Noticias de Grand Theft Auto VI en español",
+    template: "%s | GTA VI Daily",
   },
   description: SITE_DESCRIPTION,
   keywords: [
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     "GTA 6 español",
     "noticias GTA VI",
   ],
-  authors: [{ name: "Equipo GTA VI Hub" }],
-  creator: "GTA VI Hub",
-  publisher: "GTA VI Hub",
+  authors: [{ name: "Equipo GTA VI Daily" }],
+  creator: "GTA VI Daily",
+  publisher: "GTA VI Daily",
   applicationName: SITE_NAME,
   category: "Videojuegos",
   alternates: {
@@ -52,22 +52,22 @@ export const metadata: Metadata = {
     alternateLocale: ["es_MX", "es_AR"],
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "GTA VI Hub · Noticias de Grand Theft Auto VI en español",
+    title: "GTA VI Daily · Noticias de Grand Theft Auto VI en español",
     description: SITE_DESCRIPTION,
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "GTA VI Hub - Noticias de Grand Theft Auto VI en español",
+        alt: "GTA VI Daily - Noticias de Grand Theft Auto VI en español",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@gtavihub",
-    creator: "@gtavihub",
-    title: "GTA VI Hub · Noticias de Grand Theft Auto VI en español",
+    site: "@gtavidaily",
+    creator: "@gtavidaily",
+    title: "GTA VI Daily · Noticias de Grand Theft Auto VI en español",
     description: SITE_DESCRIPTION,
     images: ["/og-image.png"],
   },
@@ -112,26 +112,26 @@ export const viewport: Viewport = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "GTA VI Hub",
+  name: "GTA VI Daily",
   url: SITE_URL,
   logo: {
     "@type": "ImageObject",
-    url: `${SITE_URL}/logo.png`,
+    url: `${SITE_URL}/icon-512.png`,
     width: 512,
     height: 512,
   },
   description: SITE_DESCRIPTION,
   sameAs: [
-    "https://twitter.com/gtavihub",
-    "https://www.youtube.com/@gtavihub",
-    "https://www.instagram.com/gtavihub",
+    "https://twitter.com/gtavidaily",
+    "https://www.youtube.com/@gtavidaily",
+    "https://www.instagram.com/gtavidaily",
   ],
 };
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "GTA VI Hub",
+  name: "GTA VI Daily",
   url: SITE_URL,
   description: SITE_DESCRIPTION,
   inLanguage: ["es-ES", "es-MX", "es-AR"],
@@ -142,7 +142,7 @@ const websiteJsonLd = {
   },
   publisher: {
     "@type": "Organization",
-    name: "GTA VI Hub",
+    name: "GTA VI Daily",
   },
 };
 

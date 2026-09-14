@@ -15,9 +15,9 @@ export function StaticPage({ type }: StaticPageProps) {
 
   useEffect(() => {
     const titles = {
-      about: "Sobre GTA VI Hub | GTA VI Hub",
-      privacy: "Política de Privacidad | GTA VI Hub",
-      contact: "Contacto | GTA VI Hub",
+      about: "Sobre GTA VI Daily | GTA VI Daily",
+      privacy: "Política de Privacidad | GTA VI Daily",
+      contact: "Contacto | GTA VI Daily",
     };
     document.title = titles[type];
   }, [type]);
@@ -30,13 +30,13 @@ export function StaticPage({ type }: StaticPageProps) {
             Sobre nosotros
           </span>
           <h1 className="mt-3 text-3xl font-black text-white sm:text-4xl">
-            Sobre GTA VI Hub
+            Sobre GTA VI Daily
           </h1>
         </header>
 
         <div className="prose-article space-y-5 text-[17px] leading-relaxed text-zinc-200">
           <p>
-            GTA VI Hub es un medio digital independiente dedicado a cubrir todo
+            GTA VI Daily es un medio digital independiente dedicado a cubrir todo
             lo relacionado con Grand Theft Auto VI, el próximo gran lanzamiento
             de Rockstar Games. Nuestro equipo de periodistas y analistas sigue
             de cerca cada anuncio, filtración y rumor para ofrecer a la
@@ -134,7 +134,7 @@ export function StaticPage({ type }: StaticPageProps) {
               1. Introducción
             </h2>
             <p>
-              En GTA VI Hub respetamos tu privacidad y nos comprometemos a
+              En GTA VI Daily respetamos tu privacidad y nos comprometemos a
               proteger tus datos personales. Esta política explica qué
               información recogemos, cómo la usamos y qué derechos tienes como
               usuario. Al utilizar nuestro sitio web, aceptas las prácticas
@@ -320,7 +320,7 @@ export function StaticPage({ type }: StaticPageProps) {
 
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
         <a
-          href="mailto:contacto@gtavihub.example"
+          href="mailto:contacto@gtavidaily.com"
           className="flex items-center gap-3 rounded-lg border border-white/5 bg-zinc-900/40 p-4 transition-colors hover:border-pink-500/40"
         >
           <Mail className="h-5 w-5 text-pink-500" />
@@ -328,7 +328,7 @@ export function StaticPage({ type }: StaticPageProps) {
             <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
               Email
             </p>
-            <p className="text-sm text-white">contacto@gtavihub.example</p>
+            <p className="text-sm text-white">contacto@gtavidaily.com</p>
           </div>
         </a>
         <a
@@ -341,7 +341,7 @@ export function StaticPage({ type }: StaticPageProps) {
             <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
               Twitter / X
             </p>
-            <p className="text-sm text-white">@gtavihub</p>
+            <p className="text-sm text-white">@gtavidaily</p>
           </div>
         </a>
       </div>

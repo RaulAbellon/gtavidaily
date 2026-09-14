@@ -31,7 +31,7 @@ export function ArticleView({ slug }: ArticleViewProps) {
   useEffect(() => {
     if (article) {
       // Actualizar título de la página para SEO
-      document.title = `${article.title} | GTA VI Hub`;
+      document.title = `${article.title} | GTA VI Daily`;
 
       // JSON-LD dinámico para el artículo
       const existing = document.getElementById("article-jsonld");
@@ -56,7 +56,7 @@ export function ArticleView({ slug }: ArticleViewProps) {
         },
         publisher: {
           "@type": "Organization",
-          name: "GTA VI Hub",
+          name: "GTA VI Daily",
           logo: {
             "@type": "ImageObject",
             url: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
@@ -303,7 +303,7 @@ export function ArticleView({ slug }: ArticleViewProps) {
           <p className="mt-4 border-t border-white/5 pt-3 text-xs text-zinc-500">
             Este artículo se basa en información pública verificada de las
             fuentes citadas. Las opiniones y análisis editoriales son propios
-            de GTA VI Hub.
+            de GTA VI Daily.
           </p>
         </section>
       )}

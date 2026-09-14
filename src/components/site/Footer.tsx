@@ -124,7 +124,7 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-white/5 pt-6 text-xs text-zinc-500 sm:flex-row sm:items-center">
           <p>
-            © {new Date().getFullYear()} GTA VI Hub. Todos los derechos
+            © {new Date().getFullYear()} GTA VI Daily. Todos los derechos
             reservados.
           </p>
           <p className="flex items-center gap-2">

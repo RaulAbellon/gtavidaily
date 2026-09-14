@@ -17,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://gtavihub.example/sitemap.xml",
-    host: "https://gtavihub.example",
+    sitemap: "https://gtavidaily.com/sitemap.xml",
+    host: "https://gtavidaily.com",
   };
 }

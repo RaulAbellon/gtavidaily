@@ -21,7 +21,7 @@ export function CategoryView({ slug }: CategoryViewProps) {
 
   useEffect(() => {
     if (category) {
-      document.title = `${category.name} de GTA VI | GTA VI Hub`;
+      document.title = `${category.name} de GTA VI | GTA VI Daily`;
     }
   }, [category]);
 
