@@ -30,6 +30,11 @@ yarn-error.log*
 .env.*
 !.env.example
 
+# Tokens de publicación (el README los menciona: deben quedar fuera de Git)
+.gh-token
+.netlify-token
+.netlify
+
 # Vercel / plataformas
 .vercel
 
