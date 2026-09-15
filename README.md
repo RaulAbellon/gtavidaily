@@ -44,6 +44,7 @@ npm run dev                  # http://localhost:3000
 | `npm run test` | Pruebas unitarias (Vitest) |
 | `npm run test:e2e` | Prueba de humo HTTP contra un servidor en marcha |
 | `npm run check` | Contenido + lint + tipos + tests + build, en ese orden |
+| `npm run deploy` | Publica: regenera, comprueba, hace commit y empuja a `main` |
 
 ## Publicar una noticia nueva (flujo diario)
 
@@ -61,6 +62,9 @@ npm run content
 
 # 4. Comprobar que todo sigue en pie
 npm run check
+
+# 5. Publicar (el despliegue lo lanza la plataforma sola)
+npm run deploy -- "contenido: mi noticia del día"
 ```
 
 El validador rechaza lo que no debe publicarse: campos que faltan o sobran,
@@ -88,7 +92,7 @@ Todas están documentadas en `.env.example`. Las importantes:
 | Variable | Obligatoria | Para qué |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Sí en producción | **Única fuente de verdad** de la URL: canonical, sitemap, robots y datos estructurados salen de aquí |
-| `NEXT_PUBLIC_ADSENSE_CLIENT` | Para monetizar | ID `ca-pub-…`. Si no tiene formato válido, **no se renderiza ningún anuncio** |
+| `NEXT_PUBLIC_ADSENSE_CLIENT` | Para monetizar | ID `ca-pub-…`. Si no tiene formato válido, **no se renderiza ningún anuncio**; de él se genera también `/ads.txt` |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | Recomendada | Email mostrado en las páginas legales y el pie |
 | `NEXT_PUBLIC_EDITORIAL_NAME` | No | Firma editorial de los artículos |
 | `NEXT_PUBLIC_LEGAL_NAME` / `_TAX_ID` / `_ADDRESS` | **Sí antes de monetizar** | Identificación del responsable (art. 10 LSSI-CE y art. 13 RGPD). Mientras falten, la página legal avisa de que están pendientes |
@@ -115,7 +119,7 @@ src/
 │  ├─ consent/                   Banner, ajustes, señales de Consent Mode y hook
 │  └─ site/                      Cabecera, pie, tarjetas, migas, buscador, compartir
 └─ lib/
-   ├─ data.ts                    Contenido (44 artículos, 7 categorías)
+   ├─ data.ts                    Ensambla el contenido (57 artículos, 8 categorías)
    ├─ queries.ts                 Búsqueda, recuentos y filtros de fuentes
    ├─ site.ts                    Configuración del sitio (una sola fuente)
    └─ consent.ts                 Tipos y lógica pura del consentimiento
@@ -139,44 +143,96 @@ con `"use client"` lo importa.
 - La decisión se guarda en `localStorage` bajo la clave `gtavidaily-consent`,
   versionada, y se propaga por un evento que sí tiene consumidores.
 
-## Contenido: leer antes de monetizar
+## Contenido: estado y criterio editorial
 
-Los artículos se generaron en su día con plantillas (`scripts/generate_articles_*.py`
-ya retirados) y **no han pasado una verificación editorial**. Antes de activar
-publicidad conviene:
+Los artículos de la primera etapa salieron de plantillas
+(`scripts/generate_articles_*.py`, ya retirados). Ese contenido **se revisó
+después afirmación por afirmación y se reescribió**: cada dato se clasificó como
+confirmado, reportado, probable, rumor o falso, y lo que no se pudo sostener se
+corrigió o se retiró del sitio.
 
-1. Revisar artículo por artículo los datos concretos (fechas, precios, cifras,
-   casting) y corregir o retirar lo que no se pueda contrastar.
-2. Sustituir cualquier fuente que sea una portada de dominio por un enlace
-   permanente. La interfaz ya oculta las fuentes sin ruta, pero conviene
-   limpiarlas también en los datos.
+Al añadir contenido nuevo, el criterio es:
+
+1. Separar siempre **lo que Rockstar ha confirmado** de lo que solo es un rumor,
+   y decirlo en el cuerpo del texto, no solo en el titular.
+2. Enlazar una **fuente permanente** para cada afirmación relevante: el validador
+   rechaza las portadas de medio.
 3. Mantener el aviso de sitio fan no oficial y las marcas registradas.
+4. No inventar datos para redondear un artículo: si falta información
+   verificable, se publica menos y se dice lo que falta.
 
 ## Despliegue
 
-El build genera un servidor autocontenido en `.next/standalone` (los estáticos y
-`public/` se copian con `scripts/postbuild.mjs`):
+El sitio se despliega en **Netlify**, plan gratuito. Para este proyecto es la
+opción más rentable: el plan Starter **sí permite publicidad**, mientras que el
+plan Hobby de Vercel la prohíbe; y el soporte de Next.js 16 lo lleva el adaptador
+oficial de Netlify, que se actualiza solo en cada build.
+
+La configuración vive en `netlify.toml`: comando de build, versión de Node y las
+cabeceras de seguridad aplicadas en el CDN.
+
+### Puesta en marcha (una sola vez)
+
+1. Entra en Netlify con la cuenta de GitHub y elige **Add new site → Import an
+   existing project → GitHub → `RaulAbellon/gtavidaily`**.
+2. No toques el formulario: `netlify.toml` ya declara el comando de build y la
+   versión de Node. Pulsa **Deploy**.
+3. En **Domain management** añade `gtavidaily.com` como dominio principal y
+   `www.gtavidaily.com` como alias. Netlify redirige el segundo al primero y
+   emite el certificado TLS automáticamente.
+4. Apunta el DNS en GoDaddy: lo más simple es cambiar los *nameservers* por los
+   cuatro que indique Netlify (gestiona todos los registros). La alternativa es
+   crear un registro `A` para el dominio raíz y un `CNAME` para `www` con los
+   valores que muestre el panel.
+5. En **Site configuration → Environment variables** define las variables de
+   `.env.example` (`NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_ADSENSE_CLIENT` y los
+   datos legales son las importantes) y vuelve a desplegar.
+
+Mientras el DNS no apunte al hosting, `gtavidaily.com` seguirá mostrando la
+página de GoDaddy aunque el sitio ya esté publicado en su URL `*.netlify.app`.
+
+### Publicar cambios
+
+```bash
+npm run deploy -- "contenido: noticia del día"
+```
+
+Regenera el índice, pasa `npm run check`, hace el commit y empuja a `main`. El
+despliegue lo lanza Netlify por su cuenta: no hay ningún botón que pulsar. Sin
+`git` instalado, `scripts/publish.mjs` hace lo mismo contra la API de GitHub.
+
+### Autoalojamiento (alternativa)
+
+El build genera además un servidor autocontenido en `.next/standalone` (los
+estáticos y `public/` se copian con `scripts/postbuild.mjs`), que es lo que usa
+un VPS o un contenedor:
 
 ```bash
 npm run build
 npm start          # respeta PORT y HOSTNAME
 ```
 
-Cualquier plataforma con Node 20.9+ sirve. No hay dependencias nativas ni base
-de datos. El endpoint `/api/contacto` necesita `CONTACT_WEBHOOK_URL` para enviar
-mensajes.
-
-Si la plataforma despliega desde GitHub (Runable, Vercel, Netlify, Cloudflare
-Pages…), basta con que el cambio llegue a `main`: el despliegue lo hace ella. En
-ese caso el ciclo diario es el de arriba y termina publicando en el repositorio.
+En Netlify y Vercel ese bundle no se genera (`outputMode` en `next.config.ts` lo
+desactiva), porque es su adaptador el que empaqueta el resultado. Cualquier
+plataforma con Node 20.9+ sirve: no hay dependencias nativas ni base de datos.
+El endpoint `/api/contacto` necesita `CONTACT_WEBHOOK_URL` para enviar mensajes.
 
 ### Cabeceras de seguridad
 
-`next.config.ts` aplica `Content-Security-Policy` (permisiva con los dominios de
-Google que necesita AdSense, restrictiva con todo lo demás), `Strict-Transport-Security`
-en producción, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` y
-`Permissions-Policy`. Está documentado en el propio fichero para poder migrarla a
-nonces cuando se integre un CMP con soporte completo.
+`next.config.ts` aplica la `Content-Security-Policy` (permisiva con los dominios
+de Google que necesita AdSense, restrictiva con todo lo demás),
+`Strict-Transport-Security` en producción, `X-Content-Type-Options`,
+`X-Frame-Options`, `Referrer-Policy` y `Permissions-Policy`. Las mismas
+cabeceras se declaran en `netlify.toml` para que el CDN las aplique a todas las
+respuestas, incluidas las de la función de Next; hay una prueba que falla si la
+CSP de ambos ficheros diverge.
+
+### Monetización
+
+`/ads.txt` se genera desde `NEXT_PUBLIC_ADSENSE_CLIENT`: en cuanto el ID tenga
+formato válido, la ruta publica la línea que espera Google para autorizar el
+inventario. Sin AdSense configurado responde 404, que es lo honesto: no hay
+inventario que declarar.
 
 ## Publicar cambios sin `git`
 

@@ -26,7 +26,7 @@ async function get(pathname) {
     headers: { "user-agent": "gtaidaily-smoke" },
   });
   const body = await response.text();
-  return { status: response.status, body };
+  return { status: response.status, body, headers: response.headers };
 }
 
 async function waitForServer() {
@@ -168,6 +168,31 @@ async function main() {
       "security.txt",
       `estado ${security.status}, Expires=${expires ?? "ausente"}`
     );
+  }
+
+  // ads.txt: 404 honesto mientras no haya AdSense; con AdSense configurado, la
+  // línea que espera Google para autorizar el inventario.
+  const ads = await get("/ads.txt");
+  if (ads.status === 404) {
+    ok("/ads.txt → 404 (AdSense sin configurar)");
+  } else if (ads.status === 200 && ads.body.includes("DIRECT")) {
+    ok("/ads.txt declara el vendedor autorizado de AdSense");
+  } else {
+    fail("ads.txt", `estado ${ads.status}`);
+  }
+
+  // Cabeceras de seguridad: la misma comprobación vale en local y contra el
+  // dominio real, que es donde se confirma que el CDN las aplique.
+  const csp = home.headers.get("content-security-policy") ?? "";
+  const missing = [
+    "default-src 'self'",
+    "object-src 'none'",
+    "frame-ancestors 'self'",
+  ].filter((directive) => !csp.includes(directive));
+  if (csp && missing.length === 0) {
+    ok("la home envía la Content-Security-Policy");
+  } else {
+    fail("CSP", csp ? `faltan directivas: ${missing.join(", ")}` : "ausente");
   }
 
   const rssLinkInHtml = /application\/rss\+xml/.test(home.body);

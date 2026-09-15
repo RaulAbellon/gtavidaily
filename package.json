@@ -12,6 +12,7 @@
     "start": "node scripts/start.mjs",
     "content": "node scripts/content.mjs index",
     "content:check": "node scripts/content.mjs check",
+    "content:fix": "node scripts/content.mjs fix",
     "content:new": "node scripts/content.mjs new",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -20,6 +21,7 @@
     "test:e2e": "node tests/e2e/smoke.mjs",
     "publish:check": "node scripts/publish.mjs --dry-run",
     "publish": "node scripts/publish.mjs",
+    "deploy": "node scripts/deploy.mjs",
     "check": "npm run content:check && npm run lint && npm run typecheck && npm run test && npm run build"
   },
   "dependencies": {

@@ -1,10 +1,12 @@
 // Datos de artículos para el sitio de noticias de GTA VI.
 // Estructura optimizada para SEO con campos para JSON-LD NewsArticle.
 //
-// AVISO SOBRE EL CONTENIDO: buena parte de estos artículos se generó con
-// plantillas y no pasó una verificación editorial. Antes de monetizar el sitio
-// hay que revisarlos uno a uno, sustituir las fuentes genéricas por enlaces
-// permanentes y corregir o retirar las afirmaciones no contrastadas.
+// AVISO SOBRE EL CONTENIDO: los artículos heredados de la primera etapa se
+// verificaron afirmación por afirmación y se reescribieron (ver el informe de
+// verificación en el historial del proyecto). Cada pieza declara sus fuentes y
+// distingue lo confirmado por Rockstar de lo que solo es un rumor. Aun así, el
+// sector se mueve: antes de dar por buena una cifra, conviene reabrir la fuente
+// enlazada al final del artículo.
 //
 // Las portadas son SVG generados localmente (ver `src/lib/cover.ts`): no hay
 // material con copyright de Rockstar/Take-Two.

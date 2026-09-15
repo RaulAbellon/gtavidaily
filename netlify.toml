@@ -1,0 +1,41 @@
+# Configuración de despliegue en Netlify.
+#
+# El plan gratuito (Starter) permite publicidad, así que este sitio puede
+# monetizarse sin coste de alojamiento: la restricción de Netlify es facturar a
+# terceros por alojar sus webs, no mostrar anuncios propios.
+#
+# No se declara `publish`: el adaptador oficial de Next.js de Netlify genera el
+# directorio de publicación y provisiona las funciones a partir de `.next`.
+# Tampoco se fija la versión del adaptador, para recibir las actualizaciones
+# automáticas que dan soporte a cada versión de Next.
+
+[build]
+  # Validación del contenido (esquema, fuentes, categorías) antes de compilar.
+  # Las pruebas, el lint y el typecheck los pasa el CI de GitHub Actions y se
+  # pasan en local con `npm run check` antes de publicar.
+  command = "npm run content:check && npm run build"
+
+[build.environment]
+  # Next.js 16 exige Node >= 20.9. Se fija la LTS para que el build no dependa
+  # de la versión por defecto de la plataforma.
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# ---------------------------------------------------------------------------
+# Cabeceras de seguridad
+#
+# Se declaran aquí, en el CDN, además de en `next.config.ts`: así se aplican
+# también a las respuestas que sirve la función de Next (no solo a los activos
+# estáticos) y no dependen del comportamiento del adaptador. La CSP se mantiene
+# idéntica a la de `next.config.ts`; hay una prueba que falla si divergen.
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://partner.googleadservices.com https://tpc.googlesyndication.com https://www.googletagservices.com https://adservice.google.com https://fundingchoicesmessages.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://adservice.google.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://fundingchoicesmessages.google.com; media-src 'self'; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"

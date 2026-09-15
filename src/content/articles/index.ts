@@ -1,5 +1,5 @@
-// GENERADO por el pipeline de contenido del proyecto. No editar a mano:
-// añade o edita los ficheros .json de esta carpeta y vuelve a generarlo.
+// GENERADO por scripts/content.mjs. No editar a mano:
+// añade o edita los ficheros .json de esta carpeta y ejecuta `npm run content`.
 import a0 from "./gta-vi-cuenta-atras-dos-meses-analisis.json";
 import a1 from "./gta-vi-sistemas-talleres-robos-entrevistas.json";
 import a2 from "./gta-vi-mandos-dualsense-y-tokyo-game-show.json";

@@ -10,6 +10,11 @@ import path from "node:path";
 const root = process.cwd();
 const standalone = path.join(root, ".next", "standalone");
 
+// En Netlify y Vercel el build lo empaqueta su propio adaptador y no existe
+// `.next/standalone` (ver `outputMode` en next.config.ts). Ahí no hay nada que
+// copiar, así que el script termina sin error en lugar de romper el despliegue.
+const managedBuild = Boolean(process.env.NETLIFY || process.env.VERCEL);
+
 async function exists(target) {
   try {
     await access(target);
@@ -20,6 +25,13 @@ async function exists(target) {
 }
 
 async function main() {
+  if (managedBuild) {
+    console.log(
+      "· Build gestionado por la plataforma: no se genera .next/standalone"
+    );
+    return;
+  }
+
   if (!(await exists(standalone))) {
     console.error(
       "No se ha encontrado .next/standalone. Comprueba que next.config.ts mantiene output: \"standalone\"."

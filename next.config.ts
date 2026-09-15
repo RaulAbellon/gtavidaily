@@ -7,7 +7,7 @@ const isDev = process.env.NODE_ENV !== "production";
 // cierra todo lo demás (object-src, base-uri, frame-ancestors) y no permite
 // eval. Documentada en el README para poder endurecerla o migrarla a nonces
 // cuando se integre un CMP con soporte completo.
-const csp = [
+export const CSP = [
   "default-src 'self'",
   "base-uri 'self'",
   "object-src 'none'",
@@ -25,9 +25,22 @@ const csp = [
   "upgrade-insecure-requests",
 ].join("; ");
 
+/**
+ * Modo de salida del build.
+ *
+ * Netlify y Vercel compilan con su propio adaptador y generan su artefacto a
+ * partir de `.next`: pedir además `standalone` duplica trabajo y puede
+ * confundir al adaptador. Para autoalojamiento (VPS, Docker) el bundle
+ * autocontenido es justo lo que hace falta, así que se mantiene por defecto.
+ */
+export function outputMode(
+  env: Record<string, string | undefined> = process.env
+): "standalone" | undefined {
+  return env.NETLIFY || env.VERCEL ? undefined : "standalone";
+}
+
 const nextConfig: NextConfig = {
-  // Build autocontenido en .next/standalone.
-  output: "standalone",
+  output: outputMode(),
 
   // Las portadas son SVG generados localmente como data URI: no hay nada que
   // optimizar en build.
@@ -68,7 +81,7 @@ const nextConfig: NextConfig = {
         key: "Permissions-Policy",
         value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
       },
-      { key: "Content-Security-Policy", value: csp },
+      { key: "Content-Security-Policy", value: CSP },
     ];
 
     if (!isDev) {

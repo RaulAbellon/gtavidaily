@@ -249,6 +249,29 @@ if (COMMAND === "check") {
   process.exit(0);
 }
 
+if (COMMAND === "fix") {
+  // Reescribe el tiempo de lectura a partir del recuento real de palabras. Es
+  // la única corrección que el validador puede aplicar sin criterio editorial:
+  // el resto de avisos (extensión, etiquetas, fuentes) los decide una persona.
+  let changed = 0;
+  for (const article of articles) {
+    const expected = Math.max(1, Math.round(countWords(article.content) / 200));
+    if (article.readingTime === expected) continue;
+
+    article.readingTime = expected;
+    writeFileSync(
+      path.join(CONTENT_DIR, `${article.slug}.json`),
+      `${JSON.stringify(article, null, 2)}\n`,
+      "utf8"
+    );
+    changed += 1;
+  }
+
+  console.log(`\nreadingTime corregido en ${changed} artículo(s).`);
+  writeIndex(articles);
+  process.exit(0);
+}
+
 writeIndex(articles);
 console.log(`\nÍndice regenerado con ${articles.length} artículos.`);
 console.log("Siguiente paso: `npm run check` y publicar.");
