@@ -1,0 +1,47 @@
+{
+  "slug": "gta-vi-take-two-citaciones-filtrador-microsoft-discord",
+  "title": "Take-Two cita a Microsoft, Discord y X para encontrar al filtrador",
+  "excerpt": "La compañía ha presentado varias citaciones en un tribunal federal para obtener datos de las plataformas por donde circuló el material filtrado en agosto. Discord dice que evaluará el alcance antes de responder.",
+  "content": [
+    "Take-Two ha presentado varias citaciones en un tribunal federal de Estados Unidos para que Microsoft, Discord y X entreguen datos que permitan identificar a quien difundió material de GTA VI el pasado agosto. Lo publicaron Kotaku y GamesIndustry.biz, y la compañía no ha hecho ninguna declaración pública al respecto.",
+    "Una citación no es una demanda ni una acusación: es un requerimiento judicial para que un tercero aporte información. Lo que pide Take-Two, según estas informaciones, son registros que ayuden a rastrear el origen de las filtraciones, que se difundieron a mediados de agosto y que incluían material que la compañía no había publicado.",
+    "La respuesta más matizada ha llegado de Discord, que según Kotaku ha asegurado que evaluará la validez y el alcance del requerimiento antes de entregar nada, en un contexto de preocupación por la privacidad de sus usuarios. Microsoft, por su parte, ha señalado que trabaja estrechamente con Rockstar en la investigación, según recoge Vandal.",
+    "Es la segunda vez que una filtración de GTA termina en los tribunales. La de septiembre de 2022, en la que se publicaron decenas de vídeos de una versión en desarrollo, acabó con actuaciones judiciales en el Reino Unido y con consecuencias penales para los responsables. Aquel episodio no cambió la fecha del juego, pero sí obligó a Rockstar a adelantar su comunicación.",
+    "Para el lector, esto no afecta a tu cuenta ni a tu copia del juego. Lo que sí conviene tener presente es que las filtraciones son un terreno minado: buena parte de lo que circula como material filtrado en las semanas previas a un lanzamiento es falso, reciclado de otros juegos o generado con herramientas de imagen. Compartirlo tiene menos recorrido del que parece y, en el caso de material real obtenido de forma ilícita, expone a quien lo redistribuye.",
+    "Queda por ver si el tribunal concede las citaciones y qué entregan finalmente las plataformas. Si Discord mantiene su posición de revisar el alcance, el proceso puede alargarse meses y resolverse, en la práctica, después del lanzamiento del 19 de noviembre."
+  ],
+  "category": "noticias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-15T13:00:00.000Z",
+  "updatedAt": "2026-09-15T13:00:00.000Z",
+  "coverLabel": "Citaciones por filtraciones",
+  "coverAlt": "Ilustración conceptual sobre las citaciones judiciales de Take-Two por las filtraciones de GTA VI",
+  "tags": [
+    "Filtraciones",
+    "Take-Two",
+    "Legal",
+    "Discord",
+    "Rockstar"
+  ],
+  "readingTime": 3,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Kotaku — Take-Two cita a Microsoft y Discord por las filtraciones",
+      "url": "https://kotaku.com/take-two-subpoenas-microsoft-and-discord-records-related-to-spread-of-gta-6-leaks-2000726633"
+    },
+    {
+      "name": "GamesIndustry.biz — Citaciones contra Microsoft, Discord y X",
+      "url": "https://www.gamesindustry.biz/take-two-interactive-files-subpoenas-against-microsoft-discord-and-x-amid-ongoing-gta-6-leaks"
+    },
+    {
+      "name": "Kotaku — Discord evaluará la citación por privacidad",
+      "url": "https://kotaku.com/discord-says-it-hasnt-been-served-with-a-subpoena-over-gta-6-leaks-yet-well-evaluate-the-validity-and-scope-before-responding-2000727642"
+    },
+    {
+      "name": "Vandal — Xbox trabaja con Rockstar para descubrir al filtrador",
+      "url": "https://vandal.elespanol.com/noticia/1350792484/xbox-trabaja-estrechamente-con-rockstar-para-descubrir-al-filtrador-de-gta-6/"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "filtracion-septiembre-2022-analisis-impacto",
+  "title": "Qué cambió la filtración de GTA VI de septiembre de 2022",
+  "excerpt": "Cuatro años después, Rockstar sigue sin reparto oficial y responde a las filtraciones publicando material el mismo día. El episodio de 2022 marcó ese método.",
+  "content": [
+    "En septiembre de 2022, un atacante publicó decenas de vídeos de GTA VI en fase de desarrollo. Las imágenes mostraban una Vice City reconocible, a Jason y Lucia, y sistemas que entonces solo existían como rumor: interiores, navegación y un nivel de búsqueda de seis estrellas. Era material preliminar, con texturas provisionales y animaciones sin pulir, y no representaba la calidad final del producto.",
+    "El responsable fue Arion Kurtaj, entonces menor de edad y miembro del grupo de extorsión Lapsus$, según las investigaciones recogidas por BBC y The Guardian. En diciembre de 2023 fue condenado a una orden de internamiento hospitalario indefinido en un centro psiquiátrico seguro, después de que el jurado determinara que había cometido los hechos y de que se le declarara no apto para ser juzgado. El caso no fue un incidente menor dentro del sector: fijó un precedente sobre el coste legal de atacar material en desarrollo.",
+    "La respuesta pública de Rockstar en 2022 fue breve y no entró a discutir el contenido. La compañía lamentó la filtración, dijo que el trabajo continuaría según lo previsto y evitó confirmar o desmentir nada de lo visto. Esa contención se mantuvo durante más de un año, hasta el tráiler de diciembre de 2023.",
+    "Ese tráiler acabó siendo el mejor indicador de cómo cambió la compañía. Estaba previsto para el 5 de diciembre de 2023, pero se filtró unas horas antes; Rockstar lo reconoció ese mismo día y lo publicó de inmediato. El vídeo cerró su primera jornada con 90.421.491 visualizaciones, récord de YouTube en 24 horas para un vídeo no musical según Guinness World Records, que además consigna en su ficha que se lanzó antes de lo previsto por una filtración. Desde entonces, el patrón se repite: cuando el material se escapa, la respuesta es publicarlo.",
+    "Eso no equivale a una comunicación más abierta. La filtración de agosto de 2026, con una quincena de clips de gameplay atribuidos a un usuario identificado como «Cyberleek», recibió el 26 de agosto un comunicado de Rockstar en el que la compañía hablaba de una filtración «desgarradora para nuestro equipo» y pedía esperar al día 19 de noviembre para jugar el juego. Take-Two, por su parte, presentó peticiones de citación en el Distrito Sur de Nueva York contra Microsoft y Discord para identificar al responsable, según Kotaku.",
+    "La diferencia entre 2022 y 2026 no está en la política de silencio, sino en la capacidad de respuesta. En 2022 Rockstar no tenía nada que enseñar y la filtración ocupó ese hueco durante más de un año. En 2026 había un vídeo de 26 minutos preparado y un calendario de lanzamiento cerrado. Ese es todo el cambio: la filtración sigue doliendo, pero ya no define lo que el público ve primero."
+  ],
+  "category": "rumores",
+  "author": "redaccion",
+  "publishedAt": "2026-07-20T08:30:00Z",
+  "updatedAt": "2026-09-15T12:00:00.000Z",
+  "coverLabel": "Filtración 2022: qué cambió",
+  "coverAlt": "Composición conceptual sobre la filtración de material de GTA VI en septiembre de 2022",
+  "tags": [
+    "Filtración",
+    "Seguridad",
+    "Rockstar",
+    "Lapsus$",
+    "Análisis"
+  ],
+  "readingTime": 3,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "BBC News — GTA 6 leaks: Rockstar issues statement over online clips",
+      "url": "https://www.bbc.co.uk/news/articles/c62eg71e1z2o"
+    },
+    {
+      "name": "The Guardian — British teenager behind GTA 6 hack receives indefinite hospital order",
+      "url": "https://www.theguardian.com/uk-news/2023/dec/21/british-teenager-behind-gta-6-hack-receives-indefinite-hospital-order"
+    },
+    {
+      "name": "Kotaku — Looks Like The GTA VI Trailer Just Leaked Online (Update: Rockstar Confirms, Releases Trailer Early)",
+      "url": "https://kotaku.com/grand-theft-auto-6-vi-trailer-leak-1851072089"
+    },
+    {
+      "name": "Video Games Chronicle — GTA 6 leaks 'have been heartbreaking for our team,' says Rockstar Games as it breaks silence",
+      "url": "https://www.videogameschronicle.com/news/gta-6-leaks-have-been-heartbreaking-for-our-team-says-rockstar-games-in-a-public-statement-regarding-gameplay-videos/"
+    }
+  ]
+}

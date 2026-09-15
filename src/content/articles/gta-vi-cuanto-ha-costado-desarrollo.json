@@ -1,0 +1,51 @@
+{
+  "slug": "gta-vi-cuanto-ha-costado-desarrollo",
+  "title": "Cuánto ha costado GTA VI: por qué la cifra real no existe",
+  "excerpt": "Take-Two no ha publicado jamás un presupuesto del juego y no está obligada a hacerlo. Lo que circula son estimaciones de terceros con metodologías distintas.",
+  "content": [
+    "Take-Two Interactive no ha publicado nunca cuánto ha costado desarrollar y promocionar GTA VI. Lo único que existe es una frase de su consejero delegado, Strauss Zelnick, resumida por la prensa especializada como que «fue caro». Todo lo demás que circula son estimaciones de terceros y ninguna está confirmada por la compañía.",
+    "La cifra más repetida la publicó Business Insider en mayo de 2026: varios analistas de industria situaban el gasto entre 1.000 y 1.500 millones de dólares. Es una estimación de analistas, no un dato de Take-Two, y probablemente no incluye el marketing, que arrancó con fuerza ese mismo verano.",
+    "Hay un segundo cálculo, muy citado en foros, que sale de los registros públicos británicos. Según Companies House, la sociedad Rockstar Games UK Limited declaraba un gasto acumulado de 1.600 millones de libras (unos 2.100 millones de dólares) desde marzo de 2019, con una plantilla media de 1.744 empleados a 31 de marzo de 2025. El problema es doble: esas cuentas cubren toda la actividad del estudio, no solo GTA VI, y las propias cuentas no están verificadas por Companies House.",
+    "De ahí salen los 3.000 millones. La estimación se apoya en los salarios ya registrados más los meses que quedaban hasta el lanzamiento del 19 de noviembre de 2026, y es exactamente eso: una proyección de medios. Ni Rockstar ni Take-Two la han respaldado.",
+    "La comparación con el Burj Khalifa tampoco es un dato del juego. En agosto de 2025 circulaba que el presupuesto podía llegar a 2.000 millones de dólares, frente a los 1.500 millones que costó el rascacielos, y la comparación se viralizó en redes y medios de estilo de vida. Que el edificio costara eso es un dato verificable; que GTA VI cueste lo mismo es un rumor con una cifra redonda.",
+    "Mientras eso se discute, Take-Two sí publica cifras agregadas que permiten hacerse una idea de la escala. En su comunicado del 7 de agosto de 2026, la compañía reiteró una previsión de reservas netas de 8.000 a 8.200 millones de dólares para el ejercicio que cierra el 31 de marzo de 2027, con un coste de ingresos previsto de 3.538 a 3.658 millones. Eso es el conjunto del negocio, no GTA VI.",
+    "La razón de fondo es contable. Take-Two no presenta un desglose por título: su cuenta de resultados mezcla GTA Online, NBA 2K, Zynga y todo lo demás. Cualquier cifra atribuida al juego es una estimación construida desde fuera, y de ahí la dispersión entre 1.000 y 3.000 millones.",
+    "Zelnick ha sido deliberadamente elusivo. Dijo que el desarrollo «fue caro» y evitó dar el presupuesto o calificarlo de apuesta; el gasto, en su lectura, es una ventaja competitiva. Con las reservas usó el mismo registro: afirmó que no diría cuántas unidades se habían vendido porque la compañía no sabía traducirlas a números.",
+    "Por eso el dato probablemente no se sabrá nunca tal cual. Ni antes del lanzamiento ni después habrá una línea que diga «coste de GTA VI»: solo partidas agregadas que se moverán cuando el juego empiece a facturar, y estimaciones de analistas para explicarlas.",
+    "Queda una regla práctica para el lector. Si la cifra no aparece en un comunicado de Take-Two, de Rockstar o en un documento depositado, es estimación, y conviene mirar si el medio que la publica explica de dónde sale el número o solo repite un titular. Cuando llegue el lanzamiento, los resultados trimestrales de Take-Two serán el único sitio donde ver el rastro de este gasto. Ese rastro nunca dirá una cifra exacta."
+  ],
+  "category": "guias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-15T15:45:00.000Z",
+  "updatedAt": "2026-09-15T15:45:00.000Z",
+  "coverLabel": "La cifra que nadie tiene",
+  "coverAlt": "Ilustración sobre el presupuesto no confirmado de GTA VI y las estimaciones que circulan",
+  "tags": [
+    "gta vi",
+    "take-two",
+    "presupuesto",
+    "industria",
+    "verificacion"
+  ],
+  "readingTime": 3,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "IGN — GTA 6 Estimated to Have Cost Take-Two $1 Billion to $1.5 Billion So Far, CEO Strauss Zelnick Says 'It Was Expensive'",
+      "url": "https://www.ign.com/articles/gta-6-estimated-to-have-cost-take-two-1-billion-to-15-billion-so-far-ceo-strauss-zelnick-says-it-was-expensive"
+    },
+    {
+      "name": "GamingBolt — Grand Theft Auto 6 Development Costs May Exceed $2 Billion, Per UK Public Records",
+      "url": "https://gamingbolt.com/grand-theft-auto-6-development-costs-may-exceed-2-billion-per-uk-public-records"
+    },
+    {
+      "name": "Take-Two Interactive — Reports Results for Fiscal First Quarter 2027",
+      "url": "https://content-archive.fast-edgar.com/20260807/ACZ2F22COZ229JAF22JJ2ZZ2G7MCA22IZ282/ttwo1q27earningsrelease.htm"
+    },
+    {
+      "name": "What's On Dubai — GTA 6 is costing more to make than Dubai's iconic Burj Khalifa",
+      "url": "https://whatson.ae/2025/08/gta-6-is-costing-more-to-make-than-dubais-iconic-burj-khalifa/"
+    }
+  ]
+}

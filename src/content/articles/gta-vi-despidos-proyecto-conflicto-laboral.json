@@ -1,0 +1,49 @@
+{
+  "slug": "gta-vi-despidos-proyecto-conflicto-laboral",
+  "title": "El tribunal laboral de Rockstar, en Glasgow: 23 despidos y GTA VI",
+  "excerpt": "El juicio contra Rockstar por los despidos de octubre de 2025 se celebra en el Glasgow Tribunals Centre hasta mediados de octubre, un mes antes del lanzamiento.",
+  "content": [
+    "El tribunal laboral escocés que juzga los despidos de trabajadores del proyecto GTA VI celebra su vista final en el Glasgow Tribunals Centre desde el 10 de septiembre de 2026 y hasta mediados de octubre. La BBC cifra en 23 los demandantes despedidos por Rockstar, que en octubre de 2025 despidió a 31 personas en el Reino Unido —la mayoría en su sede de Edimburgo— y a tres más en Canadá. La empresa alega «falta grave» por compartir información confidencial en un servidor de Discord; el sindicato sostiene que fueron cesados por sindicarse.",
+    "El caso enfrenta dos relatos sobre el mismo hecho. La IWGB, que representa a los despedidos, sostiene que Rockstar vigiló ese Discord con un empleado propio desde 2024 y actuó justo cuando el sindicato alcanzó el 10% de la plantilla necesario para pedir reconocimiento legal. Rockstar mantiene que descubrió en el servidor información confidencial sobre juegos no anunciados y que hay «una única razón» para cada despido: la falta grave.",
+    "En el primer día de vista, el 10 de septiembre, una cuarentena de personas se manifestó a las puertas del edificio con pancartas contra el «union busting». El sindicato no pide boicotear GTA VI: pide donaciones para costear el litigio. El extrabajador Jason Lewis lo resumió así en el comunicado de la IWGB: mientras el mundo se prepara para el estreno, ellos reviven el momento en que les echaron de un proyecto al que dedicaron años. La vista se prolongará unas cinco semanas, hasta muy cerca del lanzamiento del juego el 19 de noviembre.",
+    "En enero de 2026, la jueza Frances Eccles ya denegó a los despedidos la «interim relief», la medida que les habría devuelto a la nómina de Rockstar mientras se sustancia el caso. Eccles razonó que no podía concluir que la afiliación sindical fuera el «motivo principal» del despido y señaló que algunos demandantes apenas habían publicado mensajes o no escribían desde hacía más de un año. También constató que no se les comunicó qué comentarios se consideraban falta grave hasta unas seis semanas después del cese.",
+    "En junio de 2026 la IWGB sumó una victoria procesal: el tribunal rechazó el intento de Rockstar de eliminar del caso las acusaciones de «blacklisting», la elaboración de listas de trabajadores sindicados para discriminarles. Esa decisión fijó las fechas de la vista final. El sindicato busca una declaración de despido improcedente y, con ella, la readmisión o una indemnización.",
+    "Al margen del tribunal, la IWGB ha construido su campaña durante 2026 con acusaciones propias sobre condiciones laborales: remuneración opaca y bonificaciones discrecionales, una brecha salarial de género que se habría ampliado y un «crunch» tan asumido que los contratos incluyen de serie la exclusión voluntaria del límite británico de 48 horas semanales. Los tres desarrolladores que relataron esto a Game Developer lo hicieron de forma anónima y no forman parte del grupo despedido.",
+    "En paralelo, los empleados que siguen en la empresa crearon la Rockstar Games Workers Union, también bajo la IWGB, y negocian con la dirección el reconocimiento voluntario. Take-Two confirmó que atendería esa petición y la primera reunión se celebró en julio; el sindicato la describió como un paso en la dirección correcta y afirmó haber cerrado una hoja de ruta hacia un convenio. Queda por acordar la unidad de negociación.",
+    "Rockstar ha explicado en el procedimiento que sostiene un régimen de confidencialidad extremo —accesos restringidos, móviles bloqueados, cinco investigadores a tiempo completo y láminas opacas en las ventanas tras el uso de drones para fotografiar el interior— y que la filtración de material le costó a su matriz unos 2.000 millones de dólares en valor bursátil. La vista termina un mes antes del 19 de noviembre, así que el fallo no debería interferir en el lanzamiento. Si el tribunal da la razón a los demandantes, obligará a Rockstar a negociar su reconocimiento sindical y sentará un precedente para la industria británica."
+  ],
+  "category": "noticias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-15T15:00:00.000Z",
+  "updatedAt": "2026-09-15T15:00:00.000Z",
+  "coverLabel": "Tribunal laboral de Rockstar",
+  "coverAlt": "Ilustración de un edificio judicial con el rótulo Glasgow Tribunals Centre y, delante, trabajadores con pancartas sindicales",
+  "tags": [
+    "Rockstar Games",
+    "GTA VI",
+    "condiciones laborales",
+    "sindicatos",
+    "Take-Two"
+  ],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "BBC News — Grand Theft Auto workers join protest as unfair dismissal tribunal begins",
+      "url": "https://www.bbc.co.uk/news/articles/cqxvzwnerq0o"
+    },
+    {
+      "name": "Eurogamer — 'It would have been insanity to take no action': Rockstar's culture of secrecy as tribunal begins",
+      "url": "https://www.eurogamer.net/rockstar-gta-6-fired-employees-tribunal-statements"
+    },
+    {
+      "name": "IWGB — Rockstar suffers legal setback as judge rules against studio in union-busting dispute",
+      "url": "https://iwgb.org.uk/en/post/rockstar-suffers-legal-setback-as-judge-rules-against-studio-in-union-busting-dispute-2/"
+    },
+    {
+      "name": "BBC News — Sacked Grand Theft Auto workers refused pay relief by judge",
+      "url": "https://www.bbc.com/news/articles/cj4le852wgeo"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "slug": "gta-vi-filtraciones-recientes-rockstar-responde",
+  "title": "Rockstar llama «desgarradoras» las filtraciones y evita hablar del retraso",
+  "excerpt": "El comunicado del 26 de agosto es la única valoración oficial del episodio: no menciona la fecha ni responde al filtrador, y Take-Two ya ha ido a los tribunales.",
+  "content": [
+    "Rockstar tildó de «desgarradoras» las filtraciones de gameplay de GTA VI. Lo hizo en un comunicado publicado el 26 de agosto de 2026 en sus redes, el mismo día en que rompió una semana de silencio sobre el goteo de clips. El texto no contiene ni una referencia a la fecha de lanzamiento ni al filtrador.",
+    "La frase oficial es la siguiente: «Sería quedarse corto decir que tener vídeos de gameplay de Grand Theft Auto VI filtrados de esta manera ha sido desgarrador para nuestro equipo, y obviamente no es así como pretendíamos que vierais el juego después de todo este tiempo». El estudio añade que lamenta que todo haya tardado tanto, «desde terminar el juego (¡casi lo tenemos!) hasta compartir más detalles y gameplay oficial».",
+    "Conviene separar lo que dice de lo que se le atribuye. El comunicado no afirma que las filtraciones no vayan a afectar al lanzamiento, ni que el calendario esté blindado, ni que el desarrollo siga «según lo previsto»: solo pide a los jugadores que esperen al 19 de noviembre para descubrir el juego por sí mismos. Cualquier lectura sobre el efecto real de los clips es interpretación, no declaración.",
+    "El material circuló desde mediados de agosto bajo el alias CYBERLEEK, que publicó fragmentos de robo de coches, tiroteos y combate cuerpo a cuerpo, entre otros. El filtrador sostuvo que tenía una build jugable completa y amenazó con destapar el final de la historia. Esa parte procede solo de él: ningún medio independiente la ha verificado, y el material disponible apunta a una versión en desarrollo, no a una copia terminada.",
+    "La respuesta legal llegó antes que la pública. El 20 de agosto, Take-Two presentó varias peticiones de citación DMCA en el Distrito Sur de Nueva York, con el propósito declarado de «obtener la identidad de un presunto infractor o infractores». Reclamó a Microsoft y a Discord registros de cuentas, correos de registro, direcciones IP, teléfonos e identificadores de dispositivo, con plazo de entrega el 4 de septiembre.",
+    "El episodio no se parece al de 2022. Aquella vez hubo una intrusión informática y decenas de vídeos de desarrollo temprano; Arion Kurtaj, miembro del grupo Lapsus$, fue condenado en diciembre de 2023 a una orden de internamiento hospitalario indefinido. Aquí lo filtrado procede de un tercero no identificado y la presión es una citación civil, no un proceso penal.",
+    "Rockstar recuperó la iniciativa al día siguiente. El Extended Look llegó a Netflix y a YouTube el 27 de agosto, y funcionó como respuesta de facto: 26 minutos de metraje oficial capturado en PS5. El orden de los acontecimientos ayuda a leer el comunicado, más pendiente de la comunidad y del estreno inminente que del incidente en sí.",
+    "Lo que queda por saber es si las citaciones llegan a alguna parte. El plazo para que Microsoft y Discord entregaran los registros venció el 4 de septiembre y no hay confirmación pública de que se haya identificado a nadie. Mientras eso no cambie, la recomendación es la de siempre: los clips son material no oficial y ningún detalle de mecánicas o de trama que solo aparezca ahí debería darse por bueno."
+  ],
+  "category": "rumores",
+  "author": "redaccion",
+  "publishedAt": "2026-09-07T15:00:00Z",
+  "updatedAt": "2026-09-15T12:00:00.000Z",
+  "coverLabel": "Rockstar y los clips filtrados",
+  "coverAlt": "Ilustración sobre las filtraciones de GTA VI y la respuesta pública de Rockstar Games",
+  "tags": [
+    "Filtraciones",
+    "Rockstar",
+    "Take-Two",
+    "Cyberleek",
+    "Comunicado"
+  ],
+  "readingTime": 3,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "VGC — GTA 6 leaks 'have been heartbreaking for our team,' says Rockstar Games as it breaks silence",
+      "url": "https://www.videogameschronicle.com/news/gta-6-leaks-have-been-heartbreaking-for-our-team-says-rockstar-games-in-a-public-statement-regarding-gameplay-videos/"
+    },
+    {
+      "name": "Kotaku — Take-Two Asks Court To Subpoena Trove Of Records From Microsoft And Discord As It Hunts For GTA 6 Leaker",
+      "url": "https://kotaku.com/take-two-subpoenas-microsoft-and-discord-records-related-to-spread-of-gta-6-leaks-2000726633"
+    },
+    {
+      "name": "The Guardian — British teenager behind GTA 6 hack receives indefinite hospital order",
+      "url": "https://www.theguardian.com/uk-news/2023/dec/21/british-teenager-behind-gta-6-hack-receives-indefinite-hospital-order"
+    }
+  ]
+}

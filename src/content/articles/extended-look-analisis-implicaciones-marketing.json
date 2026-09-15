@@ -1,0 +1,47 @@
+{
+  "slug": "extended-look-analisis-implicaciones-marketing",
+  "title": "Qué dicen los datos del Extended Look sobre la campaña de GTA VI",
+  "excerpt": "Netflix midió 31,1 millones de visualizaciones del Extended Look y un pico de altas durante la exclusiva de seis horas. El resto de la campaña sigue sin anunciarse.",
+  "content": [
+    "El Extended Look de GTA VI sumó 31,1 millones de visualizaciones en Netflix entre el 27 y el 30 de agosto de 2026 y fue el contenido más visto de la plataforma en 87 de los 93 países que mide. Los datos son del chart semanal de Netflix, no de Rockstar. El vídeo se estrenó primero en Netflix el 27 de agosto a las 15:00 ET, con una exclusiva temporal de seis horas, y pasó después a YouTube y al resto de plataformas.",
+    "Ese reparto de ventanas explica buena parte de la estrategia. En vez de un tráiler de dos minutos, Rockstar publicó 26 minutos de metraje grabado íntegramente en PlayStation 5, según el texto oficial de su propia web. El formato largo evita la comparación directa con un tráiler cinematográfico y permite enseñar sistemas de juego —conducción, interiores, policía, actividades— sin comprometerse a una fecha de lanzamiento nueva. La compañía no ha presentado el vídeo como un Trailer 3: en su catálogo oficial aparece como «An Extended Look».",
+    "Sobre el marco general de la campaña sí hay una declaración reciente de Take-Two. Strauss Zelnick describió en una entrevista con GamesIndustry.biz una campaña «muy significativa y de base amplia, que refleje dónde están hoy las audiencias y la atención», y añadió que hace trece años la compañía todavía compraba mucha televisión en abierto y que ahora no será así. La frase no concreta formatos ni presupuesto, pero encaja con lo observado: plataformas de terceros y acuerdos de marca antes que publicidad masiva tradicional.",
+    "Las cifras de audiencia tienen un límite claro. El dato de 31,1 millones procede del chart de Netflix; las estimaciones sobre cuántas personas vieron el vídeo en YouTube varían según el medio y la fecha de medición. Ampere Analysis, citada por Kotaku, calculó alrededor de 100.000 suscriptores nuevos durante la ventana de exclusiva y señaló que más del 5% de los espectadores no habían usado Netflix en los treinta días anteriores. Ni Netflix ni Take-Two han confirmado el coste del acuerdo: la estimación de entre 80 y más de 100 millones de dólares que circula se atribuye al periodista Tom Henderson y no está verificada.",
+    "Para la parte final de la campaña, lo confirmado es logística y precio. El bono de reserva, el Vintage Vice City Pack, se incluye en las compras digitales realizadas antes del 20 de noviembre de 2026 y en las reservas de la edición física hasta agotar existencias, según la ficha oficial de producto. La precarga digital empieza el 12 de noviembre, una semana antes del lanzamiento del día 19, y la edición física con código de descarga dentro de la caja sale ese mismo 12 de noviembre.",
+    "Lo que sigue sin existir a mediados de septiembre es igual de relevante. No hay un tercer tráiler anunciado, ni versión de PC con fecha, ni nombre oficial para un modo online, ni un evento presencial organizado por Rockstar. La campaña del Extended Look funcionó como lo que era: una pieza larga y medida en plataforma ajena. Lo que venga después aún no tiene calendario público."
+  ],
+  "category": "trailers",
+  "author": "redaccion",
+  "publishedAt": "2026-08-30T15:00:00Z",
+  "updatedAt": "2026-09-15T12:00:00.000Z",
+  "coverLabel": "Extended Look: datos y dudas",
+  "coverAlt": "Gráfico conceptual con el logotipo de GTA VI y cifras de audiencia del Extended Look",
+  "tags": [
+    "Extended Look",
+    "Marketing",
+    "Netflix",
+    "Take-Two",
+    "Análisis"
+  ],
+  "readingTime": 3,
+  "featured": true,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Video Games Chronicle — Netflix says GTA 6: An Extended Look got 31.1 million views and topped its charts in nearly every country",
+      "url": "https://www.videogameschronicle.com/news/netflix-says-gta-6-an-extended-look-got-31-1-million-views-and-topped-its-charts-in-nearly-every-country/"
+    },
+    {
+      "name": "Rockstar Games — Grand Theft Auto VI: An Extended Look (página oficial)",
+      "url": "https://www.rockstargames.com/VI/an-extended-look"
+    },
+    {
+      "name": "GamesIndustry.biz — The big Strauss Zelnick interview: GTA, AI, Roblox and building the biggest entertainment company in the world",
+      "url": "https://www.gamesindustry.biz/the-big-strauss-zelnick-interview-gta-ai-roblox-and-building-the-biggest-entertainment-company-in-the-world"
+    },
+    {
+      "name": "Kotaku — Grand Theft Auto 6's Netflix deal reportedly drove 100,000 new subscribers",
+      "url": "https://kotaku.com/grand-theft-auto-6-gta6-netflix-deal-subscribers-2000733229"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "gta-vi-sistemas-talleres-robos-entrevistas",
+  "title": "GTA VI: lo que los invitados a la demo vieron y lo que aún no se confirma",
+  "excerpt": "Nelson enseñó en vivo talleres, garajes, el Snap Gun y el fuego de supresión. El sistema de combustible también está confirmado: se demostró y se repostó en directo.",
+  "content": [
+    "Entre finales de agosto y principios de septiembre de 2026, Rockstar abrió las puertas de Rockstar North, en Edimburgo, a un grupo reducido de medios y creadores. Famitsu publicó el 28 de agosto su entrevista con Rob Nelson, jefe de desarrollo y codirector del estudio; TroisCouleurs vio treinta minutos de material y casi una hora de partida en vivo el 27 de agosto. En esos pases, Nelson llevaba el mando. Varios sistemas que la comunidad daba por seguros desde la filtración de 2022 se concretaron, y unos pocos siguen en el aire.",
+    "El taller más versátil es Pay & Spray, que en GTA VI no solo repinta coches. Ahí se tasa un vehículo robado, se repara, se cambia de color para escapar del estado de alerta policial y se registra como vehículo personal. El repintado se limita al color: los acabados elaborados pasan por un taller de tuning. Después de vender un coche, el mismo Pay & Spray no acepta otro durante un tiempo, así que vender dos seguidos obliga a buscar otro punto del mapa.",
+    "Los garajes funcionan como una ampliación del garaje inicial. Al arrancar hay espacio para tres vehículos personales y el jugador puede comprar garajes repartidos por Leonida para aumentar la capacidad. Nelson comparó la gestión con la de los caballos de Red Dead Redemption 2: si no hay hueco, toca vender un coche antes de registrar otro. Los robados que aún no son tuyos aparecen en el radar en gris y se pierden al cerrar la partida; los de gama alta exigen herramientas por etapas, de la ganzúa al clonador de llaves.",
+    "El armamento también se guarda. Cualquier maletero admite armas, y las taquillas de Ammu-Nation conservan lo que el jugador descarte durante una huida en lugar de perderlo. Nelson reconoció que renunciar a sacar escopetas y lanzacohetes de la nada fue una decisión meditada: rompía una convención de la saga, pero encaja con dos fugitivos que no quieren llamar la atención.",
+    "En los robos, la herramienta clave es el Snap Gun, un útil de ganzuado que Nelson describió como la vía para entrar por la puerta trasera sin que salte la alarma. Dentro se pueden destruir cámaras y anular el sistema de seguridad, de modo que un atraco puede completarse sin que nadie se entere. Para las huidas existe el fuego de supresión: disparar cerca del objetivo, sin acertar, para aturdir y ganar segundos sin matar.",
+    "La policía trabaja con el llamado estado de calor. Acumula información sobre el sospechoso (ropa, aspecto, vehículo, armas) en lugar de rastrearlo sin más. El jugador puede eliminar pistas abandonando el coche, cambiándose de ropa o guardando el arma; cambiar de coche no sirve si ya te han visto la cara.",
+    "Sobre el mundo, Nelson fue concreto en una cosa y deliberadamente vago en otra. Vice City es aproximadamente el doble de Los Santos, y el conjunto de núcleos urbanos de Leonida equivale a once veces las zonas edificadas de GTA V. De interiores dijo que se puede entrar en muchos edificios, una cantidad enorme, sin dar cifra. El tráfico cambia por franjas horarias: en la demostración, una misma calle tenía más coches al caer la tarde porque era hora punta.",
+    "Queda sin confirmar la cifra de interiores, cuántos vehículos caben por garaje, cuántos sistemas de seguridad distintos existen y si el estado de calor escala a seis niveles como aseguraba la filtración de 2022. La recarga de los coches eléctricos está confirmada, sin detalle sobre tiempos.",
+    "La corrección más útil afecta al combustible: la idea de que el sistema solo existía como icono en clips filtrados se ha quedado atrás. Flow Games y TGG vieron coches con el depósito bajo, y Nelson repostó en directo durante una demostración: unos diez segundos de animación, según el relato del medio que lo vio, no una cifra de Rockstar."
+  ],
+  "category": "gameplay",
+  "author": "redaccion",
+  "publishedAt": "2026-09-15T16:30:00.000Z",
+  "updatedAt": "2026-09-15T16:30:00.000Z",
+  "coverLabel": "Sistemas vistos en la demo",
+  "coverAlt": "Imagen conceptual de los sistemas de GTA VI mostrados en las demostraciones guiadas: talleres, garajes y robos silenciosos",
+  "tags": [
+    "Talleres",
+    "Robos",
+    "Garajes",
+    "Interiores",
+    "Sistema de calor"
+  ],
+  "readingTime": 3,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Famitsu — Entrevista exclusiva con Rob Nelson tras ver GTA VI en funcionamiento",
+      "url": "https://www.famitsu.com/article/202608/85753"
+    },
+    {
+      "name": "TroisCouleurs — Vimos GTA VI en marcha en Rockstar North: preview y entrevista exclusivas",
+      "url": "https://www.troiscouleurs.fr/cinema/we-saw-gtavi-running-at-rockstar-north-our-exclusive-preview-and-interview/"
+    },
+    {
+      "name": "GamingBolt — El sistema de repostaje de GTA 6 es \"bastante rápido\", dice el codirector del estudio",
+      "url": "https://gamingbolt.com/grand-theft-auto-6s-refueling-system-is-pretty-fast-says-co-studio-head"
+    },
+    {
+      "name": "IGN India — Vice City es el doble de Los Santos y un sistema policial más inteligente",
+      "url": "https://in.ign.com/grand-theft-auto-vi/270750/gta-6-vice-city-is-twice-the-size-of-los-santos-features-over-600000-animations-and-a-smarter-police"
+    }
+  ]
+}

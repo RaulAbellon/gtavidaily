@@ -1,80 +1,67 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
-
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://gtavidaily.com";
-const ADSENSE_CLIENT =
-  process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-0000000000000000";
-const SITE_NAME = "GTA VI Daily";
-const SITE_DESCRIPTION =
-  "Las últimas noticias, análisis, tráileres y rumores sobre Grand Theft Auto VI (GTA 6) de Rockstar Games. Cobertura en español de Vice City, Lucia Caminos y Jason Duval, fecha de lanzamiento y mucho más.";
+import { ConsentScripts } from "@/components/consent/consent-scripts";
+import { CookieBanner } from "@/components/consent/cookie-banner";
+import { Footer } from "@/components/site/footer";
+import { Header } from "@/components/site/header";
+import {
+  ADSENSE_CLIENT,
+  ADSENSE_ENABLED,
+  GOOGLE_SITE_VERIFICATION,
+  SITE_DESCRIPTION,
+  SITE_LOCALE,
+  SITE_LANGUAGE,
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_URL,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "GTA VI Daily · Noticias de Grand Theft Auto VI en español",
-    template: "%s | GTA VI Daily",
+    default: `${SITE_NAME} · ${SITE_TAGLINE}`,
+    template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
-  keywords: [
-    "GTA VI",
-    "GTA 6",
-    "Grand Theft Auto VI",
-    "GTA VI noticias",
-    "GTA VI fecha de lanzamiento",
-    "Vice City",
-    "Lucia GTA VI",
-    "Rockstar Games",
-    "GTA VI PS5",
-    "GTA VI Xbox",
-    "GTA VI PC",
-    "GTA VI tráiler",
-    "GTA 6 español",
-    "noticias GTA VI",
-  ],
-  authors: [{ name: "Equipo GTA VI Daily" }],
-  creator: "GTA VI Daily",
-  publisher: "GTA VI Daily",
   applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   category: "Videojuegos",
   alternates: {
-    canonical: "/",
     languages: {
-      "es-ES": "/",
-      "es-MX": "/",
-      "es-AR": "/",
+      [SITE_LOCALE.replace("_", "-")]: "/",
+      "x-default": "/",
+    },
+    types: {
+      "application/rss+xml": "/feed.xml",
     },
   },
   openGraph: {
     type: "website",
-    locale: "es_ES",
-    alternateLocale: ["es_MX", "es_AR"],
+    locale: SITE_LOCALE,
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "GTA VI Daily · Noticias de Grand Theft Auto VI en español",
+    title: `${SITE_NAME} · ${SITE_TAGLINE}`,
     description: SITE_DESCRIPTION,
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "GTA VI Daily - Noticias de Grand Theft Auto VI en español",
+        alt: `${SITE_NAME} · ${SITE_TAGLINE}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@gtavidaily",
-    creator: "@gtavidaily",
-    title: "GTA VI Daily · Noticias de Grand Theft Auto VI en español",
+    title: `${SITE_NAME} · ${SITE_TAGLINE}`,
     description: SITE_DESCRIPTION,
     images: ["/og-image.png"],
   },
   robots: {
     index: true,
     follow: true,
-    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -88,31 +75,28 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-  verification: {
-    google: "google-site-verification-token",
-  },
-  other: {
-    // AdSense verification: se carga desde NEXT_PUBLIC_ADSENSE_CLIENT.
-    // Sustituye el valor en el panel de Runable cuando aprueben el sitio.
-    "google-adsense-account": ADSENSE_CLIENT,
-  },
+  // El token de verificación se lee de entorno y, si no existe, no se emite una
+  // etiqueta falsa (antes se enviaba un literal de plantilla).
+  ...(GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: GOOGLE_SITE_VERIFICATION } }
+    : {}),
+  ...(ADSENSE_ENABLED
+    ? { other: { "google-adsense-account": ADSENSE_CLIENT } }
+    : {}),
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#0a0a0b" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0b" },
-  ],
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  themeColor: "#0a0a0b",
+  colorScheme: "dark",
 };
 
-// JSON-LD estructurado para la organización y el sitio web
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "GTA VI Daily",
+  name: SITE_NAME,
   url: SITE_URL,
   logo: {
     "@type": "ImageObject",
@@ -121,64 +105,58 @@ const organizationJsonLd = {
     height: 512,
   },
   description: SITE_DESCRIPTION,
-  sameAs: [
-    "https://twitter.com/gtavidaily",
-    "https://www.youtube.com/@gtavidaily",
-    "https://www.instagram.com/gtavidaily",
-  ],
 };
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "GTA VI Daily",
+  name: SITE_NAME,
   url: SITE_URL,
   description: SITE_DESCRIPTION,
-  inLanguage: ["es-ES", "es-MX", "es-AR"],
+  inLanguage: SITE_LANGUAGE,
+  publisher: { "@type": "Organization", name: SITE_NAME },
   potentialAction: {
     "@type": "SearchAction",
-    target: `${SITE_URL}/?s={search_term_string}`,
+    // Antes apuntaba a `/?s=...`, un parámetro que no existía. Ahora apunta al
+    // buscador real.
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${SITE_URL}/buscar?q={search_term_string}`,
+    },
     "query-input": "required name=search_term_string",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "GTA VI Daily",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
-      <head>
-        {/* Google AdSense - script principal.
-            El ID de cliente se controla con NEXT_PUBLIC_ADSENSE_CLIENT
-            para no tener que tocar código al publicar. */}
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-          crossOrigin="anonymous"
+    <html lang={SITE_LANGUAGE}>
+      <body className="flex min-h-screen flex-col bg-zinc-950 text-zinc-100 antialiased">
+        {/* El enlace al feed se emite como elemento (y React lo eleva al <head>)
+            porque cada página define su propio `alternates.canonical` y eso
+            reemplaza el `types` del layout. */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={`${SITE_NAME} · RSS`}
+          href="/feed.xml"
         />
-        {/* JSON-LD estructurado global */}
+        {/* Consent Mode v2 arranca en "denied" y AdSense solo se carga tras el
+            consentimiento explícito. */}
+        <ConsentScripts />
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <CookieBanner />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteJsonLd),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-      </head>
-      <body className="antialiased bg-zinc-950 text-zinc-100">
-        {children}
-        <Toaster />
       </body>
     </html>
   );

@@ -1,0 +1,49 @@
+{
+  "slug": "gta-vi-marketing-playstation-xbox-asimetria",
+  "title": "GTA VI: Sony despliega su marketing en PS5 y Xbox responde con silencio",
+  "excerpt": "La ficha de PS Store ya muestra la etiqueta Mejorado para PS5 Pro y las reservas del mando DualSense de GTA VI saturaron PlayStation Direct.",
+  "content": [
+    "PlayStation aparece como socio de marketing de GTA VI y las pruebas están en canales oficiales, no en rumores. La web de Rockstar mantiene un distintivo fijo: Plays Best On PlayStation 5. En la ficha de PlayStation Store figura la etiqueta Mejorado para PS5 Pro, y la versión en inglés la lista como PS5 Pro Enhanced, sin que Rockstar haya detallado la mejora.",
+    "Las activaciones de Sony durante la apertura de reservas incluyen una página propia en playstation.com con las ventajas de la versión PS5, el icono de la aplicación móvil recoloreado con la paleta de Vice City y una animación a pantalla completa en el menú de inicio. Sony justificó el lema citando la háptica y los gatillos adaptativos del DualSense, el altavoz integrado, el audio 3D Tempest y la velocidad del SSD.",
+    "Los mandos son el activo físico de la campaña. Sony anunció en un State of Play dos DualSense edición limitada de GTA VI, en negro y en blanco, con pintura que cambia de color, palmeras en relieve en los agarres y el logotipo del juego en el panel táctil. En España se reservan a 84,99 euros y en Estados Unidos a 85 dólares, con venta prevista el 19 de noviembre. Cuando se abrieron las reservas el 10 de septiembre, PlayStation Direct se saturó y hubo colas de una hora; en eBay aparecieron reventas de hasta 195 dólares, según Kotaku.",
+    "El único contrato entre Sony y Rockstar del que hay constancia pública es periodístico. Ni las compañías ni Take-Two lo han anunciado: la referencia es un reportaje de Bloomberg de mayo de 2026, recogido por Kotaku en junio, que describe un acuerdo de marketing cuyos términos nunca se hicieron públicos. Ahí está la frontera: que Sony promocione el juego es verificable en sus canales y en la web de Rockstar; que exista un contrato firmado con condiciones concretas es información de fuentes periodísticas.",
+    "Xbox compra el mismo juego y lo lanza el mismo 19 de noviembre, con edición física en caja desde el 12 de noviembre, sin disco y con código. Su despliegue es de otro tamaño: un aviso a pantalla completa en el menú de inicio de la consola, presencia en la tienda de Microsoft y menciones puntuales en redes. En el Tokyo Game Show, Sony instaló un teatro propio para GTA VI con pantalla de 300 pulgadas y vibración de suelo, con camiseta de regalo; el programa oficial de Xbox para ese certamen no incluye el juego.",
+    "Microsoft tampoco ha ignorado del todo la conversación. A finales de junio respondió a un dato de IGN que atribuía a la versión PS5 unas reservas ocho veces mayores que en Xbox: un portavoz dijo que esas cifras no representan datos de reservas, que habían tenido pedidos récord y que conviene esperar datos reales y no clics en enlaces de afiliados, en declaraciones recogidas por Windows Central y replicadas por VGC.",
+    "Lo que sigue sin resolverse es lo que más afecta al comprador. No se sabe si el acuerdo reportado incluye cláusulas de exclusividad temporal, ni qué hace exactamente la PS5 Pro más allá del sello de tienda, ni si habrá un modo a 60 fps. Rob Nelson, responsable de desarrollo de Rockstar North, declaró al medio brasileño FlowGames que todas las consolas apuntan a 30 fps, incluida la PS5 Pro, y que el modo de 60 seguía en evaluación interna. La asimetría de marketing no tiene, por ahora, traducción técnica confirmada."
+  ],
+  "category": "noticias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-15T15:30:00.000Z",
+  "updatedAt": "2026-09-15T15:30:00.000Z",
+  "coverLabel": "Marketing PS5 vs Xbox",
+  "coverAlt": "Mando DualSense de edición limitada de GTA VI junto a los logotipos de PlayStation 5 y Xbox Series X|S sobre fondo de atardecer de Vice City",
+  "tags": [
+    "GTA VI",
+    "PlayStation",
+    "Xbox",
+    "marketing",
+    "PS5 Pro",
+    "DualSense"
+  ],
+  "readingTime": 3,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Rockstar Games — Grand Theft Auto VI (página oficial de producto)",
+      "url": "https://www.rockstargames.com/VI"
+    },
+    {
+      "name": "PlayStation Store — Grand Theft Auto VI (ficha de producto, etiqueta PS5 Pro Enhanced)",
+      "url": "https://www.playstation.com/en-us/games/grand-theft-auto-vi/"
+    },
+    {
+      "name": "Kotaku — Sony Is Going All Out And Giving GTA 6 Special Treatment Even First-Party PlayStation Exclusives Don't Get",
+      "url": "https://kotaku.com/sony-is-going-all-out-and-giving-gta-6-special-treatment-even-first-party-playstation-exclusives-dont-get-2000710949"
+    },
+    {
+      "name": "Kotaku — GTA 6 PS5 Controller Pre-Orders Go Live On PlayStation Store And It Immediately Collapses",
+      "url": "https://kotaku.com/gta-6-ps5-controller-pre-orders-go-live-on-playstation-store-and-it-immediately-collapses-2000733219"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "gta-vi-clasificacion-edades-esrb-pegi",
+  "title": "GTA VI se vende sin clasificación de edad publicada: qué está pasando",
+  "excerpt": "El buscador público del ESRB no devuelve ninguna ficha de GTA VI, y en Alemania el organismo regulador seguía con la clasificación pendiente mientras las tiendas ya aceptaban reservas.",
+  "content": [
+    "Puedes reservar GTA VI desde el 25 de junio en PlayStation, Xbox, Amazon y decenas de tiendas. Lo que todavía no puedes hacer es consultar su clasificación por edades: la base de datos pública del ESRB no devuelve ninguna ficha del juego.",
+    "No es un fallo de búsqueda. Al buscar el título en el buscador del ESRB aparecen GTA V y sus ediciones definitivas, pero ninguna entrada de GTA VI. En Alemania, el organismo equivalente mantenía a mediados de agosto el estado de clasificación pendiente en las fichas de las tiendas, que llevaban dos meses vendiendo reservas.",
+    "Merece la pena decirlo con claridad porque circula mucha información mal atribuida: varios medios han publicado que el juego ya tiene clasificación M para mayores de 17 años, con descriptores concretos de violencia, drogas y desnudos. Eso no se sostiene contra la fuente primaria. Si el ESRB hubiera publicado la ficha, aparecería en su buscador, y no está. Hasta que se publique o Rockstar lo confirme, hay que tratarlo como no confirmado.",
+    "Que no haya ficha pública no significa que el juego vaya a salir sin clasificar ni que haya un problema de censura. El proceso de clasificación se hace antes del lanzamiento, pero el editor decide cuándo se hace público el resultado. Publicarlo antes de tiempo revela contenido de la historia que Rockstar prefiere mantener cerrado.",
+    "¿Y qué consecuencia tiene para ti? Tres prácticas. En tienda física, algunas cadenas piden identificación al recoger un título con clasificación alta, así que conviene llevar el documento. En consola, los controles parentales de PS5 y Xbox bloquearán el juego si la cuenta tiene restricciones por edad, y esa configuración depende de la clasificación que reciba. Y si compras para un menor, hoy la decisión es a ciegas: se sabe lo que ha sido siempre la saga, con violencia, lenguaje fuerte y drogas, y no lo que dirá la ficha oficial.",
+    "Para familias, el consejo es sencillo: si la compra depende de la clasificación, espera a que se publique. Todas las entregas principales de GTA han recibido la máxima categoría en los sistemas occidentales, así que un cambio de criterio sería una sorpresa mayúscula, pero la ficha es la que manda cuando llegue.",
+    "Puedes comprobarlo tú mismo en cualquier momento: entra en la web del ESRB, busca el título y mira si ya aparece. Cuando la publiquen, actualizaremos esta pieza con los descriptores exactos."
+  ],
+  "category": "noticias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-15T11:00:00.000Z",
+  "updatedAt": "2026-09-15T11:00:00.000Z",
+  "coverLabel": "Clasificación por edades",
+  "coverAlt": "Ilustración conceptual sobre la clasificación por edades pendiente de GTA VI",
+  "tags": [
+    "Clasificación",
+    "ESRB",
+    "PEGI",
+    "Familias",
+    "Verificación"
+  ],
+  "readingTime": 3,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "ESRB — Buscador público de clasificaciones",
+      "url": "https://www.esrb.org/search/?searchKeyword=Grand+Theft+Auto+VI"
+    },
+    {
+      "name": "GamesWirtschaft — La clasificación de edad de GTA 6",
+      "url": "https://www.gameswirtschaft.de/wirtschaft/grand-theft-auto-6-gta-6-altersfreigabe-140826/"
+    }
+  ]
+}

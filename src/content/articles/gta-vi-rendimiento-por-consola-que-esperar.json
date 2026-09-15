@@ -1,0 +1,39 @@
+{
+  "slug": "gta-vi-rendimiento-por-consola-que-esperar",
+  "title": "¿Puedo jugar con lo que tengo? Rendimiento esperable en cada consola",
+  "excerpt": "El análisis de Digital Foundry del material mostrado apunta a 30 fps con resolución en torno a 1440p, y los técnicos consideran improbable un modo de 60 fps. Qué significa para tu consola y si merece la pena cambiarla.",
+  "content": [
+    "Si tu decisión de compra depende de a qué se va a jugar de verdad, esto es lo que se sabe hoy: el análisis de Digital Foundry sobre el material publicado sitúa GTA VI en 30 fotogramas por segundo con una resolución en torno a 1440p. Es la referencia más sólida que existe, pero conviene subrayar qué es: una medición sobre el vídeo mostrado, no la ficha técnica del juego terminado.",
+    "Con esa base, la expectativa razonable es que PlayStation 5 y Xbox Series X se muevan en ese entorno de 1440p y 30 fps. Para PS5 Pro, Sony ha confirmado que el juego está mejorado, aunque no ha detallado en qué: puede ser resolución más alta, más estabilidad o efectos adicionales, y no hay cifras oficiales. Xbox Series S es el caso que más consultas genera y, precisamente, del que menos se sabe: no hay datos de resolución ni de framerate para esa consola, y conviene no dar por bueno lo que circula por foros.",
+    "Sobre los 60 fps, la posición de los técnicos que han analizado el material es que resulta muy improbable en consola. No es una confirmación de Rockstar, es un juicio técnico basado en lo que se ha visto, y la compañía no ha anunciado modos de rendimiento para ninguna plataforma. Si los 60 fps son innegociables para ti, hoy no hay nada que te garantice que los tendrás.",
+    "La versión de PC no forma parte del lanzamiento: no hay fecha anunciada ni requisitos publicados. Eso significa que un análisis de PC no existe todavía y que cualquier tabla de requisitos que veas ahora es inventada o reciclada de otros juegos. Si tu plan es esperar al PC, prepara la paciencia: Rockstar no ha dicho cuándo llegará.",
+    "¿Y merece la pena cambiar de consola antes del 19 de noviembre? Depende de lo que tengas y de lo que te importe. Si tienes una Series S y te preocupa el rendimiento, no hay información suficiente para justificar el gasto: espera a los primeros análisis técnicos del juego final, que llegarán en las horas previas al lanzamiento. Si tienes una PS5 base, la mejora a PS5 Pro hoy es una incógnita con precio conocido, y comprar una consola para jugar mejor un juego que aún no se ha medido es el peor momento para decidir.",
+    "Un consejo práctico que sí sirve ya: si vas a comprar digital, reserva hueco en el SSD. El tamaño oficial no está publicado, pero la expectativa generalizada es que supere los 100 GB, y el sistema se come espacio adicional. Hacer sitio antes del 12 de noviembre, cuando abre la predescarga, evita la estampa de borrar juegos a las prisas la noche del lanzamiento."
+  ],
+  "category": "guias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-15T12:30:00.000Z",
+  "updatedAt": "2026-09-15T12:30:00.000Z",
+  "coverLabel": "Rendimiento por consola",
+  "coverAlt": "Ilustración conceptual sobre el rendimiento esperado de GTA VI en cada consola",
+  "tags": [
+    "Rendimiento",
+    "PS5",
+    "Xbox Series",
+    "Digital Foundry",
+    "Compra"
+  ],
+  "readingTime": 3,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "HobbyConsolas — Digital Foundry sitúa GTA VI a 30 fps",
+      "url": "https://www.hobbyconsolas.com/videojuegos/digital-foundry-analiza-detalle-avance-gta-6-confirma-que-se-movera-30-fps-todas-las-plataformas_7030460_0.html"
+    },
+    {
+      "name": "Eurogamer Portugal — GTA VI corre a 1440p y 30 fps según Digital Foundry",
+      "url": "https://www.eurogamer.pt/gta-6-corre-a-1440p-e-30fps-diz-digital-foundry"
+    }
+  ]
+}

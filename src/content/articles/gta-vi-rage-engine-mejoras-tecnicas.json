@@ -1,0 +1,49 @@
+{
+  "slug": "gta-vi-rage-engine-mejoras-tecnicas",
+  "title": "El motor RAGE de GTA VI: lo que los análisis confirman y lo que no",
+  "excerpt": "Rockstar no ha publicado ficha técnica del motor. Los análisis de Digital Foundry sí describen qué técnicas usa GTA VI y en qué se apoya sobre Red Dead Redemption 2.",
+  "content": [
+    "El motor de GTA VI no se ha reconstruido desde cero. Un portavoz de Rockstar lo negó en abril de 2026, según la cobertura de Kotaku que recogió después prensa especializada: el estudio describió el trabajo como una actualización y extensión sobre la base de Red Dead Redemption 2, no como un motor nuevo. Conviene recordarlo porque Rockstar nunca ha publicado una ficha técnica de GTA VI ni ha usado la marca «RAGE» en su campaña; el nombre lo emplean los análisis, no el marketing.",
+    "El término aparece, por ejemplo, en el análisis de Digital Foundry sobre An Extended Look, que atribuye a «Rockstar's Rage engine» un problema de cadencia de animación y cámara que la casa arrastra desde hace años. Es decir, el linaje es el mismo y lo interesante no es el nombre, sino qué técnicas usa.",
+    "Lo que ese análisis describe es un uso intensivo del trazado de rayos. Digital Foundry sostiene que el RT es central en la iluminación y los reflejos, con reflejos trazados sobre superficies opacas y transparentes y una iluminación global difusa también trazada, que considera casi imprescindible en un mundo tan denso y dinámico. El propio análisis señala el precio: ruido característico, roturas estocásticas y compromisos temporales para que funcione en consola.",
+    "Las sombras van por otra vía. Salvo casos puntuales, el juego se apoya en mapas de sombras muy refinados, con algo de aliasing visible en primeros planos, en lugar de resolverlas todas por hardware. Eso contradice una de las afirmaciones más repetidas en los artículos de análisis, la de que las sombras se proyectan con precisión milimétrica. No es lo que se ve en el metraje distribuido.",
+    "En resolución y fluidez, el material apunta a 1440p internos sin escalado dinámico y a un 30 estable, con caídas de un solo fotograma muy ocasionales. Digital Foundry no encuentra rastro de escaladores temporales modernos y describe un escalado espacial sencillo hasta 4K, con la blandura y el parpadeo que eso implica. El 30 fps en consola es lo único que Rockstar ha dicho sobre rendimiento, en voz de Rob Nelson, y la puerta abierta a modos más rápidos es posterior al lanzamiento, no para el día uno.",
+    "Lo que el análisis sí confirma es la ambición de simulación: multitudes grandes, muchos vehículos y señales de persistencia y búsqueda de rutas más sofisticadas que en entregas anteriores. También marca el límite: el metraje está curado y el comportamiento emergente a gran escala no está demostrado. Frases como «cientos de personajes simultáneos» o «cada NPC tiene su propia rutina y sus relaciones» son inferencias, no datos del estudio.",
+    "En diseño, lo oficial es más sobrio y más sólido. Rockstar ha dicho que el mundo será «more grounded and reactive than before» y que el aspecto de los protagonistas cambia según lo que coman, entrenen o duerman, además de insistir en que no hay activos generados por IA. Es dirección artística hecha a mano, no un alarde de generación automática.",
+    "Queda un dato mal atribuido que conviene corregir: el presupuesto. No hay cifra oficial de Take-Two. La compañía se ha limitado a decir que ha sido caro —su consejero delegado lo llamó «expensive»— y las estimaciones que circulan son de terceros. Eurogamer recogió cifras por encima de los 1.000 millones de dólares; otras publicaciones hablan de más. Ninguna es una declaración de la empresa. Cuando llegue el 19 de noviembre, la prueba será el juego, no la factura."
+  ],
+  "category": "gameplay",
+  "author": "redaccion",
+  "publishedAt": "2026-08-25T13:00:00Z",
+  "updatedAt": "2026-09-15T12:00:00.000Z",
+  "coverLabel": "El motor de GTA VI",
+  "coverAlt": "Ilustración sobre las técnicas gráficas del motor de GTA VI según los análisis técnicos",
+  "tags": [
+    "RAGE",
+    "Motor gráfico",
+    "Digital Foundry",
+    "Ray tracing",
+    "Rendimiento"
+  ],
+  "readingTime": 3,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Digital Foundry — GTA 6: An Extended Look Analysis",
+      "url": "https://www.digitalfoundry.net/features/gta-6-an-extended-look-analysis-perhaps-the-most-impressive-showcase-weve-ever-seen-in-real-time-rendering"
+    },
+    {
+      "name": "NME — 'Grand Theft Auto 6' won't have any microtransactions or AI assets",
+      "url": "https://www.nme.com/news/gaming-news/grand-theft-auto-6-micro-transactions-ai-assets-3966308"
+    },
+    {
+      "name": "IT之家 (relay de Kotaku) — Un portavoz de Rockstar desmiente la reconstrucción del motor RAGE",
+      "url": "https://www.ithome.com/0/937/467.htm"
+    },
+    {
+      "name": "Eurogamer — GTA 6's development costs estimated to be over $1bn",
+      "url": "https://www.eurogamer.net/grand-theft-auto-6-development-cost-billions"
+    }
+  ]
+}

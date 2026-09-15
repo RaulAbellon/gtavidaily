@@ -1,0 +1,40 @@
+{
+  "slug": "gta-vi-estafas-preventa-como-protegerse",
+  "title": "Estafas de preventa de GTA VI: cómo no perder dinero ni la cuenta",
+  "excerpt": "Hay campañas activas que imitan la tienda de PlayStation, ofrecen betas que no existen y piden datos bancarios. Estas son las señales que las delatan y lo que conviene hacer antes del lanzamiento.",
+  "content": [
+    "Si alguien te ofrece una beta de GTA VI, es un fraude. No existe ni va a existir: Rockstar no ha abierto pruebas públicas de ninguna entrega principal de la saga, y la reserva oficial lleva funcionando desde el 25 de junio de 2026. Cualquier web que prometa acceso anticipado está vendiendo algo que no tiene.",
+    "Kaspersky publicó el 16 de julio un aviso para Latinoamérica con las campañas que ya están en circulación: sitios que copian la identidad visual del juego y de la tienda de PlayStation, con reseñas falsas de cinco estrellas y hasta una clasificación por edades inventada; formularios que piden nombre, correo, teléfono y documento, y después datos bancarios; vídeos con supuestas versiones filtradas; y tokens de criptomonedas presentados como si tuvieran relación con el juego.",
+    "Las señales que delatan a casi todas son las mismas. El dominio no es el oficial ni el de una tienda conocida, y suele llevar guiones, números o una letra cambiada. Te piden más datos de los necesarios, o datos de tarjeta antes de cualquier pago. Meten prisa con un precio que caduca hoy. No publican dirección fiscal ni condiciones de venta. Y los métodos de pago son transferencia, criptomonedas o tarjetas regalo, que son precisamente los que no se pueden revertir.",
+    "La forma segura de comprar es aburrida y funciona: hazlo desde la tienda de tu consola o desde un comercio con tienda física a la que puedas ir a reclamar. Si compras en una web, mira la barra de direcciones antes de pagar y comprueba que el dominio es el que anuncia el propio comercio, no uno parecido.",
+    "Hay un objetivo que los estafadores buscan más que tu tarjeta: tu cuenta. Una cuenta de Rockstar con correo y contraseña filtrados se convierte en un problema el día del lanzamiento, cuando no puedas acceder a tu copia del juego. Activa la verificación en dos pasos ahora, no la víspera. Son dos minutos y evita la escena más desagradable posible: tener el juego pagado y no poder entrar.",
+    "Si ya has dado tus datos a una web falsa, actúa por orden. Cambia la contraseña del correo con el que te registraste y la de tu cuenta de Rockstar, revisa los dispositivos vinculados y expulsa los que no reconozcas. Si facilitaste datos de tarjeta, llama a tu banco y bloquea el pago. Y si te han suplantado la cuenta, abre una incidencia en el soporte de Rockstar cuanto antes, con el correo original de compra como prueba.",
+    "Nada de esto es exclusivo de GTA VI: es el patrón habitual de todos los lanzamientos enormes. La diferencia es que este va a mover a mucha gente que no compra juegos habitualmente, y esos son los objetivos fáciles."
+  ],
+  "category": "guias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-15T11:30:00.000Z",
+  "updatedAt": "2026-09-15T11:30:00.000Z",
+  "coverLabel": "Estafas de preventa",
+  "coverAlt": "Ilustración conceptual sobre las estafas de preventa relacionadas con GTA VI",
+  "tags": [
+    "Seguridad",
+    "Estafas",
+    "Reservas",
+    "Cuenta",
+    "Phishing"
+  ],
+  "readingTime": 3,
+  "featured": true,
+  "trending": true,
+  "sources": [
+    {
+      "name": "Kaspersky — Falsas preventas de GTA VI ponen en riesgo a los jugadores",
+      "url": "https://latam.kaspersky.com/about/press-releases/falsas-preventas-de-grand-theft-auto-vi-ponen-en-riesgo-a-gamers-ansiosos-por-el-estreno-alerta-kaspersky"
+    },
+    {
+      "name": "Rockstar Support — Buenas prácticas para proteger tu cuenta",
+      "url": "https://support.rockstargames.com/articles/77PLWpN7ZfeLpLVLQ4l753/best-practices-for-protecting-your-rockstar-games-account"
+    }
+  ]
+}

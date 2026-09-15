@@ -1,0 +1,15 @@
+# Normalización de finales de línea: en el repositorio y en el disco, LF.
+# Sin esto, Git en Windows convertiría cada archivo a CRLF al clonar.
+* text=auto eol=lf
+
+# Binarios: no tocar
+*.png binary
+*.ico binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.zip binary
+*.db binary
+*.woff binary
+*.woff2 binary

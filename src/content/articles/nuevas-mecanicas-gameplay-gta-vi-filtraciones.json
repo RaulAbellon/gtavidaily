@@ -1,0 +1,49 @@
+{
+  "slug": "nuevas-mecanicas-gameplay-gta-vi-filtraciones",
+  "title": "Qué mostraron los clips filtrados de GTA VI y qué dijo Rockstar después",
+  "excerpt": "Quince clips de origen no autorizado revelaron detalles de mecánicas en agosto. Rockstar respondió el día 26 y Take-Two fue a los tribunales.",
+  "content": [
+    "Rockstar rompió su silencio el 26 de agosto para hablar de la filtración de GTA VI. En un mensaje en sus redes, la compañía escribió que ver vídeos de gameplay filtrarse así 'has been heartbreaking for our team', y añadió que no era la forma en que querían que se viera el juego. Llegó tras una semana de silencio y un día antes del estreno de An Extended Look en Netflix.",
+    "El material que provocó esa reacción fueron unos quince clips aparecidos desde el 18 de agosto, atribuidos a alguien que firma como Cyberleek. Ninguna de esas imágenes está confirmada por Rockstar como representativa del juego final, y Kotaku, que las revisó, advirtió de lo importante: no hay forma de saber de qué build salen ni qué partes seguirán en el juego el 19 de noviembre.",
+    "Dentro de esa cautela, los clips mostraron sistemas concretos. Se distinguen iconos de gasolina y de motor. Cuando aparecieron esos clips no había confirmación de que el combustible fuera una mecánica que hubiera que gestionar —Kotaku publicó un análisis aparte titulado 'no sabemos si estará en el juego'—, pero eso se resolvió después: en las demostraciones a medios, Rob Nelson repostó en directo durante una partida, así que el sistema está confirmado aunque no se haya publicado cuánto dura un depósito lleno. Sí se ve un medidor de búsqueda con seis niveles, coherente con las seis estrellas que la prensa describió tras los previews. En el robo de coches aparece un indicador de 'clone key' para copiar el mando del vehículo sin romper la ventana. La rueda de armas regresa más contenida, con objetos de curación, y se puede registrar a los cuerpos para conseguir munición, dinero y objetos.",
+    "Esa distinción importa, porque la misma semana hubo dos fuentes muy distintas. Lo que dijo el estudio en el preview de TroisCouleurs no es una filtración, es una demostración guiada. Rob Nelson explicó que el sistema policial funciona con la información que los agentes tienen en cada momento —pueden saber qué ropa llevas sin saber dónde estás—, de modo que entrar en un vehículo sin ser visto permite cruzar un control sin ser reconocido. También describió cómo el tráfico cambia según la hora, cómo hay eventos emergentes capaces de arruinar un plan y cómo el perfil criminal registra si Jason y Lucia actúan como profesionales cuidadosos o como agentes del caos.",
+    "Otros detalles de los clips son de mundo: pesca, con una caña en el inventario de Jason y un aviso de zona con 'Common Snook'; partidas de baloncesto que suben estadísticas; y programas deportivos en los televisores. La misma demostración guiada sirvió para que la prensa describiera el combate como un salto respecto a GTA V, más cercano a Red Dead Redemption 2 con un toque de Max Payne 3, y mostró que se puede abrir un coche con una varilla sin reventar la ventana o ingresar efectivo en un cajón automático.",
+    "El sigilo, además, no sale de los clips: tiene base en una entrevista oficial. Rob Nelson describió a Famitsu robos a tienda que pueden resolverse sin que nadie se entere, forzando la entrada con una pistola de remaches sin disparar la alarma, destruyendo las cámaras y anulando la seguridad.",
+    "La respuesta legal de Take-Two forma parte de la historia. El 20 de agosto presentó citaciones en el Distrito Sur de Nueva York contra Microsoft y Discord para identificar a la persona detrás de las filtraciones, con plazo de entrega de registros el 4 de septiembre.",
+    "Sobre el multijugador, conviene ser preciso porque se ha contado mal. Rockstar describe GTA VI como 'una experiencia para un jugador': eso dice el comunicado del 24 de junio, y es lo único que hay. La lectura de que no habrá online el día uno es de los medios. Tampoco existe nombre, fecha ni ventana para un sucesor de GTA Online, y la llamada de resultados del 7 de agosto no anunció nada al respecto. La fecha que sí sigue en pie, y la única que figura en la web oficial, es el 19 de noviembre."
+  ],
+  "category": "gameplay",
+  "author": "redaccion",
+  "publishedAt": "2026-08-10T16:45:00Z",
+  "updatedAt": "2026-09-15T12:00:00.000Z",
+  "coverLabel": "Mecánicas vistas en filtraciones",
+  "coverAlt": "Fotograma conceptual de gameplay de GTA VI con indicadores de búsqueda policial y combustible en pantalla",
+  "tags": [
+    "Filtraciones",
+    "Mecánicas",
+    "Rockstar",
+    "Gameplay",
+    "Take-Two"
+  ],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Kotaku — Rockstar finally breaks its silence over the GTA 6 leaks, calls them 'heartbreaking'",
+      "url": "https://kotaku.com/rockstar-gta-6-leaks-grand-theft-auto-cyberleek-official-statement-2000728341"
+    },
+    {
+      "name": "Kotaku — All the new details we spotted in the leaked GTA 6 videos: six-star wanted level, fueling up cars, nudity, fishing, and a stamina meter",
+      "url": "https://kotaku.com/all-the-new-details-we-spotted-in-the-leaked-gta-6-videos-six-star-wanted-level-gas-meter-improved-combat-boosting-stats-with-basketball-2000725524"
+    },
+    {
+      "name": "GTAVice.net — New GTA 6 gameplay details by TroisCouleurs: map size, interiors, police & more",
+      "url": "https://www.gtavice.net/news/new-gta-6-gameplay-details-by-troiscouleurs-map-size-interiors-police-and-more"
+    },
+    {
+      "name": "GTAVice.net — Famitsu reveals GTA 6 gameplay details: garages, Pay and Spray, weapons, robberies and more",
+      "url": "https://www.gtavice.net/news/famitsu-reveals-gta-6-gameplay-details-garages-pay-and-spray-weapons-robberies-and-more"
+    }
+  ]
+}

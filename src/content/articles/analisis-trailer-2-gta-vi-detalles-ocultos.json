@@ -1,0 +1,48 @@
+{
+  "slug": "analisis-trailer-2-gta-vi-detalles-ocultos",
+  "title": "Tráiler 2 de GTA VI: qué está analizado y qué sigue sin confirmar",
+  "excerpt": "Rockstar no ha dado especificaciones del juego. Todo lo técnico del tráiler 2 sale del análisis del vídeo, no de la compañía.",
+  "content": [
+    "El tráiler 2 de GTA VI se publicó el 6 de mayo de 2025, seis días después de que Rockstar moviera la fecha de lanzamiento al 26 de mayo de 2026. Es un vídeo de menos de tres minutos, con cinemáticas y algún tramo de juego, y sigue siendo la referencia técnica más concreta que existe del juego: la compañía nunca ha publicado especificaciones.",
+    "El trabajo de referencia es el análisis de Digital Foundry, publicado el 8 de mayo de 2025. Sus conclusiones conviene citarlas como lo que son, estimaciones hechas midiendo el vídeo, no datos de Rockstar. El tráiler salió en 4K a 30 fotogramas por segundo con barras negras, un formato aproximado de 20:9, y el texto del final confirmaba que se había grabado en una PS5 base, no en una PS5 Pro.",
+    "De ese material, Digital Foundry calculó una resolución interna de 2560×1152, unos 1440p, con un escalado espacial del tipo FSR de primera generación. También identificó iluminación global y reflejos trazados por rayo, con un enfoque híbrido junto a reflejos en pantalla, y señaló que las sombras parecen resolverse con mapas de sombras tradicionales, no con trazado. Es un análisis sólido, pero es análisis.",
+    "La confusión más repetida viene de ahí. Que un desglose de vídeo describa reflejos trazados por rayo no equivale a que Rockstar haya confirmado que el juego use trazado de rayos, y tampoco a que exista una resolución oficial por consola. La compañía no ha dicho nada de eso. Lo único que ha salido de boca de un responsable es el objetivo de rendimiento: Rob Nelson, co-responsable de Rockstar North, dijo al medio brasileño FlowGames que el juego apunta a 30 fotogramas por segundo en todas las consolas, PS5 Pro incluida, y que un modo a 60 estaba por evaluar.",
+    "Digital Foundry añadió una advertencia que se suele pasar por alto: pese a presentarse como un tráiler con gameplay, la mayoría del metraje son escenas cinematográficas, donde el estudio puede colocar luces extra como en un rodaje. Eso significa que el aspecto final del juego en manos del jugador podría no ser idéntico al del vídeo. El propio análisis recuerda que el sistema de pelo parece usar mechones, con detalle variable según el plano.",
+    "Con los nombres de lugares pasa algo parecido. Rockstar sí ha usado oficialmente Vice City y el estado de Leonida, y en textos propios han aparecido Mount Kalaga National Park, Grassrivers o Gambit Bay, además de barrios como Washington Beach, Ocean Beach, Stockyard o Southside Vice City. Nombres como Port Gellhorn o Leonida Keys circulan en guías de mapas construidas por la comunidad y no están confirmados por la compañía, así que no deben darse por buenos.",
+    "Sí se puede sostener lo evidente: el tráiler muestra agua y embarcaciones con estela, fauna y escenas nocturnas de la ciudad, y mantiene marcas paródicas de la casa, caso de Cluckin' Bell o Sprunk. Para lo demás, la referencia útil ya no es ese vídeo de mayo de 2025, sino el Extended Look del 27 de agosto de 2026, grabado íntegramente con material del juego en PS5 según el texto oficial de Rockstar. Ahí es donde tiene sentido mirar ahora."
+  ],
+  "category": "trailers",
+  "author": "redaccion",
+  "publishedAt": "2026-08-28T09:15:00Z",
+  "updatedAt": "2026-09-15T12:00:00.000Z",
+  "coverLabel": "Tráiler 2: análisis técnico",
+  "coverAlt": "Imagen conceptual del análisis técnico del segundo tráiler de GTA VI y sus detalles verificables",
+  "tags": [
+    "Tráiler 2",
+    "Análisis técnico",
+    "Digital Foundry",
+    "Vice City",
+    "Leonida"
+  ],
+  "readingTime": 3,
+  "featured": true,
+  "trending": true,
+  "sources": [
+    {
+      "name": "Digital Foundry — GTA 6 Trailer 2 tech breakdown: incredible realism, impressive RT, astonishing detail",
+      "url": "https://www.digitalfoundry.net/articles/digitalfoundry-2025-gta-6-trailer-2-tech-breakdown-incredible-realism-impressive-rt-astonishing-detail"
+    },
+    {
+      "name": "Rockstar Games — Grand Theft Auto VI: An Extended Look",
+      "url": "https://www.rockstargames.com/VI/an-extended-look"
+    },
+    {
+      "name": "IGN — GTA 6 Trailer 2 Delivers Massive Spotify Boost to The Pointer Sisters' Hot Together",
+      "url": "https://www.ign.com/articles/gta-6-trailer-2-delivers-massive-spotify-boost-to-the-pointer-sisters-hot-together"
+    },
+    {
+      "name": "Rockstar Games — Grand Theft Auto VI: Media",
+      "url": "https://www.rockstargames.com/VI/media"
+    }
+  ]
+}

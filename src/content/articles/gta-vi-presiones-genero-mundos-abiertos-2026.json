@@ -1,0 +1,49 @@
+{
+  "slug": "gta-vi-presiones-genero-mundos-abiertos-2026",
+  "title": "GTA VI y la presión sobre los mundos abiertos: qué cambia de verdad",
+  "excerpt": "Rockstar promete interiores hechos a mano, NPC dirigidos uno a uno y un mundo más reactivo. La presión sobre el género es real; el «todos huyen a septiembre», bastante menos.",
+  "content": [
+    "GTA VI sale el 19 de noviembre de 2026 con una promesa muy concreta: un mundo que reacciona más y perdona menos. Esa es la presión real que va a notar el género del mundo abierto, bastante más que cualquier rumor sobre calendarios de lanzamiento. La fecha está confirmada; todo lo demás conviene separarlo con cuidado.",
+    "Rockstar ha explicado ese giro en la entrevista que Rob Nelson, co-responsable de Rockstar North, concedió a la revista Dazed. El estudio quiere un mundo «more grounded and reactive than before», en palabras que recoge NME, y hasta las consecuencias cotidianas cambian: llevar un rifle grande por la calle trae problemas y el aspecto de Lucia y Jason varía según lo que coman, si van al gimnasio o si duermen lo suficiente.",
+    "Nelson dejó además una frase que explica el método: «We look back at our previous games with a critical eye and see where we want to evolve based on what we didn't do as well as we would have liked to». Es una declaración de intenciones, no una ficha técnica, y el propio estudio admite que buena parte del trabajo es iterativo y se ajusta por sensaciones.",
+    "El discurso oficial insiste en lo artesanal. Strauss Zelnick, consejero delegado de Take-Two, ha dicho que la IA generativa tiene «zero part» en lo que construye Rockstar porque sus mundos están hechos a mano y no se generan por procedimientos. Creadores invitados a ver el juego contaron a Kinda Funny que el estudio les aseguró que no habrá «monetisations in this game» ni activos de IA en el lanzamiento, según recogió NME.",
+    "Para el resto de la industria el problema no es el eslogan, es la comparación. El análisis de Digital Foundry sobre An Extended Look describe un ecosistema de NPC con multitudes grandes, persistencia y búsqueda de rutas, y lo sitúa como «perhaps the most impressive showcase we've ever seen in real-time rendering». El mismo análisis avisa de que el material está curado: el alcance real del comportamiento emergente sigue sin demostrarse.",
+    "Sobre el calendario, la versión que circula estos meses es más literaria que documental. Kotaku publicó en junio una lista de casi medio centenar de lanzamientos entre finales de agosto y principios de noviembre y escribió que todos parecían colocarse ahí para evitar a GTA VI. Polygon ha llamado a septiembre de 2026 el mes más cargado en años. Ningún estudio ha atribuido oficialmente su cambio de fecha a GTA VI, y esa diferencia importa.",
+    "Lo que sí enseña el caso de GTA VI es el precio del detalle. Rockstar trabaja con 30 fotogramas por segundo en consola —lo contó Nelson durante una visita de creadores— y renuncia a la fluidez para sostener la densidad del mundo. Ese es el listón que otros estudios pueden copiar o rechazar, pero ya no ignorar.",
+    "Este artículo es análisis, no un anuncio. A 15 de septiembre de 2026 falta por ver si el mundo reactivo se sostiene fuera del material dirigido, si Sony o Rockstar enseñan por fin la versión de PS5 Pro y si alguna compañía reconoce por escrito que movió una fecha por GTA VI. Hasta entonces, la presión es real y la huida es, en buena parte, interpretación de la prensa."
+  ],
+  "category": "noticias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-02T13:30:00Z",
+  "updatedAt": "2026-09-15T12:00:00.000Z",
+  "coverLabel": "Presión en el mundo abierto",
+  "coverAlt": "Ilustración sobre la presión que GTA VI ejerce en el diseño de los mundos abiertos",
+  "tags": [
+    "Mundos abiertos",
+    "Industria",
+    "Diseño",
+    "Rockstar",
+    "2026"
+  ],
+  "readingTime": 3,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "NME — 'Grand Theft Auto 6' will be more grounded and realistic than previous games",
+      "url": "https://www.nme.com/news/gaming-news/grand-theft-auto-6-interview-rockstar-grounded-realistic-previous-games-3965018"
+    },
+    {
+      "name": "NME — 'Grand Theft Auto 6' won't have any microtransactions or AI assets",
+      "url": "https://www.nme.com/news/gaming-news/grand-theft-auto-6-micro-transactions-ai-assets-3966308"
+    },
+    {
+      "name": "Digital Foundry — GTA 6: An Extended Look Analysis",
+      "url": "https://www.digitalfoundry.net/features/gta-6-an-extended-look-analysis-perhaps-the-most-impressive-showcase-weve-ever-seen-in-real-time-rendering"
+    },
+    {
+      "name": "Kotaku — Look, You Can't All Avoid GTA 6 By Hiding In September And October",
+      "url": "https://kotaku.com/look-you-cant-all-avoid-gta-6-by-hiding-in-october-and-september-2000703984"
+    }
+  ]
+}

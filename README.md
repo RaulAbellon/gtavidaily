@@ -1,257 +1,204 @@
-# GTA VI Daily — Noticias de Grand Theft Auto VI en español
+# GTA VI Daily
 
-Sitio web de noticias sobre **Grand Theft Auto VI** (GTA 6) de Rockstar Games,
-optimizado para **SEO** y **Google AdSense** (bloques publicitarios en
-posiciones estratégicas, política de privacidad incluida).
+Sitio de noticias en español sobre **Grand Theft Auto VI**: tráileres, mapa de
+Leonida, personajes y novedades de Rockstar Games y Take-Two.
 
-**Dominio oficial**: [gtavidaily.com](https://gtavidaily.com)
-
-Construido con **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS 4**
-y **shadcn/ui**.
+Sitio fan **no oficial**, sin afiliación con Rockstar Games ni Take-Two
+Interactive. Las imágenes son ilustraciones SVG generadas localmente.
 
 ---
+
+## Stack
+
+- **Next.js 16** (App Router, Turbopack) con rutas estáticas prerenderizadas
+- **React 19** + **TypeScript** en modo `strict`
+- **Tailwind CSS 4** (configuración en CSS, sin `tailwind.config.ts`)
+- **Vitest** para pruebas unitarias y un script de humo HTTP para extremo a extremo
+- 4 dependencias de producción: `next`, `react`, `react-dom` y `lucide-react`
 
 ## Requisitos
 
-- **Node.js 20+** (recomendado vía `.nvmrc`)
-- **npm 10+** (no se usa Bun en producción)
-- Base de datos **SQLite** (desarrollo local) o **PostgreSQL** (producción, opcional)
+- Node.js **20.9 o superior** (lo exige Next 16; ver `.nvmrc`)
+- npm 10+
 
----
+## Puesta en marcha
+
+```bash
+npm install
+cp .env.example .env.local   # y ajusta los valores
+npm run dev                  # http://localhost:3000
+```
+
+## Scripts
+
+| Comando | Qué hace |
+| --- | --- |
+| `npm run dev` | Servidor de desarrollo |
+| `npm run build` | Build de producción + artefactos standalone |
+| `npm start` | Arranca el servidor standalone (multiplataforma) |
+| `npm run content` | **Valida el contenido y regenera el índice de artículos** |
+| `npm run content:check` | Solo valida (lo usa el CI) |
+| `npm run content:new -- <slug>` | Crea la plantilla de un artículo nuevo |
+| `npm run lint` | ESLint con las reglas de corrección activadas |
+| `npm run typecheck` | `tsc --noEmit` (tipos estrictos) |
+| `npm run test` | Pruebas unitarias (Vitest) |
+| `npm run test:e2e` | Prueba de humo HTTP contra un servidor en marcha |
+| `npm run check` | Contenido + lint + tipos + tests + build, en ese orden |
+
+## Publicar una noticia nueva (flujo diario)
+
+Cada artículo es **un fichero JSON**. El ciclo completo son tres comandos:
+
+```bash
+# 1. Crear la plantilla
+npm run content:new -- mi-noticia-del-dia
+
+# 2. Editar src/content/articles/mi-noticia-del-dia.json
+#    (titular, entradilla, párrafos, categoría, fuentes con enlace permanente)
+
+# 3. Validar y regenerar el índice
+npm run content
+
+# 4. Comprobar que todo sigue en pie
+npm run check
+```
+
+El validador rechaza lo que no debe publicarse: campos que faltan o sobran,
+categorías inexistentes, fechas incoherentes (`updatedAt` anterior a
+`publishedAt`), texto con la codificación rota, títulos o rótulos demasiado
+largos y **fuentes que sean una portada de medio en lugar de un enlace
+permanente**. Los avisos (artículo corto, `readingTime` desajustado, menos de
+dos fuentes) no bloquean, pero aparecen en pantalla.
+
+El buscador, el sitemap, el feed RSS, las categorías y los artículos
+relacionados se recalculan solos a partir de los ficheros: no hay que tocar
+ningún listado a mano.
+
+La prueba de humo se lanza contra un servidor ya arrancado:
+
+```bash
+npm start &
+BASE_URL=http://127.0.0.1:3000 npm run test:e2e
+```
 
 ## Variables de entorno
 
-Copia `.env.example` a `.env` y ajusta los valores:
+Todas están documentadas en `.env.example`. Las importantes:
 
-```bash
-cp .env.example .env
+| Variable | Obligatoria | Para qué |
+| --- | --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Sí en producción | **Única fuente de verdad** de la URL: canonical, sitemap, robots y datos estructurados salen de aquí |
+| `NEXT_PUBLIC_ADSENSE_CLIENT` | Para monetizar | ID `ca-pub-…`. Si no tiene formato válido, **no se renderiza ningún anuncio** |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | Recomendada | Email mostrado en las páginas legales y el pie |
+| `NEXT_PUBLIC_EDITORIAL_NAME` | No | Firma editorial de los artículos |
+| `NEXT_PUBLIC_LEGAL_NAME` / `_TAX_ID` / `_ADDRESS` | **Sí antes de monetizar** | Identificación del responsable (art. 10 LSSI-CE y art. 13 RGPD). Mientras falten, la página legal avisa de que están pendientes |
+| `GOOGLE_SITE_VERIFICATION` | No | Emite la etiqueta de verificación de Search Console |
+| `CONTACT_WEBHOOK_URL` | No | Destino del formulario de contacto. Sin él, el endpoint responde con un error explícito indicando el email directo (nunca finge un envío correcto) |
+
+## Arquitectura
+
+```
+src/
+├─ app/
+│  ├─ layout.tsx                 Cabecera, pie, consentimiento y datos estructurados
+│  ├─ page.tsx                   Portada
+│  ├─ noticias/                  Listado completo con paginación
+│  ├─ articulo/[slug]/           Artículos: generateStaticParams + generateMetadata
+│  ├─ categoria/[slug]/          Categorías
+│  ├─ buscar/                    Buscador real (?q=…), noindex
+│  ├─ sobre | contacto | privacidad | cookies | aviso-legal | dmca
+│  ├─ sitemap.ts | robots.ts     Generados desde la misma fuente de verdad
+│  ├─ error.tsx | global-error.tsx | loading.tsx | not-found.tsx
+│  └─ api/contacto/route.ts      Validación y envío honesto del formulario
+├─ components/
+│  ├─ ads/                       Bloque publicitario condicionado al consentimiento
+│  ├─ consent/                   Banner, ajustes, señales de Consent Mode y hook
+│  └─ site/                      Cabecera, pie, tarjetas, migas, buscador, compartir
+└─ lib/
+   ├─ data.ts                    Contenido (44 artículos, 7 categorías)
+   ├─ queries.ts                 Búsqueda, recuentos y filtros de fuentes
+   ├─ site.ts                    Configuración del sitio (una sola fuente)
+   └─ consent.ts                 Tipos y lógica pura del consentimiento
 ```
 
-| Variable                       | Descripción                                          | Ejemplo                            |
-| ------------------------------ | ---------------------------------------------------- | ---------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`         | URL pública del sitio (sin barra final)              | `https://gtavidaily.com`           |
-| `NEXT_PUBLIC_ADSENSE_CLIENT`   | ID de cliente de Google AdSense                      | `ca-pub-1234567890123456`          |
-| `DATABASE_URL`                 | Cadena de conexión a la base de datos (Prisma)       | `file:./dev.db` (SQLite)           |
-| `GOOGLE_SITE_VERIFICATION`     | Token de verificación de Google Search Console       | `google-site-verification-token`   |
+**Frontera servidor/cliente.** El contenido (`lib/data.ts`) se consulta solo
+desde componentes de servidor: así el HTML llega renderizado y el fichero de
+contenido no viaja al navegador. Hay una prueba que falla si algún componente
+con `"use client"` lo importa.
 
-> **Importante:** las variables con prefijo `NEXT_PUBLIC_` se exponen al
-> navegador. Las demás solo viven en el servidor.
+## Privacidad y consentimiento
 
----
+- **Consent Mode v2** arranca en `denied` (publicidad, datos de usuario y
+  medición).
+- El script de AdSense **no se carga** hasta que hay consentimiento de
+  publicidad; antes de eso, el bloque publicitario ni siquiera se renderiza.
+- El banner empieza con las casillas **desactivadas**, "Rechazar todo" tiene el
+  mismo peso visual que "Aceptar todo", cerrar sin decidir no equivale a
+  aceptar, y el consentimiento se puede revisar o retirar en cualquier momento
+  desde el pie ("Configurar cookies").
+- La decisión se guarda en `localStorage` bajo la clave `gtavidaily-consent`,
+  versionada, y se propaga por un evento que sí tiene consumidores.
 
-## Desarrollo local
+## Contenido: leer antes de monetizar
+
+Los artículos se generaron en su día con plantillas (`scripts/generate_articles_*.py`
+ya retirados) y **no han pasado una verificación editorial**. Antes de activar
+publicidad conviene:
+
+1. Revisar artículo por artículo los datos concretos (fechas, precios, cifras,
+   casting) y corregir o retirar lo que no se pueda contrastar.
+2. Sustituir cualquier fuente que sea una portada de dominio por un enlace
+   permanente. La interfaz ya oculta las fuentes sin ruta, pero conviene
+   limpiarlas también en los datos.
+3. Mantener el aviso de sitio fan no oficial y las marcas registradas.
+
+## Despliegue
+
+El build genera un servidor autocontenido en `.next/standalone` (los estáticos y
+`public/` se copian con `scripts/postbuild.mjs`):
 
 ```bash
-# 1. Instalar dependencias
-npm install
-
-# 2. Generar el cliente de Prisma y crear la base de datos local
-npm run db:push
-
-# 3. Arrancar el servidor de desarrollo
-npm run dev
-```
-
-El sitio estará disponible en `http://localhost:3000`.
-
----
-
-## Build de producción
-
-```bash
-# Compilar el proyecto (genera .next/standalone autocontenido)
 npm run build
-
-# Arrancar el servidor de producción
-npm start
+npm start          # respeta PORT y HOSTNAME
 ```
 
-El build genera un servidor Node standalone en `.next/standalone/` que escucha
-en el puerto definido por la variable de entorno `PORT` (por defecto `3000`).
+Cualquier plataforma con Node 20.9+ sirve. No hay dependencias nativas ni base
+de datos. El endpoint `/api/contacto` necesita `CONTACT_WEBHOOK_URL` para enviar
+mensajes.
 
----
+Si la plataforma despliega desde GitHub (Runable, Vercel, Netlify, Cloudflare
+Pages…), basta con que el cambio llegue a `main`: el despliegue lo hace ella. En
+ese caso el ciclo diario es el de arriba y termina publicando en el repositorio.
 
-## Despliegue en Runable
+### Cabeceras de seguridad
 
-Runable impone **Node.js** como runtime (no se puede elegir Bun, Deno ni
-Docker). Por eso este proyecto está configurado para funcionar 100% con Node
-estándar.
+`next.config.ts` aplica `Content-Security-Policy` (permisiva con los dominios de
+Google que necesita AdSense, restrictiva con todo lo demás), `Strict-Transport-Security`
+en producción, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` y
+`Permissions-Policy`. Está documentado en el propio fichero para poder migrarla a
+nonces cuando se integre un CMP con soporte completo.
 
-### Arquitectura del deploy
+## Publicar cambios sin `git`
 
-```
-GoDaddy (DNS)  →  Runable (hosting Node.js)  →  gtavidaily.com
-   ↓                    ↓
-   Apunta @ al          Sirve Next.js standalone
-   dominio de Runable   en el puerto PORT
-```
-
-### Paso 1: Sube el código a GitHub
+Si no hay `git` instalado, `scripts/publish.mjs` publica por la API de GitHub:
+compara los ficheros locales con el árbol remoto por hash de blob, sube solo lo
+que cambió y crea un commit en la rama por defecto.
 
 ```bash
-git init
-git add .
-git commit -m "Initial commit: GTA VI Daily"
-git branch -M main
-git remote add origin https://github.com/USUARIO/gta-vi-daily.git
-git push -u origin main
+node scripts/publish.mjs --dry-run       # muestra qué cambiaría
+GITHUB_TOKEN=xxx node scripts/publish.mjs
 ```
 
-### Paso 2: Conecta GitHub a Runable
-
-1. Entra en [runable.com](https://runable.com) y crea un nuevo proyecto.
-2. Selecciona "Import from GitHub" y elige tu repositorio `gta-vi-daily`.
-3. Runable detectará automáticamente:
-   - **Build command:** `npm run build`
-   - **Start command:** `npm start`
-   - **Node version:** 20+ (del `engines` y `.nvmrc`)
-
-4. Configura las **variables de entorno** en el panel de Runable:
-
-   | Variable | Valor |
-   |---|---|
-   | `NEXT_PUBLIC_SITE_URL` | `https://gtavidaily.com` |
-   | `NEXT_PUBLIC_ADSENSE_CLIENT` | `ca-pub-0000000000000000` (placeholder hasta que AdSense apruebe) |
-   | `DATABASE_URL` | cadena que Runable te proporcione |
-
-5. Deploy. Runable te dará una URL tipo `gta-vi-daily.runable.app` — apunta
-   tu dominio GoDaddy a esa URL (ver siguiente paso).
-
-### Paso 3: Configura el dominio en GoDaddy
-
-1. Entra en [godaddy.com](https://dcc.godaddy.com/manage/) → ve a **Mis productos** → **DNS** junto a `gtavidaily.com`.
-
-2. **Si Runable te da una IP (registro A):**
-   - Edita el registro **A** existente con nombre `@`
-   - Cambia el valor por la IP que Runable te dé
-   - Guarda
-
-3. **Si Runable te da un CNAME (más habitual en PaaS):**
-   - Elimina el registro A existente con nombre `@` (si lo hay)
-   - Crea un nuevo registro **CNAME** con:
-     - **Name/Host:** `@`
-     - **Value/Points to:** la URL de Runable (ej: `gta-vi-daily.runable.app`)
-     - **TTL:** 600 (o Default)
-   - Crea otro CNAME para `www` que apunte a lo mismo
-
-4. **Espera la propagación DNS** (puede tardar de 5 minutos a 1 hora). Verifica con:
-   ```bash
-   dig gtavidaily.com
-   # o en https://dnschecker.org
-   ```
-
-5. **Habilita HTTPS/SSL** — Runable normalmente emite certificado Let's
-   Encrypt automáticamente. En el panel de Runable verifica que el dominio
-   custom está añadido y el SSL está activo.
-
-### Paso 4: Verifica que todo funciona
-
-- Visita `https://gtavidaily.com` — debe cargar tu sitio
-- Visita `https://gtavidaily.com/sitemap.xml` — debe mostrar el XML
-- Visita `https://gtavidaily.com/robots.txt` — debe mostrar las reglas
-- Comprueba que el certificado SSL es válido (candado verde en navegador)
-
-### Paso 5: Google Search Console
-
-1. Ve a [search.google.com/search-console](https://search.google.com/search-console)
-2. Añade propiedad → **Prefijo de URL** → `https://gtavidaily.com`
-3. Verifica con etiqueta HTML (te dará un token — ponlo en `GOOGLE_SITE_VERIFICATION` en Runable)
-4. Envía el sitemap: `https://gtavidaily.com/sitemap.xml`
-
-### Paso 6: Google AdSense (cuando aprueben)
-
-1. Regístrate en [adsense.google.com](https://adsense.google.com)
-2. Añade `gtavidaily.com` como sitio
-3. Cuando aprueben (suele tardar días/semanas), copia tu `ca-pub-XXXXXXXXXXXXXXXX`
-4. Actualiza la variable `NEXT_PUBLIC_ADSENSE_CLIENT` en el panel de Runable
-5. Re-deploy
-
-### Notas importantes para Runable
-
-- **Runtime:** Node.js 20+ (declarado en `engines` del `package.json`).
-- **Sin `sharp` nativo:** las imágenes se sirven sin optimización
-  (`images.unoptimized: true` en `next.config.ts`) para evitar dependencias
-  nativas frágiles en el entorno sin Docker.
-- **Lockfile:** el repositorio incluye `package-lock.json` para garantizar
-  instalaciones reproducibles. Si usas `bun install` en desarrollo, asegúrate
-  de regenerar el lockfile con `npm install` antes de pushear.
-- **SQLite:** si Runable no ofrece almacenamiento persistente para SQLite,
-  cambia el `provider` de `prisma/schema.prisma` a `postgresql` y configura
-  `DATABASE_URL` con la cadena de tu Postgres.
-
----
-
-## Estructura del proyecto
-
-```
-.
-├── prisma/
-│   └── schema.prisma            # Esquema de base de datos
-├── public/
-│   ├── manifest.json            # PWA manifest
-│   └── robots.txt               # Reglas para crawlers
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx           # Metadata SEO + AdSense script + JSON-LD global
-│   │   ├── page.tsx             # Router SPA por estado
-│   │   ├── globals.css          # Estilos + tema GTA VI (neón Miami)
-│   │   ├── sitemap.ts           # Sitemap dinámico
-│   │   └── robots.ts            # Robots dinámico
-│   ├── components/
-│   │   ├── ads/
-│   │   │   └── AdSense.tsx      # Componente de bloque publicitario
-│   │   └── site/
-│   │       ├── Header.tsx       # Header con nav, búsqueda, móvil
-│   │       ├── Footer.tsx       # Footer completo
-│   │       ├── ArticleCard.tsx  # 4 variantes de tarjeta de artículo
-│   │       ├── ArticleView.tsx  # Vista de artículo individual
-│   │       ├── HomeView.tsx     # Página de inicio
-│   │       ├── CategoryView.tsx # Listado por categoría
-│   │       └── StaticPage.tsx   # About / Privacy / Contact
-│   └── lib/
-│       ├── data.ts              # 13 artículos + 7 categorías + 4 autores
-│       ├── nav.ts               # Store Zustand para navegación SPA
-│       └── db.ts                # Cliente Prisma
-├── .env.example                 # Plantilla de variables de entorno
-├── .nvmrc                       # Versión de Node recomendada
-├── next.config.ts               # Config standalone + headers
-├── package.json                 # Scripts: dev / build / start (Node puro)
-└── tsconfig.json
-```
-
----
-
-## SEO incluido
-
-- ✅ Metadata completa (OpenGraph, Twitter Cards, canonical, multilenguaje)
-- ✅ JSON-LD estructurado (Organization, WebSite, NewsArticle)
-- ✅ Sitemap dinámico en `/sitemap.xml`
-- ✅ Robots.txt en `/robots.txt`
-- ✅ HTML semántico (`<article>`, `<nav>`, `<main>`, `<aside>`, `<time>`)
-- ✅ Breadcrumbs con ARIA labels
-- ✅ Manifest PWA
-- ✅ Imágenes con `alt` descriptivo
-
-## AdSense incluido
-
-- ✅ Script de AdSense en `<head>` (controlado por `NEXT_PUBLIC_ADSENSE_CLIENT`)
-- ✅ Componente `<AdSense>` reutilizable
-- ✅ 9 posiciones publicitarias estratégicas
-- ✅ Política de privacidad con cláusula AdSense
-- ✅ Meta `google-adsense-account`
-- ✅ Label "Publicidad" en cada bloque (cumple políticas)
-
----
-
-## Disclaimer legal
-
-Este sitio es un proyecto fan **no oficial**. Grand Theft Auto y Rockstar Games
-son marcas registradas de Take-Two Interactive. No estamos afiliados con
-Rockstar Games ni Take-Two. Todo el contenido es informativo y se publica bajo
-fair use.
-
----
+El token es un PAT *fine-grained* con permiso **Contents: Read and write** sobre
+este repositorio; también se puede dejar en un fichero `.gh-token` (ignorado por
+Git).
 
 ## Licencia
 
-Código bajo licencia MIT. Contenido editorial propio del sitio.
+Código bajo licencia MIT (ver `LICENSE`). El contenido editorial y las marcas de
+terceros tienen su propio régimen.
+
+---
+
+Sitio fan no oficial. *Grand Theft Auto*, *GTA*, *Vice City* y *Rockstar Games*
+son marcas registradas de Take-Two Interactive Software, Inc.

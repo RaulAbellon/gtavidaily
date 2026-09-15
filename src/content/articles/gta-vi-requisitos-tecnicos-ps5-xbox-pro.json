@@ -1,0 +1,48 @@
+{
+  "slug": "gta-vi-requisitos-tecnicos-ps5-xbox-pro",
+  "title": "GTA VI en consola: 30 fps confirmados y lo que aún no se sabe",
+  "excerpt": "Rockstar apunta a 30 fps en todas las consolas, PS5 Pro incluida, y no ha anunciado resolución ni modo a 60 fps. Repasamos qué está confirmado y qué no.",
+  "content": [
+    "GTA VI apunta a 30 fotogramas por segundo en todas las consolas, incluida PS5 Pro. Lo confirmó Rob Nelson, responsable de desarrollo y co-responsable de Rockstar North, en una conversación con el medio brasileño FlowGames que recogió ComputerBase el 28 de agosto de 2026. No hay ninguna resolución oficial confirmada y tampoco un modo a 60 fps anunciado.",
+    "Nelson dejó abierta la puerta a una opción de rendimiento, pero sin compromiso alguno: dijo que tendría que consultarlo con el equipo técnico. De aquella entrevista no se desprende que vaya a existir un modo a 60 fps el día del lanzamiento. Es la primera vez que una persona con nombre y cargo dentro del estudio pone una cifra al rendimiento; hasta entonces, todo lo que circulaba eran estimaciones hechas a partir de análisis de vídeo.",
+    "Esas estimaciones vienen sobre todo del desglose técnico que Digital Foundry hizo del segundo tráiler, capturado en PS5. El medio británico situó la imagen en torno a 2560×1152 y tituló su análisis con un uso «impresionante» del ray tracing. Conviene subrayar la naturaleza del dato: es un análisis de vídeo, no una ficha técnica. Rockstar no ha confirmado oficialmente que GTA VI use ray tracing, ni qué técnica de reconstrucción de imagen emplea, ni si habrá FSR o una solución propia.",
+    "De Xbox Series S no hay absolutamente nada. Ni resolución, ni framerate, ni una mención en material oficial. La consola más económica de la generación es también la que menos se ha dejado ver, y cualquier cifra que circule sobre ella es una extrapolación de lo que ocurre en los demás modelos.",
+    "En PS5, lo confirmado está en las sensaciones y no en los píxeles. La ficha de PlayStation Store incluye la etiqueta «PS5 Pro Enhanced» y Sony presenta el juego como «Plays best on PlayStation 5», con mención expresa a los tiempos de carga casi instantáneos, la háptica y los gatillos adaptativos del DualSense y el audio 3D Tempest. Sony no ha detallado en qué consiste la mejora en PS5 Pro, y Rockstar tampoco lo ha hecho.",
+    "Tampoco hay requisitos de PC que analizar, porque no existe una versión de PC anunciada: la página oficial del juego lista solo PlayStation 5 y Xbox Series X|S. Las tablas de requisitos mínimos que circulan son inventadas o recicladas de otros títulos de Rockstar. La misma cautela vale para el tamaño de instalación: sigue sin cifra oficial, igual que el del paquete de precarga que arranca el 12 de noviembre.",
+    "Qué mirar de aquí al lanzamiento. Si Rockstar va a ofrecer un modo a 60 fps, tendría que anunciarlo antes del 12 de noviembre para que el jugador decida dónde compra. Si no dice nada, la lectura razonable es la que ya insinuó Nelson: 30 fps estables y una PS5 Pro que mejora la imagen sin cambiar la tasa de refresco."
+  ],
+  "category": "gameplay",
+  "author": "redaccion",
+  "publishedAt": "2026-07-05T15:45:00Z",
+  "updatedAt": "2026-09-15T12:00:00.000Z",
+  "coverLabel": "30 fps y lo que falta por saber",
+  "coverAlt": "Ilustración sobre el rendimiento técnico de GTA VI en PS5 y Xbox Series",
+  "tags": [
+    "GTA VI",
+    "PS5 Pro",
+    "Rendimiento",
+    "Xbox Series",
+    "30 fps"
+  ],
+  "readingTime": 2,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "ComputerBase — Auch auf der PS5 Pro: GTA 6 zielt auf allen Konsolen auf 30 FPS",
+      "url": "https://www.computerbase.de/news/gaming/auch-auf-der-ps5-pro-gta-6-zielt-auf-allen-konsolen-auf-30-fps.99108/"
+    },
+    {
+      "name": "Digital Foundry — GTA 6 Trailer 2 tech breakdown: incredible realism, impressive RT, astonishing detail",
+      "url": "https://www.digitalfoundry.net/articles/digitalfoundry-2025-gta-6-trailer-2-tech-breakdown-incredible-realism-impressive-rt-astonishing-detail"
+    },
+    {
+      "name": "TheGamer — GTA 6 PlayStation Store Listing Officially Confirms That It'll Be PS5 Pro Enhanced",
+      "url": "https://www.thegamer.com/gta-6-ps5-pro-enhanced-confirmed-60fps-hopes/"
+    },
+    {
+      "name": "Rockstar Games — Grand Theft Auto VI (página oficial)",
+      "url": "https://www.rockstargames.com/VI"
+    }
+  ]
+}

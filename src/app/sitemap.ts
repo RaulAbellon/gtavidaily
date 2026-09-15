@@ -1,49 +1,58 @@
 import type { MetadataRoute } from "next";
 import { articles, categories } from "@/lib/data";
+import { SITE_URL, STATIC_ROUTES } from "@/lib/site";
 
-const SITE_URL = "https://gtavidaily.com";
-
+/**
+ * Sitemap con las rutas que existen de verdad.
+ *
+ * El anterior publicaba `/articulo/...` y `/categoria/...` cuando esas rutas no
+ * estaban implementadas: 54 de 55 URLs devolvían 404.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages: MetadataRoute.Sitemap = [
+  const latestArticleDate = articles.reduce<Date>((newest, article) => {
+    const date = new Date(article.updatedAt ?? article.publishedAt);
+    return date > newest ? date : newest;
+  }, new Date(0));
+
+  const siteEntries: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,
-      lastModified: new Date(),
+      lastModified: latestArticleDate,
       changeFrequency: "hourly",
       priority: 1,
     },
     {
-      url: `${SITE_URL}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: `${SITE_URL}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.4,
-    },
-    {
-      url: `${SITE_URL}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
+      url: `${SITE_URL}/noticias`,
+      lastModified: latestArticleDate,
+      changeFrequency: "hourly",
+      priority: 0.8,
     },
   ];
 
-  const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
-    url: `${SITE_URL}/categoria/${cat.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "daily",
-    priority: 0.8,
+  const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.map((route) => ({
+    url: `${SITE_URL}${route.path}`,
+    changeFrequency: "yearly",
+    priority: route.path === "/sobre" ? 0.4 : 0.3,
   }));
 
-  const articlePages: MetadataRoute.Sitemap = articles.map((article) => ({
+  const categoryEntries: MetadataRoute.Sitemap = categories.map((category) => ({
+    url: `${SITE_URL}/categoria/${category.slug}`,
+    lastModified: latestArticleDate,
+    changeFrequency: "daily",
+    priority: 0.7,
+  }));
+
+  const articleEntries: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${SITE_URL}/articulo/${article.slug}`,
-    lastModified: new Date(article.updatedAt || article.publishedAt),
+    lastModified: new Date(article.updatedAt ?? article.publishedAt),
     changeFrequency: "weekly",
     priority: 0.9,
   }));
 
-  return [...staticPages, ...categoryPages, ...articlePages];
+  return [
+    ...siteEntries,
+    ...categoryEntries,
+    ...articleEntries,
+    ...staticEntries,
+  ];
 }

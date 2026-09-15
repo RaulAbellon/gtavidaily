@@ -1,46 +1,87 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV !== "production";
+
+// Política de seguridad de contenido. Es deliberadamente permisiva con los
+// dominios de Google porque AdSense inyecta scripts e iframes propios, pero
+// cierra todo lo demás (object-src, base-uri, frame-ancestors) y no permite
+// eval. Documentada en el README para poder endurecerla o migrarla a nonces
+// cuando se integre un CMP con soporte completo.
+const csp = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'self'",
+  "form-action 'self'",
+  "script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://partner.googleadservices.com https://tpc.googlesyndication.com https://www.googletagservices.com https://adservice.google.com https://fundingchoicesmessages.google.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: https:",
+  "font-src 'self' data:",
+  "connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://adservice.google.com",
+  "frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://fundingchoicesmessages.google.com",
+  "media-src 'self'",
+  "worker-src 'self' blob:",
+  "manifest-src 'self'",
+  "upgrade-insecure-requests",
+].join("; ");
+
 const nextConfig: NextConfig = {
-  // Genera un build autocontenido en .next/standalone
-  // que puede arrancarse con `node .next/standalone/server.js`.
-  // Esto es lo que Runable ejecutará en producción.
+  // Build autocontenido en .next/standalone.
   output: "standalone",
 
-  // Runable impone Node.js sin acceso a Docker, así que evitamos
-  // dependencias nativas frágiles. Usamos el loader por defecto
-  // y dejamos que las imágenes se sirvan tal cual.
+  // Las portadas son SVG generados localmente como data URI: no hay nada que
+  // optimizar en build.
   images: {
     unoptimized: true,
   },
 
-  // En producción queremos que el build falle si hay errores TS,
-  // pero mantenemos ignoreBuildErrors para no bloquear el deploy
-  // por tipos de third-party. Cámbialo a false si quieres strictness.
+  // Los errores de tipo rompen el build. Es la red de seguridad que faltaba.
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
 
-  reactStrictMode: false,
+  // Detección temprana de efectos y renders duplicados.
+  reactStrictMode: true,
 
-  // Exponer variables de entorno al cliente (prefijo NEXT_PUBLIC_)
-  // Las que NO tengan el prefijo solo viven en el servidor.
-  env: {
-    NEXT_PUBLIC_SITE_URL:
-      process.env.NEXT_PUBLIC_SITE_URL || "https://gtavihub.example",
-    NEXT_PUBLIC_ADSENSE_CLIENT:
-      process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-0000000000000000",
+  // Sin bloque `env`: Next ya expone las variables NEXT_PUBLIC_* y así se evita
+  // inyectar literales de reserva en el bundle. La única fuente de verdad de la
+  // configuración del sitio es src/lib/site.ts.
+  poweredByHeader: false,
+
+  async rewrites() {
+    return [
+      {
+        // El App Router no admite carpetas que empiecen por punto, así que
+        // `security.txt` se sirve en su URL canónica (RFC 9116) desde aquí.
+        source: "/.well-known/security.txt",
+        destination: "/security-txt",
+      },
+    ];
   },
 
-  // Cabeceras básicas de seguridad/SEO
   async headers() {
+    const securityHeaders = [
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      { key: "X-Frame-Options", value: "SAMEORIGIN" },
+      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      {
+        key: "Permissions-Policy",
+        value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+      },
+      { key: "Content-Security-Policy", value: csp },
+    ];
+
+    if (!isDev) {
+      securityHeaders.push({
+        key: "Strict-Transport-Security",
+        value: "max-age=31536000; includeSubDomains",
+      });
+    }
+
     return [
       {
         source: "/(.*)",
-        headers: [
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "X-Frame-Options", value: "SAMEORIGIN" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-        ],
+        headers: securityHeaders,
       },
     ];
   },

@@ -1,0 +1,44 @@
+{
+  "slug": "gta-vi-peso-instalacion-estimacion-tamano",
+  "title": "Cuánto ocupará GTA VI: qué se sabe del tamaño de instalación",
+  "excerpt": "Rockstar no ha publicado el peso del juego. Las estimaciones de analistas hablan de 100 a 130 GB de base y de escenarios de hasta 200 GB.",
+  "content": [
+    "Rockstar no ha publicado el tamaño de instalación de GTA VI y no hay ninguna cifra oficial en la web del juego ni en los comunicados de Take-Two. Lo único que la compañía ha dicho sobre logística técnica es que la precarga digital empieza el 12 de noviembre de 2026, una semana antes del lanzamiento, y que la edición física es un código de descarga dentro de la caja, sin disco.",
+    "Las cifras que circulan son estimaciones. Una recopilación de Infobae de junio de 2026 sitúa la horquilla en 100 a 130 GB para la versión base y apunta a un escenario exigente de 150 a 200 GB si se incluyen audio sin comprimir y contenido adicional. Otras cifras, como los 250 GB que se repiten en foros y algún medio, no tienen respaldo de nadie: conviene tratarlas como lo que son, un cálculo de comunidad.",
+    "Para calibrar esos números sirve la propia historia de Rockstar. La versión de GTA V para PS5 ocupa alrededor de 87 GB, según las cifras recogidas por Infobae. Red Dead Redemption 2 declaró 99 GB de instalación en PS4 y 107 GB en Xbox One, aunque la versión digital de PS4 exigía 150 GB libres para descomprimir el archivo durante el proceso. Es decir: el dato de los 150 GB de RDR2 que suele citarse era espacio temporal, no peso final.",
+    "Con esa base, un salto hasta los 100-130 GB en GTA VI es plausible, pero sigue siendo una proyección. El juego añade interiores transitables, más densidad de tráfico y una cantidad de animación que Rockstar ha descrito como muy superior a la de Red Dead Redemption 2, tres elementos que engordan un archivo. Nada de eso equivale a una cifra, y el estudio tampoco ha detallado qué compresión usará.",
+    "El problema real es de espacio libre, no de curiosidad técnica. Una PS5 y una Xbox Series X tienen 1 TB de SSD nominal, pero el sistema operativo y las aplicaciones se comen una parte importante. En una Xbox Series S de 512 GB, una instalación de 130 GB deja la consola casi sin margen. Ampliar con un SSD NVMe compatible es la vía habitual en PS5 y con la tarjeta de expansión propietaria en Xbox.",
+    "La precarga del 12 de noviembre convierte el tamaño en una cuestión de tiempo además de espacio. En una conexión de 100 Mbps, 130 GB tardan unas tres horas en condiciones teóricas óptimas; con 30 Mbps, el mismo archivo se va por encima de las nueve horas, y más si la red no acompaña. En la práctica, las velocidades de descarga de PlayStation Network y Xbox Live suelen quedar por debajo del ancho de banda contratado.",
+    "Sobre una posible versión de PC no hay nada que estimar: no está anunciada y Rockstar no ha dado fecha. La web oficial del juego lista solo PlayStation 5 y Xbox Series X|S. Lo que falta por saber, por tanto, es la única cifra que importa: el tamaño real, que debería aparecer en las fichas de tienda cuando se acerque la precarga."
+  ],
+  "category": "gameplay",
+  "author": "redaccion",
+  "publishedAt": "2026-08-22T12:15:00Z",
+  "updatedAt": "2026-09-15T12:00:00.000Z",
+  "coverLabel": "Tamaño de instalación",
+  "coverAlt": "Ilustración conceptual sobre el espacio de almacenamiento que necesitará GTA VI",
+  "tags": [
+    "Instalación",
+    "Almacenamiento",
+    "Precarga",
+    "PS5",
+    "Xbox Series"
+  ],
+  "readingTime": 3,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Infobae — GTA 6 requerirá un gran espacio en disco: estas son las cifras estimadas para PS5 y Xbox Series",
+      "url": "https://www.infobae.com/tecno/2026/06/30/gta-6-requerira-un-gran-espacio-en-disco-estas-son-las-cifras-estimadas-para-ps5-y-xbox-series/"
+    },
+    {
+      "name": "Game Informer — Rockstar Confirms Red Dead Redemption II Install Sizes, PS4 Digital Will Require 150GB",
+      "url": "https://gameinformer.com/2018/10/18/rockstar-confirms-red-dead-redemption-ii-install-sizes-ps4-digital-will-require-150gb"
+    },
+    {
+      "name": "Gematsu — Grand Theft Auto VI pricing, 'Ultimate Edition', and pre-order bonuses announced",
+      "url": "https://www.gematsu.com/2026/06/grand-theft-auto-vi-pricing-ultimate-edition-and-pre-order-bonuses-announced"
+    }
+  ]
+}

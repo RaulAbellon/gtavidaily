@@ -1,0 +1,40 @@
+{
+  "slug": "gta-vi-almacenamiento-cuanto-ocupa-hacer-sitio",
+  "title": "Cuánto ocupa GTA VI y cómo hacer sitio antes de la predescarga",
+  "excerpt": "Rockstar no ha publicado el tamaño oficial, y las cifras que circulan son estimaciones. Lo que sí puedes hacer ya es preparar el disco: la predescarga abre el 12 de noviembre.",
+  "content": [
+    "Rockstar no ha publicado cuánto ocupa GTA VI. Lo único confirmado sobre este asunto es la fecha de la predescarga digital, el 12 de noviembre, una semana antes del lanzamiento. Todo lo demás son estimaciones.",
+    "Las cifras que están circulando conviene leerlas con esa etiqueta. Las estimaciones publicadas por medios especializados apuntan a una base de entre 100 y 130 GB, que podría acercarse a los 150-200 GB contando actualizaciones posteriores. Son cálculos de analistas, no datos de la compañía, y algunas de las cifras que corren por redes sociales (los famosos 250 GB) no tienen ninguna fuente detrás.",
+    "Hay un detalle que sorprende a mucha gente la primera vez que se queda sin espacio: el hueco que necesita la consola para instalar es mayor que el tamaño final del juego. PlayStation y Xbox reservan margen para descomprimir archivos durante la instalación y para el guardado, así que si el juego ocupa 130 GB puedes necesitar bastantes más libres para empezar. Dejar el disco al límite es la receta para un error de instalación a medianoche.",
+    "El plan sensato es hacer limpieza antes del 12 de noviembre, no esa noche. Empieza por los juegos que no has abierto en meses: archivarlos o borrarlos no cuesta nada, porque puedes volver a descargarlos cuando quieras. Sigue por las capturas y los vídeos, que ocupan mucho más de lo que la gente cree. Y revisa las aplicaciones de vídeo y los juegos instalados que venían con la consola.",
+    "Sobre ampliar el almacenamiento, conviene saber cómo funcionan las dos consolas, porque no son iguales. En PS5 puedes guardar juegos de PS5 en un disco externo por USB, pero no jugarlos desde ahí: hay que moverlos de vuelta al SSD interno. Para ampliar de verdad necesitas un SSD NVMe compatible con la ranura de expansión, y hay una lista oficial de modelos válidos. En Xbox Series, los juegos optimizados para la consola solo se ejecutan desde el SSD interno o desde la tarjeta de expansión propietaria; un disco USB sirve para juegos antiguos y para almacenar, no para jugar a los nuevos.",
+    "Con eso en la cabeza, la decisión depende de tu situación. Si te sobran 200 GB, no hagas nada. Si vas justo, borra lo que no juegas y espera: cuando Rockstar publique el tamaño real, sabrás exactamente cuánto necesitas. Y si estás pensando en comprar una tarjeta de expansión o un SSD, ese es precisamente el momento de hacerlo, no antes.",
+    "Actualizaremos esta guía con la cifra oficial en cuanto la compañía la publique. Hasta entonces, cualquier número que veas es una estimación, incluidos los de esta página."
+  ],
+  "category": "guias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-15T13:30:00.000Z",
+  "updatedAt": "2026-09-15T13:30:00.000Z",
+  "coverLabel": "Almacenamiento y espacio",
+  "coverAlt": "Ilustración conceptual sobre el espacio de almacenamiento necesario para GTA VI",
+  "tags": [
+    "Almacenamiento",
+    "SSD",
+    "Predescarga",
+    "PS5",
+    "Xbox Series"
+  ],
+  "readingTime": 3,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Vandal — GTA 6 confirma la hora exacta de su lanzamiento",
+      "url": "https://vandal.elespanol.com/noticia/2026250032/gta-6-confirma-la-hora-exacta-para-su-lanzamiento-en-espana-y-el-resto-del-mundo/"
+    },
+    {
+      "name": "Infobae — Las cifras estimadas de espacio en disco",
+      "url": "https://www.infobae.com/tecno/2026/06/30/gta-6-requerira-un-gran-espacio-en-disco-estas-son-las-cifras-estimadas-para-ps5-y-xbox-series/"
+    }
+  ]
+}
