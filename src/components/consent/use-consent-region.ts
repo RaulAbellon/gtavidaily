@@ -46,25 +46,32 @@ export function useConsentRegion(
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    if (window.__tcfapi) {
-      setRegion("google");
-      return;
-    }
-
     const started = Date.now();
-    const timer = window.setInterval(() => {
-      if (window.__tcfapi) {
-        window.clearInterval(timer);
-        setRegion("google");
-        return;
-      }
-      if (Date.now() - started >= timeoutMs) {
-        window.clearInterval(timer);
-        setRegion("own");
-      }
-    }, 150);
+    let resolved = false;
 
-    return () => window.clearInterval(timer);
+    const finish = (value: ConsentRegion) => {
+      if (resolved) return;
+      resolved = true;
+      window.clearTimeout(first);
+      window.clearInterval(timer);
+      setRegion(value);
+    };
+
+    const check = () => {
+      if (window.__tcfapi) finish("google");
+      else if (Date.now() - started >= timeoutMs) finish("own");
+    };
+
+    // La primera comprobación va dentro de un temporizador, no en el cuerpo del
+    // efecto: llamar a setState de forma sincrónica al montar provoca renders en
+    // cascada (y el linter tiene razón en quejarse).
+    const first = window.setTimeout(check, 0);
+    const timer = window.setInterval(check, 150);
+
+    return () => {
+      window.clearTimeout(first);
+      window.clearInterval(timer);
+    };
   }, [timeoutMs]);
 
   return region;
