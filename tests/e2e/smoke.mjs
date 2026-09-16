@@ -56,6 +56,16 @@ const REQUIRED_ROUTES = [
   "/sitemap.xml",
   "/feed.xml",
   "/.well-known/security.txt",
+  // Identidad visual: si falta un activo, el navegador o las redes sociales
+  // sirven algo roto y nadie se entera hasta que se ve el enlace compartido.
+  "/logo-compact.svg",
+  "/logo.svg",
+  "/favicon.svg",
+  "/favicon.ico",
+  "/icon-192.png",
+  "/apple-touch-icon.png",
+  "/og-image.png",
+  "/manifest.json",
 ];
 
 const EXPECTED_404 = ["/no-existe", "/about", "/articulo/no-existe-este-articulo"];
