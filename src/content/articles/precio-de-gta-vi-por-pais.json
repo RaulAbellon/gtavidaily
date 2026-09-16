@@ -1,0 +1,60 @@
+{
+  "slug": "precio-de-gta-vi-por-pais",
+  "title": "Precio de GTA VI por país: del 1.599 mexicano al precio británico",
+  "excerpt": "Los mismos 79,99 euros que se pagan en España no compran lo mismo en Ciudad de México, Londres o São Paulo. Tabla de precios comprobados uno a uno y por qué no se convierten de forma lineal.",
+  "content": [
+    "GTA VI cuesta 79,99 euros en España y 79,99 dólares en Estados Unidos. Son las dos únicas tarifas que Rockstar puso por escrito el 24 de junio de 2026, cuando abrió reservas. La Ultimate sube a 99,99 en ambos casos. El resto de lo que circula son precios de tienda o conversiones, y ahí empieza el lío.",
+    "Estos son los precios comprobados hoy, 16 de septiembre de 2026, con su fuente al lado. La edición estándar cuesta 79,99 € en PlayStation Store y Microsoft Store de España, y el mismo importe figura en GAME, Amazon, MediaMarkt, Fnac, Xtralife y PcComponentes para la caja con código. La Ultimate cuesta 99,99 €. En Reino Unido, la estándar sale a 69,99 libras y la Ultimate a 89,99, en digital y en físico, según el listado de la PlayStation Store británica.",
+    "México sigue el patrón contrario. La PS Store mexicana muestra la estándar a 1.378,45 pesos y la Ultimate a 1.723,28 pesos, ya en moneda local tras la migración que Sony cerró el 20 de agosto. Cuidado con la letra pequeña: esos importes no incluyen el IVA. En el carrito se suman 220,55 pesos y la estándar queda en 1.599 pesos. Los términos de servicio de PlayStation para México lo dicen en su cláusula 8.14. En Brasil, PlayStation Store y Microsoft Store listan la estándar a 449,90 reales y la Ultimate a 549,90.",
+    "Hay tres ausencias que conviene nombrar. No existe un documento oficial de Rockstar o Take-Two con precios para Latinoamérica: los datos mexicano y brasileño salen de tiendas localizadas. En Colombia, Chile y Argentina, Xbox muestra moneda local mientras PlayStation sigue facturando en dólares, así que comparar ambas tiendas mezcla dos cosas distintas. Para Perú no hay tienda Xbox localizada. Esas filas van como estimación.",
+    "La pregunta de fondo es por qué 79,99 no es el mismo dinero en todas partes. El precio de un lanzamiento no se calcula con una calculadora de divisas: se fija mercado a mercado. Con el tipo de referencia del Banco de Francia del 15 de septiembre de 2026, un euro equivalía a 1,1539 dólares. Los 79,99 dólares estadounidenses son unos 69,3 euros, unos diez menos que el precio español. Los 69,99 libras son 81,79 euros, casi dos más que en España.",
+    "Por eso conviene desconfiar de la frase el juego cuesta ochenta. En euros son 79,99 €, en dólares unos 69 € y en libras casi 82 €. México es el caso más instructivo: los 1.378,45 pesos no son un cambio real, sino 79,99 dólares por una tasa interna de 17,23 pesos por dólar, por encima del cambio que manejan los bancos. En Brasil, 449,90 reales equivalen a unos 75,7 euros. Y encima está el IVA: en México se añade al pagar; en España ya viene dentro de los 79,99 €.",
+    "Los recargos no acaban ahí. Los términos de PlayStation para Reino Unido avisan en el apartado 12.3 de que el precio incluye el IVA aplicable, pero que el comprador asume el IVA de importación y los aranceles que correspondan, más las comisiones de cambio de su banco. En Argentina, el impuesto PAIS está derogado desde diciembre de 2024 y la percepción de Ganancias quedó en cero para videojuegos en abril de 2025, pero siguen el IVA del 21 % y el impuesto provincial sobre ingresos brutos, que en Buenos Aires añade un 23 % al precio de lista. Dos argentinos pueden pagar distinto el mismo día.",
+    "Queda la tentación clásica: abrirse una cuenta en la región más barata. PlayStation no lo permite, y no es un rumor. Sus términos mexicanos dicen en la cláusula 3.2 que el país o la región de la cuenta se elige al crearla y no se puede cambiar después. La cláusula 8.15 añade que Sony puede verificar el país mediante el número de tarjeta y rechazar la transacción si los datos no cuadran. El atajo de la cuenta extranjera con tarjetas de regalo compradas a terceros figura entre las conductas sancionables.",
+    "Xbox aplica las mismas reglas con lenguaje más directo. Sus estándares de la comunidad califican como falta grave intentar eludir las restricciones de contenido regional, y el acuerdo de servicios de Microsoft recuerda que cerrar una cuenta puede suponer perder las licencias de contenido, las suscripciones y el saldo, además del acceso a productos ya comprados. No es teoría: en marzo de 2025 hubo jugadores baneados por comprar con VPN en tiendas de otros países.",
+    "Merece la pena ese riesgo por veinte o treinta euros? La cuenta no viaja con el país, viaja con la persona, y dentro queda todo el historial. La edición española está a 79,99 € en seis cadenas, y este medio documentó un descuento puntual de Amazon que la dejó en 64,90 €. La rebaja legal existe y no pone en juego la biblioteca.",
+    "Qué mirar a partir de ahora: si Microsoft Store España mueve su precio digital, si Sony publica precios en pesos colombianos y chilenos que sustituyan a los dólares, y si la mejora a Ultimate mantiene el salto de veinte euros en todos los mercados. Los tres datos se vigilan en las fichas de tienda y decidirán si este mapa de precios sigue en pie en noviembre."
+  ],
+  "category": "guias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-16T09:00:00.000Z",
+  "updatedAt": "2026-09-16T09:00:00.000Z",
+  "coverLabel": "Precio por pais",
+  "coverAlt": "Mapa del mundo con etiquetas de precio de GTA VI en euros, dólares, libras, pesos y reales",
+  "tags": [
+    "Precio",
+    "Reservas",
+    "Latinoamérica",
+    "PS Store",
+    "Xbox Store"
+  ],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Take-Two — Rockstar Games announces pre-orders for Grand Theft Auto VI",
+      "url": "https://www.take2games.com/ir/news/rockstar-games-announces-pre-orders-grand-theft-auto-vi"
+    },
+    {
+      "name": "PlayStation Store Reino Unido — Grand Theft Auto VI",
+      "url": "https://www.playstation.com/en-gb/games/grand-theft-auto-vi/"
+    },
+    {
+      "name": "Microsoft Store México — Comprar Grand Theft Auto VI",
+      "url": "https://www.xbox.com/es-mx/games/store/grand-theft-auto-vi/9P3H4968GRSM/0017"
+    },
+    {
+      "name": "PlayStation — Términos de servicio (México), cláusulas 3.2, 8.14 y 8.15",
+      "url": "https://www.playstation.com/es-mx/legal/terms-of-service/"
+    },
+    {
+      "name": "Xbox — Estándares de la comunidad",
+      "url": "https://www.xbox.com/es-MX/legal/community-standards"
+    },
+    {
+      "name": "3DJuegos LATAM — Utilizar VPN en Xbox es ilegal y Microsoft tomará medidas",
+      "url": "https://www.3djuegos.lat/xbox-series-x-s/utilizar-vpn-xbox-ilegal-microsoft-tomara-serias-medidas-te-aprovechas-ello-estos-riegos-que-advierten-normas"
+    }
+  ]
+}

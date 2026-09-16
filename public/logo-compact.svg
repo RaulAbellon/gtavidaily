@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="965" height="140" viewBox="0 0 965 140" role="img" aria-label="GTA VI Daily">
+  <defs>
+    <linearGradient id="bar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(0 16)">
+    
+  <defs>
+    <linearGradient id="badgeL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="55%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#4C1D95"/>
+    </linearGradient>
+    <radialGradient id="sheenL" cx="26%" cy="18%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="108" height="108" rx="23.76" fill="#09090B"/>
+  <rect width="108" height="108" rx="23.76" fill="url(#badgeL)"/>
+  <rect width="108" height="108" rx="23.76" fill="url(#sheenL)"/>
+  <rect x="4.86" y="4.86" width="98.28" height="98.28" rx="19.01" fill="none" stroke="#FFFFFF" stroke-width="0.76" opacity="0.2"/>
+  <g transform="translate(0 0) scale(0.21)">
+    <path d="M132 161 L224 351 L316 161" fill="none" stroke="#FFFFFF" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M380 161 V351" fill="none" stroke="#FFFFFF" stroke-width="46" stroke-linecap="round"/>
+  </g>
+
+  </g>
+  <path transform="translate(136 34) scale(0.72)" d="M86 28 A44 44 0 1 0 86 72 M86 72 V50 H58" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path transform="translate(211.6 34) scale(0.72)" d="M8 0 H92 M50 0 V100" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path transform="translate(287.2 34) scale(0.72)" d="M8 100 L50 0 L92 100 M26 66 H74" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path transform="translate(395.2 34) scale(0.72)" d="M10 0 L50 100 L90 0" fill="none" stroke="#EC4899" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path transform="translate(470.8 34) scale(0.72)" d="M50 0 V100" fill="none" stroke="#EC4899" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path transform="translate(578.8 34) scale(0.72)" d="M16 0 V100 M16 0 H42 A50 50 0 0 1 42 100 H16" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path transform="translate(654.4 34) scale(0.72)" d="M8 100 L50 0 L92 100 M26 66 H74" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path transform="translate(730 34) scale(0.72)" d="M50 0 V100" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path transform="translate(805.6 34) scale(0.72)" d="M16 0 V100 H88" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path transform="translate(881.2 34) scale(0.72)" d="M10 0 L50 46 L90 0 M50 46 V100" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  
+</svg>

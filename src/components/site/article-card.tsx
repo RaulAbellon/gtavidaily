@@ -1,7 +1,7 @@
 import { Clock, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { getAuthorBySlug, getCategoryBySlug, type Article } from "@/lib/data";
-import { coverUrl } from "@/lib/cover";
+import { articleImage, articleImageAlt } from "@/lib/images";
 import { EDITORIAL_NAME } from "@/lib/site";
 
 type ArticleCardProps = {
@@ -44,8 +44,8 @@ export function ArticleCard({
       <Link href={href} className="group flex w-full items-start gap-3 text-left">
         <span className="relative block h-16 w-20 flex-shrink-0 overflow-hidden rounded-md bg-zinc-900">
           <img
-            src={coverUrl(article)}
-            alt={article.coverAlt}
+            src={articleImage(article)}
+            alt={articleImageAlt(article)}
             width={1200}
             height={675}
             loading={loading}
@@ -80,8 +80,8 @@ export function ArticleCard({
         >
           <span className="relative block h-full min-h-[120px] overflow-hidden bg-zinc-900">
             <img
-              src={coverUrl(article)}
-              alt={article.coverAlt}
+              src={articleImage(article)}
+              alt={articleImageAlt(article)}
               width={1200}
               height={675}
               loading={loading}
@@ -113,8 +113,8 @@ export function ArticleCard({
         <Link href={href} className="block">
           <span className="relative block aspect-[16/10] w-full overflow-hidden sm:aspect-[16/9]">
             <img
-              src={coverUrl(article)}
-              alt={article.coverAlt}
+              src={articleImage(article)}
+              alt={articleImageAlt(article)}
               width={1200}
               height={675}
               loading={loading}
@@ -164,8 +164,8 @@ export function ArticleCard({
       <Link href={href} className="flex flex-1 flex-col">
         <span className="relative block aspect-[16/10] overflow-hidden bg-zinc-900">
           <img
-            src={coverUrl(article)}
-            alt={article.coverAlt}
+            src={articleImage(article)}
+            alt={articleImageAlt(article)}
             width={1200}
             height={675}
             loading={loading}

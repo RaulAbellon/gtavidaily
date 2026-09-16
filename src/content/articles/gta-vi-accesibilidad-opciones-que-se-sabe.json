@@ -1,0 +1,59 @@
+{
+  "slug": "gta-vi-accesibilidad-opciones-que-se-sabe",
+  "title": "GTA VI y accesibilidad: Rockstar no ha publicado ni una opción",
+  "excerpt": "Ni la ficha oficial de GTA VI ni su comunicado de reservas detallan ayudas visuales, auditivas o motoras. Pedimos a Rockstar el listado antes del 19 de noviembre.",
+  "content": [
+    "Rockstar no ha publicado ninguna lista de opciones de accesibilidad para GTA VI. La ficha del juego en PlayStation Store, consultada hoy, menciona vibración, gatillos adaptativos y Remote Play, y no incluye ni un apartado sobre subtítulos, filtros de color o remapeo de controles. En el material oficial del lanzamiento no hay nada que anunciar, así que este artículo cuenta lo que sí está documentado y lo que falta por saber.",
+    "El silencio no vendría de una compañía sin experiencia. Los juegos anteriores de Rockstar sí tienen accesibilidad documentada. Y tiene ejemplos recientes en la industria de cómo se hace esto bien. Comparar los tres planos es la forma más honesta de medir el hueco.",
+    "Empecemos por GTA V. La base de datos de accesibilidad de Family Gaming Database recoge 28 funciones para el juego, entre ellas opciones de subtítulos, remapeo completo de botones y de teclado, inversión de ejes, ajuste de sensibilidad de los sticks, indicaciones visuales de los objetivos de misión, mapa legible y ajuste de niveles de audio. La misma ficha señala los límites: los subtítulos existen, pero no todo el diálogo está subtitulado, y el texto puede ser pequeño. Nada de eso es una opción inédita hoy, pero está ahí desde hace años.",
+    "Red Dead Redemption 2 dio un paso más, y también arrastró carencias. El análisis de accesibilidad de Can I Play That, publicado en noviembre de 2018, confirma la presencia de cinco ajustes para daltonismo, subtítulos configurables con fondo negro y nombre del hablante, perfiles de audio según el equipo de sonido, asistencia de apuntado generosa, la posibilidad de saltarse un tramo de misión tras tres intentos fallidos y un modo en primera persona. El mismo texto documenta lo que faltaba: los menús de rueda de armas obligaban a mantener pulsado un botón, la pesca exigía girar el stick derecho y no había alternativa, y parte del diálogo no se subtitulaba.",
+    "En junio de 2019, la misma publicación firmó una segunda reseña centrada en jugadores sordos y con audición reducida. Titulaba el problema sin rodeos: solo una parte del diálogo estaba subtitulada, las señales visuales tenían un uso limitado, los subtítulos eran pequeños y la caza, una actividad central, dependía del oído. El veredicto de aquel análisis fue que Rockstar había tratado la accesibilidad como una casilla que marcar.",
+    "Ese es el punto de partida real. Ahora, el estándar de 2026. Las Xbox Accessibility Guidelines de Microsoft, en su versión 3.2, cubren 23 áreas: visualización de texto, contraste, canales alternativos para las señales visuales y sonoras, subtítulos y leyendas, accesibilidad del audio, narración de pantalla, entrada y remapeo, opciones de dificultad, fotosensibilidad, distracciones visuales y documentación de las propias funciones accesibles. No son una norma legal, pero son la referencia que la industria usa para revisar un AAA antes de lanzarlo.",
+    "Hay ejemplos de cómo se aterriza ese estándar. Star Wars Zero Company, publicado por EA este año, documenta en una página propia su menú de accesibilidad desde el primer arranque, los filtros para los tres tipos de daltonismo con vista previa, el tamaño de texto hasta extra grande, un conjunto de opciones de subtítulo con color, opacidad y nombres de los hablantes, sliders de volumen separados, remapeo de mandos y teclado, y cuatro niveles de dificultad. La propia EA aclara en esa página lo que no tiene, la narración de menús. Publicar lo que falta es parte del ejercicio.",
+    "Ninguno de esos ejemplos confirma nada sobre GTA VI. Una función presente en GTA V o en Red Dead Redemption 2 no se hereda automáticamente, y los menús de un juego de 2018 no describen los de un lanzamiento de 2026. Tampoco sirve dar por hecho que existirán dificultad ajustable, filtros de daltonismo o reducción de destellos. No hay fuente oficial que lo sostenga, y quien publique una lista cerrada de opciones de GTA VI se la está inventando.",
+    "Por eso la petición es concreta y va dirigida a Rockstar. Publicad el listado de opciones de accesibilidad de GTA VI antes del 19 de noviembre. En una página propia, en el blog de soporte o en la ficha de producto, da igual el formato. Que diga qué hay, qué no hay y con qué límites, como ya hace la competencia. La fecha importa porque hay decisiones de compra que no admiten espera: quien necesita subtítulos legibles o remapeo para jugar tiene que saber si podrá hacerlo antes de pagar.",
+    "Mientras eso no llegue, la recomendación es la de siempre en este sitio. La ficha de tienda y el comunicado de reservas son los únicos documentos que Rockstar ha firmado sobre este lanzamiento, y ninguno de los dos habla de accesibilidad. Si una opción concreta decide tu compra, espera a leerla en una fuente de Rockstar o en un análisis de la versión final. El 12 de noviembre empieza la predescarga y el 19 se desbloquea el juego; hasta entonces, cualquier lista que veas circulando es una suposición."
+  ],
+  "category": "gameplay",
+  "author": "redaccion",
+  "publishedAt": "2026-09-16T09:00:00.000Z",
+  "updatedAt": "2026-09-16T09:00:00.000Z",
+  "coverLabel": "Accesibilidad pendiente",
+  "coverAlt": "Ilustración conceptual sobre opciones de accesibilidad y dificultad en GTA VI",
+  "tags": [
+    "Accesibilidad",
+    "Opciones",
+    "Dificultad",
+    "Subtítulos",
+    "Rockstar"
+  ],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Microsoft Learn — Xbox Accessibility Guidelines V3.2",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/guidelines"
+    },
+    {
+      "name": "EA — Star Wars Zero Company: Accessibility Resources",
+      "url": "https://www.ea.com/able/resources/star-wars-zero-company"
+    },
+    {
+      "name": "Can I Play That? — Red Dead Redemption II accessibility review",
+      "url": "https://caniplaythat.com/2018/11/28/red-dead-redemption-ii-accessibility-review/"
+    },
+    {
+      "name": "Can I Play That? — Deaf Game Review: Red Dead Redemption 2",
+      "url": "https://caniplaythat.com/2019/02/19/deaf-game-review-red-dead-redemption-2/"
+    },
+    {
+      "name": "Family Gaming Database — Grand Theft Auto V accessibility report",
+      "url": "https://www.familygamingdatabase.com/accessibility/Grand+Theft+Auto+V"
+    },
+    {
+      "name": "PlayStation Store — Grand Theft Auto VI (PS5)",
+      "url": "https://www.playstation.com/en-us/games/grand-theft-auto-vi/"
+    }
+  ]
+}

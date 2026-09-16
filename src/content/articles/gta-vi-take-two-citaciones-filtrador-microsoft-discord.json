@@ -8,12 +8,17 @@
     "La respuesta más matizada ha llegado de Discord, que según Kotaku ha asegurado que evaluará la validez y el alcance del requerimiento antes de entregar nada, en un contexto de preocupación por la privacidad de sus usuarios. Microsoft, por su parte, ha señalado que trabaja estrechamente con Rockstar en la investigación, según recoge Vandal.",
     "Es la segunda vez que una filtración de GTA termina en los tribunales. La de septiembre de 2022, en la que se publicaron decenas de vídeos de una versión en desarrollo, acabó con actuaciones judiciales en el Reino Unido y con consecuencias penales para los responsables. Aquel episodio no cambió la fecha del juego, pero sí obligó a Rockstar a adelantar su comunicación.",
     "Para el lector, esto no afecta a tu cuenta ni a tu copia del juego. Lo que sí conviene tener presente es que las filtraciones son un terreno minado: buena parte de lo que circula como material filtrado en las semanas previas a un lanzamiento es falso, reciclado de otros juegos o generado con herramientas de imagen. Compartirlo tiene menos recorrido del que parece y, en el caso de material real obtenido de forma ilícita, expone a quien lo redistribuye.",
-    "Queda por ver si el tribunal concede las citaciones y qué entregan finalmente las plataformas. Si Discord mantiene su posición de revisar el alcance, el proceso puede alargarse meses y resolverse, en la práctica, después del lanzamiento del 19 de noviembre."
+    "Queda por ver si el tribunal concede las citaciones y qué entregan finalmente las plataformas. Si Discord mantiene su posición de revisar el alcance, el proceso puede alargarse meses y resolverse, en la práctica, después del lanzamiento del 19 de noviembre.",
+    "El instrumento jurídico que usa Take-Two tiene nombre y límites. Es una citación del artículo 512(h) de la ley estadounidense de derechos de autor, la DMCA, que permite al titular de un contenido pedir a un proveedor de servicios los datos de un presunto infractor. Su rasgo más llamativo es el procedimiento: la emite el secretario del tribunal sin intervención de un juez, como explica el profesor Eric Goldman en su análisis de este tipo de requerimientos. La información solo puede usarse para proteger los derechos de autor.",
+    "La cronología permite ver hasta dónde ha llegado. Las peticiones se presentaron el 20 de agosto de 2026 en el Distrito Sur de Nueva York, con plazo de entrega para el 4 de septiembre. Lo reclamado es amplio: identificador de cuenta, correo de registro, direcciones IP, teléfono, conexiones vinculadas como Google o Xbox, identificadores de dispositivo y el contenido relacionado con GTA de OneDrive. Entre los servidores señalados aparecen nombres como CYBERLEEK, CINEMATICROCKSTAR y Surfer24k, y también comunidades ajenas al asunto.",
+    "El caso dio un paso más el 24 de agosto, cuando el mismo tribunal autorizó una citación contra X Corp. para identificar al titular del perfil cyberleek_ar_io, según recogió Playground.ru citando el expediente. La duda es razonable: el propio filtrador sostiene que no usa redes sociales, así que las cuentas con ese nombre podrían ser imitaciones de terceros. Eurogamer informó además de un intento de segunda citación contra Discord, bajo sello y señalando a personas concretas. Que un documento esté sellado significa que su contenido no es público; no que el tribunal lo haya aceptado.",
+    "Los precedentes ayudan a poner expectativas. En diciembre de 2020, un ataque de ransomware contra Insomniac Games filtró material interno de juegos en desarrollo, entre ellos Wolverine. En septiembre de 2022 le tocó a Rockstar: un atacante publicó decenas de vídeos de una versión temprana de GTA VI. El responsable, Arion Kurtaj, del grupo Lapsus$, fue condenado en diciembre de 2023 a una orden de internamiento hospitalario indefinido, según recogió The Guardian. El patrón se repite: la respuesta legal llega, pero tarda y no recupera el material publicado.",
+    "Queda una pregunta práctica. Los primeros pasos del proceso rara vez terminan en una sanción visible antes del lanzamiento. Lo que sí cambia es el perímetro: conforme el caso avanza, los servidores donde circula el material pasan a ser el siguiente objetivo."
   ],
   "category": "noticias",
   "author": "redaccion",
   "publishedAt": "2026-09-15T13:00:00.000Z",
-  "updatedAt": "2026-09-15T13:00:00.000Z",
+  "updatedAt": "2026-09-16T10:00:00.000Z",
   "coverLabel": "Citaciones por filtraciones",
   "coverAlt": "Ilustración conceptual sobre las citaciones judiciales de Take-Two por las filtraciones de GTA VI",
   "tags": [
@@ -23,7 +28,7 @@
     "Discord",
     "Rockstar"
   ],
-  "readingTime": 2,
+  "readingTime": 4,
   "featured": false,
   "trending": false,
   "sources": [
@@ -42,6 +47,22 @@
     {
       "name": "Vandal — Xbox trabaja con Rockstar para descubrir al filtrador",
       "url": "https://vandal.elespanol.com/noticia/1350792484/xbox-trabaja-estrechamente-con-rockstar-para-descubrir-al-filtrador-de-gta-6/"
+    },
+    {
+      "name": "Technology & Marketing Law Blog — Qué permite una citación de la DMCA",
+      "url": "https://blog.ericgoldman.org/archives/2021/10/court-orders-unmasking-subpoena-of-alleged-infringers-baugher-v-godaddy.htm"
+    },
+    {
+      "name": "The Guardian — Condena por el hackeo de GTA VI de 2022",
+      "url": "https://www.theguardian.com/uk-news/2023/dec/21/british-teenager-behind-gta-6-hack-receives-indefinite-hospital-order"
+    },
+    {
+      "name": "Eurogamer — Take-Two intenta una segunda citación, sellada, contra Discord",
+      "url": "https://www.eurogamer.net/gta-6-leaker-discord-subpoena-sealed-take-two"
+    },
+    {
+      "name": "Sky News — Qué se sabe del ciberataque que filtró Wolverine",
+      "url": "https://news.sky.com/story/wolverine-what-we-know-about-the-cyberattack-that-leaked-one-of-playstations-most-anticipated-games-13034721"
     }
   ]
 }

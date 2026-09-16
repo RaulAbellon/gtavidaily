@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="GTA VI Daily">
+  <defs>
+    <linearGradient id="badge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="55%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#4C1D95"/>
+    </linearGradient>
+    <radialGradient id="sheen" cx="26%" cy="18%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="112.64" fill="#09090B"/>
+  <rect width="512" height="512" rx="112.64" fill="url(#badge)"/>
+  <rect width="512" height="512" rx="112.64" fill="url(#sheen)"/>
+  <rect x="23.04" y="23.04" width="465.92" height="465.92" rx="90.11" fill="none" stroke="#FFFFFF" stroke-width="3.58" opacity="0.2"/>
+  <g transform="translate(0 0) scale(1)">
+    <path d="M132 161 L224 351 L316 161" fill="none" stroke="#FFFFFF" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M380 161 V351" fill="none" stroke="#FFFFFF" stroke-width="46" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -8,12 +8,16 @@
     "El problema es que esta entrega es un caso especial. La historia transcurre en Leonida, un estado inspirado en Florida, con Lucia Caminos y Jason Duval como protagonistas y con una fuerte presencia de cultura latina. Ver a personajes hispanohablantes expresarse en inglés y leer lo que dicen en un subtítulo es una experiencia distinta a escucharlos en su idioma. Es muy probable que dentro del juego haya personajes que hablen en español, porque el contexto lo hace casi inevitable, pero ni cuántos ni con qué acento está confirmado.",
     "Si vas a jugar así, hay una cosa que conviene hacer antes de la primera misión y que casi nadie hace: entrar en opciones y ajustar el tamaño, el fondo y el contraste de los subtítulos. Es un minuto de configuración que evita dos horas de perder diálogos por tener el texto pequeño sobre un fondo claro.",
     "Sobre pedir el doblaje, conviene ser realista con lo que implica. Doblar un juego de este tamaño significa contratar un reparto amplio, dirigir sesiones durante meses y volver a grabar cada vez que cambia un guion. No es un ajuste de configuración: es una decisión de producción, y Rockstar lleva dos décadas tomando la misma. Las campañas de la comunidad han funcionado en otros estudios, no en este.",
-    "Hay además una pregunta incómoda que merece la pena hacerse: si el audio original es la versión que el estudio considera definitiva, ¿queremos un doblaje porque mejora la experiencia o porque nos resulta más cómodo? Las dos respuestas son legítimas, pero llevan a sitios distintos."
+    "Hay además una pregunta incómoda que merece la pena hacerse: si el audio original es la versión que el estudio considera definitiva, ¿queremos un doblaje porque mejora la experiencia o porque nos resulta más cómodo? Las dos respuestas son legítimas, pero llevan a sitios distintos.",
+    "Conviene mirar alrededor antes de tomarlo como una excepción. En los grandes lanzamientos de este curso el doblaje al español se ha vuelto una lotería. Tomb Raider: Legacy of Atlantis llegará con voces en español de Hispanoamérica y sin voces en español de España, según confirmó Vandal a partir del listado de idiomas del juego. Fable, cuyo estreno se ha movido a febrero de 2027, hará lo mismo: audio en inglés, portugués de Brasil, alemán y español latino, y solo textos en castellano. En el otro extremo, Crimson Desert añadió doblaje al castellano con su versión Enhanced. El castellano no desaparece: depende del editor y de su presupuesto de localización.",
+    "En el caso de GTA VI hay un matiz que juega en contra. El audio en inglés es el que ha dirigido Rockstar, y la historia ocurre en una Vice City contemporánea con una presencia latina que el propio estudio ha subrayado. Los nombres oficiales, Lucia Caminos y Raul Bautista, y las canciones con licencia del Extended Look, como Se Me Nota (Agárrame) de Chimbala y Omega, apuntan en la misma dirección. Es probable que dentro del juego se escuchen diálogos en español, con acentos distintos según el personaje. Esos momentos llegarán con su voz original y el resto del reparto no, y la mezcla resultante será más desigual que en un juego doblado por completo.",
+    "Para quien juegue con subtítulos hay tres ajustes que marcan la diferencia. El primero es el tamaño: en un mundo tan luminoso como Vice City, el texto pequeño sobre arena o asfalto claro se pierde. El segundo es el fondo o ventana del subtítulo, que añade una caja semitransparente. El tercero es el contraste o el borde del texto. Si el menú del juego no deja tocarlos, en PS5 hay un apartado de accesibilidad con subtítulos personalizables, aunque está pensado para contenido multimedia y puede no afectar a los subtítulos internos del juego.",
+    "Queda un detalle por confirmar que conviene vigilar: si el juego permitirá elegir subtítulos en español de España y de México por separado, o si la consola impondrá uno según el idioma del sistema. En GTA V, la versión de PC permitía ajustar los subtítulos desde el menú de opciones. Cuando haya copias en circulación, esa será la primera cosa que comprobaremos."
   ],
   "category": "guias",
   "author": "redaccion",
   "publishedAt": "2026-09-15T10:30:00.000Z",
-  "updatedAt": "2026-09-15T10:30:00.000Z",
+  "updatedAt": "2026-09-16T10:00:00.000Z",
   "coverLabel": "Idiomas y doblaje",
   "coverAlt": "Ilustración conceptual sobre los idiomas disponibles en GTA VI y la ausencia de doblaje al español",
   "tags": [
@@ -23,7 +27,7 @@
     "Español",
     "Compra"
   ],
-  "readingTime": 2,
+  "readingTime": 4,
   "featured": false,
   "trending": false,
   "sources": [
@@ -34,6 +38,18 @@
     {
       "name": "Nintenderos — La página oficial de idiomas de la Microsoft Store",
       "url": "https://www.nintenderos.com/2026/06/gta-6-no-viene-con-doblaje-al-espanol-asi-se-muestra-en-la-pagina-oficial-de-idiomas-de-la-microsoft-store/"
+    },
+    {
+      "name": "Vandal — Tomb Raider: Legacy of Atlantis tendrá voces latinas, no castellanas",
+      "url": "https://vandal.elespanol.com/noticia/1350790452/el-nuevo-tomb-raider-confirma-doblaje-espanol-de-hispanoamerica-pero-descarta-voces-en-espanol-de-espana/"
+    },
+    {
+      "name": "Vandal — Fable no tendrá voces en español de España",
+      "url": "https://vandal.elespanol.com/noticia/1350790574/polemica-con-fable-xbox-confirma-que-no-tendra-voces-en-espanol-de-espana-pero-si-de-hispanoamerica/"
+    },
+    {
+      "name": "PlayStation — Ajustes de accesibilidad en PS5 y subtítulos",
+      "url": "https://www.playstation.com/es-es/support/hardware/ps5-accessibility-settings/"
     }
   ]
 }

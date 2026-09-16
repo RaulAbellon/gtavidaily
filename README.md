@@ -4,7 +4,8 @@ Sitio de noticias en español sobre **Grand Theft Auto VI**: tráileres, mapa de
 Leonida, personajes y novedades de Rockstar Games y Take-Two.
 
 Sitio fan **no oficial**, sin afiliación con Rockstar Games ni Take-Two
-Interactive. Las imágenes son ilustraciones SVG generadas localmente.
+Interactive. Las portadas son ilustraciones SVG generadas localmente; cuando un
+artículo lleva una imagen propia, su autoría aparece en el pie de foto.
 
 ---
 
@@ -38,6 +39,8 @@ npm run dev                  # http://localhost:3000
 | `npm start` | Arranca el servidor standalone (multiplataforma) |
 | `npm run content` | **Valida el contenido y regenera el índice de artículos** |
 | `npm run content:check` | Solo valida (lo usa el CI) |
+| `npm run content:fix` | Recalcula el tiempo de lectura a partir del texto real |
+| `npm run content:images` | Informe de cobertura de imágenes propias por artículo |
 | `npm run content:new -- <slug>` | Crea la plantilla de un artículo nuevo |
 | `npm run lint` | ESLint con las reglas de corrección activadas |
 | `npm run typecheck` | `tsc --noEmit` (tipos estrictos) |
@@ -121,9 +124,15 @@ src/
 └─ lib/
    ├─ data.ts                    Ensambla el contenido (57 artículos, 8 categorías)
    ├─ queries.ts                 Búsqueda, recuentos y filtros de fuentes
+   ├─ images.ts                  Imagen propia del artículo, créditos y og:image
+   ├─ cover.ts                   Portadas SVG generadas que sirve /cover
    ├─ site.ts                    Configuración del sitio (una sola fuente)
    └─ consent.ts                 Tipos y lógica pura del consentimiento
 ```
+
+Además, fuera del repositorio y solo para trabajo de assets, `work/assets/`
+contiene el generador de la identidad visual y la herramienta de preparación de
+imágenes (usan `sharp`; el proyecto no la necesita para compilar).
 
 **Frontera servidor/cliente.** El contenido (`lib/data.ts`) se consulta solo
 desde componentes de servidor: así el HTML llega renderizado y el fichero de
@@ -161,6 +170,59 @@ Al añadir contenido nuevo, el criterio es:
 4. No inventar datos para redondear un artículo: si falta información
    verificable, se publica menos y se dice lo que falta.
 
+## Identidad visual
+
+El logotipo, los iconos y la imagen social se generan con un script que vive
+**fuera del repositorio** (`work/assets/build-brand.mjs`, con `sharp`), para que
+el proyecto no arrastre una dependencia nativa por una tarea que se hace de vez
+en cuando. Lo que produce va a `public/`:
+
+| Fichero | Para qué |
+| --- | --- |
+| `logo.svg` | Lockup completo (marca + nombre + lema): pie y prensa |
+| `logo-compact.svg` | Marca + nombre: lo que usa la cabecera |
+| `logo-mark.svg` / `icon.svg` | Marca cuadrada (avatar, manifiesto PWA) |
+| `icon-192.png` / `icon-512.png` / `icon-maskable-512.png` | Iconos PWA |
+| `apple-touch-icon.png` | Icono de iOS (180 px, a sangre) |
+| `favicon.ico` | ICO multi-tamaño 16/32/48 |
+| `og-image.png` | Imagen social 1200×630 |
+
+El logotipo es **original**: se compone con una tipografía geométrica propia
+definida como trazados en el propio script, así que no depende de fuentes del
+sistema ni imita la identidad de Rockstar/Take-Two. Antes, `public/logo.svg` era
+un resto del andamiaje original con el logotipo de la herramienta que generó el
+sitio.
+
+Para regenerarlo todo:
+
+```bash
+cd work/assets && node build-brand.mjs
+```
+
+## Imágenes de los artículos
+
+Cada artículo puede llevar su propia imagen, además de la portada generada. Las
+reglas completas están en `public/imagenes/README.md`; el resumen:
+
+- **Siempre copia local** en `public/imagenes/`, nunca un enlace a un tercero: el
+  validador rechaza una URL remota en `image`.
+- Campos del JSON: `image`, `imageAlt`, `imageCredit` y `imageSource`.
+- Sin imagen propia, el artículo sigue sirviendo la portada SVG de `/cover`. Es
+  una situación válida, no un problema pendiente.
+- La imagen propia se usa también como `og:image` del artículo, se declara en el
+  sitemap (Google Imágenes) y su autoría aparece en el pie de foto.
+
+Herramienta para prepararlas (recorte 16:9 por atención, 1200×675 y JPEG
+optimizado):
+
+```bash
+node work/assets/prepare-image.mjs <origen> <slug> "Autoría" "https://fuente"
+npm run content && npm run content:images
+```
+
+Antes de añadir imágenes con derechos conviene leer la política de Rockstar sobre
+material con copyright, enlazada en `public/imagenes/README.md`.
+
 ## Despliegue
 
 El sitio se despliega en **Netlify**, plan gratuito. Para este proyecto es la
@@ -190,6 +252,16 @@ cabeceras de seguridad aplicadas en el CDN.
 
 Mientras el DNS no apunte al hosting, `gtavidaily.com` seguirá mostrando la
 página de GoDaddy aunque el sitio ya esté publicado en su URL `*.netlify.app`.
+
+### Estado actual
+
+| Dato | Valor |
+| --- | --- |
+| Proyecto en Netlify | `gtavidaily-news` (`gtavidaily.netlify.app` estaba ocupado) |
+| Dominio | `gtavidaily.com` en Netlify DNS, con `www` redirigiendo 301 al raíz |
+| Registros | `ALIAS` del raíz → `apex-loadbalancer.netlify.com` y `CNAME` de `www` → `gtavidaily-news.netlify.app` |
+| Certificado | Let's Encrypt, emitido y con renovación automática |
+| Visibilidad | Pública. **Ojo:** desde julio de 2026 Netlify crea los proyectos privados por defecto (responden 401); si algún día se crea otro, hay que ponerlo en público en *Project configuration → Visitor access* |
 
 ### Publicar cambios
 

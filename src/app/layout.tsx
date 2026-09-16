@@ -72,7 +72,13 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   icons: {
-    icon: "/favicon.ico",
+    // El SVG es el preferido por los navegadores actuales; el .ico queda como
+    // respaldo y el PNG para iOS, que no acepta SVG.
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
     apple: "/apple-touch-icon.png",
   },
   // El token de verificación se lee de entorno y, si no existe, no se emite una

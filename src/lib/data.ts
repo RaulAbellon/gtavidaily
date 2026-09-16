@@ -44,6 +44,14 @@ export type Article = {
   readingTime: number; // minutos
   featured?: boolean;
   trending?: boolean;
+  /** Imagen propia del artículo, siempre una copia local en `public/imagenes/`. */
+  image?: string;
+  /** Texto alternativo de esa imagen (si falta, se usa `coverAlt`). */
+  imageAlt?: string;
+  /** Autoría o cesión de la imagen; se muestra en el pie de foto. */
+  imageCredit?: string;
+  /** Enlace a la fuente original de la imagen, para trazabilidad. */
+  imageSource?: string;
   sources?: { name: string; url: string }[]; // fuentes reales citadas
 };
 

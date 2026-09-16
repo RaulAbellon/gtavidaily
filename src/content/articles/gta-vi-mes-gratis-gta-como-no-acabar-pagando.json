@@ -9,12 +9,18 @@
     "Cómo se cancela depende de dónde lo hayas activado, y ahí está la trampa: la suscripción se gestiona desde la tienda de tu consola, no desde el juego ni desde la web de Rockstar. En PS5, entra en Ajustes, luego en Usuarios y cuentas y después en Suscripciones; en Xbox, la ruta está en la configuración de la cuenta, en el apartado de suscripciones y servicios. La regla es sencilla: cancela antes de la fecha de renovación y el cargo no se produce.",
     "El consejo práctico es apuntarse la fecha de la reserva en el calendario y revisar la suscripción la semana del lanzamiento, cuando ya habrás probado si el servicio te aporta algo. Es un minuto de gestión frente al cargo mensual que se acumula sin que lo notes.",
     "Conviene aclarar una duda habitual: cancelar la suscripción no cancela la reserva del juego ni te quita el bono de reserva. Son productos distintos y se gestionan por separado, así que puedes quedarte con el juego y con el paquete Vintage Vice City y, aun así, no seguir pagando GTA+.",
-    "¿Y cuándo no interesa cancelar? Si ya juegas a GTA Online con regularidad y aprovechas las ventajas mensuales, el mes gratis es un descuento real y seguir suscrito tiene sentido. Si no juegas, estarás pagando por ventajas que no vas a usar. La decisión es tuya, pero que sea una decisión y no un descuido."
+    "¿Y cuándo no interesa cancelar? Si ya juegas a GTA Online con regularidad y aprovechas las ventajas mensuales, el mes gratis es un descuento real y seguir suscrito tiene sentido. Si no juegas, estarás pagando por ventajas que no vas a usar. La decisión es tuya, pero que sea una decisión y no un descuido.",
+    "El precio ayuda a decidir. GTA+ costaba 5,99 euros al mes hasta abril de 2024, cuando Rockstar lo subió a 7,99 euros, un 33% más en Europa y hasta un 40% en el Reino Unido. Es la cifra que ronda hoy en PS5 y Xbox Series X|S. Sobre doce meses son unos 96 euros al año, y no hay plan anual ni descuento por varios meses.",
+    "Lo que compras con ese dinero ha cambiado desde 2022. El servicio arrancó como una bolsa de ventajas para GTA Online y hoy incluye un catálogo rotativo de juegos de Rockstar. Según la ficha de tienda recogida por 3DJuegos, dentro están GTA: The Trilogy, Red Dead Redemption con su expansión Undead Nightmare, L.A. Noire, Bully, el modo historia de GTA V y, para móviles, Liberty City Stories y Chinatown Wars.",
+    "De ahí sale el cálculo que casi nadie hace. Si el catálogo de clásicos te interesa, el mes gratis puede valer más que el contenido de GTA Online: son juegos completos que mantienes mientras la suscripción siga activa. Si solo buscas los 500.000 GTA$, el mismo dinero rinde más comprando una tarjeta de tiburón en oferta que pagando la cuota todos los meses.",
+    "Dos detalles conviene apuntarlos. El canje se limita a una cuenta por plataforma, así que el mes gratis no se reparte entre dos perfiles ni se transfiere a otra cuenta. Y el bono debe canjearse antes del 31 de marzo de 2027. Hay margen, pero no es indefinido.",
+    "Sobre lo ya canjeado, la respuesta tranquiliza a medias. Cancelar detiene los cargos futuros, pero no devuelve el dinero ya cobrado: en PlayStation Store, desactivar la renovación mantiene el servicio hasta la siguiente fecha de pago y luego termina, sin reembolso del periodo en curso. Lo recibido durante el mes gratis, el depósito de GTA$ y los objetos entregados, se queda en tu cuenta. Lo que se pierde es el acceso a las ventajas recurrentes: catálogo, descuentos y bonus mensuales.",
+    "Eso deja una ventana razonable para decidir. Activa el mes cuando vayas a aprovecharlo, prueba el catálogo y decide antes de la renovación. Si sigues, pagarás lo mismo; si no, habrás usado un mes completo sin desembolsar nada."
   ],
   "category": "guias",
   "author": "redaccion",
   "publishedAt": "2026-09-15T14:30:00.000Z",
-  "updatedAt": "2026-09-15T14:30:00.000Z",
+  "updatedAt": "2026-09-16T10:00:00.000Z",
   "coverLabel": "GTA+ mes gratis",
   "coverAlt": "Ilustración conceptual sobre la suscripción GTA+ incluida con la reserva de GTA VI",
   "tags": [
@@ -24,7 +30,7 @@
     "Compra",
     "Monetización"
   ],
-  "readingTime": 2,
+  "readingTime": 4,
   "featured": false,
   "trending": true,
   "sources": [
@@ -43,6 +49,18 @@
     {
       "name": "AreaJugones — Los bonus de reserva que pueden costarte dinero",
       "url": "https://areajugones.sport.es/videojuegos/cuidado-con-los-bonus-de-reserva-de-gta-vi-uno-de-ellos-puede-costarte-dinero-si-te-despistas/"
+    },
+    {
+      "name": "VGC — Rockstar sube el precio de GTA+ hasta un 40%",
+      "url": "https://www.videogameschronicle.com/news/rockstar-has-raised-gta-prices-by-up-to-40/"
+    },
+    {
+      "name": "PSU — La reserva de GTA VI incluye un mes de GTA+",
+      "url": "https://www.psu.com/news/grand-theft-auto-vi-pre-orders-offers-one-month-subscription-of-gta-for-free/"
+    },
+    {
+      "name": "PlayStation — Política de cancelación de PlayStation Store",
+      "url": "https://www.playstation.com/es-es/legal/playstation-store-cancellation-policy/"
     }
   ]
 }

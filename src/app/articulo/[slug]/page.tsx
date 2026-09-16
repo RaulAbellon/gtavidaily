@@ -13,7 +13,16 @@ import {
   type Article,
 } from "@/lib/data";
 import { countWords, citableSources, getAllArticleSlugs } from "@/lib/queries";
-import { coverUrl } from "@/lib/cover";
+import {
+  ARTICLE_IMAGE_HEIGHT,
+  ARTICLE_IMAGE_WIDTH,
+  articleImage,
+  articleImageAlt,
+  articleImageCredit,
+  articleImageUrl,
+  articleOgImage,
+  hasOwnImage,
+} from "@/lib/images";
 import { EDITORIAL_NAME, SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -44,13 +53,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       modifiedTime: article.updatedAt ?? article.publishedAt,
       authors: [EDITORIAL_NAME],
       tags: article.tags,
-      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: article.coverAlt }],
+      images: [
+        {
+          url: articleOgImage(article),
+          width: hasOwnImage(article) ? ARTICLE_IMAGE_WIDTH : 1200,
+          height: hasOwnImage(article) ? ARTICLE_IMAGE_HEIGHT : 630,
+          alt: articleImageAlt(article),
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: article.title,
       description: article.excerpt,
-      images: ["/og-image.png"],
+      images: [articleOgImage(article)],
     },
   };
 }
@@ -63,7 +79,7 @@ function buildJsonLd(article: Article) {
     mainEntityOfPage: { "@type": "WebPage", "@id": absoluteUrl(`/articulo/${article.slug}`) },
     headline: article.title,
     description: article.excerpt,
-    image: [`${SITE_URL}/og-image.png`],
+    image: [articleImageUrl(article)],
     datePublished: article.publishedAt,
     dateModified: article.updatedAt ?? article.publishedAt,
     author: { "@type": "Organization", name: EDITORIAL_NAME },
@@ -177,16 +193,17 @@ export default async function ArticlePage({ params }: PageProps) {
 
       <figure className="mb-8 overflow-hidden rounded-xl">
         <img
-          src={coverUrl(article)}
-          alt={article.coverAlt}
-          width={1200}
-          height={675}
+          src={articleImage(article)}
+          alt={articleImageAlt(article)}
+          width={ARTICLE_IMAGE_WIDTH}
+          height={ARTICLE_IMAGE_HEIGHT}
           fetchPriority="high"
           decoding="async"
           className="aspect-[16/9] w-full object-cover"
         />
         <figcaption className="mt-2 text-xs text-zinc-500">
-          {article.coverAlt}
+          {articleImageAlt(article)}
+          {articleImageCredit(article) ? ` · ${articleImageCredit(article)}` : ""}
         </figcaption>
       </figure>
 

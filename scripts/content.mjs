@@ -45,7 +45,15 @@ const ALLOWED_FIELDS = new Set([
   "featured",
   "trending",
   "sources",
+  "image",
+  "imageAlt",
+  "imageCredit",
+  "imageSource",
 ]);
+
+/** Carpeta pública de imágenes de artículo y extensiones admitidas. */
+const IMAGES_DIR = "imagenes";
+const ALLOWED_IMAGE_EXT = /\.(jpe?g|png|webp|avif)$/i;
 
 const MOJIBAKE = /Ã|Â«|Â»|â€|ï¿½/;
 const errors = [];
@@ -66,7 +74,14 @@ function countWords(content) {
 
 function isPermalink(url) {
   try {
-    return new URL(url).pathname.replace(/\/+$/, "").length > 0;
+    const parsed = new URL(url);
+    const path = parsed.pathname.replace(/\/+$/, "");
+    if (path.length === 0) return false;
+    // Una página de resultados no es un enlace permanente: su contenido cambia
+    // con el tiempo y deja de sostener la afirmación que cita.
+    if (/\/search\b/i.test(path)) return false;
+    if (/(^|&)(s|q|search|searchKeyword|query)=/i.test(parsed.search.slice(1))) return false;
+    return true;
   } catch {
     return false;
   }
@@ -120,6 +135,31 @@ function validate(file, article, categories) {
   }
   if (typeof article.coverAlt !== "string" || article.coverAlt.length < 10) {
     warnings.push(`${label}: coverAlt demasiado corto`);
+  }
+
+  // Imagen propia del artículo. Se exige copia local: si se enlaza a un tercero
+  // y ese medio la retira, el artículo se queda roto y sin control sobre la
+  // licencia. Ver public/imagenes/README.md.
+  if (article.image !== undefined) {
+    const image = String(article.image).trim();
+    if (!image) {
+      errors.push(`${label}: «image» está vacío (bórralo si el artículo no tiene imagen propia)`);
+    } else if (/^https?:/i.test(image)) {
+      errors.push(`${label}: «image» no puede ser una URL remota; guarda una copia en /imagenes/`);
+    } else if (!image.startsWith(`/${IMAGES_DIR}/`)) {
+      errors.push(`${label}: «image» debe empezar por /${IMAGES_DIR}/ (recibido: ${image})`);
+    } else if (!ALLOWED_IMAGE_EXT.test(image)) {
+      errors.push(`${label}: «image» debe ser jpg, png, webp o avif`);
+    } else if (!existsSync(path.join(ROOT, "public", image.replace(/^\//, "")))) {
+      errors.push(`${label}: no existe el fichero public${image}`);
+    }
+
+    if (!article.imageAlt || String(article.imageAlt).trim().length < 15) {
+      warnings.push(`${label}: conviene un «imageAlt» descriptivo (≥15 caracteres)`);
+    }
+    if (!article.imageCredit) {
+      warnings.push(`${label}: falta «imageCredit» (autoría o cesión de la imagen)`);
+    }
   }
 
   const published = Date.parse(article.publishedAt);
@@ -246,6 +286,46 @@ if (errors.length > 0) {
 
 if (COMMAND === "check") {
   console.log("\nContenido válido.");
+  process.exit(0);
+}
+
+if (COMMAND === "images") {
+  // Informe de cobertura de imágenes propias: sirve para trabajar el objetivo
+  // "una imagen por artículo" sin tener que abrir 60 ficheros a mano.
+  const withImage = articles.filter((a) => a.image);
+  const withoutImage = articles.filter((a) => !a.image);
+  const used = new Set(withImage.map((a) => a.image));
+
+  const counts = new Map();
+  for (const article of withImage) {
+    counts.set(article.image, (counts.get(article.image) ?? 0) + 1);
+  }
+  const repeated = [...counts.entries()].filter(([, n]) => n > 1);
+
+  const folder = path.join(ROOT, "public", IMAGES_DIR);
+  const files = existsSync(folder)
+    ? readdirSync(folder).filter((f) => ALLOWED_IMAGE_EXT.test(f))
+    : [];
+  const orphan = files.filter((f) => !used.has(`/${IMAGES_DIR}/${f}`));
+
+  console.log(`\nImágenes propias: ${withImage.length} de ${articles.length} artículos`);
+  console.log(`Cobertura: ${Math.round((withImage.length / articles.length) * 100)} %`);
+  console.log(`Ficheros en public/${IMAGES_DIR}/: ${files.length}`);
+
+  if (repeated.length > 0) {
+    console.log("\nImágenes usadas por más de un artículo:");
+    for (const [image, n] of repeated) console.log(`  · ${image} (${n} artículos)`);
+  }
+  if (orphan.length > 0) {
+    console.log("\nFicheros sin artículo que los use:");
+    for (const file of orphan) console.log(`  · /${IMAGES_DIR}/${file}`);
+  }
+  if (withoutImage.length > 0) {
+    console.log(`\nArtículos sin imagen propia (${withoutImage.length}):`);
+    for (const article of withoutImage.slice(0, 60)) {
+      console.log(`  · ${article.slug}`);
+    }
+  }
   process.exit(0);
 }
 

@@ -1,28 +1,30 @@
 import Link from "next/link";
-import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
+import { SITE_NAME } from "@/lib/site";
 
-/** Marca del sitio: un único nombre en todo el producto (antes convivían
- *  "GTA VI Daily" y "GTA VI HUB" en el mismo header). */
+/**
+ * Marca del sitio, con el logotipo propio (`public/logo-compact.svg`, generado
+ * por `work/assets/build-brand.mjs`). Antes era un badge con texto en CSS y el
+ * fichero `logo.svg` era un resto del andamiaje original (el logotipo de la
+ * herramienta con la que se generó el sitio, que no pintaba nada aquí).
+ *
+ * Se usa `<img>` y no `next/image` a propósito: es un SVG vectorial, ya pesa
+ * menos de 4 KB y no necesita optimización ni pasar por el CDN de imágenes.
+ */
 export function Brand({ compact = false }: { compact?: boolean }) {
   return (
     <Link
       href="/"
-      className="group flex items-center gap-2"
+      className="group flex items-center"
       aria-label={`Ir al inicio de ${SITE_NAME}`}
     >
-      <span className="flex h-9 w-9 items-center justify-center rounded-md bg-gradient-to-br from-pink-500 to-purple-600 font-black text-white shadow-[0_0_20px_-2px] shadow-pink-500/50 transition-transform group-hover:scale-105">
-        VI
-      </span>
-      {!compact && (
-        <span className="flex flex-col leading-none">
-          <span className="text-lg font-black tracking-tight text-white">
-            GTA <span className="text-pink-400">VI</span> Daily
-          </span>
-          <span className="text-[10px] uppercase tracking-[0.3em] text-cyan-400">
-            {SITE_TAGLINE.replace("Noticias de ", "").slice(0, 24)}
-          </span>
-        </span>
-      )}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={compact ? "/logo-mark.svg" : "/logo-compact.svg"}
+        alt={SITE_NAME}
+        width={compact ? 36 : 248}
+        height={36}
+        className="h-9 w-auto transition-transform group-hover:scale-[1.03]"
+      />
     </Link>
   );
 }

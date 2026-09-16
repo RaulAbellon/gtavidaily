@@ -1,0 +1,62 @@
+{
+  "slug": "gta-vi-que-puede-publicar-un-fansite",
+  "title": "Qué puede publicar tu fan site de GTA VI sin jugarte la cuenta",
+  "excerpt": "Rockstar tiene una política sobre publicación de material con copyright. Existe, pero no hemos podido leer su texto y por eso no la resumimos aquí. Estas son las reglas que sí se pueden verificar.",
+  "content": [
+    "Rockstar tiene una página oficial dedicada a este asunto: se titula Policy on posting copyrighted Rockstar Games material y vive en su soporte, en support.rockstargames.com. Es la fuente que hay que consultar antes de publicar nada. Este artículo no la resume ni la cita por una razón simple: no hemos podido leer su texto. La página no cargó en los intentos de consulta, y resumir de memoria la política de una empresa sobre derechos de autor sería exactamente el error que esta guía intenta evitar. Ten la URL delante y léela entera antes de tomar decisiones.",
+    "Aclarado eso, sí hay material verificado del que sacar reglas prácticas, y conviene empezar por la línea que el propio Rockstar marcó el 27 de agosto de 2026, el día del Extended Look. La compañía confirmó que los creadores podían emitir el vídeo en directo desde el mismo estreno en Netflix, siempre que respetaran las normas de su plataforma y aportaran contexto o comentario propio. Lo que quedó fuera fue reemitir o resubir el vídeo completo sin editar y sin comentario. Esa es la frontera: uso informativo con tu voz dentro, no redistribución del material ajeno.",
+    "Para un fan site, la traducción es sencilla. Citar fragmentos, analizar, comparar capturas o incrustar el tráiler oficial de YouTube es lo que hace la prensa especializada todos los días. Descargar el tráiler, subirlo a tu propio canal y no añadir nada más es otra cosa, y es justo lo que Rockstar excluyó por escrito. La diferencia entre las dos situaciones no es la cantidad de segundos, sino si aportas algo tuyo.",
+    "La marca es un terreno distinto y ahí la ley juega a favor de Rockstar. El logotipo, el nombre del juego y la tipografía son marcas registradas, y su titular puede impedir que se usen de un modo que sugiera respaldo, patrocinio o relación comercial. Un fan site puede hablar de GTA VI; lo que no puede es parecer el sitio oficial del juego, ni usar el logotipo como reclamo de una tienda, de merchandising o de una suscripción de pago. En el ecosistema de mods esa regla ya está escrita con detalle: si construyes un servidor sobre la plataforma de Cfx.re, el acuerdo de licencia obliga a identificar al responsable con un correo y a dejar bien claro que el proyecto no está aprobado ni patrocinado por Rockstar Games.",
+    "Cuando Take-Two decide actuar, ocurren tres cosas, y las tres están documentadas. La primera son los requerimientos directos a proyectos concretos: Rage:MP, una de las mayores plataformas de rol para GTA V, anunció su cierre tras recibir el aviso de la compañía y apagó sus servidores el 31 de agosto de 2026, animando a sus comunidades a mudarse a FiveM. La segunda son los avisos de retirada enviados a las plataformas, con peticiones judiciales para identificar a quien los publica: en agosto de 2026 Take-Two pidió a Google y a X que retiraran imágenes y vídeos del juego sin publicar, y YouTube llegó a confirmar por correo que había cumplido la retirada. La tercera afecta a falsificaciones: vídeos de GTA VI fabricados con inteligencia artificial que simulaban ser material real desaparecieron de YouTube por reclamación del titular de los derechos.",
+    "En YouTube conviene distinguir dos mecanismos que la gente mezcla y que no se parecen en nada. Una reclamación de Content ID la detecta un sistema automático: el vídeo puede seguir en pie con la publicidad destinada al titular, o quedar bloqueado en ciertos países, y normalmente no penaliza tu cuenta. Un aviso de copyright es una acción manual del titular: el vídeo se retira y el aviso queda en tu expediente. Con tres avisos activos en 90 días, la cuenta se cierra y no puedes abrir canales nuevos. Lo habitual en lanzamientos grandes no es el primero, sino la reclamación automática de la música con licencia que suena en tus partidas.",
+    "En Twitch el camino es parecido en la práctica: llega una notificación por supuesta infracción, se retiran fragmentos o emisiones, y la cuenta acumula avisos. El precedente más sonado fue la oleada masiva de avisos de retirada que obligó a miles de streamers a borrar clips, recogida por Kotaku en 2020. Si emites un juego que suena con canciones con licencia, ese es tu riesgo real, no el rótulo del juego.",
+    "La lección que deja el caso de Rage:MP es la más incómoda. Un proyecto que dependa de los servidores, del juego y de los activos de otra empresa no se protege por ser un proyecto de fans: se protege teniendo claro qué está permitido, cobrando solo si las reglas lo permiten y dejando por escrito quién eres. Eso es lo que separa un fan site que dura de uno que recibe una carta y se apaga en tres meses.",
+    "Queda una pregunta que nadie puede responder con fuentes a día de hoy: qué pasará con la avalancha de contenido de la semana del lanzamiento, con filtraciones y respuestas masivas en directo. Lo único honesto es esto: lee la política oficial completa antes de publicar, y si tu plan se sostiene solo porque todo el mundo lo hace, cambia el plan."
+  ],
+  "category": "guias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-16T09:00:00.000Z",
+  "updatedAt": "2026-09-16T09:00:00.000Z",
+  "coverLabel": "Fan sites: qué puedes publicar",
+  "coverAlt": "Ilustración sobre qué material de GTA VI puede publicar un fan site o un creador de contenido",
+  "tags": [
+    "Derechos de autor",
+    "Fan sites",
+    "Creadores",
+    "YouTube",
+    "Twitch"
+  ],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Rockstar Support — Roleplay (RP) Servers",
+      "url": "https://support.rockstargames.com/articles/5I66kExWgligszgMCU3XC1/roleplay-rp-servers"
+    },
+    {
+      "name": "Rockstar Support — Policy on posting copyrighted Rockstar Games material (no se pudo leer su texto)",
+      "url": "https://support.rockstargames.com/articles/7bNaeoMFTV0iUDGhStTXvz/policy-on-posting-copyrighted-rockstar-games-material"
+    },
+    {
+      "name": "Rockstar Support — Roleplay (RP) Servers",
+      "url": "https://support.rockstargames.com/articles/5I66kExWgligszgMCU3XC1/roleplay-rp-servers"
+    },
+    {
+      "name": "GTA BOOM — Rockstar Clarifies What Creators Can and Cannot Do With the GTA 6 Extended Look",
+      "url": "https://www.gtaboom.com/rockstar-cleared-creators-to-react-to-and-livestream-the-gta-6-extended-look-with-one-catch-151a"
+    },
+    {
+      "name": "Notebookcheck — Take-Two targets fake AI-generated leaks",
+      "url": "https://www.notebookcheck.net/GTA-6-trailer-3-release-anticipated-as-Take-Two-targets-fake-AI-generated-leaks.1351256.0.html"
+    },
+    {
+      "name": "Mashable — GTA 6 makers subpoena X, Google in hunt for Cyberleek",
+      "url": "https://me.mashable.com/tech/75273/gta-6-makers-subpoena-x-google-in-hunt-for-cyberleek"
+    },
+    {
+      "name": "RouteNote — A guide to understanding YouTube copyright strikes",
+      "url": "https://routenote.com/blog/youtube-copyright-strikes-guide/"
+    }
+  ]
+}

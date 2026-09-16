@@ -13,6 +13,7 @@
     "content": "node scripts/content.mjs index",
     "content:check": "node scripts/content.mjs check",
     "content:fix": "node scripts/content.mjs fix",
+    "content:images": "node scripts/content.mjs images",
     "content:new": "node scripts/content.mjs new",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",

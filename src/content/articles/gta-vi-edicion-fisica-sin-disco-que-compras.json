@@ -9,12 +9,18 @@
     "Sobre las ediciones, en tienda física lo que se comercializa es la estándar, a 79,99 euros. El contenido de la Ultimate se adquiere aparte desde la tienda digital de tu consola una vez canjeado el código. Dicho de otro modo: la caja no te da acceso directo a la edición de 100 euros.",
     "Lo que todavía no se sabe es cuánto dura el código. Rockstar no ha publicado plazo de caducidad ni límite de canjes por cuenta, y tampoco ha anunciado una edición posterior con disco. Las versiones que hablan de una caja con disco real más adelante son, hoy, rumores sin confirmar por la compañía.",
     "Hay un caso en el que la caja se comporta distinto de lo que espera la gente: el regalo. Un código canjeado queda atado a la cuenta que lo usó y ya no se puede transferir. Si compras el juego para regalarlo, no lo abras ni lo canjees por adelantado, por muy bien que suene tenerlo listo.",
+    "La secuencia completa, desde que pagas hasta que juegas, tiene cinco pasos. Reservas o compras la caja. El 12 de noviembre la recibes con el código dentro y lo canjeas en la cuenta de tu consola. Desde ese momento puedes predescargar. El 19 de noviembre a medianoche, hora local de tu país, el juego se desbloquea. A partir de ahí todo funciona como una compra digital: la copia queda vinculada a tu cuenta y depende de la tienda de tu plataforma.",
+    "Ese último punto sorprende a mucha gente. Aunque el pago se haya hecho en una tienda física, el juego se comporta como una compra digital, y eso cambia las devoluciones: en las reservas digitales, si pagaste con más de 14 días de antelación puedes cancelar antes del lanzamiento y recuperar el dinero, siempre que no hayas empezado a descargar el contenido.",
+    "En el caso de la caja, el reloj de la devolución empieza antes: las reservas se pueden cancelar sin coste hasta principios de noviembre, unos 14 días antes del lanzamiento. Si la cancelas, pierdes el contenido ligado a la reserva, entre él el paquete Vintage Vice City y el mes gratis de GTA+.",
+    "Después del lanzamiento el terreno cambia. Para juegos digitales el plazo general es de 14 días desde la compra, y se pierde en cuanto empieza la descarga. Para artículos físicos son 30 días con el precinto intacto, y cada cadena aplica después sus condiciones.",
+    "El otro punto delicado son los imprevistos. Si pierdes el código antes de canjearlo, no hay tienda ni plataforma que lo reponga: es de un solo uso y quien lo encuentre puede usarlo. Si lo pierdes después de canjearlo, el problema es menor: la licencia ya está en tu cuenta y puedes volver a descargar el juego.",
+    "Y si quieres revenderlo, la respuesta es incómoda: un código canjeado no se puede transferir ni vender, porque queda atado a la cuenta que lo activó. Un código sin canjear sí se puede vender, prestar o regalar. Ese es el cambio de fondo respecto a un disco: GTA VI no entrará en el circuito de reventa e intercambio que sí alimentó a las entregas anteriores.",
     "En resumen: la caja tiene sentido si te apetece el objeto físico, si te la van a regalar o si prefieres pagar en efectivo en una tienda de confianza. Si lo único que te importa es jugar el primer día, la versión digital hace exactamente lo mismo, llega a tu consola sin intermediarios y te ahorra el trámite del canje."
   ],
   "category": "guias",
   "author": "redaccion",
   "publishedAt": "2026-09-15T10:00:00.000Z",
-  "updatedAt": "2026-09-15T10:00:00.000Z",
+  "updatedAt": "2026-09-16T10:00:00.000Z",
   "coverLabel": "Caja sin disco",
   "coverAlt": "Ilustración conceptual de una caja de GTA VI con un código de descarga en lugar de un disco",
   "tags": [
@@ -24,7 +30,7 @@
     "Predescarga",
     "Código de descarga"
   ],
-  "readingTime": 2,
+  "readingTime": 4,
   "featured": false,
   "trending": false,
   "sources": [
@@ -39,6 +45,18 @@
     {
       "name": "Gematsu — Precio, Ultimate Edition y bonos de reserva",
       "url": "https://www.gematsu.com/2026/06/grand-theft-auto-vi-pricing-ultimate-edition-and-pre-order-bonuses-announced"
+    },
+    {
+      "name": "PlayStation — Política de cancelación de PlayStation Store",
+      "url": "https://www.playstation.com/es-es/legal/playstation-store-cancellation-policy/"
+    },
+    {
+      "name": "PlayStation — Cómo cancelar una reserva de PlayStation Store",
+      "url": "https://www.playstation.com/en-us/support/store/cancel-ps-store-pre-order/"
+    },
+    {
+      "name": "GamesWirtschaft — Sin clasificación de edad: efectos en la preventa",
+      "url": "https://www.gameswirtschaft.de/wirtschaft/grand-theft-auto-6-gta-6-altersfreigabe-140826/"
     }
   ]
 }

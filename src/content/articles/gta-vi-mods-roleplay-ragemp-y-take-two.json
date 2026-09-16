@@ -1,0 +1,62 @@
+{
+  "slug": "gta-vi-mods-roleplay-ragemp-y-take-two",
+  "title": "Take-Two cierra Rage:MP: el rol se queda en GTA V",
+  "excerpt": "El 31 de agosto de 2026 Rage:MP apagó sus servidores tras el requerimiento de Take-Two. La comunidad de rol hispanohablante seguirá anclada a Los Santos: GTA VI no tendrá online el 19 de noviembre.",
+  "content": [
+    "Rage:MP se apagó el 31 de agosto de 2026. La plataforma de servidores multijugador para GTA V anunció el 25 de mayo que iniciaba un cierre ordenado a petición de Take-Two Interactive, y lo ejecutó por etapas: no se admitieron servidores nuevos desde ese primer día, la lista pública cayó el 1 de junio y la infraestructura completa cesó a final de agosto. Quien tuviera un proyecto de rol montado ahí tenía, como única salida, mudarlo a FiveM.",
+    "El motivo lo dejó escrito el propio equipo de Rage:MP en su anuncio de despedida. Según su relato, Rockstar Games y Take-Two les comunicaron que FiveM es la única plataforma autorizada para el modding multijugador de GTA V, conforme al acuerdo de licencia de plataforma. La empresa no ha publicado un comunicado propio sobre este caso, así que ese extremo se sostiene sobre lo que dijeron los afectados y sobre la cobertura de medios especializados. Lo que sí es un hecho comprobable es el resultado: una de las dos grandes alternativas del rol en PC dejó de existir.",
+    "Conviene mirar la fecha. El cierre se consumó tres meses antes del lanzamiento de GTA VI, y no fue un movimiento aislado: alt:V, otro mod multijugador con nueve años de recorrido, ya había anunciado su cierre en febrero de 2026 tras un aviso similar. Take-Two está concentrando toda la escena de multijugador modificado de GTA V en una única plataforma que le pertenece desde que adquirió Cfx.re en agosto de 2023.",
+    "La pregunta que se hace cualquier creador de rol en español es la siguiente: ¿y ahora qué? La respuesta corta es que no hay mudanza a Vice City. GTA VI llega el 19 de noviembre de 2026 a PS5 y Xbox Series X|S con una experiencia para un jugador. El comunicado de Rockstar del 24 de junio lo describe como una experiencia individual, y Rockstar no ha anunciado ni nombre, ni fecha ni ventana para un online de GTA VI. Tampoco hay versión de PC anunciada, y el modding de rol vive precisamente en PC. Sin online y sin PC no hay base sobre la que construir. Traducción: la escena de rol hispanohablante sigue anclada a GTA V por un tiempo indeterminado.",
+    "El forcejeo entre Take-Two y las plataformas de modding no empezó ayer. En 2015 la compañía calificó FiveM de servicio multijugador no autorizado y suspendió cuentas del Social Club de sus creadores; algunos modders de entonces aseguraron que la empresa envió investigadores privados a sus casas, según recogió Ars Technica. Después Take-Two bloqueó proyectos de ingeniería inversa de GTA III y Vice City. El giro llegó en 2023: en lugar de seguir peleando contra la comunidad de rol, Rockstar compró al equipo que la sostenía.",
+    "Para los servidores en español que hoy operan en FiveM, las reglas están escritas y son más estrictas de lo que sugiere la costumbre. La política de Rockstar sobre servidores de rol fija cinco prioridades de actuación legal: el mal uso de sus marcas o de su propiedad intelectual; el uso de propiedad intelectual ajena, incluidas marcas reales, personajes o música; la explotación comercial, con mención expresa a las cajas botín, la venta de moneda virtual, los patrocinios de marcas y las criptomonedas o NFT; la creación de juegos, historias, misiones o mapas nuevos; y la interferencia con sus servicios oficiales. El propio texto aclara que no es una licencia ni implica aprobación de ningún proyecto.",
+    "Encima de eso, desde el 12 de enero de 2026 rige un nuevo acuerdo de licencia de creador de Cfx.re. El texto está publicado en fivem.net/terms, y un proveedor de alojamiento de servidores de juego lo ha desglosado. Lo práctico: los cobros deben pasar por Tebex y por ningún otro sitio, así que un enlace de PayPal, Patreon o Ko-fi en el Discord del servidor es una infracción; no se puede vender moneda virtual del servidor por dinero real; no se pueden vender cajas, ruletas ni sorteos, ni siquiera pagados con dinero del propio servidor; no vale pedir donaciones a cambio de nada, porque todo paquete debe describir qué entrega; y la web y la tienda deben identificar al responsable con un correo válido y llevar bien visible que el servidor no está aprobado, patrocinado ni respaldado por Rockstar Games.",
+    "Nada de esto es una interpretación cerrada, y conviene decirlo. Los propios creadores discuten desde enero de 2026 qué significa exactamente cada cláusula: hay dudas razonables sobre si se puede vender la moneda del propio servidor o sobre si pesan las mecánicas de azar sin dinero real de por medio. El acuerdo reserva a Rockstar la potestad de ampliar la lista y de retirar el permiso cuando quiera. Ante la duda, la opción segura es la aburrida: cobrar solo por ventajas que existen dentro de tu servidor y no se convierten en dinero.",
+    "Mientras no haya online de GTA VI, el escenario que queda es mantener la comunidad en GTA V y preparar el terreno. El dato a vigilar ya no es la fecha de lanzamiento, sino cuándo y cómo anuncia Rockstar la siguiente evolución del rol. El 1 de septiembre de 2026 dio una pista: presentó su colaboración oficial con el servidor nopixel, cuya beta cerrada se abrió el 8 de septiembre a través del Rockstar Games Launcher. Cuando el rol oficial llegue a Leonida, todo apunta a que llegará por ahí: servidor oficial, launcher oficial y reglas oficiales."
+  ],
+  "category": "noticias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-16T09:00:00.000Z",
+  "updatedAt": "2026-09-16T09:00:00.000Z",
+  "coverLabel": "El rol se queda en GTA V",
+  "coverAlt": "Ilustración sobre el cierre de la plataforma de rol Rage:MP tras el requerimiento legal de Take-Two",
+  "tags": [
+    "Mods",
+    "Rol",
+    "FiveM",
+    "Take-Two",
+    "Comunidad"
+  ],
+  "readingTime": 5,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Kotaku — Take-Two Forcing Another Popular GTA Roleplay Multiplayer Platform To Shut Down",
+      "url": "https://kotaku.com/take-two-forcing-another-popular-gta-roleplay-multiplayer-platform-to-shut-down-2000699497"
+    },
+    {
+      "name": "Vandal — Golpe a la comunidad de creadores de GTA 5: Take-Two tumba una de las mayores plataformas multijugador",
+      "url": "https://vandal.elespanol.com/noticia/1350790487/golpe-a-la-comunidad-de-creadores-de-gta-5-taketwo-tumba-una-de-las-mayores-plataformas-multijugador/"
+    },
+    {
+      "name": "Rage:MP — Long-Term Eco-System Integration, Pt. II: Final Outreach / C&D (anuncio de cierre)",
+      "url": "https://rage.mp/forums/topic/26561-long-term-eco-system-integration-pt-ii-final-outreach-cd/"
+    },
+    {
+      "name": "NME — Grand Theft Auto bosses reveal next evolution of Online roleplay spin-off",
+      "url": "https://www.nme.com/news/gaming-news/grand-theft-auto-online-roleplay-nopixel-3966553"
+    },
+    {
+      "name": "Cfx.re — Updates to the Creator Platform License Agreement",
+      "url": "https://forum.cfx.re/t/updates-to-the-creator-platform-license-agreement/5371920"
+    },
+    {
+      "name": "LibertyCity — Take-Two está cerrando otra popular plataforma multijugador de GTA 5",
+      "url": "https://es.libertycity.net/news/gta-5/9790-take-two-is-shutting-down-another.html"
+    },
+    {
+      "name": "GameServerKings — FiveM Server Monetisation: What the Cfx.re Rules Actually Allow",
+      "url": "https://www.gameserverkings.com/knowledge-base/fivem/server-monetisation/"
+    }
+  ]
+}

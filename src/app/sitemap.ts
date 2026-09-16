@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { articles, categories } from "@/lib/data";
+import { articleImageUrl, hasOwnImage } from "@/lib/images";
 import { SITE_URL, STATIC_ROUTES } from "@/lib/site";
 
 /**
@@ -47,6 +48,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(article.updatedAt ?? article.publishedAt),
     changeFrequency: "weekly",
     priority: 0.9,
+    // Solo se declaran las imágenes propias: las portadas generadas se sirven
+    // desde /cover y no aportan nada al índice de imágenes.
+    ...(hasOwnImage(article) ? { images: [articleImageUrl(article)] } : {}),
   }));
 
   return [

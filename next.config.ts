@@ -42,8 +42,11 @@ export function outputMode(
 const nextConfig: NextConfig = {
   output: outputMode(),
 
-  // Las portadas son SVG generados localmente como data URI: no hay nada que
-  // optimizar en build.
+  // Las portadas se generan como SVG en /cover y las imágenes propias de cada
+  // artículo se preparan ya recortadas y comprimidas a 1200×675 en
+  // `public/imagenes/` (ver work/assets/prepare-image.mjs). No hay nada que
+  // optimizar en caliente, así que se sirven tal cual y se ahorra una capa de
+  // transformación en el CDN.
   images: {
     unoptimized: true,
   },
