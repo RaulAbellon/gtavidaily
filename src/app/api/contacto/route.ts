@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { CONTACT_EMAIL } from "@/lib/site";
+import { CONTACT_EMAIL, SITE_NAME } from "@/lib/site";
 
 /**
  * Endpoint del formulario de contacto.
@@ -8,6 +8,10 @@ import { CONTACT_EMAIL } from "@/lib/site";
  * se valida de verdad y, si no hay proveedor de envío configurado
  * (CONTACT_WEBHOOK_URL), se responde con un error explícito indicando el email
  * directo en lugar de fingir que el mensaje ha salido.
+ *
+ * El proveedor por defecto es Web3Forms, que exige una clave en el cuerpo
+ * (CONTACT_WEBHOOK_KEY). El código no la da por supuesta: sin ella el cuerpo
+ * sigue siendo válido para cualquier webhook propio.
  */
 
 const MAX = { name: 120, email: 200, subject: 160, message: 4000 } as const;
@@ -56,14 +60,19 @@ export async function POST(request: Request) {
   }
 
   try {
+    const key = process.env.CONTACT_WEBHOOK_KEY?.trim();
+
     const response = await fetch(webhook, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
+        // Web3Forms exige la clave en el cuerpo; otros webhooks la ignoran.
+        ...(key ? { access_key: key } : {}),
         name,
         email,
-        subject,
+        subject: subject || `Mensaje desde ${SITE_NAME}`,
         message,
+        from_name: SITE_NAME,
         receivedAt: new Date().toISOString(),
       }),
     });
