@@ -169,6 +169,20 @@ export function LegalPrivacy() {
             anteriores del usuario a nuestro sitio o a otros sitios.
           </p>
           <p>
+            <strong>Quién recoge tu consentimiento.</strong> En el Espacio
+            Económico Europeo, el Reino Unido y Suiza lo recoge la plataforma de
+            gestión de consentimiento (CMP) certificada por Google, obligatoria
+            en esas regiones, que emite la cadena de consentimiento del marco
+            europeo (IAB TCF); puedes cambiar o retirar tu decisión desde
+            «Configurar cookies» en el pie de página. En el resto del mundo lo
+            recoge el banner propio del sitio. En ambos casos el sistema arranca
+            con el Consent Mode v2 de Google en estado denegado, de modo que
+            hasta que no decides no se escribe ninguna cookie publicitaria ni se
+            personaliza la publicidad: la etiqueta de Google está presente en las
+            páginas porque es la que sirve el mensaje de consentimiento donde es
+            obligatorio.
+          </p>
+          <p>
             El uso de cookies de publicidad por parte de Google permite a
             Google y a sus partners mostrar anuncios a tus usuarios en base a
             su visita a nuestros sitios o a otros sitios en Internet. Los

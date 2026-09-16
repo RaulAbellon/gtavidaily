@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { useConsent } from "@/components/consent/use-consent";
+import { useConsentRegion } from "@/components/consent/use-consent-region";
+import { canShowAdSlot } from "@/lib/consent";
 import { ADSENSE_CLIENT, ADSENSE_ENABLED } from "@/lib/site";
 
 type AdSlotProps = {
@@ -12,14 +14,22 @@ type AdSlotProps = {
 };
 
 /**
- * Bloque publicitario condicionado al consentimiento.
+ * Bloque publicitario.
  *
- * Si no hay consentimiento de publicidad o no hay un identificador de cliente
- * real configurado, **no se renderiza nada**: ni anuncio, ni hueco vacío con
- * borde discontinuo (antes se pintaban nueve). Solo cuando el hueco ya está en
- * el DOM y tiene ancho suficiente se empuja el anuncio, evitando el error
- * clásico de AdSense "No slot size for availableWidth=0" y el doble push que
- * provoca React en modo estricto.
+ * Se muestra en dos situaciones:
+ *
+ * - La persona usuaria ha aceptado publicidad en **nuestro** banner (fuera del
+ *   EEE: es nuestro criterio, y sin aceptar no se muestra nada).
+ * - El consentimiento lo gestiona la **CMP certificada de Google** (EEE, Reino
+ *   Unido y Suiza). Ahí el hueco se pinta siempre y es Google quien decide qué
+ *   sirve según la decisión registrada; si no se ha aceptado, no sirve anuncios
+ *   personalizados. Si no pintáramos el hueco, esos visitantes no tendrían
+ *   anuncios nunca.
+ *
+ * Sin un identificador de cliente real configurado no se renderiza nada: ni
+ * anuncio ni hueco vacío con borde discontinuo. Solo se empuja el anuncio cuando
+ * el hueco ya está en el DOM y tiene ancho suficiente, evitando el error clásico
+ * "No slot size for availableWidth=0" y el doble push de React en modo estricto.
  */
 export function AdSlot({
   slot,
@@ -28,9 +38,10 @@ export function AdSlot({
   minHeight = 90,
 }: AdSlotProps) {
   const consent = useConsent();
+  const region = useConsentRegion();
   const insRef = useRef<HTMLModElement | null>(null);
   const pushed = useRef(false);
-  const allowed = ADSENSE_ENABLED && consent?.marketing === true;
+  const allowed = ADSENSE_ENABLED && canShowAdSlot(consent, region);
 
   useEffect(() => {
     if (!allowed) {

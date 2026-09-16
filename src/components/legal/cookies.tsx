@@ -92,6 +92,37 @@ export function LegalCookies() {
               configuración. Duración: 6 meses.
             </li>
           </ul>
+
+          <h3 className="mt-4 text-lg font-semibold text-pink-400">
+            2.4. Quién recoge tu consentimiento
+          </h3>
+          <p>
+            Depende de dónde nos visites, porque la normativa aplicable no es la
+            misma:
+          </p>
+          <ul className="ml-6 list-disc space-y-1 text-sm">
+            <li>
+              <strong>Espacio Económico Europeo, Reino Unido y Suiza:</strong> el
+              consentimiento lo recoge la plataforma de gestión de consentimiento
+              (CMP) certificada por Google, que es obligatoria en esas regiones y
+              emite la cadena de consentimiento del marco europeo (IAB TCF). Para
+              cambiar o retirar tu decisión, usa el enlace «Configurar cookies»
+              del pie de página.
+            </li>
+            <li>
+              <strong>Resto del mundo:</strong> lo recoge el banner propio de este
+              sitio.
+            </li>
+          </ul>
+          <p>
+            En ambos casos el sitio arranca con el <strong>Consent Mode v2</strong>{" "}
+            de Google en estado <strong>denegado</strong>: hasta que no decides,
+            no se escribe ninguna cookie publicitaria ni se personaliza la
+            publicidad. La etiqueta de Google está presente en todas las páginas
+            porque es la que sirve el mensaje de consentimiento allí donde es
+            obligatorio; la cookie que guarda esa decisión es técnica, no de
+            seguimiento.
+          </p>
         </section>
 
         <section>

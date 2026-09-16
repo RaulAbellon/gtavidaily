@@ -90,6 +90,35 @@ export function canLoadAdvertising(state: ConsentState | null): boolean {
   return state?.marketing === true;
 }
 
+/**
+ * Quién gestiona el consentimiento de este visitante.
+ *
+ * En el Espacio Económico Europeo, el Reino Unido y Suiza es obligatorio usar
+ * una CMP certificada por Google, que emite la cadena de consentimiento del
+ * marco IAB TCF. Nuestro banner no lo es, así que allí manda el mensaje de
+ * Google y el nuestro no debe aparecer.
+ */
+export type ConsentRegion = "unknown" | "google" | "own";
+
+/**
+ * ¿Se puede pintar el hueco publicitario?
+ *
+ * - Con la CMP de Google, sí: decide Google según la decisión registrada. Si no
+ *   pintáramos el hueco, esos visitantes —la mayoría de nuestra audiencia— no
+ *   tendrían anuncios nunca.
+ * - Con nuestro banner, solo si hay consentimiento de publicidad explícito.
+ * - Mientras no se sabe quién gestiona el consentimiento (`unknown`, durante la
+ *   hidratación), no se pinta nada.
+ */
+export function canShowAdSlot(
+  state: ConsentState | null | undefined,
+  region: ConsentRegion
+): boolean {
+  if (region === "google") return true;
+  if (region !== "own") return false;
+  return state?.marketing === true;
+}
+
 /** ¿Se puede cargar analítica? */
 export function canLoadAnalytics(state: ConsentState | null): boolean {
   return state?.analytics === true;

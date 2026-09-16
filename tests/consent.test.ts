@@ -8,6 +8,7 @@ import {
   buildConsentState,
   canLoadAdvertising,
   canLoadAnalytics,
+  canShowAdSlot,
   parseStoredConsent,
   toConsentModeSignals,
 } from "@/lib/consent";
@@ -49,6 +50,26 @@ describe("consentimiento", () => {
     expect(canLoadAnalytics(null)).toBe(false);
     expect(canLoadAnalytics(buildConsentState({ analytics: false, marketing: true }))).toBe(false);
     expect(canLoadAnalytics(buildConsentState(ALLOW_ALL))).toBe(true);
+  });
+
+  it("decide el hueco publicitario según quién gestione el consentimiento", () => {
+    const allow = buildConsentState(ALLOW_ALL);
+    const deny = buildConsentState(DENY_ALL);
+
+    // Nuestro banner: solo con consentimiento explícito de publicidad.
+    expect(canShowAdSlot(null, "own")).toBe(false);
+    expect(canShowAdSlot(deny, "own")).toBe(false);
+    expect(canShowAdSlot(allow, "own")).toBe(true);
+
+    // CMP de Google (EEE, Reino Unido y Suiza): el hueco se pinta y decide
+    // Google; si no, esa audiencia no tendría anuncios nunca.
+    expect(canShowAdSlot(null, "google")).toBe(true);
+    expect(canShowAdSlot(deny, "google")).toBe(true);
+
+    // Mientras no se sabe quién gestiona el consentimiento, no se pinta nada.
+    expect(canShowAdSlot(allow, "unknown")).toBe(false);
+    expect(canShowAdSlot(null, "unknown")).toBe(false);
+    expect(canShowAdSlot(undefined, "unknown")).toBe(false);
   });
 
   it("guarda la versión y la fecha de la decisión", () => {

@@ -23,16 +23,27 @@ function gtag(...args: unknown[]) {
 
 /**
  * Aplica el consentimiento a Google Consent Mode v2 y carga el script de
- * AdSense **solo** cuando la persona usuaria ha aceptado publicidad.
+ * AdSense.
  *
- * El código original inyectaba el script en el `<head>` de forma
- * incondicional, así que la publicidad se servía antes de cualquier
- * consentimiento, y el banner emitía un evento que nadie escuchaba.
+ * Dos etapas, y conviene no confundirlas:
+ *
+ * 1. **Antes** este componente no cargaba el script hasta que hubiera
+ *    consentimiento. Ya no puede ser así: el mensaje de consentimiento de
+ *    Google (la CMP certificada que exige el marco europeo en el EEE, Reino
+ *    Unido y Suiza) **se sirve precisamente desde el script de AdSense**. Sin
+ *    script no hay mensaje, y sin mensaje no hay cadena de consentimiento: los
+ *    anuncios llegarían como "limited ads" o no llegarían.
+ * 2. Lo que sí se mantiene intacto es la parte que importa: **Consent Mode v2
+ *    arranca en `denied`**, así que no se escribe ninguna cookie publicitaria ni
+ *    se personaliza nada hasta que la persona usuaria decide. La decisión la
+ *    recoge la CMP de Google (en el EEE) o nuestro propio banner (fuera).
+ *
+ * El código original inyectaba el script sin ninguna señal de consentimiento:
+ * eso sí era servir publicidad antes de preguntar.
  */
 export function ConsentScripts() {
   const consent = useConsent();
   const sentDefault = useRef(false);
-  const adsAllowed = ADSENSE_ENABLED && consent?.marketing === true;
 
   useEffect(() => {
     if (!sentDefault.current) {
@@ -51,7 +62,7 @@ export function ConsentScripts() {
   }, [consent]);
 
   useEffect(() => {
-    if (!adsAllowed) return;
+    if (!ADSENSE_ENABLED) return;
     if (document.querySelector("script[data-adsense-loader]")) return;
 
     const script = document.createElement("script");
@@ -60,7 +71,7 @@ export function ConsentScripts() {
     script.dataset.adsenseLoader = "true";
     script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`;
     document.head.appendChild(script);
-  }, [adsAllowed]);
+  }, []);
 
   return null;
 }

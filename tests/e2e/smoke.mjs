@@ -137,15 +137,18 @@ async function main() {
     ok("ninguna portada incrustada como data URI");
   }
 
-  // Privacidad: el cargador de AdSense no debe estar en el HTML inicial.
+  // Privacidad: el HTML inicial no trae el script de AdSense. Se inyecta al
+  // hidratar, con Consent Mode v2 arrancando en "denied", y en el EEE el mensaje
+  // de la CMP certificada de Google va por delante de cualquier anuncio. Que no
+  // esté en el HTML también significa que no entra en la ruta crítica de carga.
   for (const [label, page] of [
     ["home", home],
     ["artículo", article],
   ]) {
     if (/adsbygoogle\.js/.test(page.body)) {
-      fail(`AdSense en ${label}`, "el script se sirve antes del consentimiento");
+      fail(`AdSense en ${label}`, "el script aparece en el HTML inicial");
     } else {
-      ok(`sin script de AdSense antes del consentimiento (${label})`);
+      ok(`el HTML de ${label} no trae el script de AdSense`);
     }
   }
 

@@ -5,6 +5,10 @@ import Link from "next/link";
 import { Cookie, X } from "lucide-react";
 import { useConsent } from "@/components/consent/use-consent";
 import {
+  openGoogleConsentSettings,
+  useConsentRegion,
+} from "@/components/consent/use-consent-region";
+import {
   ALLOW_ALL,
   CONSENT_EVENT,
   CONSENT_STORAGE_KEY,
@@ -17,7 +21,13 @@ import {
 export const OPEN_CONSENT_SETTINGS_EVENT = "consent-open-settings";
 
 /**
- * Banner de consentimiento.
+ * Banner de consentimiento propio.
+ *
+ * Se muestra cuando el consentimiento lo gestionamos nosotros: fuera del Espacio
+ * Económico Europeo, Reino Unido y Suiza. Dentro de esas regiones lo lleva la CMP
+ * certificada de Google (obligatoria para servir anuncios allí) y este banner
+ * **no debe aparecer**: dos banners a la vez es confuso y, además, el nuestro no
+ * emite la cadena de consentimiento del marco europeo.
  *
  * Diferencias con el original: las casillas empiezan **desactivadas**, la
  * decisión se emite de verdad (evento que sí se escucha), se puede volver a
@@ -26,6 +36,7 @@ export const OPEN_CONSENT_SETTINGS_EVENT = "consent-open-settings";
  */
 export function CookieBanner() {
   const consent = useConsent();
+  const region = useConsentRegion();
   const [forceOpen, setForceOpen] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [overrides, setOverrides] = useState<Partial<ConsentDecision>>({});
@@ -34,11 +45,16 @@ export function CookieBanner() {
   const marketing = overrides.marketing ?? consent?.marketing ?? false;
 
   // Sin decisión guardada (null) el banner aparece; en el servidor y durante la
-  // hidratación `consent` es undefined y no se renderiza nada.
-  const visible = forceOpen || consent === null;
+  // hidratación `consent` es undefined. Mientras no se sabe quién gestiona el
+  // consentimiento no se pinta nada, para no enseñar dos banners.
+  const visible =
+    region !== "google" && (forceOpen || (region === "own" && consent === null));
 
   useEffect(() => {
     const open = () => {
+      // En el EEE la forma de cambiar de opinión es el mensaje de revocación de
+      // Google; si no está disponible, se abre el nuestro.
+      if (openGoogleConsentSettings()) return;
       setOverrides({});
       setShowDetails(true);
       setForceOpen(true);
