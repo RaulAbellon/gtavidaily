@@ -61,6 +61,71 @@ describe("netlify.toml", () => {
   });
 });
 
+describe("Cloudflare (adaptador de OpenNext)", () => {
+  const wrangler = readFileSync(
+    fileURLToPath(new URL("../wrangler.jsonc", import.meta.url)),
+    "utf8"
+  );
+  const cloudflareHeaders = readFileSync(
+    fileURLToPath(new URL("../public/_headers", import.meta.url)),
+    "utf8"
+  );
+
+  it("apunta al Worker que genera el adaptador", () => {
+    expect(wrangler).toContain('"main": ".open-next/worker.js"');
+    expect(wrangler).toContain('"directory": ".open-next/assets"');
+  });
+
+  it("activa nodejs_compat, que Next.js 16 necesita", () => {
+    expect(wrangler).toContain('"nodejs_compat"');
+  });
+
+  it("usa una fecha de compatibilidad posterior a nodejs_compat", () => {
+    const date = /"compatibility_date":\s*"(\d{4}-\d{2}-\d{2})"/.exec(wrangler)?.[1];
+    expect(date, "falta compatibility_date").toBeTruthy();
+    expect(new Date(date as string).getTime()).toBeGreaterThan(
+      new Date("2024-09-23").getTime()
+    );
+  });
+
+  it("el binding de auto-referencia se llama como el Worker", () => {
+    const name = /"name":\s*"([^"]+)"/.exec(wrangler)?.[1];
+    const service = /"service":\s*"([^"]+)"/.exec(wrangler)?.[1];
+    expect(name).toBeTruthy();
+    expect(service).toBe(name);
+  });
+
+  it("atiende las peticiones con el Worker antes que los activos estáticos", () => {
+    // Sin `run_worker_first` se perderían la CSP del HTML y la reescritura de
+    // `/.well-known/security.txt`, que las aplica Next (ver next.config.ts).
+    expect(wrangler).toContain('"run_worker_first": true');
+  });
+
+  it("replica exactamente la misma CSP que next.config.ts", () => {
+    // En Cloudflare, `_headers` no se aplica a lo que genera el Worker, así que
+    // la CSP vive en dos sitios y no pueden divergir.
+    expect(cloudflareHeaders).toContain(CSP);
+  });
+
+  it("declara las cabeceras de seguridad de los activos estáticos", () => {
+    for (const header of [
+      "X-Content-Type-Options",
+      "X-Frame-Options",
+      "Referrer-Policy",
+      "Permissions-Policy",
+      "Strict-Transport-Security",
+    ]) {
+      expect(cloudflareHeaders, `falta ${header}`).toContain(header);
+    }
+  });
+
+  it("no deja los activos con hash sin caché larga", () => {
+    expect(cloudflareHeaders).toMatch(
+      /\/_next\/static\/\*[\s\S]*?Cache-Control:\s*public,\s*max-age=\d+,\s*immutable/
+    );
+  });
+});
+
 describe("ads.txt", () => {
   // El fichero se sirve como **estático** desde `public/`, que es la forma
   // canónica que describe Google: sin función de por medio, con el tipo de

@@ -7,6 +7,12 @@ import nextTypescript from "eslint-config-next/typescript";
  * La versión anterior desactivaba ~30 reglas (incluidas `no-unused-vars`,
  * `no-undef`, `no-unreachable` y `react-hooks/exhaustive-deps`), así que el
  * linting no detectaba nada.
+ *
+ * `eslint-plugin-react-hooks` está además declarado en `devDependencies`
+ * (aunque ya venga con `eslint-config-next`) porque ESLint 9 lo resuelve por
+ * nombre desde la raíz: instalado solo como dependencia transitiva, `npm run
+ * lint` falla con «could not find plugin react-hooks» según cómo quede el árbol
+ * de dependencias. Lo detectó la migración a Cloudflare al añadir wrangler.
  */
 const eslintConfig = [
   ...nextCoreWebVitals,
@@ -39,7 +45,18 @@ const eslintConfig = [
     },
   },
   {
-    ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"],
+    // `.open-next` y `.wrangler` son artefactos del adaptador de Cloudflare:
+    // sin excluirlos, `npm run lint` después de `cf:build` analiza el bundle
+    // entero y falla con decenas de miles de avisos que no son del proyecto.
+    ignores: [
+      "node_modules/**",
+      ".next/**",
+      ".open-next/**",
+      ".wrangler/**",
+      "out/**",
+      "build/**",
+      "next-env.d.ts",
+    ],
   },
 ];
 

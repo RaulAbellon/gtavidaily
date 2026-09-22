@@ -14,16 +14,29 @@ const IGNORED_DIRS = new Set([
   "dist",
 ]);
 
+/**
+ * Lista los ficheros de un directorio saltándose los directorios ignorados.
+ *
+ * Antes se hacía `readdirSync(..., { recursive: true })` y se descartaban las
+ * entradas de `node_modules` a posteriori. Eso obligaba a recorrer y tipar los
+ * ~55.000 ficheros del árbol de dependencias en cada llamada y, con el
+ * adaptador de Cloudflare instalado, la prueba que busca el lockfile agotaba su
+ * tiempo límite. Podar los directorios ignorados durante el descenso no cambia
+ * el resultado (esos ficheros ya se descartaban) y baja el coste a milisegundos.
+ */
 export function listFiles(dir: string): string[] {
-  return readdirSync(dir, { recursive: true, withFileTypes: true })
-    .filter((entry) => entry.isFile())
-    .filter(
-      (entry) =>
-        !entry.parentPath
-          ?.split(path.sep)
-          .some((segment) => IGNORED_DIRS.has(segment))
-    )
-    .map((entry) => path.join(entry.parentPath ?? dir, entry.name));
+  const files: string[] = [];
+
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      if (IGNORED_DIRS.has(entry.name)) continue;
+      files.push(...listFiles(path.join(dir, entry.name)));
+    } else if (entry.isFile()) {
+      files.push(path.join(dir, entry.name));
+    }
+  }
+
+  return files;
 }
 
 export function sourceFiles(): string[] {

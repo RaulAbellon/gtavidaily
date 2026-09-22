@@ -1,0 +1,25 @@
+# Cabeceras HTTP para Cloudflare (Workers Static Assets y Pages).
+#
+# Cloudflare parsea este fichero y NO lo sirve como activo. Los valores de las
+# cabeceras de seguridad son idénticos a los de `next.config.ts` y
+# `netlify.toml`; si se cambia uno, hay que cambiar los tres.
+#
+# Aviso importante: las reglas de `_headers` solo se aplican a las respuestas
+# que sirve el CDN como activo estático. El HTML lo genera el Worker de OpenNext
+# y NO pasa por aquí, así que su CSP es la que declara `headers()` en
+# `next.config.ts` (y por eso `wrangler.jsonc` lleva `run_worker_first: true`).
+# Este fichero cubre lo demás: /ads.txt, /robots.txt, /imagenes/*, /icon-*.png
+# y, sobre todo, la caché de los activos con hash de /_next/static/*.
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Los ficheros de `public/` no llevan hash en el nombre: si se cachean un año,
+# un cambio en ads.txt o en el manifest no llega nunca. Se revalidan siempre.
+/*
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://partner.googleadservices.com https://tpc.googlesyndication.com https://www.googletagservices.com https://adservice.google.com https://fundingchoicesmessages.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://adservice.google.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://fundingchoicesmessages.google.com; media-src 'self'; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains

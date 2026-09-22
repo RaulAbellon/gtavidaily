@@ -1,0 +1,21 @@
+# Variables de entorno del entorno local de `wrangler`/workerd.
+#
+# NO se versiona: `npm run cf:preview` lo lee, pero su contenido depende de cada
+# máquina. Aquí queda la plantilla; el fichero real se llama `.dev.vars`.
+#
+# NEXTJS_ENV decide qué ficheros `.env` de Next carga la app cuando corre dentro
+# del Worker. En producción Cloudflare no lo usa: las variables se configuran en
+# el panel (ver MIGRACION-CLOUDFLARE.md).
+NEXTJS_ENV=development
+
+# Copia aquí las mismas claves que tengas en `.env.local` si quieres que la
+# previsualización del Worker se comporte como producción:
+#
+# NEXT_PUBLIC_SITE_URL=https://gtavidaily.com
+# NEXT_PUBLIC_ADSENSE_CLIENT=ca-pub-6098877112141110
+# NEXT_PUBLIC_CONTACT_EMAIL=contacto@gtavidaily.com
+# NEXT_PUBLIC_LEGAL_EMAIL=gtavidaily.contacto@gmail.com
+# NEXT_PUBLIC_LEGAL_NAME=Raul Abellon Losa
+# NEXT_PUBLIC_LEGAL_TAX_ID=71183429F
+# NEXT_PUBLIC_LEGAL_ADDRESS=Calle Esla 8 3B, 47140 Valladolid
+# GOOGLE_SITE_VERIFICATION=L5mhV_ec7wXJGWr6yV5DdFAVXbxkhj1A6HPX5oUhCVI

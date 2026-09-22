@@ -49,6 +49,10 @@ npm run dev                  # http://localhost:3000
 | `npm run check` | Contenido + lint + tipos + tests + build, en ese orden |
 | `npm run deploy` | Publica: regenera, comprueba, hace commit y empuja a `main` |
 | `npm run indexnow` | Avisa a Bing y Yandex de las URLs nuevas (IndexNow). Se lanza **después** de publicar |
+| `npm run cf:build` | Build para Cloudflare con el adaptador de OpenNext (`.open-next/`) |
+| `npm run cf:preview` | `cf:build` + previsualización en el runtime de Cloudflare (workerd) |
+| `npm run cf:deploy` | `cf:build` + despliegue a Cloudflare Workers (`--keep-vars`) |
+| `node scripts/verify-cf.mjs <url>` | Comprueba un despliegue de Cloudflare (rutas, cabeceras, AdSense) |
 
 ## Publicar una noticia nueva (flujo diario)
 
@@ -243,6 +247,9 @@ opción más rentable: el plan Starter **sí permite publicidad**, mientras que 
 plan Hobby de Vercel la prohíbe; y el soporte de Next.js 16 lo lleva el adaptador
 oficial de Netlify, que se actualiza solo en cada build.
 
+Hay una migración a **Cloudflare** preparada en paralelo (ver más abajo), sin
+tocar nada de lo de aquí.
+
 La configuración vive en `netlify.toml`: comando de build, versión de Node y las
 cabeceras de seguridad aplicadas en el CDN.
 
@@ -300,7 +307,8 @@ npm start          # respeta PORT y HOSTNAME
 En Netlify y Vercel ese bundle no se genera (`outputMode` en `next.config.ts` lo
 desactiva), porque es su adaptador el que empaqueta el resultado. Cualquier
 plataforma con Node 20.9+ sirve: no hay dependencias nativas ni base de datos.
-El endpoint `/api/contacto` necesita `CONTACT_WEBHOOK_URL` para enviar mensajes.
+Los formularios dependen de Netlify Forms, así que en otro hosting hay que
+sustituirlos (ver `MIGRACION-CLOUDFLARE.md`).
 
 ### Cabeceras de seguridad
 
@@ -312,12 +320,39 @@ cabeceras se declaran en `netlify.toml` para que el CDN las aplique a todas las
 respuestas, incluidas las de la función de Next; hay una prueba que falla si la
 CSP de ambos ficheros diverge.
 
+### Migración a Cloudflare (en preparación)
+
+El despliegue en Cloudflare (Workers, con el adaptador oficial de OpenNext) está
+preparado **en paralelo** a Netlify, que sigue siendo el destino mientras no se
+cambie el DNS. La configuración vive en `wrangler.jsonc` y
+`open-next.config.ts`; las cabeceras de los activos estáticos, en
+`public/_headers`. Los pasos que dependen de una persona (cuenta, conexión del
+repositorio y DNS) están en `MIGRACION-CLOUDFLARE.md`, en la raíz del
+repositorio.
+
+Para probarlo en local:
+
+```bash
+npm run cf:preview     # compila con el adaptador y sirve en http://localhost:8787
+```
+
+`cf:preview` es el comando correcto para probar: además de servir el Worker,
+**precarga la caché de las páginas prerenderizadas** (con `wrangler dev` a
+secas, `/articulo/<slug>` y `/categoria/<slug>` responden 404, porque la caché no
+está poblada). Las variables del build se leen de `.env.local`; en Cloudflare se
+configuran en el panel (ver la guía).
+
+`esbuild` está declarado como `devDependency` a propósito, aunque no se use
+directamente: el adaptador lo importa por su nombre desde la raíz del proyecto y
+no basta con que venga como dependencia transitiva de `wrangler`.
+
 ### Monetización
 
-`/ads.txt` se genera desde `NEXT_PUBLIC_ADSENSE_CLIENT`: en cuanto el ID tenga
-formato válido, la ruta publica la línea que espera Google para autorizar el
-inventario. Sin AdSense configurado responde 404, que es lo honesto: no hay
-inventario que declarar.
+`/ads.txt` es un fichero estático en `public/`, que es la forma canónica que
+describe Google: lo sirve el CDN, sin función de por medio y con el tipo de
+contenido correcto. Declara el vendedor autorizado de AdSense
+(`pub-6098877112141110`); `tests/deploy.test.ts` falla si deja de coincidir con
+el cliente configurado.
 
 ## Publicar cambios sin `git`
 
