@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import sitemap from "@/app/sitemap";
 import { articles, type Article } from "@/lib/data";
 import {
-  ARTICLE_IMAGES_DIR,
+  ARTICLE_IMAGES_URL_PREFIX,
   DEFAULT_OG_IMAGE,
   articleImage,
   articleImageAlt,
@@ -46,7 +46,10 @@ describe("imágenes de artículo", () => {
   it("nunca enlaza imágenes de terceros", () => {
     for (const article of articles) {
       if (!article.image) continue;
-      expect(article.image.startsWith(`/${ARTICLE_IMAGES_DIR}/`), article.slug).toBe(true);
+      expect(
+        article.image.startsWith(ARTICLE_IMAGES_URL_PREFIX),
+        article.slug
+      ).toBe(true);
       expect(/^https?:/i.test(article.image), article.slug).toBe(false);
     }
   });

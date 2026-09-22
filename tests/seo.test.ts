@@ -57,8 +57,11 @@ describe("sitemap", () => {
 describe("robots.txt", () => {
   const rules = robots();
 
-  it("apunta al sitemap absoluto", () => {
-    expect(rules.sitemap).toBe(`${SITE_URL}/sitemap.xml`);
+  it("declara el sitemap general y el de noticias", () => {
+    const declared = Array.isArray(rules.sitemap) ? rules.sitemap : [rules.sitemap];
+    expect(declared).toContain(`${SITE_URL}/sitemap.xml`);
+    // El de noticias es el que usa Google para detectar contenido fresco.
+    expect(declared).toContain(`${SITE_URL}/news-sitemap.xml`);
   });
 
   it("bloquea la API y permite el rastreador de AdSense", () => {

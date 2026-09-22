@@ -4,8 +4,11 @@ import { describe, expect, it } from "vitest";
 import {
   CONTACT_FORM_NAME,
   CONTACT_LIMITS,
+  LAUNCH_ALERT_FORM_NAME,
   toFormBody,
+  toLaunchAlertBody,
   validateContact,
+  validateLaunchAlert,
 } from "@/lib/contact";
 
 const VALID = {
@@ -89,5 +92,40 @@ describe("esqueleto estático para Netlify Forms", () => {
 
   it("no se indexa ni se enlaza desde el sitio", () => {
     expect(skeleton).toContain('name="robots" content="noindex');
+  });
+
+  it("declara también el formulario de avisos, con los mismos campos", () => {
+    expect(skeleton).toContain(`name="${LAUNCH_ALERT_FORM_NAME}"`);
+    expect(skeleton).toContain(`value="${LAUNCH_ALERT_FORM_NAME}"`);
+
+    const sent = [...new URLSearchParams(toLaunchAlertBody("ana@ejemplo.com", "pie")).keys()].sort();
+    expect(sent).toEqual(["email", "form-name", "origen"]);
+    for (const field of sent) {
+      expect(skeleton, `falta el campo ${field} en el esqueleto`).toContain(
+        field === "form-name" ? `name="form-name"` : `name="${field}"`
+      );
+    }
+  });
+});
+
+describe("aviso de lanzamiento", () => {
+  it("valida el correo", () => {
+    expect(validateLaunchAlert("").error).toBeTruthy();
+    expect(validateLaunchAlert("no-es-email").error).toBeTruthy();
+    expect(validateLaunchAlert("ana@ejemplo.com")).toEqual({
+      email: "ana@ejemplo.com",
+      error: null,
+    });
+  });
+
+  it("recorta un correo absurdamente largo", () => {
+    const { email } = validateLaunchAlert(`${"a".repeat(400)}@ejemplo.com`);
+    expect(email.length).toBeLessThanOrEqual(CONTACT_LIMITS.email);
+  });
+
+  it("deja constancia del origen de la suscripción", () => {
+    expect(new URLSearchParams(toLaunchAlertBody("ana@ejemplo.com", "articulo")).get("origen")).toBe(
+      "articulo"
+    );
   });
 });

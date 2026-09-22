@@ -22,6 +22,12 @@ export const DEFAULT_OG_IMAGE = "/og-image.png";
 /** Carpeta pública donde viven las imágenes de los artículos. */
 export const ARTICLE_IMAGES_DIR = "public/imagenes";
 
+/**
+ * Prefijo de URL de esas imágenes. Se mantiene aparte de la ruta de disco para
+ * no confundirlos: la primera es `public/imagenes`, la segunda `/imagenes`.
+ */
+export const ARTICLE_IMAGES_URL_PREFIX = "/imagenes";
+
 /** Medidas a las que se preparan las imágenes de artículo (16:9). */
 export const ARTICLE_IMAGE_WIDTH = 1200;
 export const ARTICLE_IMAGE_HEIGHT = 675;

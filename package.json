@@ -23,6 +23,7 @@
     "publish:check": "node scripts/publish.mjs --dry-run",
     "publish": "node scripts/publish.mjs",
     "deploy": "node scripts/deploy.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
     "check": "npm run content:check && npm run lint && npm run typecheck && npm run test && npm run build"
   },
   "dependencies": {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Brand } from "@/components/site/brand";
 import { CookieSettingsLink } from "@/components/consent/cookie-settings-link";
+import { LaunchAlertForm } from "@/components/site/launch-alert-form";
 import { getPopulatedCategories } from "@/lib/queries";
 import {
   CONTACT_EMAIL,
@@ -107,6 +108,12 @@ export function Footer() {
             </ul>
             <p className="mt-3 text-xs text-zinc-500">{EDITORIAL_NAME}</p>
           </div>
+        </div>
+
+        {/* Captar el correo es la única vía de recuperar lectores sin depender
+            del buscador, así que vive en el pie: aparece en todas las páginas. */}
+        <div className="mt-10 max-w-md rounded-xl border border-white/5 bg-zinc-900/40 p-4">
+          <LaunchAlertForm origin="pie" />
         </div>
 
         <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-6 text-xs text-zinc-500 sm:flex-row sm:items-center">

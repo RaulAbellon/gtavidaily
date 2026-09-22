@@ -7,6 +7,9 @@ import { SITE_URL } from "@/lib/site";
  *
  * `/buscar` se deja rastreable a propósito: esas páginas llevan `noindex`, y
  * bloquearlas impediría que el buscador leyera esa directiva.
+ *
+ * El sitemap de noticias se declara aparte del general: solo contiene piezas de
+ * las últimas 48 horas, que es lo que usa Google para detectar frescura.
  */
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -21,6 +24,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: [`${SITE_URL}/sitemap.xml`, `${SITE_URL}/news-sitemap.xml`],
   };
 }

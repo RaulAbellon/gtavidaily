@@ -18,6 +18,14 @@ export const CONTACT_LIMITS = {
 /** Nombre del formulario tal y como lo detecta Netlify en el build. */
 export const CONTACT_FORM_NAME = "contacto";
 
+/**
+ * Segundo formulario: aviso por correo el día del lanzamiento.
+ *
+ * Captar el correo es la única forma de traer de vuelta a alguien que ya nos
+ * leyó sin depender de Google. También vive en `public/__forms.html`.
+ */
+export const LAUNCH_ALERT_FORM_NAME = "avisos";
+
 export type ContactInput = {
   name: string;
   email: string;
@@ -66,4 +74,23 @@ export function toFormBody(values: ContactInput): string {
     message: values.message,
   });
   return body.toString();
+}
+
+/** Valida el correo del aviso de lanzamiento. */
+export function validateLaunchAlert(raw: unknown): {
+  email: string;
+  error: string | null;
+} {
+  const email = text(raw, CONTACT_LIMITS.email);
+  if (!EMAIL_PATTERN.test(email)) return { email, error: "Indica un email válido." };
+  return { email, error: null };
+}
+
+/** Cuerpo del aviso de lanzamiento para Netlify Forms. */
+export function toLaunchAlertBody(email: string, origin = "pie"): string {
+  return new URLSearchParams({
+    "form-name": LAUNCH_ALERT_FORM_NAME,
+    email,
+    origen: origin,
+  }).toString();
 }
