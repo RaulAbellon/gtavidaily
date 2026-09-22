@@ -1,0 +1,3 @@
+# ads.txt — GTA VI Daily
+# Generado desde NEXT_PUBLIC_ADSENSE_CLIENT: no editar a mano.
+google.com, pub-6098877112141110, DIRECT, f08c47fec0942fa0

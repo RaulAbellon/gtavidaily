@@ -2,9 +2,8 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { CSP, outputMode } from "../next.config";
-import { GET as getAdsTxt } from "@/app/ads.txt/route";
 import { buildAdsTxt } from "@/lib/ads-txt";
-import { ADSENSE_ENABLED } from "@/lib/site";
+import { ADSENSE_CLIENT } from "@/lib/site";
 
 const netlifyToml = readFileSync(
   fileURLToPath(new URL("../netlify.toml", import.meta.url)),
@@ -63,27 +62,42 @@ describe("netlify.toml", () => {
 });
 
 describe("ads.txt", () => {
+  // El fichero se sirve como **estático** desde `public/`, que es la forma
+  // canónica que describe Google: sin función de por medio, con el tipo de
+  // contenido y las cabeceras del CDN. Antes lo generaba una ruta dinámica.
+  const file = readFileSync(
+    fileURLToPath(new URL("../public/ads.txt", import.meta.url)),
+    "utf8"
+  );
+
   it("declara el vendedor autorizado de AdSense", () => {
-    const body = buildAdsTxt("ca-pub-1234567890123456");
-    expect(body).toContain(
-      "google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0"
+    expect(file).toMatch(
+      /^google\.com, pub-\d{16}, DIRECT, f08c47fec0942fa0$/m
     );
-    expect(body?.endsWith("\n")).toBe(true);
+    expect(file.endsWith("\n")).toBe(true);
   });
 
-  it("no publica nada si el identificador no es válido", () => {
-    expect(buildAdsTxt("")).toBeNull();
-    expect(buildAdsTxt("ca-pub-123")).toBeNull();
-    expect(buildAdsTxt("pub-1234567890123456")).toBeNull();
+  it("va en UTF-8 sin BOM y sin caracteres invisibles al principio", () => {
+    const bytes = readFileSync(
+      fileURLToPath(new URL("../public/ads.txt", import.meta.url))
+    );
+    expect([...bytes.slice(0, 3)]).not.toEqual([0xef, 0xbb, 0xbf]);
+    expect(bytes[0]).toBe(0x23); // "#"
   });
 
-  it("responde 404 mientras AdSense no esté configurado", async () => {
-    const response = await getAdsTxt();
-    if (ADSENSE_ENABLED) {
-      expect(response.status).toBe(200);
-      expect(await response.text()).toContain("DIRECT");
-    } else {
-      expect(response.status).toBe(404);
+  it("coincide con lo que genera la librería para el cliente configurado", () => {
+    const expected = buildAdsTxt(ADSENSE_CLIENT);
+    if (expected) {
+      // Si algún día cambia el identificador, esta prueba falla y recuerda que
+      // hay que regenerar `public/ads.txt`.
+      expect(file).toBe(expected);
     }
+  });
+
+  it("no declara más de un vendedor", () => {
+    const sellers = file
+      .split("\n")
+      .filter((line) => line.trim() && !line.startsWith("#"));
+    expect(sellers).toHaveLength(1);
   });
 });
