@@ -340,7 +340,9 @@ npm run cf:preview     # compila con el adaptador y sirve en http://localhost:87
 **precarga la caché de las páginas prerenderizadas** (con `wrangler dev` a
 secas, `/articulo/<slug>` y `/categoria/<slug>` responden 404, porque la caché no
 está poblada). Las variables del build se leen de `.env.local`; en Cloudflare se
-configuran en el panel (ver la guía).
+configuran en el panel (ver la guía). `verify-cf.mjs` necesita que el build se
+haya hecho **con** esas variables: si faltan, falla a propósito en AdSense,
+datos legales y Search Console.
 
 `esbuild` está declarado como `devDependency` a propósito, aunque no se use
 directamente: el adaptador lo importa por su nombre desde la raíz del proyecto y
