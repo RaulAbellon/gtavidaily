@@ -9,6 +9,25 @@ import {
   renderCoverSvg,
 } from "@/lib/cover";
 
+/** Distancia entre dos tonos, en grados. Sirve para comparar familias de color. */
+function hueDistance(a: string, b: string): number {
+  const hue = (hex: string) => {
+    const value = hex.replace("#", "");
+    const [r, g, bl] = [0, 2, 4].map(
+      (index) => parseInt(value.slice(index, index + 2), 16) / 255
+    );
+    const max = Math.max(r, g, bl);
+    const min = Math.min(r, g, bl);
+    const delta = max - min;
+    if (delta === 0) return 0;
+    if (max === r) return (((g - bl) / delta) % 6) * 60;
+    if (max === g) return ((bl - r) / delta + 2) * 60;
+    return ((r - g) / delta + 4) * 60;
+  };
+  const difference = Math.abs(hue(a) - hue(b)) % 360;
+  return difference > 180 ? 360 - difference : difference;
+}
+
 describe("ilustraciones de portada", () => {
   it("genera un SVG con las dimensiones declaradas y el rótulo", () => {
     const svg = renderCoverSvg("trailers", "Tráiler 2");
@@ -37,14 +56,24 @@ describe("ilustraciones de portada", () => {
     );
   });
 
-  it("reparte los artículos reales entre las cinco escenas", () => {
+  it("reparte los artículos reales entre las siete escenas", () => {
     const escenas = new Set(
       articles.map((article) => {
         const svg = renderCoverSvg(article.category, article.coverLabel);
         return /id="sky(\d)"/.exec(svg)?.[1];
       })
     );
-    expect([...escenas].sort()).toEqual(["0", "1", "2", "3", "4"]);
+    expect([...escenas].sort()).toEqual(["0", "1", "2", "3", "4", "5", "6"]);
+  });
+
+  it("varía la composición dentro de la misma escena", () => {
+    // Sin variación interna, dos artículos de la misma categoría y escena
+    // saldrían clavados; el espejo y las disposiciones lo evitan.
+    const noticias = articles
+      .filter((article) => article.category === "noticias")
+      .slice(0, 24)
+      .map((article) => renderCoverSvg(article.category, article.coverLabel));
+    expect(new Set(noticias).size).toBe(noticias.length);
   });
 
   it("no depende de recursos externos: todo es arte propio", () => {
@@ -54,8 +83,12 @@ describe("ilustraciones de portada", () => {
   });
 
   it("usa la paleta por defecto en categorías desconocidas", () => {
-    // El color principal por defecto se usa en el logotipo y en el neón.
-    expect(renderCoverSvg("no-existe", "x")).toContain("#EC4899");
+    const svg = renderCoverSvg("no-existe", "x");
+    // El color principal se usa en el degradado de neón. La deriva de tono lo
+    // mueve unos grados por artículo, así que se compara el tono, no el valor.
+    const color = /id="neon\d"[\s\S]*?stop-color="(#[0-9a-fA-F]{6})"/.exec(svg)?.[1];
+    expect(color, "no se ha encontrado el color principal").toBeTruthy();
+    expect(hueDistance(color!, "#EC4899")).toBeLessThan(30);
   });
 
   it("recorta los rótulos demasiado largos", () => {

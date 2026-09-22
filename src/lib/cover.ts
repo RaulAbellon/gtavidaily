@@ -19,7 +19,7 @@
  *    así que subirlo invalida las cachés cuando cambia el dibujo.
  */
 
-export const COVER_VERSION = "2";
+export const COVER_VERSION = "3";
 export const COVER_WIDTH = 1200;
 export const COVER_HEIGHT = 675;
 
@@ -62,6 +62,58 @@ function toHex({ r, g, b }: RGB): string {
   const part = (n: number) =>
     Math.max(0, Math.min(255, Math.round(n))).toString(16).padStart(2, "0");
   return `#${part(r)}${part(g)}${part(b)}`;
+}
+
+/**
+ * Gira el tono de un color. Sirve para que dos artículos de la misma categoría
+ * no compartan exactamente el mismo cielo: mantiene la identidad de la sección
+ * pero diferencia cada pieza.
+ */
+function rotateHue(hex: string, degrees: number): string {
+  const { r, g, b } = hexToRgb(hex);
+  const rn = r / 255;
+  const gn = g / 255;
+  const bn = b / 255;
+  const max = Math.max(rn, gn, bn);
+  const min = Math.min(rn, gn, bn);
+  const lightness = (max + min) / 2;
+  const delta = max - min;
+
+  let hue = 0;
+  let saturation = 0;
+  if (delta !== 0) {
+    saturation =
+      lightness > 0.5 ? delta / (2 - max - min) : delta / (max + min);
+    if (max === rn) hue = ((gn - bn) / delta + (gn < bn ? 6 : 0)) / 6;
+    else if (max === gn) hue = ((bn - rn) / delta + 2) / 6;
+    else hue = ((rn - gn) / delta + 4) / 6;
+  }
+  hue = (((hue + degrees / 360) % 1) + 1) % 1;
+
+  const channel = (p: number, q: number, t: number) => {
+    let value = t;
+    if (value < 0) value += 1;
+    if (value > 1) value -= 1;
+    if (value < 1 / 6) return p + (q - p) * 6 * value;
+    if (value < 1 / 2) return q;
+    if (value < 2 / 3) return p + (q - p) * (2 / 3 - value) * 6;
+    return p;
+  };
+
+  if (saturation === 0) {
+    return toHex({ r: lightness * 255, g: lightness * 255, b: lightness * 255 });
+  }
+
+  const q =
+    lightness < 0.5
+      ? lightness * (1 + saturation)
+      : lightness + saturation - lightness * saturation;
+  const p = 2 * lightness - q;
+  return toHex({
+    r: channel(p, q, hue + 1 / 3) * 255,
+    g: channel(p, q, hue) * 255,
+    b: channel(p, q, hue - 1 / 3) * 255,
+  });
 }
 
 /** Mezcla dos colores: t=0 devuelve `a`, t=1 devuelve `b`. */
@@ -169,6 +221,10 @@ function brandTextWidth(text: string, size: number): number {
 type Scene = {
   rng: () => number;
   archetype: number;
+  /** Composición espejada: duplica la variedad sin dibujar nada nuevo. */
+  mirror: boolean;
+  /** Variante de disposición dentro de la misma escena (0-2). */
+  layout: number;
   c1: string;
   c2: string;
   accent: string;
@@ -186,17 +242,23 @@ type Scene = {
 
 /** Prepara el contexto de dibujo a partir de la categoría y el rótulo. */
 function createScene(category: string, label: string): Scene {
-  const [c1, c2] = COLORS[category] ?? DEFAULT_COLORS;
+  const [base1, base2] = COLORS[category] ?? DEFAULT_COLORS;
   const rng = random(hash(`${category}|${label}`));
-  const archetype = Math.floor(rng() * 5);
+  const archetype = Math.floor(rng() * 7);
 
-  const night = archetype === 1 || archetype === 3;
+  // Deriva de tono por artículo: mantiene el color de la sección pero evita que
+  // dos noticias de la misma categoría compartan exactamente el mismo cielo.
+  const drift = (rng() - 0.5) * 46;
+  const c1 = rotateHue(base1, drift);
+  const c2 = rotateHue(base2, drift * 0.55);
+
+  const night = archetype === 1 || archetype === 3 || archetype === 6;
+  const mirror = rng() > 0.5;
+  const sunXRaw = COVER_WIDTH * (0.24 + rng() * 0.52);
   const skyTop = night ? mix(INK, c2, 0.2) : mix(INK, c2, 0.34);
   const skyBottom =
     archetype === 2
-      ? // El verde puro en el cielo queda a pantalla verde: se apaga un poco y
-        // se calienta hacia el horizonte.
-        mix(mix(c1, INK, 0.22), "#FFCE96", 0.34)
+      ? mix(mix(c1, INK, 0.22), "#FFCE96", 0.34)
       : night
         ? mix(c1, INK, 0.42)
         : mix(mix(c1, INK, 0.08), "#FFE9C7", 0.28);
@@ -207,16 +269,20 @@ function createScene(category: string, label: string): Scene {
   return {
     rng,
     archetype,
+    mirror,
+    layout: Math.floor(rng() * 3),
     c1,
     c2,
     accent: mix("#06B6D4", c1, 0.2),
     skyTop,
     skyBottom,
     sun,
-    sunX: COVER_WIDTH * (0.28 + rng() * 0.44),
-    sunY: 150 + rng() * 120,
-    sunR: 88 + rng() * 48,
-    horizon: 448 + rng() * 26,
+    // La escena se dibuja espejada cuando `mirror` es true, así que la posición
+    // del sol se refleja también para que el reflejo del agua siga cuadrando.
+    sunX: mirror ? COVER_WIDTH - sunXRaw : sunXRaw,
+    sunY: 138 + rng() * 144,
+    sunR: 78 + rng() * 62,
+    horizon: 428 + rng() * 48,
     night,
     striped: archetype === 1,
     id: String(archetype),
@@ -550,27 +616,166 @@ function road(scene: Scene): string {
   return parts.join("");
 }
 
+/** Puerto: grúas de contenedores, muelle con pilotes, barcos y gaviotas. */
+function harbour(scene: Scene): string {
+  const baseY = scene.horizon + 10;
+  const color = mix(INK, scene.c2, 0.17);
+  const parts: string[] = [];
+
+  for (let index = 0; index < 4; index += 1) {
+    const x = 110 + index * 300 + scene.rng() * 90;
+    const height = 88 + scene.rng() * 72;
+    parts.push(
+      `<rect x="${x.toFixed(0)}" y="${(baseY - height).toFixed(0)}" width="8" height="${height.toFixed(
+        0
+      )}" fill="${color}"/>`,
+      `<rect x="${(x - 48).toFixed(0)}" y="${(baseY - height + 6).toFixed(0)}" width="100" height="7" fill="${color}"/>`,
+      `<rect x="${(x + 26).toFixed(0)}" y="${(baseY - height + 4).toFixed(0)}" width="4" height="28" fill="${color}"/>`
+    );
+  }
+
+  const pierY = baseY + 44;
+  for (let x = 52; x < COVER_WIDTH; x += 76) {
+    parts.push(
+      `<rect x="${x}" y="${pierY}" width="9" height="46" fill="${color}" opacity="0.9"/>`
+    );
+  }
+  parts.push(
+    `<rect x="0" y="${pierY - 8}" width="${COVER_WIDTH}" height="10" fill="${color}"/>`
+  );
+
+  for (let index = 0; index < 3; index += 1) {
+    const x = 190 + index * 340 + scene.rng() * 60;
+    const width = 120 + scene.rng() * 70;
+    const y = pierY + 30 + scene.rng() * 16;
+    parts.push(
+      `<path d="M${x.toFixed(0)} ${y.toFixed(0)} h${width.toFixed(0)} l-22 26 h-${(
+        width - 44
+      ).toFixed(0)} Z" fill="${color}"/>`,
+      `<rect x="${(x + width / 2 - 2).toFixed(0)}" y="${(y - 56).toFixed(0)}" width="4" height="56" fill="${color}"/>`,
+      `<circle cx="${(x - 6).toFixed(0)}" cy="${(y + 6).toFixed(0)}" r="3" fill="${scene.sun}" opacity="0.7"/>`
+    );
+  }
+
+  parts.push(
+    `<path d="M240 ${(scene.horizon - 92).toFixed(0)} q14 -10 28 0 q14 -10 28 0 M900 ${(
+      scene.horizon - 132
+    ).toFixed(0)} q12 -9 24 0 q12 -9 24 0" fill="none" stroke="${mix(
+      scene.sun,
+      "#ffffff",
+      0.35
+    )}" stroke-width="2.2" stroke-linecap="round" opacity="0.45"/>`
+  );
+
+  return parts.join("");
+}
+
+/** Distrito de vallas luminosas, con la calle mojada reflejando el neón. */
+function billboards(scene: Scene): string {
+  const baseY = scene.horizon + 8;
+  const color = mix(INK, scene.c2, 0.18);
+  const parts: string[] = [];
+
+  for (let index = 0; index < 5; index += 1) {
+    const width = 130 + scene.rng() * 90;
+    const x = -30 + index * 258 + scene.rng() * 40;
+    const height = 118 + scene.rng() * 150;
+    const top = baseY - height;
+    parts.push(
+      `<rect x="${x.toFixed(0)}" y="${top.toFixed(0)}" width="${width.toFixed(
+        0
+      )}" height="${(height + 30).toFixed(0)}" fill="${color}"/>`
+    );
+
+    if (scene.rng() > 0.35) {
+      const boardWidth = Math.min(width * 0.92, 220);
+      const boardX = x + (width - boardWidth) / 2;
+      const boardY = Math.max(18, top - 46 - scene.rng() * 34);
+      const boardColor = scene.rng() > 0.5 ? scene.c1 : scene.accent;
+      parts.push(
+        // Halo: un rectángulo mayor y translúcido detrás de la valla.
+        `<rect x="${(boardX - 12).toFixed(0)}" y="${(boardY - 12).toFixed(0)}" width="${(
+          boardWidth + 24
+        ).toFixed(0)}" height="96" rx="10" fill="${boardColor}" opacity="0.16"/>`,
+        `<rect x="${boardX.toFixed(0)}" y="${boardY.toFixed(0)}" width="${boardWidth.toFixed(
+          0
+        )}" height="72" rx="4" fill="${boardColor}" opacity="0.92"/>`,
+        `<rect x="${(boardX + 8).toFixed(0)}" y="${(boardY + 8).toFixed(0)}" width="${(
+          boardWidth - 16
+        ).toFixed(0)}" height="56" rx="2" fill="${INK}" opacity="0.6"/>`
+      );
+    }
+
+    if (scene.rng() > 0.6) {
+      parts.push(
+        `<rect x="${(x + width - 16).toFixed(0)}" y="${(top + 24).toFixed(0)}" width="6" height="${(
+          height * 0.5
+        ).toFixed(0)}" fill="${scene.accent}" opacity="0.55"/>`
+      );
+    }
+  }
+
+  for (let index = 0; index < 16; index += 1) {
+    const x = scene.rng() * COVER_WIDTH;
+    const width = 2 + scene.rng() * 5;
+    const height = 40 + scene.rng() * 100;
+    parts.push(
+      `<rect x="${x.toFixed(0)}" y="${baseY.toFixed(0)}" width="${width.toFixed(
+        1
+      )}" height="${height.toFixed(0)}" fill="${
+        scene.rng() > 0.5 ? scene.c1 : scene.accent
+      }" opacity="${(0.07 + scene.rng() * 0.16).toFixed(2)}"/>`
+    );
+  }
+
+  return parts.join("");
+}
+
 function sceneBody(scene: Scene): string {
   switch (scene.archetype) {
-    // Atardecer con skyline y agua.
-    case 0:
-      return `${skyline(scene, 2)}${skyline(scene, 1)}${skyline(scene, 0)}
-        ${water(scene)}
-        ${palm({
-          x: 120,
-          baseY: COVER_HEIGHT + 10,
-          height: 300,
-          color: mix(INK, scene.c2, 0.13),
-          rng: scene.rng,
-        })}
-        ${palm({
-          x: 1060,
-          baseY: COVER_HEIGHT + 20,
-          height: 250,
-          color: mix(INK, scene.c2, 0.1),
-          flip: -1,
-          rng: scene.rng,
-        })}`;
+    // Atardecer con skyline y agua. Tres disposiciones distintas.
+    case 0: {
+      const layers =
+        scene.layout === 1
+          ? `${skyline(scene, 2)}${skyline(scene, 0)}`
+          : `${skyline(scene, 2)}${skyline(scene, 1)}${skyline(scene, 0)}`;
+      const trunk = mix(INK, scene.c2, 0.13);
+
+      const foreground =
+        scene.layout === 2
+          ? // Sin palmeras: solo aves, para que no se parezca a la escena de costa.
+            `<path d="M300 ${(scene.horizon - 150).toFixed(0)} q15 -11 30 0 q15 -11 30 0 M820 ${(
+              scene.horizon - 96
+            ).toFixed(0)} q13 -9 26 0 q13 -9 26 0" fill="none" stroke="${mix(
+              scene.sun,
+              "#ffffff",
+              0.35
+            )}" stroke-width="2.4" stroke-linecap="round" opacity="0.5"/>`
+          : scene.layout === 1
+            ? palm({
+                x: 150,
+                baseY: COVER_HEIGHT + 20,
+                height: 330,
+                color: trunk,
+                rng: scene.rng,
+              })
+            : `${palm({
+                x: 120,
+                baseY: COVER_HEIGHT + 10,
+                height: 300,
+                color: trunk,
+                rng: scene.rng,
+              })}${palm({
+                x: 1060,
+                baseY: COVER_HEIGHT + 20,
+                height: 250,
+                color: trunk,
+                flip: -1,
+                rng: scene.rng,
+              })}`;
+
+      return `${layers}${water(scene)}${foreground}`;
+    }
 
     // Neón nocturno con rejilla en perspectiva.
     case 1: {
@@ -641,14 +846,27 @@ function sceneBody(scene: Scene): string {
       return `${skyline(scene, 2)}${road(scene)}${palms.join("")}`;
     }
 
-    // Fachadas art déco con neón.
+    // Fachadas art déco con neón. Tres disposiciones distintas.
     case 3: {
       const baseY = scene.horizon + 10;
-      const layout = [
-        { x: 66, width: 206, height: 246 },
-        { x: 468, width: 252, height: 296 },
-        { x: 884, width: 198, height: 214 },
+      const LAYOUTS = [
+        [
+          { x: 66, width: 206, height: 246 },
+          { x: 468, width: 252, height: 296 },
+          { x: 884, width: 198, height: 214 },
+        ],
+        [
+          { x: 118, width: 244, height: 286 },
+          { x: 716, width: 232, height: 252 },
+        ],
+        [
+          { x: 24, width: 168, height: 196 },
+          { x: 296, width: 202, height: 254 },
+          { x: 596, width: 178, height: 218 },
+          { x: 878, width: 212, height: 272 },
+        ],
       ];
+      const layout = LAYOUTS[scene.layout] ?? LAYOUTS[0];
       const towers = layout.map((slot, index) =>
         tower({
           x: slot.x + scene.rng() * 22,
@@ -663,6 +881,14 @@ function sceneBody(scene: Scene): string {
       );
       return `${skyline(scene, 2)}${towers.join("")}${water(scene)}`;
     }
+
+    // Puerto: grúas, muelle y barcos amarrados.
+    case 5:
+      return `${skyline(scene, 2)}${water(scene)}${harbour(scene)}`;
+
+    // Distrito de vallas luminosas, con la calle mojada.
+    case 6:
+      return `${skyline(scene, 2)}${billboards(scene)}`;
 
     // Costa: mar en calma, palmera en primer plano y ciudad al fondo.
     default:
@@ -688,12 +914,18 @@ export function renderCoverSvg(category: string, label: string): string {
   const scene = createScene(category, label);
   const safeLabel = escapeXml(label.slice(0, 60));
   const wordSize = 26;
+  const body = sceneBody(scene);
+  // La escena puede ir espejada; el texto y la viñeta quedan fuera del grupo
+  // para que no se reflejen.
+  const sceneMarkup = scene.mirror
+    ? `<g transform="translate(${COVER_WIDTH} 0) scale(-1 1)">${body}</g>`
+    : body;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${COVER_WIDTH}" height="${COVER_HEIGHT}" viewBox="0 0 ${COVER_WIDTH} ${COVER_HEIGHT}" role="img" aria-label="${safeLabel}">
   ${defs(scene)}
   ${stars(scene)}
   ${sunDisc(scene)}
-  ${sceneBody(scene)}
+  ${sceneMarkup}
   <rect width="${COVER_WIDTH}" height="${COVER_HEIGHT}" fill="url(#vig${scene.id})"/>
   <g>
     ${brandText("GTA VI", { x: 72, y: 56, size: wordSize, color: "#ffffff", opacity: 0.92 })}
