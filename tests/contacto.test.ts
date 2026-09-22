@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   CONTACT_FORM_NAME,
@@ -52,5 +54,40 @@ describe("formulario de contacto", () => {
     expect(body.get("name")).toBe(VALID.name);
     expect(body.get("email")).toBe(VALID.email);
     expect(body.get("message")).toBe(VALID.message);
+  });
+});
+
+/**
+ * Netlify detecta el formulario en el HTML estático del despliegue y valida los
+ * nombres de los campos contra esa declaración. Si se añade un campo al
+ * formulario real y no al esqueleto (o al revés), los envíos fallan en silencio.
+ */
+describe("esqueleto estático para Netlify Forms", () => {
+  const skeleton = readFileSync(
+    path.join(process.cwd(), "public", "__forms.html"),
+    "utf8"
+  );
+
+  it("declara el formulario con el mismo nombre que envía la web", () => {
+    expect(skeleton).toContain(`name="${CONTACT_FORM_NAME}"`);
+    expect(skeleton).toContain('data-netlify="true"');
+    expect(skeleton).toContain(`value="${CONTACT_FORM_NAME}"`);
+  });
+
+  it("incluye exactamente los campos que se envían", () => {
+    for (const field of ["name", "email", "subject", "message", "bot-field"]) {
+      expect(skeleton, `falta el campo ${field}`).toContain(`name="${field}"`);
+    }
+    // Y el cuerpo que construimos no lleva ningún campo de más.
+    const sent = [...new URLSearchParams(toFormBody(VALID)).keys()].sort();
+    expect(sent).toEqual(["email", "form-name", "message", "name", "subject"]);
+  });
+
+  it("el campo trampa está declarado como honeypot", () => {
+    expect(skeleton).toContain('netlify-honeypot="bot-field"');
+  });
+
+  it("no se indexa ni se enlaza desde el sitio", () => {
+    expect(skeleton).toContain('name="robots" content="noindex');
   });
 });

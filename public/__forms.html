@@ -7,21 +7,25 @@
   </head>
   <body>
     <!--
-      Este fichero NO se enlaza desde ninguna parte y no lo ve nadie. Existe
-      porque Netlify detecta los formularios analizando el HTML estático del
-      despliegue, y con Next.js el HTML de las páginas se sirve desde la caché de
-      rutas, no como fichero estático. Sin esta declaración, Netlify no registra
-      el formulario y los envíos se pierden con un 404.
+      Esqueleto estático para Netlify Forms. NO se enlaza desde ninguna parte y
+      no lo ve nadie: existe porque Netlify detecta los formularios analizando el
+      HTML estático del despliegue, y con Next.js el HTML de las páginas se sirve
+      desde la función, no como fichero estático.
 
-      Los nombres de los campos tienen que coincidir exactamente con los del
-      formulario real (src/components/site/contact-form.tsx). Si se añade un
-      campo allí, hay que añadirlo también aquí.
+      Dos reglas que hay que respetar o los envíos fallan en silencio:
+      1. Los nombres de los campos deben coincidir EXACTAMENTE con los que envía
+         el formulario real (src/components/site/contact-form.tsx). Netlify
+         valida los nombres contra el formulario registrado.
+      2. En aplicaciones con SSR, el POST debe ir a ESTE fichero
+         (/__forms.html), no a "/": la función de Next intercepta la raíz y el
+         envío nunca llega al gestor de formularios.
     -->
     <form
       name="contacto"
       method="POST"
       data-netlify="true"
       netlify-honeypot="bot-field"
+      hidden
     >
       <input type="hidden" name="form-name" value="contacto" />
       <p hidden>

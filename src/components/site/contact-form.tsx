@@ -47,7 +47,10 @@ export function ContactForm({ contactEmail }: { contactEmail: string }) {
     setStatus({ kind: "sending" });
 
     try {
-      const response = await fetch("/", {
+      // El POST va al esqueleto estático, no a "/": en una aplicación con SSR la
+      // función de Next intercepta la raíz y el envío nunca llegaría a Netlify
+      // Forms. Está documentado en public/__forms.html.
+      const response = await fetch("/__forms.html", {
         method: "POST",
         headers: { "content-type": "application/x-www-form-urlencoded" },
         body: toFormBody(values),
