@@ -1,0 +1,62 @@
+{
+  "slug": "rockstar-reglas-mods-gta-vi",
+  "title": "Las nuevas reglas de mods de Rockstar: qué cambia de verdad",
+  "excerpt": "La compañía ha reunido en una sola página lo que permite y lo que no. Mucho de lo que se está contando como novedad lleva años vigente, y GTA VI no ha cambiado nada.",
+  "content": [
+    "Rockstar publicó una página de directrices de mods y dejó claro qué se puede tocar y qué no. Se llama Mod Guidelines, vive dentro del centro de recursos para la comunidad de su web y aplica a todo su catálogo: GTA, Red Dead Redemption, Bully y los títulos anteriores. No es un documento sobre GTA VI. La compañía no ha dicho en ningún momento que la página se hiciera pensando en el próximo juego.",
+    "Lo que las directrices prohíben es concreto. No se pueden modificar ni expandir las historias, tramas, misiones y personajes oficiales; no se puede mezclar contenido de un juego de Rockstar con otro; no se puede cruzar su propiedad intelectual con la de terceros; no se permite llevar sus juegos a plataformas donde nunca se lanzaron oficialmente; y el modding multijugador no autorizado queda fuera. Así lo desglosaron medios especializados como el portal 80.lv y la prensa en español, y la propia página lo recoge en su listado de límites.",
+    "El uso comercial también tiene puerta. Cualquier mod con ánimo de lucro necesita pasar por la Creator Platform de Rockstar y por los acuerdos que la acompañan. Siguen prohibidos el intercambio de dinero real por moneda virtual del juego, las mecánicas de azar con dinero real y el uso o la promoción de criptomonedas. En el capítulo de contenido, las reglas descartan material abusivo, sexual explícito, de acoso o de apoyo al extremismo violento.",
+    "Ahora, la parte que casi nadie está contando: lo nuevo es el envoltorio, no el contenido. Rockstar tolera mods de un jugador en PC desde hace años, y su documentación de soporte ya advertía de que se pueden suspender cuentas por desarrollar o distribuir mods en el online, por manipular código protegido o por fastidiar la partida a otros. El medio brasileño Arkade lo resume con precisión: la página ordena en un solo texto límites que antes estaban repartidos entre artículos de soporte, acuerdos de licencia y posicionamientos sueltos.",
+    "Hay una excepción que demuestra dónde está la línea real, y es el sistema antitrampas. GTA Online usa BattlEye en PC, y Rockstar permite desactivarlo cuando el jugador está en el modo historia. El problema nunca ha sido modificar el juego para uno mismo: ha sido llevar esa modificación al terreno multijugador. Quien atribuya a GTA VI una prohibición nueva de los mods de un jugador está describiendo una política que lleva años escrita.",
+    "Para quien hace mods, el cambio práctico es de referencia, no de margen. Los retoques visuales, las mejoras de rendimiento y los ajustes de un jugador siguen dentro. Lo que se cae es la ambición de las conversiones totales: las expansiones de historia no oficiales, los ports a otras plataformas y los injertos entre juegos quedan fuera de la zona gris en la que han vivido. Y el mod de pago deja de ser una discusión interpretativa: o hay acuerdo con Rockstar o es comercialización no autorizada.",
+    "Para los servidores de rol, el marco ya existía y no se ha movido. La vía legítima es la Creator Platform que Rockstar controla desde que compró el equipo de Cfx.re, la plataforma detrás de FiveM y RedM, en 2023. Los servidores de rol están permitidos ahí siempre que cumplan los términos de servicio, el acuerdo de licencia de creador y ahora también estas directrices. La política de Rockstar sobre servidores de rol detalla además cinco frentes de actuación: el mal uso de sus marcas, el uso de propiedad intelectual ajena, la explotación comercial, la creación de juegos o historias nuevas y la interferencia con sus servicios oficiales.",
+    "Para quien hace contenido en vídeo, el mensaje es que la monetización ajena al juego también se vigila. Las directrices descartan el contenido patrocinado por terceros dentro del mod, algo que afecta directamente a los proyectos que se anuncian como servidores donde el jugador podría ganar dinero real. El caso más citado es el de creadores que llevan tiempo prometiendo un servidor de GTA VI con economía propia y sueldos; sin aprobación de Rockstar, ese plan no se sostiene. En el terreno promocional ya hubo un precedente: durante el Extended Look, las normas permitían compartir clips, pero no subir los 26 minutos completos sin editar ni comentar, tal como recogió Kotaku.",
+    "La gran pregunta es cómo se aplicará esto a GTA VI, y la respuesta honesta es que no se sabe. El juego no tiene versión de PC anunciada ni herramientas oficiales de modding para un jugador, así que el modding de GTA VI es hoy una hipótesis, no una escena. Tampoco hay un online de GTA VI anunciado, y por tanto no hay servidores de rol de GTA VI a los que aplicar nada. Cuando ambas cosas existan, estas directrices serán el punto de partida.",
+    "Queda una lectura que conviene no perder de vista. Rockstar ha pasado de perseguir a la comunidad de rol a comprarla, y estas reglas son la formalización de ese matrimonio: una sola plataforma autorizada, reglas escritas y un permiso que la empresa puede retirar. Para el creador ordenado, el cambio es tener un texto único al que agarrarse. Para el que construía su proyecto en la ambigüedad, el suelo se ha movido. Lo que falta por saber es si habrá herramientas oficiales de modding para GTA VI y qué margen dará Rockstar al rol cuando el juego llegue a PC."
+  ],
+  "category": "noticias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-22T20:00:00.000Z",
+  "updatedAt": "2026-09-22T22:00:00.000Z",
+  "coverLabel": "Nuevas reglas para los mods",
+  "coverAlt": "Ilustración sobre las directrices de Rockstar para los mods y el rol",
+  "tags": [
+    "Mods",
+    "Rol",
+    "Rockstar",
+    "FiveM",
+    "Comunidad"
+  ],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Rockstar Games — Mod Guidelines",
+      "url": "https://www.rockstargames.com/community-resources/mod-guidelines"
+    },
+    {
+      "name": "Vandal — Rockstar endurece sus reglas para los mods a dos meses de GTA 6: prohíbe historias nuevas, ports y mezclar sus juegos",
+      "url": "https://vandal.elespanol.com/noticia/2026265013/rockstar-pone-limites-a-los-mods-antes-de-gta-6-prohibe-historias-nuevas-ports-y-mezclar-sus-juegos/"
+    },
+    {
+      "name": "80.lv — Rockstar Reveals What GTA 6 Mods Won't Be Allowed to Do",
+      "url": "https://80.lv/articles/rockstar-reveals-what-gta-6-mods-won-t-be-allowed-to-do"
+    },
+    {
+      "name": "Arkade — Perto do lançamento de GTA VI, a Rockstar atualizou as regras sobre mods",
+      "url": "https://arkade.com.br/perto-do-lancamento-de-gta-vi-a-rockstar-atualizou-as-regras-onde-diz-o-que-pode-e-o-que-nao-pode-ser-feito-em-relacao-aos-mods/"
+    },
+    {
+      "name": "IGN España — Rockstar Games actualiza su política de modding para GTA 6: estos son los cambios",
+      "url": "https://es.ign.com/grand-theft-auto-vi/233892/rockstar-games-actualiza-su-politica-de-modding-para-gta-6-estos-son-los-cambios"
+    },
+    {
+      "name": "Rockstar Games Newswire — Introducing nopixel V",
+      "url": "https://www.rockstargames.com/newswire/article/17857581o753k1/introducing-nopixel-v"
+    }
+  ],
+  "image": "/imagenes/rockstar-reglas-mods-gta-vi.jpg",
+  "imageAlt": "Ilustración sobre las directrices de Rockstar para los mods y el rol",
+  "imageCredit": "Ilustración original de GTA VI Daily"
+}

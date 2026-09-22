@@ -1,0 +1,58 @@
+{
+  "slug": "gta-vi-xbox-series-s-que-esperar",
+  "title": "Xbox Series S y GTA VI: qué está confirmado y qué nadie ha respondido",
+  "excerpt": "Rockstar apunta a 30 fps en todas las consolas, pero no ha dicho una palabra sobre la consola más floja de la generación. Repasamos qué es dato y qué es previsión.",
+  "content": [
+    "Xbox Series S es la única plataforma confirmada de GTA VI sobre la que Rockstar no ha dicho nada. El juego sale el 19 de noviembre de 2026 en PS5 y Xbox Series X|S, y la página oficial del producto lista esa familia de consolas sin distinguir entre modelos. No hay resolución, no hay tasa de fotogramas y no hay una línea en los comunicados de Take-Two que aborde la pregunta.",
+    "Lo confirmado empieza por una cifra. Rob Nelson, responsable de desarrollo y co-responsable de Rockstar North, dijo al medio brasileño FlowGames que el objetivo es de 30 fotogramas por segundo en todas las consolas, PS5 Pro incluida. Lo recogió ComputerBase el 28 de agosto de 2026. Nelson añadió que tendría que consultar con su equipo técnico la posibilidad de una opción a 60 fps, de lo que no se desprende ningún compromiso para el lanzamiento. Esa es la única cifra de rendimiento que ha salido de boca de alguien con nombre y cargo dentro del estudio. Todo lo demás que circula viene de análisis de vídeo o de filtraciones, y ninguna de las dos cosas es una ficha técnica.",
+    "Lo único que se ha dicho en voz alta en Take-Two sobre esa consola es una respuesta de Strauss Zelnick que no resuelve nada. En una conversación con inversores, al consejero delegado se le preguntó si le preocupaba el rendimiento del juego en Series S. Contestó que la compañía apoya las plataformas donde hay consumidores mientras sigan siendo relevantes, que encuentran la manera de adaptarse a capacidades técnicas distintas y que no estaba especialmente preocupado. El medio ixbt.games recuperó esa declaración el 31 de agosto de 2026, cuando la inquietud de los jugadores volvió a aflorar tras el Extended Look. Es una declaración de confianza, no un dato técnico.",
+    "Lo reportado es el resto del cuadro, y conviene leerlo con la etiqueta puesta. Digital Foundry analizó el material publicado y tituló su desglose del segundo tráiler con un uso impresionante del trazado de rayos. El medio británico estimó una resolución interna en torno a 2560×1152 acompañada de 30 fps, según recogió Hobby Consolas. Todos esos números son mediciones sobre vídeo, no una ficha técnica: Rockstar no ha confirmado resolución, ni ray tracing, ni técnica de escalado para ninguna plataforma.",
+    "Del modelo pequeño, nada. Series S no aparece en el material promocional con cifras y no ha sido mencionada en ninguna entrevista. Cualquier tabla que la compare con Series X o PS5 y traiga números concretos es una extrapolación: no es información, aunque acierte por probabilidad.",
+    "El motivo de la preocupación no es una corazonada, y aquí conviene mirar a otros estudios. En una entrevista con Digital Foundry, IO Interactive explicó que 007 First Light correrá a 60 fps en PS5, PS5 Pro y Xbox Series X, mientras que en Series S solo habrá modo de calidad a 30 fps en el lanzamiento. El estudio atribuyó la diferencia a que la consola tiene 10 GB de memoria frente a los 16 GB de los otros modelos, y a que su GPU no puede con todos los sistemas del motor a la vez.",
+    "Es el mismo patrón que se repite en los lanzamientos más exigentes de la generación: cuando el juego aprieta, el recorte llega en el modelo barato, y llega sobre todo en memoria y en calidad de imagen. Alan Wake 2, por ejemplo, se quedó sin modo de rendimiento en esa consola, tal como recogió la cobertura especializada de su lanzamiento. La memoria es justo el recurso que un mundo abierto con la densidad que Rockstar describe en Leonida consume sin remedio.",
+    "Hay una incógnita añadida que suele pasarse por alto: con qué tecnología se reconstruye la imagen. La ficha de PlayStation Store etiqueta el juego como mejorado para PS5 Pro, un distintivo que no viene acompañado de ningún detalle sobre reescalado o resolución. En la familia Xbox no hay ni siquiera esa etiqueta, y Series S no aparece en ninguna parte con cifras. De ese detalle depende que una resolución interna baja se vea aceptable en un televisor 4K.",
+    "Con eso, la previsión razonada es estrecha y conviene decirla como lo que es. Si el objetivo en PS5, Series X y PS5 Pro es 30 fps, no hay ningún argumento para esperar más de 30 fps en Series S: la pregunta real es a qué resolución y con cuánta estabilidad. En títulos exigentes de esta generación, Series S suele resolver entre 720p y 1080p con reescalado y perfiles gráficos bajos, y casi siempre a 30 fps. Es un rango de referencia, no un pronóstico firmado por nadie, y Rockstar no ha dado pie a pensar en otra cosa.",
+    "Lo que falta por saber es concreto. Si habrá modos adicionales después del lanzamiento -hay quien lo da por hecho citando a personas cercanas al estudio, pero es una afirmación que no se puede sostener con fuente primaria-, cuánto se recorta la calidad gráfica y, sobre todo, cuándo lo sabremos. Los primeros análisis técnicos del juego final llegarán en las horas previas al 19 de noviembre, cuando se levante el embargo. Si Rockstar va a ofrecer un modo de rendimiento, tendría que anunciarlo antes del 12 de noviembre, fecha en la que abre la precarga y el comprador decide. Hasta entonces, Series S sigue siendo la duda grande y sin respuesta."
+  ],
+  "category": "noticias",
+  "author": "redaccion",
+  "publishedAt": "2026-09-22T17:00:00.000Z",
+  "updatedAt": "2026-09-22T19:00:00.000Z",
+  "coverLabel": "Series S: la duda sin respuesta",
+  "coverAlt": "Ilustración sobre el rendimiento esperado de GTA VI en Xbox Series S",
+  "tags": [
+    "Xbox Series S",
+    "Rendimiento",
+    "GTA VI",
+    "Digital Foundry",
+    "Consolas"
+  ],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "ComputerBase — Auch auf der PS5 Pro: GTA 6 zielt auf allen Konsolen auf 30 FPS",
+      "url": "https://www.computerbase.de/news/gaming/auch-auf-der-ps5-pro-gta-6-zielt-auf-allen-konsolen-auf-30-fps.99108/"
+    },
+    {
+      "name": "Digital Foundry — GTA 6 Trailer 2 tech breakdown: incredible realism, impressive RT, astonishing detail",
+      "url": "https://www.digitalfoundry.net/articles/digitalfoundry-2025-gta-6-trailer-2-tech-breakdown-incredible-realism-impressive-rt-astonishing-detail"
+    },
+    {
+      "name": "Hobby Consolas — Digital Foundry analiza el avance de GTA 6 y confirma que se moverá a 30 fps en todas las plataformas",
+      "url": "https://www.hobbyconsolas.com/videojuegos/digital-foundry-analiza-detalle-avance-gta-6-confirma-que-se-movera-30-fps-todas-las-plataformas_7030460_0.html"
+    },
+    {
+      "name": "ixbt.games — Los jugadores temen problemas de rendimiento de GTA VI en Xbox Series S, pero el jefe de Take-Two no está preocupado",
+      "url": "https://ixbt.games/es/news/2026/08/31/igroki-opasaiutsia-problem-s-proizvoditelnostiu-gta-vi-na-xbox-series-s-a-boss-take-two-ne-perezivaet.html"
+    },
+    {
+      "name": "ixbt.games — Xbox Series S is too weak and only runs 007 First Light at 30 fps, say IO Interactive",
+      "url": "https://ixbt.games/en/news/2026/05/21/414771-avtory-007-first-light-raskritikovali-xbox-series-s-za-skromnyi-obieem-pamiati-i-slabyi-graficeskii-processor.html"
+    }
+  ],
+  "image": "/imagenes/gta-vi-xbox-series-s-que-esperar.jpg",
+  "imageAlt": "Ilustración sobre el rendimiento esperado de GTA VI en Xbox Series S",
+  "imageCredit": "Ilustración original de GTA VI Daily"
+}
