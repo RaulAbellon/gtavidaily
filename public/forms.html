@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Formularios de GTA VI Daily</title>
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body>
+    <!--
+      Este fichero NO se enlaza desde ninguna parte y no lo ve nadie. Existe
+      porque Netlify detecta los formularios analizando el HTML estático del
+      despliegue, y con Next.js el HTML de las páginas se sirve desde la caché de
+      rutas, no como fichero estático. Sin esta declaración, Netlify no registra
+      el formulario y los envíos se pierden con un 404.
+
+      Los nombres de los campos tienen que coincidir exactamente con los del
+      formulario real (src/components/site/contact-form.tsx). Si se añade un
+      campo allí, hay que añadirlo también aquí.
+    -->
+    <form
+      name="contacto"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value="contacto" />
+      <p hidden>
+        <label>No rellenes este campo <input name="bot-field" /></label>
+      </p>
+      <p><label>Nombre <input type="text" name="name" /></label></p>
+      <p><label>Email <input type="email" name="email" /></label></p>
+      <p><label>Asunto <input type="text" name="subject" /></label></p>
+      <p><label>Mensaje <textarea name="message"></textarea></label></p>
+    </form>
+  </body>
+</html>

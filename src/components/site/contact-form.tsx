@@ -68,14 +68,14 @@ export function ContactForm({ contactEmail }: { contactEmail: string }) {
   return (
     <form
       name={CONTACT_FORM_NAME}
-      data-netlify="true"
-      netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
       className="space-y-4 rounded-xl border border-white/5 bg-zinc-900/40 p-6"
       noValidate
     >
-      {/* Netlify detecta el formulario en el HTML del build: necesita el nombre
-          entre los campos y un campo trampa que solo rellenan los bots. */}
+      {/* La declaración del formulario para Netlify vive en `public/forms.html`:
+          con Next.js su detector no analiza este HTML, porque se sirve desde la
+          caché de rutas. Aquí solo hace falta enviar el nombre y el campo trampa
+          con los mismos nombres que en esa declaración. */}
       <input type="hidden" name="form-name" value={CONTACT_FORM_NAME} />
       <p className="hidden" aria-hidden="true">
         <label>
