@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Calendar, Clock, FileText, Tag, User } from "lucide-react";
 import { AdSlot } from "@/components/ads/ad-slot";
+import { RichText } from "@/components/site/rich-text";
 import { ArticleGrid } from "@/components/site/article-grid";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { ShareButton } from "@/components/site/share-button";
@@ -217,7 +218,8 @@ export default async function ArticlePage({ params }: PageProps) {
                 {paragraph.charAt(0)}
               </span>
             ) : null}
-            {index === 0 ? paragraph.slice(1) : paragraph}
+            {/* Los enlaces internos del texto se escriben `[así](/articulo/slug)`. */}
+            <RichText text={index === 0 ? paragraph.slice(1) : paragraph} />
           </p>
         ))}
       </div>
