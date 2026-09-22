@@ -117,11 +117,25 @@ async function main() {
     fail("artículo", `${articlePath} → ${article.status}`);
   }
 
-  // Las portadas se sirven como SVG cacheable, no incrustadas en el HTML.
-  const coverUrls = [...new Set([...home.body.matchAll(/\/cover\?[^"'\s)]+/g)].map((m) => m[0]))];
-  if (coverUrls.length === 0) {
-    fail("portadas", "la home no referencia ninguna portada en /cover");
-  } else {
+  // Portadas: cada artículo tiene su ilustración en JPEG (/imagenes/) para que
+  // Discover y las redes sociales la usen; /cover sigue sirviendo la versión SVG
+  // generada como respaldo de los artículos que no tengan imagen propia.
+  const ownImages = [
+    ...new Set([...home.body.matchAll(/\/imagenes\/[^"'\s)]+\.jpg/g)].map((m) => m[0])),
+  ];
+  const coverUrls = [
+    ...new Set([...home.body.matchAll(/\/cover\?[^"'\s)]+/g)].map((m) => m[0])),
+  ];
+
+  if (ownImages.length > 0) {
+    const image = await fetch(`${BASE}${ownImages[0]}`);
+    const contentType = image.headers.get("content-type") ?? "";
+    if (image.status === 200 && contentType.includes("image/jpeg")) {
+      ok(`${ownImages.length} portadas propias en JPEG`, contentType);
+    } else {
+      fail("portada propia", `${ownImages[0]} → ${image.status} ${contentType}`);
+    }
+  } else if (coverUrls.length > 0) {
     const coverResponse = await fetch(`${BASE}${coverUrls[0].replace(/&amp;/g, "&")}`);
     const contentType = coverResponse.headers.get("content-type") ?? "";
     if (coverResponse.status === 200 && contentType.includes("image/svg+xml")) {
@@ -129,6 +143,8 @@ async function main() {
     } else {
       fail("portada", `${coverUrls[0]} → ${coverResponse.status} ${contentType}`);
     }
+  } else {
+    fail("portadas", "la home no referencia ninguna imagen de artículo");
   }
 
   if (/data:image\/svg\+xml/.test(home.body)) {

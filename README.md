@@ -48,6 +48,7 @@ npm run dev                  # http://localhost:3000
 | `npm run test:e2e` | Prueba de humo HTTP contra un servidor en marcha |
 | `npm run check` | Contenido + lint + tipos + tests + build, en ese orden |
 | `npm run deploy` | Publica: regenera, comprueba, hace commit y empuja a `main` |
+| `npm run indexnow` | Avisa a Bing y Yandex de las URLs nuevas (IndexNow). Se lanza **después** de publicar |
 
 ## Publicar una noticia nueva (flujo diario)
 
@@ -69,6 +70,18 @@ npm run check
 # 5. Publicar (el despliegue lo lanza la plataforma sola)
 npm run deploy -- "contenido: mi noticia del día"
 ```
+
+**Portada de la noticia.** Cada artículo lleva una ilustración propia en JPEG de
+1200×675, que es lo que usan Google Discover y las previsualizaciones al compartir
+en WhatsApp, Telegram o X. Se genera con la herramienta local
+`work/assets/generate-covers.mjs` (necesita `npm run dev` en marcha), que dibuja la
+misma escena que `/cover` y anota `image`, `imageAlt` y `imageCredit` en el JSON.
+Si no se genera, el artículo usa la portada SVG de `/cover` y no pasa nada: además,
+el validador avisa si se declara una imagen que no existe.
+
+Cada noticia que se publica entra sola en el **sitemap de noticias**
+(`/news-sitemap.xml`), que solo contiene piezas de las últimas 48 horas: es la vía
+por la que Google detecta contenido fresco.
 
 El validador rechaza lo que no debe publicarse: campos que faltan o sobran,
 categorías inexistentes, fechas incoherentes (`updatedAt` anterior a
