@@ -108,6 +108,19 @@ describe("ruta /cover", () => {
     expect(await response.text()).not.toContain("<script>");
   });
 
+  it("declara de qué depende su caché", async () => {
+    const response = await GET(
+      new Request("http://localhost/cover?c=noticias&t=Prueba")
+    );
+    // El adaptador de Netlify restringe la clave de caché a sus parámetros
+    // internos. Sin esta cabecera, todas las portadas comparten una única
+    // entrada y se ven iguales: pasó en producción.
+    const vary = response.headers.get("netlify-vary") ?? "";
+    expect(vary).toContain("c");
+    expect(vary).toContain("t");
+    expect(vary).toContain("v");
+  });
+
   it("no falla sin parámetros", async () => {
     const response = await GET(new Request("http://localhost/cover"));
     expect(response.status).toBe(200);
