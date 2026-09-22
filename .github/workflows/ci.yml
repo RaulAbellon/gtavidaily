@@ -27,7 +27,11 @@ jobs:
       - name: Preparar Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          # 22, no 20: `wrangler` (devDependency del adaptador de Cloudflare) y
+          # `@cloudflare/kv-asset-handler` exigen Node >= 22 y con 20 `npm ci`
+          # avisa de engines incumplidos. Es además la versión de `.nvmrc` y la
+          # que usa el build de las plataformas.
+          node-version: "22"
           cache: npm
 
       - name: Instalar dependencias
