@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AlertTriangle, CheckCircle2, Send } from "lucide-react";
+import { CONTACT_FORM_NAME, toFormBody, validateContact } from "@/lib/contact";
 
 type Status =
   | { kind: "idle" }
@@ -14,10 +15,18 @@ const inputClass =
   "w-full rounded-md border border-white/10 bg-zinc-950 px-3 py-2 text-sm text-white placeholder:text-zinc-600 focus:border-pink-500/50 focus:outline-none focus:ring-2 focus:ring-pink-500/20";
 
 /**
- * Formulario de contacto real: envía los datos al endpoint `/api/contacto` y
- * muestra el resultado verdadero. El original se limitaba a un `alert()` de
- * éxito sin enviar nada, descartando el mensaje y el consentimiento RGPD que
- * recogía.
+ * Formulario de contacto real.
+ *
+ * El envío va a **Netlify Forms**, que es nativo del hosting: no hay terceros de
+ * por medio, no hace falta exponer ninguna clave en el HTML y las respuestas se
+ * guardan en el panel de Netlify además de notificarse por correo.
+ *
+ * Antes enviaba a un proveedor externo a través de `/api/contacto`. Ese camino
+ * se retiró porque el proveedor está detrás de la protección anti-bots de
+ * Cloudflare y rechazaba (403) cualquier envío hecho desde un servidor.
+ *
+ * Lo que se mantiene del original: la validación de verdad y que la interfaz
+ * nunca finge un envío correcto.
  */
 export function ContactForm({ contactEmail }: { contactEmail: string }) {
   const [status, setStatus] = useState<Status>({ kind: "idle" });
@@ -26,56 +35,54 @@ export function ContactForm({ contactEmail }: { contactEmail: string }) {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
-    const data = new FormData(form);
+    const raw = Object.fromEntries(new FormData(form)) as Record<string, string>;
+    const { values, errors } = validateContact(raw);
+
+    setFieldErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      setStatus({ kind: "error", message: "Revisa los campos marcados." });
+      return;
+    }
 
     setStatus({ kind: "sending" });
-    setFieldErrors({});
 
     try {
-      const response = await fetch("/api/contacto", {
+      const response = await fetch("/", {
         method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          name: data.get("name"),
-          email: data.get("email"),
-          subject: data.get("subject"),
-          message: data.get("message"),
-        }),
+        headers: { "content-type": "application/x-www-form-urlencoded" },
+        body: toFormBody(values),
       });
 
-      const payload = (await response.json().catch(() => ({}))) as {
-        ok?: boolean;
-        error?: string;
-        errors?: Record<string, string>;
-      };
-
-      if (!response.ok || !payload.ok) {
-        if (payload.errors) setFieldErrors(payload.errors);
-        setStatus({
-          kind: "error",
-          message:
-            payload.error ??
-            `No hemos podido enviar el mensaje. Escríbenos a ${contactEmail}.`,
-        });
-        return;
-      }
+      if (!response.ok) throw new Error(`Netlify respondió ${response.status}`);
 
       form.reset();
       setStatus({ kind: "ok" });
     } catch {
       setStatus({
         kind: "error",
-        message: `No hay conexión con el servidor. Escríbenos a ${contactEmail}.`,
+        message: `No hemos podido enviar el mensaje. Escríbenos a ${contactEmail}.`,
       });
     }
   }
 
   return (
     <form
+      name={CONTACT_FORM_NAME}
+      data-netlify="true"
+      netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
       className="space-y-4 rounded-xl border border-white/5 bg-zinc-900/40 p-6"
       noValidate
     >
+      {/* Netlify detecta el formulario en el HTML del build: necesita el nombre
+          entre los campos y un campo trampa que solo rellenan los bots. */}
+      <input type="hidden" name="form-name" value={CONTACT_FORM_NAME} />
+      <p className="hidden" aria-hidden="true">
+        <label>
+          No rellenes este campo <input name="bot-field" tabIndex={-1} />
+        </label>
+      </p>
+
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label

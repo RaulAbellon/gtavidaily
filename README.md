@@ -100,8 +100,7 @@ Todas están documentadas en `.env.example`. Las importantes:
 | `NEXT_PUBLIC_EDITORIAL_NAME` | No | Firma editorial de los artículos |
 | `NEXT_PUBLIC_LEGAL_NAME` / `_TAX_ID` / `_ADDRESS` | **Sí antes de monetizar** | Identificación del responsable (art. 10 LSSI-CE y art. 13 RGPD). Mientras falten, la página legal avisa de que están pendientes |
 | `GOOGLE_SITE_VERIFICATION` | No | Emite la etiqueta de verificación de Search Console |
-| `CONTACT_WEBHOOK_URL` | No | Destino del formulario de contacto. Sin él, el endpoint responde con un error explícito indicando el email directo (nunca finge un envío correcto) |
-| `CONTACT_WEBHOOK_KEY` | Con Web3Forms | Clave del proveedor. Web3Forms la exige en el cuerpo de la petición; se puede restringir al dominio desde su panel |
+| `CONTACT_WEBHOOK_URL` / `CONTACT_WEBHOOK_KEY` | Ya no se usan | El formulario pasó a **Netlify Forms** (nativo del hosting): sin terceros y sin claves en el HTML. Las variables siguen dadas de alta en Netlify, pero ningún código las lee |
 
 ## Arquitectura
 
