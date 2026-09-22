@@ -90,7 +90,11 @@ describe("integridad del contenido", () => {
 
   it("genera las portadas localmente (sin hotlinking)", () => {
     for (const article of articles) {
-      expect(article.cover.startsWith("data:image/svg+xml")).toBe(true);
+      // La ilustración se sirve desde nuestra propia ruta /cover: nada de
+      // enlazar imágenes de terceros.
+      expect(article.cover.startsWith("/cover?"), article.slug).toBe(true);
+      expect(article.cover, article.slug).not.toMatch(/^https?:/);
+      expect(article.cover, article.slug).not.toContain("data:");
     }
   });
 

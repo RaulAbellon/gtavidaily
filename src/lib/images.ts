@@ -35,7 +35,7 @@ export function hasOwnImage(article: Pick<Article, "image">): boolean {
 
 /** Imagen que se muestra en el artículo y en las tarjetas. */
 export function articleImage(
-  article: Pick<Article, "image" | "category" | "cover">
+  article: Pick<Article, "image" | "category" | "coverLabel">
 ): string {
   const own = article.image?.trim();
   return own ? own : coverUrl(article);
@@ -60,7 +60,7 @@ export function articleImageCredit(
 
 /** URL absoluta de la imagen del artículo, para `og:image` y datos estructurados. */
 export function articleImageUrl(
-  article: Pick<Article, "image" | "category" | "cover">
+  article: Pick<Article, "image" | "category" | "coverLabel">
 ): string {
   return absoluteUrl(articleImage(article));
 }

@@ -11,7 +11,7 @@
 // Las portadas son SVG generados localmente (ver `src/lib/cover.ts`): no hay
 // material con copyright de Rockstar/Take-Two.
 
-import { coverDataUri } from "@/lib/cover";
+import { coverUrl } from "@/lib/cover";
 import { articlesRaw } from "@/content/articles";
 
 export type Category = {
@@ -38,7 +38,8 @@ export type Article = {
   author: string; // slug de autor
   publishedAt: string; // ISO date
   updatedAt?: string;
-  cover: string; // URL de imagen o data URI
+  cover: string; // URL de la ilustración generada (ver src/lib/cover.ts)
+  coverLabel: string; // rótulo corto que se dibuja dentro de la ilustración
   coverAlt: string;
   tags: string[];
   readingTime: number; // minutos
@@ -133,14 +134,16 @@ export const authors: Author[] = [
 /**
  * Los artículos viven en `src/content/articles/`, un fichero JSON por pieza,
  * para poder editarlos sin tocar un módulo gigante. Aquí solo se les añade la
- * portada, que se genera a partir de la categoría y el rótulo.
+ * URL de la ilustración, que se genera a partir de la categoría y el rótulo.
+ *
+ * Antes el campo `cover` guardaba el SVG entero como `data:` URI (unos 2,5 KB
+ * por artículo, 165 KB en total) solo para poder recuperar de ahí el rótulo. La
+ * etiqueta ya viaja como campo propio, así que ese rodeo sobra.
  */
-export const articles: Article[] = articlesRaw.map(
-  ({ coverLabel, ...article }) => ({
-    ...article,
-    cover: coverDataUri(article.category, coverLabel),
-  })
-);
+export const articles: Article[] = articlesRaw.map((article) => ({
+  ...article,
+  cover: coverUrl(article),
+}));
 
 // Utilidades de acceso a datos
 export function getArticleBySlug(slug: string): Article | undefined {

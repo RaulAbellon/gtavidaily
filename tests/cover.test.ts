@@ -5,20 +5,18 @@ import {
   COVER_HEIGHT,
   COVER_VERSION,
   COVER_WIDTH,
-  coverDataUri,
-  coverLabelFromDataUri,
   coverUrl,
   renderCoverSvg,
 } from "@/lib/cover";
 
-describe("generación de portadas", () => {
-  it("genera un SVG con las dimensiones declaradas", () => {
+describe("ilustraciones de portada", () => {
+  it("genera un SVG con las dimensiones declaradas y el rótulo", () => {
     const svg = renderCoverSvg("trailers", "Tráiler 2");
     expect(svg.startsWith("<svg")).toBe(true);
     expect(svg).toContain(`width="${COVER_WIDTH}"`);
     expect(svg).toContain(`height="${COVER_HEIGHT}"`);
     expect(svg).toContain("Tráiler 2");
-    expect(svg).toContain("GTA VI Daily");
+    expect(svg.trimEnd().endsWith("</svg>")).toBe(true);
   });
 
   it("escapa el texto que se inyecta en el SVG", () => {
@@ -27,29 +25,47 @@ describe("generación de portadas", () => {
     expect(svg).toContain("&lt;script&gt;");
   });
 
-  it("usa el gradiente por defecto en categorías desconocidas", () => {
+  it("es determinista: el mismo artículo produce siempre la misma ilustración", () => {
+    expect(renderCoverSvg("mapa", "Estado de Leonida")).toBe(
+      renderCoverSvg("mapa", "Estado de Leonida")
+    );
+  });
+
+  it("varía entre artículos distintos", () => {
+    expect(renderCoverSvg("noticias", "Uno")).not.toBe(
+      renderCoverSvg("noticias", "Dos")
+    );
+  });
+
+  it("reparte los artículos reales entre las cinco escenas", () => {
+    const escenas = new Set(
+      articles.map((article) => {
+        const svg = renderCoverSvg(article.category, article.coverLabel);
+        return /id="sky(\d)"/.exec(svg)?.[1];
+      })
+    );
+    expect([...escenas].sort()).toEqual(["0", "1", "2", "3", "4"]);
+  });
+
+  it("no depende de recursos externos: todo es arte propio", () => {
+    const svg = renderCoverSvg("guias", "Guía de compra");
+    expect(svg).not.toMatch(/(href|src)="https?:/);
+    expect(svg).not.toContain("<image");
+  });
+
+  it("usa la paleta por defecto en categorías desconocidas", () => {
+    // El color principal por defecto se usa en el logotipo y en el neón.
     expect(renderCoverSvg("no-existe", "x")).toContain("#EC4899");
   });
 
-  it("genera un data URI válido y recupera su etiqueta", () => {
-    const uri = coverDataUri("mapa", "Estado de Leonida");
-    expect(uri.startsWith("data:image/svg+xml;utf8,")).toBe(true);
-    expect(coverLabelFromDataUri(uri)).toBe("Estado de Leonida");
+  it("recorta los rótulos demasiado largos", () => {
+    const svg = renderCoverSvg("noticias", "a".repeat(120));
+    expect(svg).toContain("a".repeat(60));
+    expect(svg).not.toContain("a".repeat(61));
   });
+});
 
-  it("devuelve null si el data URI no tiene el formato esperado", () => {
-    expect(coverLabelFromDataUri("no-es-un-data-uri")).toBeNull();
-    expect(coverLabelFromDataUri("data:image/svg+xml;utf8,")).toBeNull();
-  });
-
-  it("recupera la etiqueta de las 44 portadas reales", () => {
-    for (const article of articles) {
-      const label = coverLabelFromDataUri(article.cover);
-      expect(label, article.slug).toBeTruthy();
-      expect(label!.length).toBeGreaterThan(0);
-    }
-  });
-
+describe("URL de la portada", () => {
   it("construye URLs cortas y cacheables en lugar de incrustar el SVG", () => {
     for (const article of articles) {
       const url = coverUrl(article);
@@ -57,8 +73,16 @@ describe("generación de portadas", () => {
       expect(url).toContain(`v=${COVER_VERSION}`);
       expect(url).not.toContain("data:");
       expect(url.length).toBeLessThan(160);
-      // Antes cada portada ocupaba ~2,5 KB dentro del HTML.
-      expect(url.length).toBeLessThan(article.cover.length / 10);
+    }
+  });
+
+  it("el campo cover de cada artículo ya es esa URL y el rótulo viaja aparte", () => {
+    for (const article of articles) {
+      expect(article.cover).toBe(coverUrl(article));
+      expect(article.cover).not.toContain("data:");
+      expect(article.coverLabel.length).toBeGreaterThan(0);
+      // Antes el SVG entero (~2,5 KB) viajaba dentro de los datos.
+      expect(article.cover.length).toBeLessThan(160);
     }
   });
 });
@@ -66,24 +90,22 @@ describe("generación de portadas", () => {
 describe("ruta /cover", () => {
   it("sirve el SVG con caché larga", async () => {
     const response = await GET(
-      new Request("http://localhost/cover?v=1&c=trailers&t=Prueba")
+      new Request("http://localhost/cover?v=2&c=trailers&t=Prueba")
     );
     expect(response.status).toBe(200);
     expect(response.headers.get("content-type")).toContain("image/svg+xml");
     expect(response.headers.get("cache-control")).toContain("immutable");
 
-    const body = await response.text();
-    expect(body).toContain("Prueba");
+    expect(await response.text()).toContain("Prueba");
   });
 
   it("neutraliza texto malicioso en los parámetros", async () => {
     const response = await GET(
       new Request(
-        `http://localhost/cover?c=noticias&t=${encodeURIComponent('<script>x</script>')}`
+        `http://localhost/cover?c=noticias&t=${encodeURIComponent("<script>x</script>")}`
       )
     );
-    const body = await response.text();
-    expect(body).not.toContain("<script>");
+    expect(await response.text()).not.toContain("<script>");
   });
 
   it("no falla sin parámetros", async () => {

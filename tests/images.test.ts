@@ -17,12 +17,18 @@ import {
 /** Campos que consume la capa de imágenes, para construir casos de prueba. */
 type Sample = Pick<
   Article,
-  "category" | "cover" | "coverAlt" | "image" | "imageAlt" | "imageCredit" | "imageSource"
+  | "category"
+  | "coverLabel"
+  | "coverAlt"
+  | "image"
+  | "imageAlt"
+  | "imageCredit"
+  | "imageSource"
 >;
 
 const sinImagen: Sample = {
   category: "noticias",
-  cover: "data:image/svg+xml;utf8,%3Csvg%3E%3C/svg%3E",
+  coverLabel: "Rótulo de prueba",
   coverAlt: "Ilustración conceptual generada para el artículo",
 };
 
