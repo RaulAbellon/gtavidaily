@@ -95,10 +95,10 @@ describe("Cloudflare (adaptador de OpenNext)", () => {
     expect(service).toBe(name);
   });
 
-  it("atiende las peticiones con el Worker antes que los activos estáticos", () => {
+  it("deja los activos estáticos al CDN para no gastar la cuota diaria del Worker", () => {
     // Sin `run_worker_first` se perderían la CSP del HTML y la reescritura de
     // `/.well-known/security.txt`, que las aplica Next (ver next.config.ts).
-    expect(wrangler).toContain('"run_worker_first": true');
+    expect(wrangler).toContain('"run_worker_first": false');
   });
 
   it("replica exactamente la misma CSP que next.config.ts", () => {

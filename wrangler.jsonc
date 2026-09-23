@@ -52,7 +52,7 @@
     // `false` y replicar las cabeceras en `public/_headers`, pero entonces hay
     // que mover también allí la reescritura de security.txt y comprobar que las
     // páginas siguen recibiendo la CSP.
-    "run_worker_first": true
+    "run_worker_first": false
   },
 
   // Auto-referencia que el adaptador usa para tareas internas (cola de
