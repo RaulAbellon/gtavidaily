@@ -14,6 +14,32 @@ type AdSlotProps = {
 };
 
 /**
+ * Identificadores de prueba que quedaron en el código como marcadores.
+ *
+ * Mientras no haya unidades de anuncio reales creadas en AdSense, aquí no hay
+ * nada que mostrar. Se traducen a la variable de entorno correspondiente y, si
+ * esa variable no está definida, el hueco **no se pinta**: una caja vacía con el
+ * letrero "Publicidad" solo afea la página y perjudica la experiencia, que es
+ * justo lo que penaliza AdSense.
+ *
+ * El día que existan las unidades, basta con definir en el build
+ * `NEXT_PUBLIC_ADSENSE_SLOT_TOP` y `NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM`: no hay que
+ * tocar código.
+ */
+const PLACEHOLDER_SLOTS: Record<string, string | undefined> = {
+  "1111111111": process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOP,
+  "2222222222": process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM,
+};
+
+/** Un identificador de unidad de AdSense es un número de 10 cifras. */
+const VALID_SLOT = /^\d{10}$/;
+
+function resolveSlot(slot: string): string | null {
+  const resolved = PLACEHOLDER_SLOTS[slot] ?? slot;
+  return VALID_SLOT.test(resolved) ? resolved : null;
+}
+
+/**
  * Bloque publicitario.
  *
  * Se muestra en dos situaciones:
@@ -41,7 +67,8 @@ export function AdSlot({
   const region = useConsentRegion();
   const insRef = useRef<HTMLModElement | null>(null);
   const pushed = useRef(false);
-  const allowed = ADSENSE_ENABLED && canShowAdSlot(consent, region);
+  const unit = resolveSlot(slot);
+  const allowed = Boolean(unit) && ADSENSE_ENABLED && canShowAdSlot(consent, region);
 
   useEffect(() => {
     if (!allowed) {
@@ -78,7 +105,7 @@ export function AdSlot({
         className="adsbygoogle block"
         style={{ display: "block", minHeight }}
         data-ad-client={ADSENSE_CLIENT}
-        data-ad-slot={slot}
+        data-ad-slot={unit}
         data-ad-format={format}
         data-full-width-responsive="true"
       />
