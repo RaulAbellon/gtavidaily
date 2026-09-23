@@ -17,7 +17,7 @@ export const CSP = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self' data:",
-  "connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://adservice.google.com",
+  "connect-src 'self' https://api.web3forms.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://adservice.google.com",
   "frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://fundingchoicesmessages.google.com",
   "media-src 'self'",
   "worker-src 'self' blob:",
