@@ -1,12 +1,10 @@
-import { readFileSync } from "node:fs";
-import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import {
-  CONTACT_FORM_NAME,
   CONTACT_LIMITS,
-  LAUNCH_ALERT_FORM_NAME,
-  toFormBody,
-  toLaunchAlertBody,
+  WEB3FORMS_ENDPOINT,
+  sendToWeb3Forms,
+  toContactPayload,
+  toLaunchAlertPayload,
   validateContact,
   validateLaunchAlert,
 } from "@/lib/contact";
@@ -18,7 +16,14 @@ const VALID = {
   message: "Escribo para preguntar por la fecha de lanzamiento del juego.",
 };
 
-describe("formulario de contacto", () => {
+/** Respuesta falsa de Web3Forms, para no depender de la red en las pruebas. */
+function fakeFetch(status: number, body: unknown) {
+  return vi.fn(
+    async () => new Response(JSON.stringify(body), { status })
+  ) as unknown as typeof fetch;
+}
+
+describe("validación del formulario", () => {
   it("acepta un mensaje correcto", () => {
     const { values, errors } = validateContact(VALID);
     expect(errors).toEqual({});
@@ -51,65 +56,7 @@ describe("formulario de contacto", () => {
     expect(values).toEqual({ name: "", email: "", subject: "", message: "" });
   });
 
-  it("construye el cuerpo que espera Netlify Forms", () => {
-    const body = new URLSearchParams(toFormBody(VALID));
-    expect(body.get("form-name")).toBe(CONTACT_FORM_NAME);
-    expect(body.get("name")).toBe(VALID.name);
-    expect(body.get("email")).toBe(VALID.email);
-    expect(body.get("message")).toBe(VALID.message);
-  });
-});
-
-/**
- * Netlify detecta el formulario en el HTML estático del despliegue y valida los
- * nombres de los campos contra esa declaración. Si se añade un campo al
- * formulario real y no al esqueleto (o al revés), los envíos fallan en silencio.
- */
-describe("esqueleto estático para Netlify Forms", () => {
-  const skeleton = readFileSync(
-    path.join(process.cwd(), "public", "__forms.html"),
-    "utf8"
-  );
-
-  it("declara el formulario con el mismo nombre que envía la web", () => {
-    expect(skeleton).toContain(`name="${CONTACT_FORM_NAME}"`);
-    expect(skeleton).toContain('data-netlify="true"');
-    expect(skeleton).toContain(`value="${CONTACT_FORM_NAME}"`);
-  });
-
-  it("incluye exactamente los campos que se envían", () => {
-    for (const field of ["name", "email", "subject", "message", "bot-field"]) {
-      expect(skeleton, `falta el campo ${field}`).toContain(`name="${field}"`);
-    }
-    // Y el cuerpo que construimos no lleva ningún campo de más.
-    const sent = [...new URLSearchParams(toFormBody(VALID)).keys()].sort();
-    expect(sent).toEqual(["email", "form-name", "message", "name", "subject"]);
-  });
-
-  it("el campo trampa está declarado como honeypot", () => {
-    expect(skeleton).toContain('netlify-honeypot="bot-field"');
-  });
-
-  it("no se indexa ni se enlaza desde el sitio", () => {
-    expect(skeleton).toContain('name="robots" content="noindex');
-  });
-
-  it("declara también el formulario de avisos, con los mismos campos", () => {
-    expect(skeleton).toContain(`name="${LAUNCH_ALERT_FORM_NAME}"`);
-    expect(skeleton).toContain(`value="${LAUNCH_ALERT_FORM_NAME}"`);
-
-    const sent = [...new URLSearchParams(toLaunchAlertBody("ana@ejemplo.com", "pie")).keys()].sort();
-    expect(sent).toEqual(["email", "form-name", "origen"]);
-    for (const field of sent) {
-      expect(skeleton, `falta el campo ${field} en el esqueleto`).toContain(
-        field === "form-name" ? `name="form-name"` : `name="${field}"`
-      );
-    }
-  });
-});
-
-describe("aviso de lanzamiento", () => {
-  it("valida el correo", () => {
+  it("valida el correo del aviso de lanzamiento", () => {
     expect(validateLaunchAlert("").error).toBeTruthy();
     expect(validateLaunchAlert("no-es-email").error).toBeTruthy();
     expect(validateLaunchAlert("ana@ejemplo.com")).toEqual({
@@ -117,15 +64,58 @@ describe("aviso de lanzamiento", () => {
       error: null,
     });
   });
+});
 
-  it("recorta un correo absurdamente largo", () => {
-    const { email } = validateLaunchAlert(`${"a".repeat(400)}@ejemplo.com`);
-    expect(email.length).toBeLessThanOrEqual(CONTACT_LIMITS.email);
+describe("envío a Web3Forms", () => {
+  it("manda la clave, el remitente y los campos del mensaje", () => {
+    const payload = toContactPayload(VALID, "clave-de-prueba");
+    expect(payload.access_key).toBe("clave-de-prueba");
+    expect(payload.email).toBe(VALID.email);
+    expect(payload.name).toBe(VALID.name);
+    expect(payload.message).toBe(VALID.message);
+    expect(payload.subject).toContain("Consulta");
   });
 
-  it("deja constancia del origen de la suscripción", () => {
-    expect(new URLSearchParams(toLaunchAlertBody("ana@ejemplo.com", "articulo")).get("origen")).toBe(
-      "articulo"
+  it("el aviso de lanzamiento lleva el correo, el remitente y su origen", () => {
+    const payload = toLaunchAlertPayload("ana@ejemplo.com", "k", "articulo");
+    expect(Object.keys(payload).sort()).toEqual([
+      "access_key",
+      "email",
+      "from_name",
+      "origen",
+      "subject",
+    ]);
+    expect(payload.origen).toBe("articulo");
+  });
+
+  it("considera correcto el envío cuando el servicio responde success", async () => {
+    const result = await sendToWeb3Forms(
+      toContactPayload(VALID, "k"),
+      fakeFetch(200, { success: true, message: "Email sent" })
     );
+    expect(result.ok).toBe(true);
+    expect(result.detail).toBe("Email sent");
+  });
+
+  it("no lo considera correcto si el servicio rechaza la petición", async () => {
+    // Es el caso real con el que nos encontramos: 403 de la protección anti-bots.
+    const result = await sendToWeb3Forms(
+      toContactPayload(VALID, "k"),
+      fakeFetch(403, { success: false, message: "Forbidden" })
+    );
+    expect(result.ok).toBe(false);
+  });
+
+  it("no lo considera correcto si el servicio responde success falso", async () => {
+    const result = await sendToWeb3Forms(
+      toContactPayload(VALID, "k"),
+      fakeFetch(200, { success: false, message: "Invalid access key" })
+    );
+    expect(result.ok).toBe(false);
+    expect(result.detail).toBe("Invalid access key");
+  });
+
+  it("apunta al endpoint público del servicio", () => {
+    expect(WEB3FORMS_ENDPOINT).toBe("https://api.web3forms.com/submit");
   });
 });

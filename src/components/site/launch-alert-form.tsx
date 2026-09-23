@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 import { BellRing, CheckCircle2 } from "lucide-react";
-import { toLaunchAlertBody, validateLaunchAlert } from "@/lib/contact";
+import {
+  sendToWeb3Forms,
+  toLaunchAlertPayload,
+  validateLaunchAlert,
+  web3formsKey,
+} from "@/lib/contact";
 
 type Status = "idle" | "sending" | "ok";
 
@@ -10,9 +15,9 @@ type Status = "idle" | "sending" | "ok";
  * Aviso por correo el día del lanzamiento.
  *
  * Es la única pieza del sitio que construye algo que no depende de Google: quien
- * deja su correo vuelve aunque no nos encuentre en el buscador. Se envía con
- * Netlify Forms, igual que el formulario de contacto, así que no hay terceros ni
- * claves expuestas.
+ * deja su correo vuelve aunque no nos encuentre en el buscador. Se envía desde el
+ * navegador con Web3Forms, igual que el formulario de contacto, así que no
+ * depende del alojamiento.
  *
  * Se pide solo el correo: cada campo de más reduce las suscripciones, y aquí no
  * hace falta nada más para poder avisar.
@@ -31,12 +36,15 @@ export function LaunchAlertForm({ origin = "pie" }: { origin?: string }) {
 
     setStatus("sending");
     try {
-      const response = await fetch("/__forms.html", {
-        method: "POST",
-        headers: { "content-type": "application/x-www-form-urlencoded" },
-        body: toLaunchAlertBody(value, origin),
-      });
-      if (!response.ok) throw new Error(`Netlify respondió ${response.status}`);
+      const key = web3formsKey();
+      if (!key) {
+        setStatus("idle");
+        setError("El aviso no está configurado todavía. Inténtalo más tarde.");
+        return;
+      }
+
+      const result = await sendToWeb3Forms(toLaunchAlertPayload(value, key, origin));
+      if (!result.ok) throw new Error(result.detail);
 
       setEmail("");
       setStatus("ok");

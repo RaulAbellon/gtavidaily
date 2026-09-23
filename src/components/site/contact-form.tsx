@@ -3,7 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AlertTriangle, CheckCircle2, Send } from "lucide-react";
-import { CONTACT_FORM_NAME, toFormBody, validateContact } from "@/lib/contact";
+import {
+  sendToWeb3Forms,
+  toContactPayload,
+  validateContact,
+  web3formsKey,
+} from "@/lib/contact";
 
 type Status =
   | { kind: "idle" }
@@ -17,16 +22,14 @@ const inputClass =
 /**
  * Formulario de contacto real.
  *
- * El envío va a **Netlify Forms**, que es nativo del hosting: no hay terceros de
- * por medio, no hace falta exponer ninguna clave en el HTML y las respuestas se
- * guardan en el panel de Netlify además de notificarse por correo.
+ * El envío va a **Web3Forms desde el navegador del visitante**, no desde el
+ * servidor. Esa decisión viene de dos intentos anteriores: el proveedor bloquea
+ * con 403 las peticiones de servidor a servidor (está detrás de Cloudflare) y
+ * Netlify Forms ataba el formulario al alojamiento, así que se perdía al migrar.
+ * Enviando desde el navegador, el formulario funciona igual en cualquier hosting.
  *
- * Antes enviaba a un proveedor externo a través de `/api/contacto`. Ese camino
- * se retiró porque el proveedor está detrás de la protección anti-bots de
- * Cloudflare y rechazaba (403) cualquier envío hecho desde un servidor.
- *
- * Lo que se mantiene del original: la validación de verdad y que la interfaz
- * nunca finge un envío correcto.
+ * Lo que se mantiene: la validación de verdad y que la interfaz nunca finge un
+ * envío correcto.
  */
 export function ContactForm({ contactEmail }: { contactEmail: string }) {
   const [status, setStatus] = useState<Status>({ kind: "idle" });
@@ -47,16 +50,19 @@ export function ContactForm({ contactEmail }: { contactEmail: string }) {
     setStatus({ kind: "sending" });
 
     try {
-      // El POST va al esqueleto estático, no a "/": en una aplicación con SSR la
-      // función de Next intercepta la raíz y el envío nunca llegaría a Netlify
-      // Forms. Está documentado en public/__forms.html.
-      const response = await fetch("/__forms.html", {
-        method: "POST",
-        headers: { "content-type": "application/x-www-form-urlencoded" },
-        body: toFormBody(values),
-      });
+      const key = web3formsKey();
+      if (!key) {
+        // Sin clave no se puede entregar nada: se dice la verdad en lugar de
+        // fingir que el mensaje ha salido.
+        setStatus({
+          kind: "error",
+          message: `El formulario no está configurado todavía. Escríbenos a ${contactEmail}.`,
+        });
+        return;
+      }
 
-      if (!response.ok) throw new Error(`Netlify respondió ${response.status}`);
+      const result = await sendToWeb3Forms(toContactPayload(values, key));
+      if (!result.ok) throw new Error(result.detail);
 
       form.reset();
       setStatus({ kind: "ok" });
@@ -70,7 +76,7 @@ export function ContactForm({ contactEmail }: { contactEmail: string }) {
 
   return (
     <form
-      name={CONTACT_FORM_NAME}
+      name="contacto"
       onSubmit={handleSubmit}
       className="space-y-4 rounded-xl border border-white/5 bg-zinc-900/40 p-6"
       noValidate
@@ -79,7 +85,7 @@ export function ContactForm({ contactEmail }: { contactEmail: string }) {
           con Next.js su detector no analiza este HTML, porque se sirve desde la
           caché de rutas. Aquí solo hace falta enviar el nombre y el campo trampa
           con los mismos nombres que en esa declaración. */}
-      <input type="hidden" name="form-name" value={CONTACT_FORM_NAME} />
+      <input type="hidden" name="form-name" value="contacto" />
       <p className="hidden" aria-hidden="true">
         <label>
           No rellenes este campo <input name="bot-field" tabIndex={-1} />
