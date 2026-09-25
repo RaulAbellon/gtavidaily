@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { getLatestArticles } from "@/lib/data";
+import { GET as getSearchIndex } from "@/app/buscar/indice.json/route";
+import { toSearchIndexEntry } from "@/lib/article-view";
+import { articles, getLatestArticles } from "@/lib/data";
 import {
   countWords,
   estimateReadingTime,
@@ -8,6 +10,7 @@ import {
   normalize,
   searchArticles,
 } from "@/lib/queries";
+import { rankSearches } from "@/lib/search";
 
 describe("buscador", () => {
   it("ignora consultas demasiado cortas", () => {
@@ -37,6 +40,60 @@ describe("buscador", () => {
 
   it("no devuelve nada para términos inexistentes", () => {
     expect(searchArticles("zxqwvbnm")).toEqual([]);
+  });
+});
+
+describe("buscador en el navegador (/buscar)", () => {
+  // `/buscar` es una página estática: el índice viaja como fichero
+  // (`/buscar/indice.json`) y el filtrado ocurre en el cliente. Estas pruebas
+  // garantizan que ese índice existe, está completo y **puntúa igual** que el
+  // servidor: si divergieran, el buscador daría resultados distintos según dónde
+  // se ejecutara.
+  const queries = ["lucia", "trailer", "tráiler", "gta", "vice city", "mapa", "zxqwvbnm"];
+
+  it("el índice estático se sirve como JSON con todos los artículos", async () => {
+    const response = await getSearchIndex();
+    expect(response.status).toBe(200);
+    expect(response.headers.get("content-type")).toContain("application/json");
+
+    const entries = JSON.parse(await response.text()) as { slug: string }[];
+    expect(entries.length).toBe(articles.length);
+    expect(new Set(entries.map((entry) => entry.slug)).size).toBe(articles.length);
+  });
+
+  it("el índice lleva lo que necesitan la búsqueda y la tarjeta", async () => {
+    const entries = JSON.parse(await (await getSearchIndex()).text()) as Record<
+      string,
+      unknown
+    >[];
+    for (const entry of entries) {
+      for (const field of [
+        "slug",
+        "title",
+        "excerpt",
+        "tags",
+        "content",
+        "image",
+        "imageAlt",
+        "categoryName",
+        "categoryColor",
+        "dateLabel",
+        "publishedAt",
+        "readingTime",
+      ]) {
+        expect(entry[field], `${entry.slug as string} sin ${field}`).toBeDefined();
+      }
+    }
+  });
+
+  it("da exactamente los mismos resultados que el buscador del servidor", () => {
+    const index = articles.map(toSearchIndexEntry);
+    for (const query of queries) {
+      expect(
+        rankSearches(index, query, 40).map((entry) => entry.slug),
+        `consulta «${query}»`
+      ).toEqual(searchArticles(query, 40).map((article) => article.slug));
+    }
   });
 });
 

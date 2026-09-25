@@ -1,17 +1,23 @@
-# Cabeceras HTTP para Cloudflare (Workers Static Assets y Pages).
+# Cabeceras HTTP para Cloudflare (Workers Static Assets) y para Netlify.
 #
 # Cloudflare parsea este fichero y NO lo sirve como activo. Los valores de las
-# cabeceras de seguridad son idénticos a los de `next.config.ts` y
-# `netlify.toml`; si se cambia uno, hay que cambiar los tres.
+# cabeceras de seguridad son idénticos a los de `netlify.toml` y a la constante
+# `CSP` de `next.config.ts`; si se cambia uno, hay que cambiar los tres (hay una
+# prueba que falla si divergen).
 #
-# Aviso importante: las reglas de `_headers` solo se aplican a las respuestas
-# que sirve el CDN como activo estático. El HTML lo genera el Worker de OpenNext
-# y NO pasa por aquí, así que su CSP es la que declara `headers()` en
-# `next.config.ts` (y por eso `wrangler.jsonc` lleva `run_worker_first: true`).
-# Este fichero cubre lo demás: /ads.txt, /robots.txt, /imagenes/*, /icon-*.png
-# y, sobre todo, la caché de los activos con hash de /_next/static/*.
+# **Ahora se aplica a todo, incluido el HTML.** El sitio es estático
+# (`output: "export"`), así que las páginas son ficheros de `out/` servidos por
+# el CDN: dejaron de generarlas un Worker de Next, y por eso ya no hacen falta
+# dos sitios donde declarar la CSP. Este fichero cubre las páginas, /ads.txt,
+# /robots.txt, los sitemaps, el feed, /imagenes/*, /portadas/*, /icon-*.png y la
+# caché de los activos con hash de /_next/static/*.
 
 /_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Las portadas SVG de reserva llevan el slug en la URL y solo cambian si cambia
+# el dibujo, así que se pueden cachear para siempre.
+/portadas/*
   Cache-Control: public, max-age=31536000, immutable
 
 # Los ficheros de `public/` no llevan hash en el nombre: si se cachean un año,

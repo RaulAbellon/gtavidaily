@@ -4,16 +4,18 @@
 # monetizarse sin coste de alojamiento: la restricción de Netlify es facturar a
 # terceros por alojar sus webs, no mostrar anuncios propios.
 #
-# No se declara `publish`: el adaptador oficial de Next.js de Netlify genera el
-# directorio de publicación y provisiona las funciones a partir de `.next`.
-# Tampoco se fija la versión del adaptador, para recibir las actualizaciones
-# automáticas que dan soporte a cada versión de Next.
+# El sitio es **completamente estático** (`output: "export"` en next.config.ts):
+# `npm run build` deja los ficheros en `out/` y Netlify los publica tal cual. Ya
+# no hay adaptador de Next que genere una función de SSR, así que `publish` sí se
+# declara aquí (antes lo gestionaba el adaptador). Con esto, Netlify y Cloudflare
+# sirven exactamente el mismo artefacto.
 
 [build]
   # Validación del contenido (esquema, fuentes, categorías) antes de compilar.
   # Las pruebas, el lint y el typecheck los pasa el CI de GitHub Actions y se
   # pasan en local con `npm run check` antes de publicar.
   command = "npm run content:check && npm run build"
+  publish = "out"
 
 [build.environment]
   # Next.js 16 exige Node >= 20.9. Se fija la LTS para que el build no dependa

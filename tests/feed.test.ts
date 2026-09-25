@@ -1,9 +1,14 @@
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { GET as getFeed } from "@/app/feed.xml/route";
-import { GET as getSecurityTxt } from "@/app/security-txt/route";
 import { articles, getLatestArticles } from "@/lib/data";
 import { FEED_LIMIT, buildFeed } from "@/lib/feed";
-import { SECURITY_TXT_PATH, buildSecurityTxt } from "@/lib/security-txt";
+import {
+  SECURITY_TXT_PATH,
+  buildSecurityTxt,
+  securityTxtExpires,
+} from "@/lib/security-txt";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 
 describe("feed RSS", () => {
@@ -73,34 +78,59 @@ describe("feed RSS", () => {
 });
 
 describe("security.txt (RFC 9116)", () => {
-  it("incluye contacto y canonical", async () => {
-    const text = await (await getSecurityTxt()).text();
-    const lines = text.split("\n");
+  // Desde la conversión a sitio estático el fichero es **real**
+  // (`public/.well-known/security.txt`): antes lo generaba la ruta
+  // `/security-txt` y se publicaba en su URL canónica con una reescritura de
+  // `next.config.ts`, que con `output: "export"` no existe. Estas pruebas miran
+  // el fichero que se despliega, no una función.
+  const file = readFileSync(
+    fileURLToPath(new URL("../public/.well-known/security.txt", import.meta.url)),
+    "utf8"
+  );
+
+  it("vive en la ruta canónica del sitio", () => {
+    expect(SECURITY_TXT_PATH).toBe(".well-known/security.txt");
+  });
+
+  it("incluye contacto y canonical", () => {
+    const lines = file.split("\n");
     expect(lines).toContain(`Contact: mailto:${CONTACT_EMAIL}`);
     expect(lines).toContain(`Canonical: ${SITE_URL}/${SECURITY_TXT_PATH}`);
     expect(lines).toContain("Preferred-Languages: es, en");
+    expect(lines).toContain(`Policy: ${SITE_URL}/aviso-legal`);
   });
 
-  it("declara una caducidad en el futuro y dentro de un año", () => {
-    const text = buildSecurityTxt();
-    const expires = /^Expires: (.+)$/m.exec(text)?.[1];
-    expect(expires, "falta el campo Expires").toBeTruthy();
-
-    const when = new Date(expires!).getTime();
-    expect(Number.isNaN(when)).toBe(false);
-    expect(when).toBeGreaterThan(Date.now());
-    expect(when).toBeLessThan(Date.now() + 366 * 24 * 60 * 60 * 1000);
+  it("declara una caducidad en el futuro", () => {
+    const expires = securityTxtExpires(file);
+    expect(expires, "falta el campo Expires o no es una fecha").not.toBeNull();
+    expect((expires as Date).getTime()).toBeGreaterThan(Date.now());
   });
 
-  it("renueva la caducidad con cada generación", () => {
-    const now = new Date("2026-01-01T00:00:00.000Z");
-    const expires = /^Expires: (.+)$/m.exec(buildSecurityTxt(now))?.[1];
-    expect(new Date(expires!).getUTCFullYear()).toBe(2027);
+  it("avisa con margen antes de caducar (al menos 90 días)", () => {
+    // El fichero versionado no se regenera solo: si se acerca su caducidad, esta
+    // prueba falla y recuerda actualizarlo. En cada build,
+    // `scripts/postbuild.mjs` reescribe el Expires del fichero **publicado** a un
+    // año vista, así que el sitio desplegado siempre va holgado.
+    const expires = securityTxtExpires(file) as Date;
+    expect(expires.getTime() - Date.now()).toBeGreaterThan(
+      90 * 24 * 60 * 60 * 1000
+    );
   });
 
-  it("se sirve como texto plano", async () => {
-    const response = await getSecurityTxt();
-    expect(response.status).toBe(200);
-    expect(response.headers.get("content-type")).toContain("text/plain");
+  it("mantiene el mismo formato que el generador", () => {
+    // `buildSecurityTxt` es la fuente de verdad del formato: regenerarlo con la
+    // fecha del fichero tiene que devolver el fichero tal cual.
+    const expires = securityTxtExpires(file) as Date;
+    const regenerated = buildSecurityTxt(
+      new Date(expires.getTime() - 365 * 24 * 60 * 60 * 1000)
+    );
+    expect(regenerated).toBe(file);
+  });
+
+  it("va en UTF-8 sin BOM", () => {
+    const bytes = readFileSync(
+      fileURLToPath(new URL("../public/.well-known/security.txt", import.meta.url))
+    );
+    expect([...bytes.slice(0, 3)]).not.toEqual([0xef, 0xbb, 0xbf]);
   });
 });

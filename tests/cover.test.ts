@@ -1,13 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { GET } from "@/app/cover/route";
+import { GET, generateStaticParams } from "@/app/portadas/[slug]/route";
 import { articles } from "@/lib/data";
 import {
   COVER_HEIGHT,
-  COVER_VERSION,
   COVER_WIDTH,
   coverUrl,
   renderCoverSvg,
 } from "@/lib/cover";
+import { articleImage, staticCoverUrl } from "@/lib/images";
 
 /** Distancia entre dos tonos, en grados. Sirve para comparar familias de color. */
 function hueDistance(a: string, b: string): number {
@@ -99,20 +99,22 @@ describe("ilustraciones de portada", () => {
 });
 
 describe("URL de la portada", () => {
-  it("construye URLs cortas y cacheables en lugar de incrustar el SVG", () => {
+  it("el generador sigue construyendo URLs cortas y deterministas", () => {
+    // `coverUrl` se conserva como utilidad del generador, pero **ya no se
+    // publica ninguna ruta que la sirva**: la portada que se muestra es el JPEG
+    // propio del artículo y, si falta, el SVG estático `/portadas/<slug>.svg`.
     for (const article of articles) {
       const url = coverUrl(article);
       expect(url.startsWith("/cover?")).toBe(true);
-      expect(url).toContain(`v=${COVER_VERSION}`);
       expect(url).not.toContain("data:");
       expect(url.length).toBeLessThan(160);
     }
   });
 
-  it("el campo cover de cada artículo ya es esa URL y el rótulo viaja aparte", () => {
+  it("cada artículo apunta a una imagen real, nunca a la ruta retirada", () => {
     for (const article of articles) {
-      expect(article.cover).toBe(coverUrl(article));
-      expect(article.cover).not.toContain("data:");
+      expect(article.cover).not.toContain("/cover?");
+      expect(article.cover).toBe(articleImage(article));
       expect(article.coverLabel.length).toBeGreaterThan(0);
       // Antes el SVG entero (~2,5 KB) viajaba dentro de los datos.
       expect(article.cover.length).toBeLessThan(160);
@@ -120,43 +122,40 @@ describe("URL de la portada", () => {
   });
 });
 
-describe("ruta /cover", () => {
-  it("sirve el SVG con caché larga", async () => {
-    const response = await GET(
-      new Request("http://localhost/cover?v=2&c=trailers&t=Prueba")
+describe("portadas estáticas /portadas/[slug].svg", () => {
+  it("genera un fichero por artículo, sin dejar ninguno fuera", () => {
+    // El valor del parámetro incluye la extensión: así el build escribe
+    // `out/portadas/<slug>.svg` (el App Router no admite `[slug].svg`).
+    const slugs = generateStaticParams().map((params) => params.slug);
+    expect(slugs.sort()).toEqual(
+      articles.map((article) => `${article.slug}.svg`).sort()
     );
+    expect(new Set(slugs).size).toBe(slugs.length);
+  });
+
+  it("sirve el SVG del artículo con caché larga", async () => {
+    const article = articles[0];
+    const response = await GET(new Request("http://localhost/portadas/x.svg"), {
+      params: Promise.resolve({ slug: `${article.slug}.svg` }),
+    });
     expect(response.status).toBe(200);
     expect(response.headers.get("content-type")).toContain("image/svg+xml");
     expect(response.headers.get("cache-control")).toContain("immutable");
 
-    expect(await response.text()).toContain("Prueba");
+    const svg = await response.text();
+    expect(svg).toContain("<svg");
+    expect(svg).toBe(renderCoverSvg(article.category, article.coverLabel));
   });
 
-  it("neutraliza texto malicioso en los parámetros", async () => {
-    const response = await GET(
-      new Request(
-        `http://localhost/cover?c=noticias&t=${encodeURIComponent("<script>x</script>")}`
-      )
-    );
-    expect(await response.text()).not.toContain("<script>");
+  it("la URL pública coincide con el fichero que se genera", () => {
+    const article = articles[0];
+    expect(staticCoverUrl(article.slug)).toBe(`/portadas/${article.slug}.svg`);
   });
 
-  it("declara de qué depende su caché", async () => {
-    const response = await GET(
-      new Request("http://localhost/cover?c=noticias&t=Prueba")
-    );
-    // El adaptador de Netlify restringe la clave de caché a sus parámetros
-    // internos. Sin esta cabecera, todas las portadas comparten una única
-    // entrada y se ven iguales: pasó en producción.
-    const vary = response.headers.get("netlify-vary") ?? "";
-    expect(vary).toContain("c");
-    expect(vary).toContain("t");
-    expect(vary).toContain("v");
-  });
-
-  it("no falla sin parámetros", async () => {
-    const response = await GET(new Request("http://localhost/cover"));
-    expect(response.status).toBe(200);
-    expect(await response.text()).toContain("<svg");
+  it("devuelve 404 para un slug que no existe", async () => {
+    const response = await GET(new Request("http://localhost/portadas/x.svg"), {
+      params: Promise.resolve({ slug: "no-existe-este-articulo.svg" }),
+    });
+    expect(response.status).toBe(404);
   });
 });

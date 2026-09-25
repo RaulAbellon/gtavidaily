@@ -124,9 +124,10 @@ Reglas que aplicamos además:
    regla con sentido: repetir la misma captura en varias piezas la devalúa.
 
 Si no hay imagen adecuada, el artículo se queda con su portada generada
-(`/cover`), que es original y no depende de nadie. **Es una opción válida, no un
-problema pendiente.** De hecho es la opción obligada en rumores, filtraciones y
-sucesos negativos.
+(`/portadas/<slug>.svg`, un fichero estático que produce el build con el motor de
+`src/lib/cover.ts`), que es original y no depende de nadie. **Es una opción
+válida, no un problema pendiente.** De hecho es la opción obligada en rumores,
+filtraciones y sucesos negativos.
 
 ## Cómo se añade una imagen
 

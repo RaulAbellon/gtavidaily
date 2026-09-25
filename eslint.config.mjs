@@ -45,9 +45,11 @@ const eslintConfig = [
     },
   },
   {
-    // `.open-next` y `.wrangler` son artefactos del adaptador de Cloudflare:
-    // sin excluirlos, `npm run lint` después de `cf:build` analiza el bundle
+    // `.wrangler` es el estado local de wrangler y `out/` el build estático.
+    // Sin excluirlos, `npm run lint` después de compilar analiza el artefacto
     // entero y falla con decenas de miles de avisos que no son del proyecto.
+    // (`.open-next` se mantiene en la lista por si queda algún resto de la etapa
+    // del adaptador de OpenNext: ya no se genera.)
     ignores: [
       "node_modules/**",
       ".next/**",

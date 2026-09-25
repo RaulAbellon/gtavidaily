@@ -56,6 +56,10 @@ const REQUIRED_ROUTES = [
   "/sitemap.xml",
   "/feed.xml",
   "/.well-known/security.txt",
+  // El buscador es estático: la página y el índice con el que filtra el
+  // navegador son dos activos distintos.
+  "/buscar",
+  "/buscar/indice.json",
   // Identidad visual: si falta un activo, el navegador o las redes sociales
   // sirven algo roto y nadie se entera hasta que se ve el enlace compartido.
   "/logo-compact.svg",
@@ -112,19 +116,22 @@ async function main() {
   const articlePath = new URL(urls.find((url) => url.includes("/articulo/")) ?? `${BASE}/`).pathname;
   const article = await get(articlePath);
   if (article.status === 200 && article.body.includes("<article")) {
-    ok("el artículo se renderiza en el servidor", articlePath);
+    // El HTML viene pregenerado en el build: se sirve tal cual, sin renderizar.
+    ok("el artículo llega completo en el HTML", articlePath);
   } else {
     fail("artículo", `${articlePath} → ${article.status}`);
   }
 
-  // Portadas: cada artículo tiene su ilustración en JPEG (/imagenes/) para que
-  // Discover y las redes sociales la usen; /cover sigue sirviendo la versión SVG
-  // generada como respaldo de los artículos que no tengan imagen propia.
+  // Portadas: cada artículo tiene su imagen en JPEG (/imagenes/) para que
+  // Discover y las redes sociales la usen; `/portadas/<slug>.svg` es el fichero
+  // estático de reserva que entra si algún artículo se quedara sin imagen
+  // propia. La ruta dinámica `/cover?c=…&t=…` ya no existe: obligaba al Worker
+  // a dibujar el SVG en cada petición.
   const ownImages = [
     ...new Set([...home.body.matchAll(/\/imagenes\/[^"'\s)]+\.jpg/g)].map((m) => m[0])),
   ];
   const coverUrls = [
-    ...new Set([...home.body.matchAll(/\/cover\?[^"'\s)]+/g)].map((m) => m[0])),
+    ...new Set([...home.body.matchAll(/\/portadas\/[^"'\s)]+\.svg/g)].map((m) => m[0])),
   ];
 
   if (ownImages.length > 0) {
@@ -136,15 +143,32 @@ async function main() {
       fail("portada propia", `${ownImages[0]} → ${image.status} ${contentType}`);
     }
   } else if (coverUrls.length > 0) {
-    const coverResponse = await fetch(`${BASE}${coverUrls[0].replace(/&amp;/g, "&")}`);
+    const coverResponse = await fetch(`${BASE}${coverUrls[0]}`);
     const contentType = coverResponse.headers.get("content-type") ?? "";
     if (coverResponse.status === 200 && contentType.includes("image/svg+xml")) {
-      ok(`${coverUrls.length} portadas servidas desde /cover`, contentType);
+      ok(`${coverUrls.length} portadas servidas como SVG estático`, contentType);
     } else {
       fail("portada", `${coverUrls[0]} → ${coverResponse.status} ${contentType}`);
     }
   } else {
     fail("portadas", "la home no referencia ninguna imagen de artículo");
+  }
+
+  // La reserva tiene que existir de verdad para **todos** los artículos: es la
+  // garantía de que ninguna página se queda sin imagen.
+  const coverSlugs = urls
+    .filter((url) => url.includes("/articulo/"))
+    .slice(0, 3)
+    .map((url) => new URL(url).pathname.replace("/articulo/", ""));
+  for (const slug of coverSlugs) {
+    const path = `/portadas/${slug}.svg`;
+    const response = await fetch(`${BASE}${path}`);
+    const contentType = response.headers.get("content-type") ?? "";
+    if (response.status === 200 && contentType.includes("image/svg+xml")) {
+      ok(`${path} → 200`);
+    } else {
+      fail(path, `estado ${response.status}, content-type ${contentType}`);
+    }
   }
 
   if (/data:image\/svg\+xml/.test(home.body)) {

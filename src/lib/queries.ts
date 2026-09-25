@@ -8,52 +8,26 @@ import {
   type Article,
   type Category,
 } from "@/lib/data";
+import { normalize, rankSearches } from "@/lib/search";
 
 /**
  * Consultas derivadas del contenido. Se mantienen aparte de `data.ts` para no
  * tocar el fichero de datos (200 KB generados) y poder probarlas por separado.
+ *
+ * El motor de búsqueda vive en `@/lib/search` porque desde la conversión a sitio
+ * estático también lo usa el navegador: `/buscar` es una página estática y
+ * filtra en el cliente sobre un índice JSON. Aquí se reexporta para no romper a
+ * quien ya lo importaba desde este módulo.
  */
 
-/** Normaliza texto para búsquedas: minúsculas y sin acentos. */
-export function normalize(text: string): string {
-  return text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
-}
+export { normalize };
 
 /**
  * Busca artículos por título, extracto, etiquetas y cuerpo.
  * Devuelve resultados ordenados por relevancia (título > etiquetas > cuerpo).
  */
 export function searchArticles(query: string, limit = 30): Article[] {
-  const needle = normalize(query.trim());
-  if (needle.length < 2) return [];
-
-  const scored = articles
-    .map((article) => {
-      const title = normalize(article.title);
-      const excerpt = normalize(article.excerpt);
-      const tags = normalize(article.tags.join(" "));
-      const body = normalize(article.content.join(" "));
-
-      let score = 0;
-      if (title.includes(needle)) score += 10;
-      if (tags.includes(needle)) score += 5;
-      if (excerpt.includes(needle)) score += 3;
-      if (body.includes(needle)) score += 1;
-
-      return { article, score };
-    })
-    .filter((row) => row.score > 0)
-    .sort(
-      (a, b) =>
-        b.score - a.score ||
-        new Date(b.article.publishedAt).getTime() -
-          new Date(a.article.publishedAt).getTime()
-    );
-
-  return scored.slice(0, limit).map((row) => row.article);
+  return rankSearches(articles, query, limit);
 }
 
 /**

@@ -1,4 +1,3 @@
-import { coverUrl } from "@/lib/cover";
 import type { Article } from "@/lib/data";
 import { absoluteUrl } from "@/lib/site";
 
@@ -12,8 +11,12 @@ import { absoluteUrl } from "@/lib/site";
  * imagen se guarda siempre en `public/imagenes/` y en los datos solo se apunta
  * a esa copia local.
  *
- * Mientras un artículo no tenga imagen propia, se sigue sirviendo la portada
- * generada (`/cover`), que es SVG, pesa poco y no depende de nadie.
+ * **Desde la conversión a sitio estático la imagen propia (JPEG 1200×675) es la
+ * única que se sirve**: la ruta dinámica `/cover?c=…&t=…` desapareció porque
+ * obligaba al Worker a dibujar el SVG en cada petición. Para un artículo sin
+ * imagen propia queda el SVG estático que el build genera en
+ * `/portadas/<slug>.svg` (ver `src/app/portadas/[slug]/route.ts`), así que
+ * ninguna página se queda sin portada nunca.
  */
 
 /** Imagen social por defecto del sitio (marca, no de un artículo). */
@@ -28,6 +31,9 @@ export const ARTICLE_IMAGES_DIR = "public/imagenes";
  */
 export const ARTICLE_IMAGES_URL_PREFIX = "/imagenes";
 
+/** Prefijo de las portadas SVG estáticas que genera el build. */
+export const STATIC_COVERS_PREFIX = "/portadas";
+
 /** Medidas a las que se preparan las imágenes de artículo (16:9). */
 export const ARTICLE_IMAGE_WIDTH = 1200;
 export const ARTICLE_IMAGE_HEIGHT = 675;
@@ -39,12 +45,20 @@ export function hasOwnImage(article: Pick<Article, "image">): boolean {
   return Boolean(article.image?.trim());
 }
 
+/**
+ * Portada SVG estática de reserva de un artículo.
+ *
+ * Es un fichero real del build (`out/portadas/<slug>.svg`), no una ruta que se
+ * renderice en cada petición: lo sirve el CDN como cualquier otro activo.
+ */
+export function staticCoverUrl(slug: string): string {
+  return `${STATIC_COVERS_PREFIX}/${slug}.svg`;
+}
+
 /** Imagen que se muestra en el artículo y en las tarjetas. */
-export function articleImage(
-  article: Pick<Article, "image" | "category" | "coverLabel">
-): string {
+export function articleImage(article: Pick<Article, "image" | "slug">): string {
   const own = article.image?.trim();
-  return own ? own : coverUrl(article);
+  return own ? own : staticCoverUrl(article.slug);
 }
 
 /** Texto alternativo: el de la imagen propia o el de la portada generada. */
@@ -66,7 +80,7 @@ export function articleImageCredit(
 
 /** URL absoluta de la imagen del artículo, para `og:image` y datos estructurados. */
 export function articleImageUrl(
-  article: Pick<Article, "image" | "category" | "coverLabel">
+  article: Pick<Article, "image" | "slug">
 ): string {
   return absoluteUrl(articleImage(article));
 }

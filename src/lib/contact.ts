@@ -2,10 +2,11 @@
  * Reglas del formulario de contacto.
  *
  * Antes esto vivía en el endpoint `/api/contacto`, que reenviaba el mensaje a un
- * proveedor externo. Ese camino ya no existe: el formulario se envía a Netlify
- * Forms, que es nativo del hosting, no depende de terceros ni exige exponer
- * claves en el HTML. La validación se hace en el navegador con estas mismas
- * funciones, que siguen siendo puras y comprobables.
+ * proveedor externo. Ese camino ya no existe: el envío lo hace **el navegador**
+ * contra Web3Forms (ver `sendToWeb3Forms`), así que el formulario no depende del
+ * servidor y sigue funcionando igual con el sitio estático, sin Worker que lo
+ * atienda. La validación se hace en el cliente con estas mismas funciones, que
+ * son puras y comprobables.
  */
 
 export const CONTACT_LIMITS = {
@@ -15,14 +16,14 @@ export const CONTACT_LIMITS = {
   message: 4000,
 } as const;
 
-/** Nombre del formulario tal y como lo detecta Netlify en el build. */
+/** Nombre del formulario, que viaja como campo para identificarlo en el correo. */
 export const CONTACT_FORM_NAME = "contacto";
 
 /**
  * Segundo formulario: aviso por correo el día del lanzamiento.
  *
  * Captar el correo es la única forma de traer de vuelta a alguien que ya nos
- * leyó sin depender de Google. También vive en `public/__forms.html`.
+ * leyó sin depender de Google. También se envía desde el navegador.
  */
 export const LAUNCH_ALERT_FORM_NAME = "avisos";
 

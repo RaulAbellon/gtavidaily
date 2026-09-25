@@ -6,17 +6,20 @@ import { articles, type Article } from "@/lib/data";
 import {
   ARTICLE_IMAGES_URL_PREFIX,
   DEFAULT_OG_IMAGE,
+  STATIC_COVERS_PREFIX,
   articleImage,
   articleImageAlt,
   articleImageCredit,
   articleImageUrl,
   articleOgImage,
   hasOwnImage,
+  staticCoverUrl,
 } from "@/lib/images";
 
 /** Campos que consume la capa de imágenes, para construir casos de prueba. */
 type Sample = Pick<
   Article,
+  | "slug"
   | "category"
   | "coverLabel"
   | "coverAlt"
@@ -27,6 +30,7 @@ type Sample = Pick<
 >;
 
 const sinImagen: Sample = {
+  slug: "articulo-de-prueba",
   category: "noticias",
   coverLabel: "Rótulo de prueba",
   coverAlt: "Ilustración conceptual generada para el artículo",
@@ -83,10 +87,24 @@ describe("imágenes de artículo", () => {
     }
   });
 
-  it("cae en la portada generada cuando el artículo no tiene imagen", () => {
+  it("cae en la portada SVG estática cuando el artículo no tiene imagen", () => {
+    // Antes la reserva era la ruta dinámica `/cover?c=…&t=…`, que el Worker
+    // tenía que dibujar en cada petición. Ahora es un fichero del build en
+    // `/portadas/<slug>.svg` (ver src/app/portadas/[slug]/route.ts), así que
+    // ninguna página se queda sin portada y el CDN lo sirve sin ejecutar nada.
     expect(hasOwnImage(sinImagen)).toBe(false);
-    expect(articleImage(sinImagen)).toContain("/cover?");
+    expect(articleImage(sinImagen)).toBe(staticCoverUrl(sinImagen.slug));
+    expect(articleImage(sinImagen)).toContain(STATIC_COVERS_PREFIX);
     expect(articleImage(conImagen)).toBe("/imagenes/ejemplo.jpg");
+  });
+
+  it("genera una portada estática por artículo, con su slug en la URL", () => {
+    for (const article of articles) {
+      const url = staticCoverUrl(article.slug);
+      expect(url).toBe(`/portadas/${article.slug}.svg`);
+      // Sin parámetros de consulta: es un activo cacheable para siempre.
+      expect(url).not.toContain("?");
+    }
   });
 
   it("usa el texto alternativo de la imagen o el de la portada", () => {
@@ -112,6 +130,9 @@ describe("imágenes de artículo", () => {
 
   it("construye URLs absolutas para datos estructurados", () => {
     expect(articleImageUrl(conImagen)).toMatch(/^https:\/\/gtavidaily\.com\/imagenes\//);
+    expect(articleImageUrl(sinImagen)).toBe(
+      `https://gtavidaily.com${staticCoverUrl(sinImagen.slug)}`
+    );
   });
 
   it("el sitemap solo declara las imágenes propias", () => {

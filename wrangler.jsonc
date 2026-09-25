@@ -1,83 +1,54 @@
 /**
- * Configuración de Cloudflare para el adaptador oficial de OpenNext.
+ * Configuración de Cloudflare: **solo activos estáticos, sin Worker**.
  *
- * Este fichero es el equivalente de `netlify.toml` en la plataforma nueva, pero
- * convive con él: la migración se prepara en paralelo y Netlify sigue siendo el
- * destino mientras no se cambie el DNS.
+ * El sitio se convierte en estático (`output: "export"` en `next.config.ts`),
+ * así que `next build` deja todo en `out/` y Cloudflare lo sirve desde su CDN.
+ * No hay script de Worker (`main`): ninguna petición ejecuta código, ninguna
+ * consume CPU y ninguna cuenta como petición al Worker. Eso resuelve de raíz el
+ * problema que motivó el cambio —el límite de 10 ms de CPU por petición del plan
+ * gratuito cortaba la conexión al renderizar una página con la caché fría— y
+ * hace que el sitio funcione exactamente igual en el plan gratuito y en el de
+ * pago.
  *
- * Referencia: https://opennext.js.org/cloudflare/get-started
+ * Antes de esto, `wrangler.jsonc` apuntaba al Worker del adaptador de OpenNext
+ * (`.open-next/worker.js`) y el HTML lo generaba Next en cada petición fría. Ese
+ * adaptador ya no se usa: ver `CONVERSION-ESTATICA.md`.
+ *
+ * Referencias:
+ * · Activos estáticos: https://developers.cloudflare.com/workers/static-assets/
+ * · Cabeceras: https://developers.cloudflare.com/workers/static-assets/headers/
+ * · 404: https://developers.cloudflare.com/workers/static-assets/routing/
  */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
 
-  // El adaptador deja el Worker aquí al ejecutar `npm run cf:build`.
-  "main": ".open-next/worker.js",
-
-  // Nombre del Worker. Debe coincidir exactamente con el `service` del binding
-  // WORKER_SELF_REFERENCE de más abajo, o el despliegue falla.
+  // Debe coincidir con el nombre del Worker en el panel de Cloudflare.
   "name": "gtavidaily",
 
-  // El adaptador avisa si esta fecha tiene más de seis meses, así que hay que
-  // revisarla de vez en cuando (la última, 2026-09-01). Debe ser posterior al
-  // 2024-09-23, que es cuando `nodejs_compat` empieza a funcionar de verdad.
+  // El adaptador avisaba si esta fecha tenía más de seis meses. Sin Worker no es
+  // crítica, pero se mantiene para que el día que se añada uno no haya sorpresas
+  // (y porque debe ser posterior al 2024-09-23, cuando `nodejs_compat` empieza a
+  // funcionar de verdad).
   "compatibility_date": "2026-09-01",
 
-  "compatibility_flags": [
-    // Next.js 16 necesita las API de Node en el runtime de workerd.
-    "nodejs_compat",
-    // Recomendado por el adaptador: obliga a que `fetch` solo salga a Internet
-    // y no pueda resolver bindings internos por accidente.
-    "global_fetch_strictly_public"
-  ],
-
   "assets": {
-    // Activos estáticos del build (public/ + .next/static) y el binding con el
-    // que el Worker los lee.
-    "directory": ".open-next/assets",
-    "binding": "ASSETS",
+    // Lo que produce `npm run cf:build` (= `npm run build`).
+    "directory": "out",
 
-    // El Worker atiende CADA petición antes que los activos estáticos.
-    //
-    // Es necesario para conservar el comportamiento que ya tiene el sitio en
-    // Netlify: las cabeceras de seguridad y la reescritura de
-    // `/.well-known/security.txt` -> `/security-txt` las aplica Next (ver
-    // `headers()` y `rewrites()` en next.config.ts), y con
-    // `run_worker_first: false` Cloudflare serviría los activos directamente sin
-    // pasar por Next, saltándose ambas cosas. También es lo que permite que los
-    // formularios (POST a `/__forms.html`) y las rutas dinámicas de query
-    // (`/cover?c=...&t=...`) lleguen al Worker.
-    //
-    // Contrapartida: los aciertos de activos también se facturan como petición
-    // al Worker. Si algún día se quiere ahorrar ese coste, se puede poner a
-    // `false` y replicar las cabeceras en `public/_headers`, pero entonces hay
-    // que mover también allí la reescritura de security.txt y comprobar que las
-    // páginas siguen recibiendo la CSP.
-    "run_worker_first": false
-  },
+    // El CDN resuelve `/noticias` como `noticias.html` y `/articulo/<slug>` como
+    // `articulo/<slug>.html`, que es exactamente cómo los genera Next. Es el
+    // valor por defecto, pero se declara para que quede por escrito.
+    "html_handling": "auto-trailing-slash",
 
-  // Auto-referencia que el adaptador usa para tareas internas (cola de
-  // revalidación). El nombre debe ser el mismo que el de arriba.
-  "services": [
-    {
-      "binding": "WORKER_SELF_REFERENCE",
-      "service": "gtavidaily"
-    }
-  ]
+    // Cualquier URL que no exista devuelve el `404.html` del build (con estado
+    // 404 real, no un 200 disfrazado).
+    "not_found_handling": "404-page"
+  }
 
-  // Sin bindings opcionales:
-  //
-  // · `images`: el sitio tiene `images.unoptimized = true` en next.config.ts
-  //   (las portadas se preparan ya recortadas a 1200×675 y /cover genera SVG),
-  //   así que no hay nada que optimizar en caliente.
-  //
-  // · `r2_buckets` (NEXT_INC_CACHE_R2_BUCKET): solo hace falta para ISR de
-  //   verdad. 82 artículos y las categorías se prerenderizan enteros en el
-  //   build; lo único con revalidación es /news-sitemap.xml (cada hora) y se
-  //   regenera en la primera visita de cada ventana. Si algún día se quiere
-  //   caché incremental persistente, se crea el bucket con
-  //   `npx wrangler r2 bucket create gtavidaily-opennext-cache` y se añade:
-  //
-  //   "r2_buckets": [
-  //     { "binding": "NEXT_INC_CACHE_R2_BUCKET", "bucket_name": "gtavidaily-opennext-cache" }
-  //   ]
+  // Sin `main`, sin `services` (la auto-referencia solo servía para la cola de
+  // revalidación de OpenNext), sin `nodejs_compat` y sin bindings: no hay nada
+  // que ejecutar. Las cabeceras de seguridad y la CSP viven en
+  // `public/_headers`, que Cloudflare aplica a **todas** las respuestas,
+  // incluidas las páginas HTML (antes solo cubría los activos, porque el HTML lo
+  // generaba el Worker).
 }

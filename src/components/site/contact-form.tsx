@@ -81,10 +81,11 @@ export function ContactForm({ contactEmail }: { contactEmail: string }) {
       className="space-y-4 rounded-xl border border-white/5 bg-zinc-900/40 p-6"
       noValidate
     >
-      {/* La declaración del formulario para Netlify vive en `public/forms.html`:
-          con Next.js su detector no analiza este HTML, porque se sirve desde la
-          caché de rutas. Aquí solo hace falta enviar el nombre y el campo trampa
-          con los mismos nombres que en esa declaración. */}
+      {/* `form-name` y el campo trampa son restos de la etapa en la que el
+          formulario se enviaba a Netlify Forms: hoy el envío lo hace
+          `handleSubmit` desde el navegador contra Web3Forms y `toContactPayload`
+          solo manda nombre, email, asunto y mensaje. Se dejan tal cual porque no
+          afectan al envío (y el campo trampa sigue sirviendo de despiste). */}
       <input type="hidden" name="form-name" value="contacto" />
       <p className="hidden" aria-hidden="true">
         <label>

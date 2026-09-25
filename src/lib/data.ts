@@ -8,10 +8,12 @@
 // sector se mueve: antes de dar por buena una cifra, conviene reabrir la fuente
 // enlazada al final del artículo.
 //
-// Las portadas son SVG generados localmente (ver `src/lib/cover.ts`): no hay
-// material con copyright de Rockstar/Take-Two.
+// Las portadas de reserva son SVG estáticos generados en el build
+// (`/portadas/<slug>.svg`); la imagen que se muestra es el JPEG propio de cada
+// artículo en `public/imagenes/`. No hay material con copyright de
+// Rockstar/Take-Two.
 
-import { coverUrl } from "@/lib/cover";
+import { articleImage } from "@/lib/images";
 import { articlesRaw } from "@/content/articles";
 
 export type Category = {
@@ -38,7 +40,7 @@ export type Article = {
   author: string; // slug de autor
   publishedAt: string; // ISO date
   updatedAt?: string;
-  cover: string; // URL de la ilustración generada (ver src/lib/cover.ts)
+  cover: string; // URL de la portada: imagen propia o `/portadas/<slug>.svg`
   coverLabel: string; // rótulo corto que se dibuja dentro de la ilustración
   coverAlt: string;
   tags: string[];
@@ -134,15 +136,17 @@ export const authors: Author[] = [
 /**
  * Los artículos viven en `src/content/articles/`, un fichero JSON por pieza,
  * para poder editarlos sin tocar un módulo gigante. Aquí solo se les añade la
- * URL de la ilustración, que se genera a partir de la categoría y el rótulo.
+ * URL de la portada.
  *
- * Antes el campo `cover` guardaba el SVG entero como `data:` URI (unos 2,5 KB
- * por artículo, 165 KB en total) solo para poder recuperar de ahí el rótulo. La
- * etiqueta ya viaja como campo propio, así que ese rodeo sobra.
+ * La portada que se sirve es la **imagen propia** del artículo (JPEG 1200×675
+ * en `public/imagenes/`); si algún día falta, cae en el SVG estático
+ * `/portadas/<slug>.svg` que genera `next build`. Antes este campo apuntaba a
+ * la ruta dinámica `/cover?...`, que ya no existe porque obligaba al Worker a
+ * renderizar en cada petición.
  */
 export const articles: Article[] = articlesRaw.map((article) => ({
   ...article,
-  cover: coverUrl(article),
+  cover: articleImage(article),
 }));
 
 // Utilidades de acceso a datos

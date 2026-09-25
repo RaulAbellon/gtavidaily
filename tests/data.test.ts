@@ -3,6 +3,10 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { articles, authors, categories, getCategoryBySlug } from "@/lib/data";
 import {
+  ARTICLE_IMAGES_URL_PREFIX,
+  STATIC_COVERS_PREFIX,
+} from "@/lib/images";
+import {
   citableSources,
   countWords,
   findArticlesWithUnknownAuthor,
@@ -88,13 +92,18 @@ describe("integridad del contenido", () => {
     }
   });
 
-  it("genera las portadas localmente (sin hotlinking)", () => {
+  it("sirve las portadas desde el propio sitio (sin hotlinking)", () => {
     for (const article of articles) {
-      // La ilustración se sirve desde nuestra propia ruta /cover: nada de
-      // enlazar imágenes de terceros.
-      expect(article.cover.startsWith("/cover?"), article.slug).toBe(true);
+      // La portada es la imagen propia del artículo (`/imagenes/…`) o, si no la
+      // tiene, el SVG estático `/portadas/<slug>.svg` que genera el build. En
+      // ningún caso se enlaza una imagen de un tercero ni se incrusta un data URI.
+      expect(article.cover, article.slug).toMatch(
+        new RegExp(`^(${ARTICLE_IMAGES_URL_PREFIX}/|${STATIC_COVERS_PREFIX}/)`)
+      );
       expect(article.cover, article.slug).not.toMatch(/^https?:/);
       expect(article.cover, article.slug).not.toContain("data:");
+      // Ya no queda ninguna URL a la ruta dinámica retirada.
+      expect(article.cover, article.slug).not.toContain("/cover?");
     }
   });
 

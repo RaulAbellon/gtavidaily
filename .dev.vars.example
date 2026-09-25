@@ -1,15 +1,22 @@
 # Variables de entorno del entorno local de `wrangler`/workerd.
 #
-# NO se versiona: `npm run cf:preview` lo lee, pero su contenido depende de cada
-# máquina. Aquí queda la plantilla; el fichero real se llama `.dev.vars`.
+# NO se versiona: su contenido depende de cada máquina. Aquí queda la plantilla;
+# el fichero real se llama `.dev.vars`.
 #
-# NEXTJS_ENV decide qué ficheros `.env` de Next carga la app cuando corre dentro
-# del Worker. En producción Cloudflare no lo usa: las variables se configuran en
-# el panel (ver MIGRACION-CLOUDFLARE.md).
+# OJO, con el sitio estático esto ya no basta para la previsualización: al no
+# haber Worker, las variables NEXT_PUBLIC_* **se incrustan en el momento de
+# compilar**, no en tiempo de petición. Para que `npm run cf:preview` (y
+# `scripts/verify-cf.mjs`) se comporten como producción hay que compilar con
+# ellas en el entorno:
+#
+#   cp .dev.vars .env.local && npm run cf:preview
+#
+# o exportarlas a mano antes de `npm run cf:build`. En producción se configuran
+# como **variables de build** del proyecto (ver CONVERSION-ESTATICA.md, sección 8).
 NEXTJS_ENV=development
 
 # Copia aquí las mismas claves que tengas en `.env.local` si quieres que la
-# previsualización del Worker se comporte como producción:
+# previsualización se comporte como producción:
 #
 # NEXT_PUBLIC_SITE_URL=https://gtavidaily.com
 # NEXT_PUBLIC_ADSENSE_CLIENT=ca-pub-6098877112141110

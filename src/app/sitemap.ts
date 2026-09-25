@@ -8,7 +8,12 @@ import { SITE_URL, STATIC_ROUTES } from "@/lib/site";
  *
  * El anterior publicaba `/articulo/...` y `/categoria/...` cuando esas rutas no
  * estaban implementadas: 54 de 55 URLs devolvían 404.
+ *
+ * Se genera **en el build** como `out/sitemap.xml`, así que lo sirve el CDN como
+ * un activo estático.
  */
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const latestArticleDate = articles.reduce<Date>((newest, article) => {
     const date = new Date(article.updatedAt ?? article.publishedAt);
@@ -48,8 +53,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(article.updatedAt ?? article.publishedAt),
     changeFrequency: "weekly",
     priority: 0.9,
-    // Solo se declaran las imágenes propias: las portadas generadas se sirven
-    // desde /cover y no aportan nada al índice de imágenes.
+    // Solo se declaran las imágenes propias (JPEG). Las portadas SVG de
+    // reserva de `/portadas/` no aportan nada al índice de imágenes y solo se
+    // usan cuando un artículo no tiene imagen propia.
     ...(hasOwnImage(article) ? { images: [articleImageUrl(article)] } : {}),
   }));
 
