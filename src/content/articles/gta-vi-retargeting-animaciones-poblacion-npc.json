@@ -1,0 +1,59 @@
+{
+  "slug": "gta-vi-retargeting-animaciones-poblacion-npc",
+  "title": "El truco de GTA VI para que la gente de Leonida no sea toda igual",
+  "excerpt": "Rockstar explica el sistema que reajusta animaciones en tiempo real para que convivan peatones de complexiones muy distintas sin romper el juego.",
+  "content": [
+    "GTA VI tendrá la población de peatones más variada que Rockstar ha puesto en un juego. El dato no viene de un comunicado, sino de una explicación técnica: el estudio desarrolló un sistema que reajusta las animaciones sobre la marcha para que cada personaje se mueva según su altura y su complexión. Sin eso, un mismo gesto aplicado a alguien de 1,70 metros y a alguien de 1,88 no encaja. El responsable de desarrollo y co-responsable de Rockstar North, Rob Nelson, lo contó en una entrevista con IGN.",
+    "El problema que resuelve es más viejo de lo que parece. En los Grand Theft Auto anteriores, los personajes con cuerpos distintos compartían los mismos conjuntos de animación, así que el estudio tenía que limitar cuánto podía separarse un peatón de la media. Si el modelo era mucho más alto que la animación, la mano no llegaba al volante, la sentada quedaba desalineada o el puñetazo en un combate no conectaba con el otro personaje. Ampliar la variedad de cuerpos implicaba multiplicar el trabajo de animación, y ahí estaba el techo.",
+    "Nelson describe la solución como un reajuste dinámico: en lugar de crear un juego de animaciones por cada tipo de cuerpo, el sistema adapta la animación al personaje que la ejecuta. Eso permite que convivan alturas y formas muy distintas y que las interacciones sigan cuadrando, tanto al pelear como al sentarse dentro de un coche o al tocar un objeto del entorno. El resultado son multitudes menos repetitivas: menos sensación de estar viendo el mismo modelo con la camisa cambiada.",
+    "Conviene medir bien lo que esto significa y lo que no. Rockstar no ha publicado cuántos tipos de cuerpo hay, ni cuántos peatones caben en pantalla, ni una cifra de densidad por barrio de Vice City. La compañía tampoco ha detallado cuánta memoria de consola consume este sistema. Lo confirmado es el mecanismo y su efecto declarado: más diferencias de altura y de complexión que nunca en un juego del estudio. Todo lo demás, incluidos los números que circulan por foros, sigue sin fuente oficial.",
+    "El detalle técnico encaja con una idea que Rockstar repite desde hace meses: el mundo como suma de piezas hechas a mano. Aaron Garbut, co-responsable del estudio, explicó al New York Times que cada habitación del juego pasó por la cabeza de alguien, y que los objetos de dentro responden a quién vive allí. En el caso de los peatones, el estudio montó en Los Ángeles un equipo dedicado casi en exclusiva a dirigir personajes: nada de generar cuerpos y caras por procedimiento, sino diseñar cada figura y ajustar después su comportamiento.",
+    "La variedad también se juega por zonas. La población no se reparte igual en todas partes: la gente que se ve en Little Cuba no es la misma que la que aparece cerca del parque nacional de Mount Kalaga. Esa distinción importa más de lo que parece, porque convierte el mapa en algo que se lee con la vista antes de que el jugador llegue a la misión. Las playas son el mejor escaparate para comprobarlo: mucha gente junta en un espacio abierto, donde las diferencias individuales se notan sin esfuerzo.",
+    "Todo esto se apoya en una decisión de fondo sobre los recursos. Nelson sitúa el origen del sistema en haber desarrollado el juego desde cero para la generación actual de consolas, con más memoria disponible que en la anterior. Es la misma línea que Take-Two ha defendido en público: su consejero delegado, Strauss Zelnick, ha declarado en varias ocasiones que la IA generativa no tiene ningún papel en lo que construye Rockstar y que sus mundos son artesanales. Ese discurso se sostiene sobre sistemas como este, que automatizan la adaptación, no el diseño.",
+    "Para quien vaya a jugar el 19 de noviembre en PS5 o Xbox Series X|S, la consecuencia práctica es difícil de anticipar hasta tener el mando. Un sistema de este tipo se nota sobre todo en lo contrario de lo llamativo: en que un atraco salga distinto porque el dependiente es más bajo, más corpulento o se mueve de otra manera. Los previews apuntan en esa dirección, con la idea de que dos atracos idénticos no se desarrollen igual.",
+    "Lo que falta por saber es cuánto de todo esto sobrevive a la primera hora de juego y cuánto se queda en las zonas turísticas que enseñan los tráilers. Rockstar no ha mostrado cifras de población ni ha permitido medir el rendimiento en condiciones de mucha gente en pantalla. La fecha para comprobarlo con datos propios sigue siendo el 19 de noviembre, y la precarga, el 12.",
+    "Para seguir con el tema: [qué esperar del rendimiento por consola](/articulo/gta-vi-rendimiento-por-consola-que-esperar) y [los sistemas de talleres y robos que ya conocemos](/articulo/gta-vi-sistemas-talleres-robos-entrevistas)."
+  ],
+  "category": "gameplay",
+  "author": "redaccion",
+  "publishedAt": "2026-09-23T09:00:00.000Z",
+  "updatedAt": "2026-09-23T11:00:00.000Z",
+  "coverLabel": "Peatones distintos",
+  "coverAlt": "Lucia Caminos sentada en un banco de gimnasio con guantes de entrenamiento y auriculares",
+  "tags": [
+    "NPC",
+    "Animación",
+    "Rockstar North",
+    "Leonida",
+    "Tecnología"
+  ],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "TweakTown — Rockstar says GTA 6 has the most diverse NPC population of any of its games",
+      "url": "https://www.tweaktown.com/news/113646/rockstar-says-gta-6-has-the-most-diverse-npc-population-of-any-of-its-games/index.html"
+    },
+    {
+      "name": "Game Rant — GTA 6 Officially Details NPC Diversity and Population Density",
+      "url": "https://gamerant.com/gta-6-world-npcs-differences/"
+    },
+    {
+      "name": "IBTimes UK — GTA 6 Beaches Officially Detailed With New NPC Technology and Population Density Across Vice City",
+      "url": "https://www.ibtimes.co.uk/gta-6-beaches-officially-detailed-new-npc-technology-population-density-across-vice-city-1821254"
+    },
+    {
+      "name": "TechTroduce — GTA VI: every room hand crafted",
+      "url": "https://www.techtroduce.com/gta-vi-every-room-hand-crafted/"
+    },
+    {
+      "name": "Rockstar Games — Grand Theft Auto VI, página oficial del juego",
+      "url": "https://www.rockstargames.com/VI"
+    }
+  ],
+  "image": "/imagenes/oficiales/vice-city-lucia-gimnasio.jpg",
+  "imageAlt": "Lucia Caminos sentada en un banco de gimnasio con guantes de entrenamiento y auriculares, con la luz del sol entrando por los ventanales",
+  "imageCredit": "Imagen oficial de GTA VI · © Rockstar Games",
+  "imageSource": "https://www.rockstargames.com/VI/media/screenshots"
+}
