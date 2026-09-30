@@ -5,11 +5,10 @@
  * las seis páginas mezcladas). Los metadatos de la ruta viven en
  * `src/app/sobre/page.tsx`.
  */
+import Link from "next/link";
 import { Users } from "lucide-react";
 import { LegalHeader } from "@/components/legal/legal-header";
-import {
-  EDITORIAL_NAME,
-} from "@/lib/site";
+import { EDITORIAL_NAME } from "@/lib/site";
 
 export function LegalAbout() {
   return (
@@ -18,29 +17,53 @@ export function LegalAbout() {
 
       <div className="prose-article space-y-5 text-[17px] leading-relaxed text-zinc-200">
         <p>
-          GTA VI Daily es un medio digital independiente dedicado a cubrir todo
-          lo relacionado con Grand Theft Auto VI, el próximo gran lanzamiento
-          de Rockstar Games. Nuestro equipo de periodistas y analistas sigue
-          de cerca cada anuncio, filtración y rumor para ofrecer a la
-          comunidad hispanohablante la información más completa y rigurosa.
+          GTA VI Daily es un medio digital independiente en español dedicado a
+          cubrir todo lo relacionado con Grand Theft Auto VI, el próximo gran
+          lanzamiento de Rockstar Games. Seguimos de cerca cada anuncio,
+          filtración y rumor para ofrecer a la comunidad hispanohablante la
+          información más completa y rigurosa posible.
         </p>
         <p>
-          Nacimos en agosto de 2026 con la ilusión de crear un espacio de
-          referencia para los fans de la saga en español. Tras años consumiendo
-          contenidos en inglés y frustrados por la falta de medios de calidad
-          en nuestro idioma, decidimos dar el paso y construir el sitio que
-          nos habría gustado leer. Hoy somos un equipo de cuatro personas
-          apasionadas por los videojuegos, los mundos abiertos y la saga GTA
-          en particular.
+          Nacimos en agosto de 2026 con la intención de cubrir en español lo que
+          hasta ahora solo se contaba en inglés: los anuncios de Rockstar, los
+          datos de las fichas de tienda, las declaraciones del estudio y todo lo
+          que rodea al lanzamiento del 19 de noviembre. El sitio lo edita una
+          redacción independiente con sede en España y publica bajo una única
+          firma editorial,{" "}
+          <strong className="font-semibold text-white">
+            Redacción GTA VI Daily
+          </strong>
+          . No publicamos nombres ni fichas de redactores: preferimos decirlo
+          antes que fingir una plantilla que no existe.
         </p>
         <p>
           Nuestra línea editorial se basa en tres pilares: rigor informativo,
-          análisis profundo y respeto por la comunidad. Solo publicamos
-          noticias verificadas, distinguimos claramente entre hechos y rumores,
-          y citamos siempre las fuentes originales. En el análisis,
-          privilegiamos la profundidad sobre la inmediatez, y siempre damos
-          contexto suficiente para que el lector entienda el porqué de cada
-          noticia.
+          análisis profundo y respeto por la comunidad. Solo publicamos noticias
+          verificadas, distinguimos claramente entre hechos y rumores, y citamos
+          siempre las fuentes originales. En el análisis, privilegiamos la
+          profundidad sobre la inmediatez, y siempre damos contexto suficiente
+          para que el lector entienda el porqué de cada noticia.
+        </p>
+        <p>
+          Eso incluye decir lo que no se sabe. Cuando no hay fuente oficial para
+          un dato —el tamaño de la descarga, la hora exacta de la precarga, el
+          reparto de voces— lo escribimos como lo que es, en lugar de rellenarlo
+          con una cifra que suene bien. Hay dos páginas que existen justo para
+          eso: la{" "}
+          <Link
+            href="/cronologia"
+            className="font-semibold text-pink-400 underline-offset-2 hover:underline"
+          >
+            cronología de confirmaciones
+          </Link>
+          , con la fuente primaria de cada línea, y la{" "}
+          <Link
+            href="/desbloqueo"
+            className="font-semibold text-pink-400 underline-offset-2 hover:underline"
+          >
+            tabla de desbloqueo por países
+          </Link>
+          , con lo que está calculado y lo que está sin confirmar, separado.
         </p>
         <p>
           No estamos afiliados con Rockstar Games ni con Take-Two Interactive.

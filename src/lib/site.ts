@@ -15,7 +15,7 @@ function normalizeUrl(value: string): string {
 }
 
 export const SITE_URL = normalizeUrl(
-  process.env.NEXT_PUBLIC_SITE_URL || FALLBACK_SITE_URL
+  process.env.NEXT_PUBLIC_SITE_URL || FALLBACK_SITE_URL,
 );
 
 export const SITE_NAME = "GTA VI Daily";
@@ -51,7 +51,7 @@ export const LEGAL_OWNER = {
 };
 
 export const isLegalOwnerComplete = Boolean(
-  LEGAL_OWNER.name && LEGAL_OWNER.taxId && LEGAL_OWNER.address
+  LEGAL_OWNER.name && LEGAL_OWNER.taxId && LEGAL_OWNER.address,
 );
 
 /** AdSense: solo se activa con un ID de cliente con formato válido. */
@@ -66,9 +66,7 @@ export const GOOGLE_SITE_VERIFICATION = (
 ).trim();
 
 /** ¿Se ha configurado la URL pública explícitamente? */
-export const IS_SITE_URL_CONFIGURED = Boolean(
-  process.env.NEXT_PUBLIC_SITE_URL
-);
+export const IS_SITE_URL_CONFIGURED = Boolean(process.env.NEXT_PUBLIC_SITE_URL);
 
 /** Construye una URL absoluta a partir de una ruta interna. */
 export function absoluteUrl(path = "/"): string {
@@ -78,6 +76,8 @@ export function absoluteUrl(path = "/"): string {
 
 /** Rutas de las páginas legales y estáticas, en un solo sitio. */
 export const STATIC_ROUTES = [
+  { path: "/cronologia", title: "Cronología de GTA VI" },
+  { path: "/desbloqueo", title: "Hora de desbloqueo por países" },
   { path: "/sobre", title: "Sobre nosotros" },
   { path: "/contacto", title: "Contacto" },
   { path: "/aviso-legal", title: "Aviso legal" },

@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { History, Menu, Timer } from "lucide-react";
 import { NavLink } from "@/components/site/nav-link";
 import { SearchForm } from "@/components/site/search-form";
 import { Brand } from "@/components/site/brand";
@@ -8,7 +8,18 @@ import { getPopulatedCategories } from "@/lib/queries";
  * Cabecera. Todo se renderiza en el servidor: la navegación son enlaces reales
  * (`<Link>`), el buscador es un formulario GET y el menú móvil usa `<details>`,
  * así que no necesita JavaScript.
+ *
+ * Además de las secciones, hay dos páginas de consulta que conviene tener a
+ * mano todo el año: `/cronologia` y `/desbloqueo`. Viven en su propia franja,
+ * separadas de los enlaces de sección, para que no desaparezcan entre las
+ * categorías y para no comprimir la barra principal en pantallas de 1024 px,
+ * que es justo el ancho en el que entra la navegación de escritorio.
  */
+const CONSULTAS = [
+  { href: "/cronologia", label: "Cronología de GTA VI", Icon: History },
+  { href: "/desbloqueo", label: "Hora de desbloqueo por países", Icon: Timer },
+] as const;
+
 export function Header() {
   const categories = getPopulatedCategories().slice(0, 5);
 
@@ -57,8 +68,31 @@ export function Header() {
       </div>
 
       <div className="hidden border-t border-white/5 px-4 py-2.5 lg:block">
-        <div className="mx-auto max-w-7xl">
-          <SearchForm />
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3">
+          <div className="min-w-[240px] flex-1">
+            <SearchForm />
+          </div>
+          <nav
+            className="flex flex-wrap items-center gap-2"
+            aria-label="Páginas de consulta"
+          >
+            <span className="text-[11px] font-bold uppercase tracking-widest text-pink-400">
+              Consulta
+            </span>
+            {CONSULTAS.map(({ href, label, Icon }) => (
+              <NavLink
+                key={href}
+                href={href}
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-zinc-900/40 px-3 py-1.5 text-xs font-semibold text-zinc-200 transition-colors"
+              >
+                <Icon
+                  className="h-3.5 w-3.5 text-pink-400"
+                  aria-hidden="true"
+                />
+                {label}
+              </NavLink>
+            ))}
+          </nav>
         </div>
       </div>
 
@@ -98,6 +132,16 @@ export function Header() {
           >
             Todas las noticias
           </NavLink>
+          {CONSULTAS.map(({ href, label, Icon }) => (
+            <NavLink
+              key={href}
+              href={href}
+              className="flex items-center gap-2 rounded-md px-3 py-2.5 text-sm font-medium"
+            >
+              <Icon className="h-4 w-4 text-pink-400" aria-hidden="true" />
+              {label}
+            </NavLink>
+          ))}
           <NavLink
             href="/sobre"
             className="rounded-md px-3 py-2.5 text-sm font-medium"
