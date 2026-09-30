@@ -30,8 +30,10 @@ export function Footer() {
               Sitio fan no oficial. Grand Theft Auto, GTA, Vice City y Rockstar
               Games son marcas registradas de Take-Two Interactive Software,
               Inc. No estamos afiliados ni patrocinados por Rockstar Games ni
-              Take-Two. Las imágenes son ilustraciones conceptuales generadas
-              localmente y no representan arte oficial del juego.
+              Take-Two. Las ilustraciones propias de este sitio están dibujadas
+              por nosotros pieza a pieza, no reutilizamos imágenes de terceros, y
+              cuando una pieza se ilustra con material oficial de Rockstar se
+              indica en el pie de la imagen con su crédito.
             </p>
           </div>
 
