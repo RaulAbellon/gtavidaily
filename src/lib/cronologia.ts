@@ -262,6 +262,10 @@ const FUENTES = {
     name: "Transcripción de la llamada de resultados del Q1 FY2027 de Take-Two (7 de agosto de 2026)",
     url: "https://stockanalysis.com/stocks/ttwo/transcripts/676596-q1-2027/",
   },
+  gameInformer382: {
+    name: "Game Informer — «Grand Theft Auto VI – Welcome to Leonida» (portada del número 382, 29 de septiembre de 2026)",
+    url: "https://gameinformer.com/feature/2026/09/29/grand-theft-auto-vi-welcome-to-leonida",
+  },
 } as const satisfies Record<string, CronologiaSource>;
 
 export const CRONOLOGIA_UPDATED_AT = "2026-09-30";
@@ -798,6 +802,21 @@ export const CRONOLOGIA: CronologiaEvent[] = [
       "rockstar-pide-a-los-actores-no-revelar-su-participacion",
     ],
   },
+  {
+    date: "2026-09-29",
+    dateLabel: "29 de septiembre de 2026",
+    title:
+      "Game Informer 382 respalda «Port Gellhorn» y «Ambrosia» como regiones de Leonida",
+    detail:
+      "El reportaje de portada del número 382, «Welcome to Leonida», describe el estado dividido en seis regiones —Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia y el parque nacional Mount Kalaga— y atribuye la descripción a Aaron Garbut, responsable de arte de Rockstar North. Hasta esa fecha, Port Gellhorn y Ambrosia solo circulaban en guías de comunidad y en un expediente municipal de Miami-Dade: no constaban en ningún comunicado de la compañía. No hay comunicado posterior que enumere las seis regiones, y topónimos como «Kelly County» siguen sin fuente.",
+    status: "confirmado",
+    evidence: "informado",
+    sources: [FUENTES.gameInformer382],
+    related: [
+      "gta-vi-caza-fauna-actividades-game-informer",
+      "game-informer-382-clima-extremo-170-especies",
+    ],
+  },
 ];
 
 /** Eventos ordenados de más reciente a más antiguo. */
@@ -886,13 +905,16 @@ export const CRONOLOGIA_EXCLUIDO: { tema: string; motivo: string }[] = [
       "No hay ningún anuncio de un programa para GTA VI. Los creadores con acceso previo confirmados son acuerdos individuales, no un programa de alta pública.",
   },
   {
-    tema: "Nombres de región no acreditados por Rockstar",
+    tema: "Topónimos de región que siguen sin acreditarse",
     motivo:
-      "Topónimos como «Port Gellhorn» aparecen en documentos municipales y en reconstrucciones de comunidad, pero no en material de Rockstar como regiones jugables; los que sí están en material oficial están listados abajo.",
+      "Nombres como «Kelly County» circulan en guías y reconstrucciones de comunidad sin aparecer ni en material de Rockstar ni en el reportaje de portada de Game Informer 382 (29 de septiembre de 2026). Los topónimos que sí están respaldados —«Port Gellhorn» y «Ambrosia» desde ese reportaje— figuran en la lista de abajo; el resto no.",
   },
 ];
 
-/** Lugares y topónimos que sí aparecen en material oficial de Rockstar. */
+/**
+ * Lugares y topónimos respaldados: los que aparecen en material de Rockstar o
+ * en declaraciones de sus responsables recogidas por la prensa.
+ */
 export const LUGARES_OFICIALES: string[] = [
   "Vice City",
   "Southside Vice City",
@@ -905,4 +927,6 @@ export const LUGARES_OFICIALES: string[] = [
   "Mount Kalaga National Park",
   "Grassrivers",
   "Leonida Keys (reportado en preview, no en comunicado)",
+  "Port Gellhorn (Game Informer 382, 29-sep-2026)",
+  "Ambrosia (Game Informer 382, 29-sep-2026)",
 ];

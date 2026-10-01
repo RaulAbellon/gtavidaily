@@ -415,13 +415,14 @@ export default function CronologiaPage() {
       <section className="mt-10 rounded-xl border border-white/5 bg-zinc-900/40 p-5 sm:p-6">
         <h2 className="mb-2 flex items-center gap-2 text-xl font-black text-white">
           <MapPin className="h-5 w-5 text-emerald-400" aria-hidden="true" />
-          Topónimos que sí están en material oficial
+          Topónimos que sí están respaldados
         </h2>
         <p className="mb-4 text-sm leading-relaxed text-zinc-300">
           Para que la separación sea útil también aquí: estos nombres aparecen
-          en textos o imágenes distribuidas por Rockstar. Cualquier otro
-          topónimo que circule es una lectura de la comunidad o de una
-          ilustración de producto, no una confirmación.
+          en textos o imágenes distribuidas por Rockstar o en declaraciones de
+          sus responsables recogidas por la prensa. Cualquier otro topónimo que
+          circule —«Kelly County» incluido— es una lectura de la comunidad o de
+          una ilustración de producto, no una confirmación.
         </p>
         <ul className="flex flex-wrap gap-2">
           {LUGARES_OFICIALES.map((lugar) => (
@@ -436,8 +437,13 @@ export default function CronologiaPage() {
         <p className="mt-4 text-xs leading-relaxed text-zinc-500">
           Los lugares enumerados arriba están en el comunicado del 24 de junio
           de 2026, en el texto del Extended Look o en la propia web de Rockstar.
-          La única excepción marcada es «Leonida Keys», que consta en una
-          entrevista de preview y no en un comunicado de la compañía.
+          Las excepciones van marcadas: «Leonida Keys» consta en una entrevista
+          de preview y no en un comunicado de la compañía, y «Port Gellhorn» y
+          «Ambrosia» proceden del reportaje de portada de Game Informer 382
+          (29 de septiembre de 2026), donde Aaron Garbut, responsable de arte de
+          Rockstar North, describe las seis regiones del estado. «Kelly County»
+          y cualquier otro topónimo que no aparezca en ese reportaje siguen sin
+          acreditarse.
         </p>
       </section>
 

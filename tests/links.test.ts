@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { articles } from "@/lib/data";
 import { articleSlugFromHref, extractLinks, parseRichText } from "@/lib/text";
+import { matchesKnownRoute } from "./helpers/routes";
 
 const slugs = new Set(articles.map((article) => article.slug));
 
@@ -48,7 +49,10 @@ describe("enlaces del contenido publicado", () => {
           const slug = articleSlugFromHref(href);
           if (slug) {
             if (!slugs.has(slug)) broken.push(`${article.slug} → ${href}`);
-          } else if (!OTHER_ROUTES.has(href)) {
+            // Además de los artículos y de la lista de arriba, vale cualquier
+            // ruta real del App Router: así las páginas de consulta
+            // (/cronologia, /desbloqueo…) no hay que darlas de alta a mano.
+          } else if (!OTHER_ROUTES.has(href) && !matchesKnownRoute(href)) {
             broken.push(`${article.slug} → ${href} (ruta no reconocida)`);
           }
         }

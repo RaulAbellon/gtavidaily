@@ -6,7 +6,7 @@
     "Vice City es aproximadamente el doble de grande que Los Santos. Lo dijo Rob Nelson, responsable de desarrollo y co-responsable de Rockstar North, al medio francés TroisCouleurs durante una visita al estudio, y es la primera comparación de escala con GTA V que sale de boca de alguien de Rockstar. No es un comunicado: es una declaración en un preview con unos 30 minutos de metraje y casi una hora de partida en directo.",
     "La segunda cifra del mismo encuentro es más fácil de malinterpretar. Según Nelson, si se suman los pueblos y las zonas urbanizadas que rodean Vice City, Leonida contiene el equivalente a unas once veces la superficie urbanizada de GTA V. Once veces las áreas desarrolladas, no once veces el mapa. La diferencia importa: entre esos núcleos hay agua, humedales y campo, y Rockstar no ha traducido nada de esto a kilómetros cuadrados.",
     "La tercera comparación llegó antes y por otra vía. En el preview concedido al New York Times, el propio Nelson dijo que el mapa equivale a unas tres veces la superficie jugable de Red Dead Redemption 2. Es la referencia más útil para hacerse una idea, porque RDR2 ya era un mundo grande y despoblado, y aquí hablamos de una Florida ficticia con una metrópoli densa dentro. Tres cifras, tres unidades distintas: conviene no mezclarlas.",
-    "Sobre el terreno, lo que Rockstar sí ha nombrado en material propio tiene menos épica y más topónimo. La web oficial del juego, en su sección 'Only in Leonida', presenta zonas explorables concretas: Vice City, los Leonida Keys, Grassrivers y Mount Kalaga. El comunicado de la Ultimate Edition añade barrios y parajes dentro de la ciudad y su entorno, como Southside Vice City, Stockyard, Watson Bay, Washington Beach, Ocean Beach y Lake Leonida, además de Gambit Bay. Otros nombres que circulan mucho en guías y wikis, como Port Gellhorn o Ambrosia, no tienen una confirmación oficial clara: aparecen en documentos municipales y en reconstrucciones de la comunidad, pero no en un comunicado de Rockstar. Y no hay un recuento oficial de 'seis regiones' ni nada parecido.",
+    "Sobre el terreno, lo que Rockstar sí ha nombrado en material propio tiene menos épica y más topónimo. La web oficial del juego, en su sección 'Only in Leonida', presenta zonas explorables concretas: Vice City, los Leonida Keys, Grassrivers y Mount Kalaga. El comunicado de la Ultimate Edition añade barrios y parajes dentro de la ciudad y su entorno, como Southside Vice City, Stockyard, Watson Bay, Washington Beach, Ocean Beach y Lake Leonida, además de Gambit Bay. Otros nombres que circulan mucho en guías y wikis, como Port Gellhorn o Ambrosia, aparecían en documentos municipales y en reconstrucciones de la comunidad, pero no en un comunicado de Rockstar. Eso cambió con el reportaje de portada de Game Informer 382, del 29 de septiembre de 2026: ahí Aaron Garbut, responsable de arte de Rockstar North, describe Leonida dividida en seis regiones y respalda esos dos nombres. Kelly County y los topónimos que no salen en ese reportaje siguen sin fuente. Y sigue sin haber un comunicado de la compañía que fije el recuento de 'seis regiones'.",
     "El arranque también está descrito. La primera parte de la historia transcurre en el extremo sur del mapa, en los Leonida Keys, donde está la casa pequeña de Jason que ya se vio en el Tráiler 2. A partir de ahí el mundo se abre y el jugador puede ir donde quiera. Eso sitúa la apertura lejos de la metrópoli y explica por qué el contraste entre islas y ciudad es una decisión de diseño, no un accidente geográfico.",
     "Lo que sigue sin respuesta es lo que suele pedir el jugador: cifras. No hay superficie oficial en kilómetros cuadrados, ni número de edificios enterables, ni mapa interactivo publicado por Rockstar. La comparación de los interiores que dio Nelson en el mismo preview fue deliberadamente vaga —una cantidad 'enorme' de edificios accesibles—, y en paralelo el estudio insiste en que cada habitación está hecha a mano. 'Enorme' y 'todos' no son lo mismo, y Rockstar nunca ha dicho lo segundo.",
     "Para la próxima semana, lo razonable es vigilar dos cosas: si Take-Two o Rockstar publican alguna cifra de escala en la llamada de resultados de noviembre —que es cuando el lanzamiento entra en las cuentas del trimestre— y si la web oficial suma nuevas zonas a 'Only in Leonida'. Ahí es donde aparecerán los topónimos confirmados, no en las reconstrucciones de mapas que circulan por foros y wikis de comunidad."
@@ -14,7 +14,7 @@
   "category": "mapa",
   "author": "redaccion",
   "publishedAt": "2026-08-15T11:30:00Z",
-  "updatedAt": "2026-09-15T12:00:00.000Z",
+  "updatedAt": "2026-10-01T18:00:00.000Z",
   "coverLabel": "Escala del mapa de Leonida",
   "coverAlt": "Mapa conceptual del estado ficticio de Leonida con Vice City como núcleo urbano y las regiones confirmadas por Rockstar",
   "tags": [
@@ -43,6 +43,10 @@
     {
       "name": "Gematsu — Grand Theft Auto VI pricing, 'Ultimate Edition', and pre-order bonuses announced",
       "url": "https://www.gematsu.com/2026/06/grand-theft-auto-vi-pricing-ultimate-edition-and-pre-order-bonuses-announced"
+    },
+    {
+      "name": "Game Informer — Grand Theft Auto VI: Welcome to Leonida (reportaje de portada, número 382)",
+      "url": "https://gameinformer.com/feature/2026/09/29/grand-theft-auto-vi-welcome-to-leonida"
     }
   ],
   "image": "/imagenes/oficiales/leonida-everglades-aerobarco.jpg",
