@@ -55,6 +55,15 @@ jobs:
       - name: Prueba de humo sobre el servidor real
         run: |
           npm start > server.log 2>&1 &
+          # Hay que esperar a que el servidor responda: sin esta espera, la prueba
+          # falla con "connection refused" porque arranca antes de que escuche.
+          for intento in $(seq 1 30); do
+            if curl -sf -o /dev/null http://127.0.0.1:3000/; then
+              echo "servidor listo tras $intento intento(s)"
+              break
+            fi
+            sleep 2
+          done
           npm run test:e2e
         env:
           BASE_URL: http://127.0.0.1:3000
