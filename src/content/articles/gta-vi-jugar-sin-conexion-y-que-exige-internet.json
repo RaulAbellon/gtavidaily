@@ -1,0 +1,50 @@
+{
+  "slug": "gta-vi-jugar-sin-conexion-y-que-exige-internet",
+  "title": "¿Se puede jugar a GTA VI sin conexión? Lo que dicen las fichas de tienda",
+  "excerpt": "Es una experiencia para un jugador, pero la ficha de Xbox menciona cuenta de Rockstar y un código de un solo uso. Nadie ha publicado los requisitos exactos.",
+  "content": [
+    "GTA VI es una experiencia para un jugador, pero eso no responde a la pregunta de si hará falta internet para jugarlo. La respuesta más honesta hoy es que nadie ha publicado los requisitos exactos, y que las pistas disponibles apuntan a una conexión necesaria para arrancar y para algunas funciones, pero no para toda la partida.",
+    "El punto de partida está en la ficha de la tienda de Xbox, que describe la compra como una licencia del producto digital y advierte de que determinadas funciones, contenidos o servicios pueden requerir conexión a internet, registro de una cuenta de Rockstar Games, un «single-use serial code», pagos adicionales o desbloqueo mediante el juego. Es el mismo tipo de texto legal que aparece en la mayoría de lanzamientos recientes, y conviene leerlo con calma porque no dice que el juego exija conexión permanente: dice que algunas funciones pueden exigirla.",
+    "La segunda pista es el código de un solo uso. Esa expresión aparece en el texto legal y encaja con el modelo de la edición física: una caja con un código de descarga en lugar de un disco. Un código de un solo uso implica un canje, y un canje implica conexión en el momento de la activación. Después de eso, la licencia queda atada a la cuenta y el juego puede arrancar sin volver a validar, como ocurre en cualquier compra digital de consola.",
+    "La tercera pista tiene que ver con la cuenta de Rockstar. El comunicado oficial del 24 de junio describe el juego como una experiencia para un jugador y no menciona ningún servicio online obligatorio, pero el propio texto de tienda sí exige el registro. En la práctica, eso significa que habrá que vincular una cuenta de Rockstar a la cuenta de la consola al menos una vez, incluso si después se juega siempre sin conexión.",
+    "Hay un precedente que ayuda a calibrar el escenario. En Red Dead Redemption 2, el modo historia podía jugarse sin conexión una vez instalado y activado, mientras que Red Dead Online exigía conexión permanente. En GTA V ocurrió lo mismo con sus versiones de consola. La estructura de GTA VI es más parecida a la del primero, porque aquí no hay un modo online en el lanzamiento confirmado.",
+    "Un matiz que conviene añadir es el de la precarga. El 12 de noviembre se podrá descargar el juego, y esa descarga requiere conexión por definición. Lo que permite la precarga es tenerlo todo instalado antes del 19, de modo que el desbloqueo no dependa de una descarga de decenas de gigabytes en el peor momento posible. No da acceso anticipado: el juego se abre a medianoche local de cada país, según confirmó Rockstar a través de la ficha de PlayStation Store.",
+    "Sobre el arranque, hay una cuestión que solo se resolverá con las copias en la mano: si el juego exige una comprobación de licencia periódica. En PS5, la consola principal permite jugar sin conexión a los juegos digitales comprados con esa cuenta; en Xbox ocurre algo similar con la consola designada como principal. Si esa lógica se mantiene, quien juegue en su consola habitual no tendrá problema, y quien comparta cuenta con otra persona sí puede encontrarse con bloqueos.",
+    "Para quien tenga una conexión mala o inestable, la recomendación práctica es hacer la precarga en cuanto arranque el 12 de noviembre y no dejarla para el día anterior. La descarga digital de un juego de esta escala puede tardar días en una línea lenta, y el desbloqueo no espera. También conviene tener la cuenta de Rockstar creada y vinculada de antemano, porque el proceso de registro requiere conexión y puede fallar en el peor momento.",
+    "Lo que queda por saber es concreto: si el modo historia exige conexión permanente, si hay comprobación de licencia y si algún contenido del juego requiere servidores. Rockstar no ha publicado una ficha técnica de requisitos y no ha respondido a estas preguntas en público. Cuando la precarga llegue, los primeros jugadores podrán comprobarlo en la práctica.",
+    "Para seguir el tema: [qué preparar antes de la precarga](/articulo/gta-vi-precarga-12-noviembre-que-preparar-antes), [la edición física sin disco y qué implica](/articulo/gta-vi-edicion-fisica-sin-disco-que-compras) y [la tabla de desbloqueo por países](/desbloqueo)."
+  ],
+  "category": "guias",
+  "author": "redaccion",
+  "publishedAt": "2026-10-06T09:00:00.000Z",
+  "updatedAt": "2026-10-06T11:00:00.000Z",
+  "coverLabel": "Sin conexión",
+  "coverAlt": "Ilustración conceptual sobre los requisitos de conexión a internet de GTA VI",
+  "tags": [
+    "Conexión",
+    "Cuenta Rockstar",
+    "PS5",
+    "Xbox"
+  ],
+  "readingTime": 3,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Xbox — Grand Theft Auto VI",
+      "url": "https://www.xbox.com/en-US/games/store/grand-theft-auto-vi/9P3H4968GRSM"
+    },
+    {
+      "name": "PlayStation Store — Grand Theft Auto VI",
+      "url": "https://www.playstation.com/en-us/games/grand-theft-auto-vi/"
+    },
+    {
+      "name": "Businesswire China — Take-Two Interactive Software, Inc. announces Grand Theft Auto VI pre-orders",
+      "url": "https://www.businesswirechina.com/en/news/63335.html"
+    },
+    {
+      "name": "Rockstar Games — Grand Theft Auto VI, pagina oficial del juego",
+      "url": "https://www.rockstargames.com/VI"
+    }
+  ]
+}
