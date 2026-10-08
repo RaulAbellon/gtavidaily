@@ -1,0 +1,50 @@
+{
+  "slug": "gta-vi-alternar-personajes-como-funciona",
+  "title": "Cómo se alterna entre Jason y Lucia en GTA VI",
+  "excerpt": "El cambio de protagonista se hace sobre la marcha con la cruceta, incluso a mitad de misión, y los dos comparten cuenta bancaria y arsenal.",
+  "content": [
+    "Cambiar de protagonista en GTA VI se hace sobre la marcha, con la cruceta, y también a mitad de misión. No es un menú de pausa ni una pantalla de selección como la de GTA V: la cámara se desplaza de Jason a Lucia y la acción continúa. El material de An Extended Look lo deja ver en varias secuencias, y el desglose técnico que publicó VGTimes tras el estreno del vídeo confirma el mecanismo y la tecla.",
+    "La consecuencia más importante no es estética, es económica. Los dos protagonistas comparten una única cuenta bancaria y un único arsenal. Lo que roba uno lo puede gastar el otro, y el arma que compra Jason aparece en manos de Lucia sin ningún paso intermedio. Eso simplifica la gestión y a la vez obliga a pensar en la pareja como una sola unidad operativa, no como dos personajes que se turnan.",
+    "El intercambio de armas refuerza esa idea. Según Vandal, Jason y Lucia pueden pasarse equipamiento a mano durante un tiroteo, de forma física, y eso permite cambiar de estrategia sin abrir el inventario. Si uno lleva la escopeta y el otro el rifle, la pareja puede reorganizarse en mitad del combate. El diseño de las misiones parece construido alrededor de esa posibilidad.",
+    "Las transiciones también se han trabajado. El análisis del Extended Look señala que no hay pantallas de carga entre cinemáticas y juego: la cámara pasa de una secuencia guionizada a una persecución o a un tiroteo sin corte visible. Rockstar lo ha explicado con un ejemplo concreto al medio francés TroisCouleurs: la escena del ascensor que se vio en el vídeo es jugable, no pre-renderizada, y encadena control parcial, conversación, cinemática y tiroteo final.",
+    "El sistema de relación añade una capa que no existía en la saga. La fact-base recoge que los protagonistas se escriben mensajes, que responder importa y que la relación evoluciona según el comportamiento del jugador. Ron Nelson lo describió a TroisCouleurs: el juego registra si pasan tiempo juntos y si se cuidan entre ellos, y eso afecta a cómo interactúan después. En la demostración en directo, Jason y Lucia caminaban de la mano por la calle, y los periodistas describieron que las situaciones peligrosas posteriores se sentían distintas por ese vínculo.",
+    "Conviene separar lo confirmado de lo que no. Que existe el cambio con la cruceta, que el dinero y las armas son compartidos y que la relación se rastrea son datos que llegan de material oficial o de declaraciones con nombre y apellidos de responsables de Rockstar North. Lo que no está confirmado es si alguna misión bloquea el cambio de personaje, si hay misiones exclusivas de uno de los dos y qué pasa si uno de ellos muere durante la campaña. La fact-base no recoge ninguna respuesta a esas preguntas y Rockstar no las ha abordado en público.",
+    "Tampoco hay cifras. No se sabe cuántas misiones hay, ni cuántas permiten alternar, ni cuánto dura la campaña en horas de cada protagonista. La única referencia publicada es la que situaba la duración total en torno a ochenta horas, el doble que GTA V, sin desglose por personaje.",
+    "El propio Nelson ha explicado que la relación es un sistema más del mundo, no una barra de afecto con finales alternativos: el juego registra el comportamiento y lo devuelve en forma de reacciones. Eso encaja con la descripción del estudio sobre un mundo «más reactivo» y con la idea de que dos partidas no se parezcan.",
+    "Para el jugador, la lectura práctica es sencilla. Alternar no será una decisión de menú, será una herramienta táctica. Si el diseño mantiene lo que promete, la pregunta constante durante el juego no será a quién controlas, sino qué lleva cada uno y dónde está el otro. Y eso conecta directamente con el almacenamiento compartido: el maletero del coche personal conserva el arsenal, el de un vehículo robado no.",
+    "Queda por ver cómo se comporta el cambio en las misiones más cerradas, que suelen ser las que llevan el peso narrativo. La precarga empieza el 12 de noviembre y el desbloqueo llega a medianoche local del 19. Para seguir el tema: [los sistemas de talleres y robos](/articulo/gta-vi-sistemas-talleres-robos-entrevistas), [los protagonistas y su historia](/articulo/lucia-jason-protagonistas-historia-gta-vi) y [la cronología de confirmaciones](/cronologia)."
+  ],
+  "category": "gameplay",
+  "author": "redaccion",
+  "publishedAt": "2026-10-07T19:00:00.000Z",
+  "updatedAt": "2026-10-07T21:00:00.000Z",
+  "coverLabel": "Cambiar de personaje",
+  "coverAlt": "Ilustración conceptual sobre el cambio de protagonista entre Jason y Lucia en GTA VI",
+  "tags": [
+    "Jason y Lucia",
+    "Gameplay",
+    "Misiones",
+    "Rockstar"
+  ],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "vgtimes — GTA 6: An Extended Look breakdown",
+      "url": "https://vgtimes.com/articles/165665-gta-6-an-extended-look-breakdown.html"
+    },
+    {
+      "name": "GTAVice.net — New GTA 6 Gameplay Details by TroisCouleurs: Map Size, Interiors, Police & More",
+      "url": "https://www.gtavice.net/news/new-gta-6-gameplay-details-by-troiscouleurs-map-size-interiors-police-and-more"
+    },
+    {
+      "name": "Vandal — GTA 6 no es cooperativo, pero Jason y Lucia podran intercambiar y pasarse armas directamente en tiempo real",
+      "url": "https://vandal.elespanol.com/noticia/2026258029/gta-6-no-es-cooperativo-pero-jason-y-lucia-podran-intercambiar-y-pasarse-armas-directamente-en-tiempo-real/"
+    },
+    {
+      "name": "Rockstar Games — Grand Theft Auto VI, pagina oficial del juego",
+      "url": "https://www.rockstargames.com/VI"
+    }
+  ]
+}
