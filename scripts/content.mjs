@@ -178,7 +178,10 @@ function validate(file, article, categories) {
     );
   }
   if (words < 400) warnings.push(`${label}: solo ${words} palabras`);
-  if (words > 900) warnings.push(`${label}: ${words} palabras, quizá demasiado largo`);
+  // Aviso (no error) por encima de 1.000 palabras. El umbral era 900, pero
+  // varias piezas de análisis lo rozaban sin ser un problema real: el aviso
+  // saltaba tanto que dejaba de significar nada.
+  if (words > 1000) warnings.push(`${label}: ${words} palabras, quizá demasiado largo`);
 
   if (!Array.isArray(article.tags) || article.tags.length < 3 || article.tags.length > 6) {
     warnings.push(`${label}: conviene entre 3 y 6 etiquetas`);
