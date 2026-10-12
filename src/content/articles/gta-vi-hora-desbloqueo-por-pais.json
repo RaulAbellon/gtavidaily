@@ -1,0 +1,57 @@
+{
+  "slug": "gta-vi-hora-desbloqueo-por-pais",
+  "title": "Hora de desbloqueo de GTA VI por país: la tabla completa",
+  "excerpt": "Medianoche local es una hora distinta en cada huso: Nueva Zelanda abre 19 horas antes que México. Tabla con la hora local y UTC de cada región, y el error de la ficha estadounidense.",
+  "content": [
+    "GTA VI se desbloquea a medianoche hora local del jueves 19 de noviembre de 2026, no a una hora única mundial. Eso encadena los estrenos en casi veinte horas: de las 11:00 UTC del miércoles 18 en Nueva Zelanda a las 06:00 UTC del jueves 19 en el centro de México. Las fichas de PlayStation Store y Xbox Store coinciden exactamente en siete regiones.",
+    "Regiones con hora comprobada en ficha de tienda (dato, no cálculo):",
+    "Nueva Zelanda — 19 de noviembre, 00:00 NZDT — 18 de noviembre, 11:00 UTC\nAustralia (Nueva Gales del Sur, Victoria, Tasmania y Territorio de la Capital Australiana) — 19 de noviembre, 00:00 AEDT — 18 de noviembre, 13:00 UTC\nEspaña peninsular y Baleares — 19 de noviembre, 00:00 CET — 18 de noviembre, 23:00 UTC\nReino Unido — 19 de noviembre, 00:00 GMT — 19 de noviembre, 00:00 UTC\nArgentina — 19 de noviembre, 00:00 ART — 19 de noviembre, 03:00 UTC\nMéxico (centro, incluida Ciudad de México) — 19 de noviembre, 00:00 CST — 19 de noviembre, 06:00 UTC",
+    "Regiones sin ficha propia, deducidas por este medio al aplicar la misma regla al huso oficial de cada territorio, con la hora local primero y el UTC después:",
+    "Canarias — 19 de noviembre, 00:00 WET — 19 de noviembre, 00:00 UTC\nColombia, Perú, Ecuador y Panamá — 19 de noviembre, 00:00 — 19 de noviembre, 05:00 UTC\nEstados Unidos, hora del Este (Nueva York, Miami, Washington) — 19 de noviembre, 00:00 EST — 19 de noviembre, 05:00 UTC\nEstados Unidos, hora central (Chicago, Dallas) — 19 de noviembre, 00:00 CST — 19 de noviembre, 06:00 UTC\nEstados Unidos, hora del Pacífico (Los Ángeles, Seattle) — 19 de noviembre, 00:00 PST — 19 de noviembre, 08:00 UTC",
+    "Conviene marcar la frontera entre las dos listas. Las seis primeras filas están leídas en las fichas de tienda y coinciden entre sí; el resto es aritmética sobre husos oficiales, no una tabla publicada por Rockstar ni por Sony. Si tu país no está en la primera lista, la hora de apertura es la medianoche de tu reloj, pero nadie la ha confirmado por escrito.",
+    "La duda más habitual de estas semanas viene de una lectura equivocada. La ficha estadounidense de la tienda muestra el instante 11/19/2026 05:00 AM UTC —en su formato, el 19 de noviembre a las 05:00 UTC—, que es la medianoche de la costa este. Quien copie ese valor y lo lea como hora española concluirá que GTA VI abre a las 06:00 CET del día 19, cuando en España lleva abierto desde las 00:00. Son seis horas de diferencia entre lo que dice el dato y lo que la gente cree que dice.",
+    "En Australia hay que afinar más, porque las 13:00 UTC no cubren todo el país. Corresponden a los estados del este en horario de verano, que en noviembre van en UTC+11. Queensland, sin ese cambio, abre a las 10:00 UTC del 18, y Australia Occidental, en UTC+8, a las 16:00 UTC.",
+    "Entre plataformas no hay carrera. PlayStation 5 y Xbox Series X|S abren el juego en el mismo instante en cada región, y ninguna ficha publica un horario propio distinto. Lo que sí circula es un método con nombre propio: cambiar la región de la consola Xbox a Nueva Zelanda para entrar antes que en España. Lo reportan medios como Eurogamer y BGR, que lo presentan como algo aparente y sin garantía; Microsoft y Rockstar no lo han confirmado. La regla publicada es la del huso de la cuenta, no la del reloj de la consola, así que tratarlo como plan fiable es un riesgo innecesario a ocho semanas del estreno.",
+    "La traducción práctica depende de lo que busque cada uno. En España peninsular, el desbloqueo llega en la medianoche del miércoles 18 al jueves 19, y solo funciona si la descarga está hecha: el juego no viene en disco, sino en un código dentro de la caja. Para jugar entre los primeros hay que estar en Nueva Zelanda o en el este de Australia; el resto no tiene atajo. Ni Canarias ni la península abren antes de su propia medianoche: en Canarias, con una hora menos, esa medianoche local llega a las 23:00 UTC del día 18.",
+    "Para quien quiera llegar sin spoilers, la tabla dice lo contrario de lo que parece: la ventana de riesgo no empieza cuando abre tu región, sino doce horas antes, cuando ya hay jugadores dentro. La conversación se llena durante toda la tarde y la noche del miércoles 18 en horario peninsular. Ese es el tramo que hay que blindar, y está detallado en [la guía para jugar a medianoche](/articulo/jugar-gta-vi-medianoche-19-noviembre-guia).",
+    "Este cuadro se mueve si alguna tienda publica horas nuevas, y la versión que se mantiene al día es [la tabla viva de desbloqueo por país](/desbloqueo), que además marca para cada huso si el desfase está verificado o pendiente de comprobar. Lo que sigue esperando respuesta es si la distinción por husos se aplicará igual en las tres tiendas digitales, si alguno de los mercados que hoy no publica ficha propia la publicará antes de noviembre, y cómo se canjeará el código físico la noche del estreno. El contexto de cómo se llegó hasta aquí está en [la cronología](/cronologia)."
+  ],
+  "category": "guias",
+  "author": "redaccion",
+  "publishedAt": "2026-10-12T19:00:00.000Z",
+  "updatedAt": "2026-10-12T21:00:00.000Z",
+  "coverLabel": "Desbloqueo por pais y hora",
+  "coverAlt": "Mapa del mundo con la hora local de desbloqueo de GTA VI en cada país y su equivalencia en UTC",
+  "tags": [
+    "Lanzamiento",
+    "Horarios",
+    "PS Store",
+    "Xbox Store",
+    "Latinoamérica"
+  ],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "PlayStation Store España — Grand Theft Auto VI",
+      "url": "https://www.playstation.com/es-es/games/grand-theft-auto-vi/"
+    },
+    {
+      "name": "Microsoft Store España — Comprar Grand Theft Auto VI",
+      "url": "https://www.xbox.com/es-es/games/store/grand-theft-auto-vi/9P3H4968GRSM"
+    },
+    {
+      "name": "NME — Grand Theft Auto 6: what time does it launch worldwide?",
+      "url": "https://www.nme.com/news/gaming-news/grand-theft-auto-6-what-time-launch-worldwide-3967520"
+    },
+    {
+      "name": "Eurogamer — Grand Theft Auto 6 worldwide unlock times revealed, and Xbox owners can seemingly still use the old New Zealand trick to play early",
+      "url": "https://www.eurogamer.net/gta-6-worldwide-release-unlock-times-ps5-xbox-series-x-s"
+    },
+    {
+      "name": "BGR — Xbox Series X Players Can Get Early Access To GTA 6 Through This Trick",
+      "url": "https://www.bgr.com/2259294/xbox-series-x-get-early-access-gta-6/"
+    }
+  ]
+}
