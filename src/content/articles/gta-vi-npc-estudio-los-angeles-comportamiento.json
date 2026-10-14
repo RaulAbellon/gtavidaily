@@ -1,0 +1,53 @@
+{
+  "slug": "gta-vi-npc-estudio-los-angeles-comportamiento",
+  "title": "Los NPC de GTA VI: el estudio que Rockstar abrió solo para Leonida",
+  "excerpt": "Rockstar no tenía capacidad para la población que quería, así que abrió un estudio en Los Ángeles dedicado a escribir y animar peatones. El juego supera las 600.000 animaciones.",
+  "content": [
+    "GTA VI tendrá la población de peatones más trabajada que Rockstar ha puesto en un juego, y detrás hay una decisión industrial. El estudio se dio cuenta durante el desarrollo de que no tenía capacidad de producción para acercarse a lo que había prometido, y la respuesta fue abrir una oficina nueva en Los Ángeles dedicada en exclusiva a escribir y animar personajes no controlables.",
+    "El dato procede del reportaje que Jason Schreier ha publicado este miércoles en Bloomberg, y tiene una consecuencia directa sobre el calendario: según Phil Hooker, responsable de desarrollo de Rockstar, aquella inversión obligó a mover la fecha de lanzamiento. El propio Hooker la califica como una de las mejores decisiones de todo el proyecto. La alternativa era reducir la ambición del mundo abierto.",
+    "El contexto ayuda a entender el volumen. Aaron Garbut, director de arte del estudio, cifró el pasado agosto en 600.000 las animaciones distintas de GTA VI, frente a las 55.000 de GTA V y las 300.000 de Red Dead Redemption 2. La cifra la dio en declaraciones al New York Times recogidas por Vandal, y cubre personajes, fauna, vehículos y todo lo que se mueve en Leonida. «Dirigimos artísticamente cada uno de ellos de manera individual», dijo entonces.",
+    "La parte jugable es la que más cambia respecto a entregas anteriores. El reportaje recoge una partida de prueba de Hooker que ilustra cómo se encadenan las situaciones sin guion. Iba camino de una misión de historia, chocó con otro coche y el conductor le respondió embistiéndole y gritándole. Los dos se apartaron a la orilla de la carretera para aclararlo y, con la salud baja, Hooker entró en una tienda a comprar objetos curativos.",
+    "El relato sigue: por el camino otro peatón le insultó y se liaron a golpes, no había nadie en la caja de la tienda y la robó, llegó la policía, escapó, abandonó su coche, encontró otro de valor para venderlo, casi le aplasta un vehículo con la música alta, decidió seguirlo, descubrió un recinto cercano, lo inspeccionó, encontró género que robar, se fue a venderlo a un fence y allí recibió otra pista para hacer algo más. Dos horas después seguía sin acercarse a la misión.",
+    "Hooker resume su reacción con una frase que cita el reportaje: «Recuerdo la diversión pura que fue». Añade que ver al equipo salir de aquella revisión entusiasmado, pese a las dudas que arrastraban, le confirmó que iban por buen camino. Es la descripción más concreta que ha dado Rockstar de cómo funcionan sus sistemas emergentes, y conviene tomarla por lo que es: una anécdota interna, no una promesa de que cada partida se comporte igual.",
+    "Lo que sí está documentado es el principio de diseño. Rob Nelson, codirector de Rockstar North, explicó en la entrevista que concedió a IGN que el objetivo es abrir las misiones siempre que sea posible para que se sientan como el mundo abierto, y subir a la vez la calidad de lo que ocurre fuera de ellas. Su formulación es que quieren «seguir difuminando la línea que separa los diferentes tipos de contenido».",
+    "Ese trabajo encaja con lo que el estudio ya había contado sobre la población. Nuestro análisis de [cómo evita Rockstar que los peatones sean todos iguales](/articulo/gta-vi-retargeting-animaciones-poblacion-npc) explica el sistema que reajusta animaciones en tiempo real según la altura y la complexión de cada personaje, y la fauna de Leonida tiene su propia pieza en [las más de 170 especies confirmadas](/articulo/leonida-fauna-naturaleza-salvaje-gta-vi).",
+    "Para el jugador, la lectura práctica de todo esto llega el 19 de noviembre, y afecta sobre todo a las primeras horas. Un mundo que reacciona a lo que haces castiga las prisas: el sistema de detenciones y muertes ya está descrito en [la guía de las primeras horas](/articulo/gta-vi-primeras-horas-relacion-detenciones-garaje), y esta pieza añade el motivo por el que conviene no cruzar la ciudad a la carrera. El juego abre a medianoche local de cada país, y la hora exacta de cada región está en [la tabla de desbloqueo](/articulo/gta-vi-hora-desbloqueo-por-pais).",
+    "Queda por saber si esos sistemas se comportan igual en las consolas base que en los modelos con más potencia. Rockstar no ha publicado detalles de rendimiento por plataforma y el análisis técnico difundido hasta ahora apunta a 30 fps en torno a 1440p, como recoge nuestro repaso de [rendimiento por consola](/articulo/gta-vi-rendimiento-por-consola-que-esperar). Tampoco hay confirmación oficial de cuántos de esos NPC simultáneos soporta cada máquina.",
+    "Otra incógnita es la de siempre con este tipo de sistemas: cuánto de lo que ocurre en el mundo abierto sobrevive al paso del tiempo. El reportaje no aclara si las secuencias emergentes se pueden perder de forma definitiva ni si afectan a la historia principal más allá de la experiencia inmediata. Es lo primero que se podrá comprobar en cuanto el juego esté en las manos de los jugadores, el 19 de noviembre de 2026.",
+    "El recorrido completo de los ocho años de desarrollo, con la cancelación de Project Americas y los tres directores al frente, está en [la historia del desarrollo de GTA VI](/articulo/gta-vi-project-americas-ocho-anos-desarrollo)."
+  ],
+  "category": "noticias",
+  "author": "redaccion",
+  "publishedAt": "2026-10-14T18:00:00.000Z",
+  "updatedAt": "2026-10-14T20:00:00.000Z",
+  "coverLabel": "NPC de Leonida y sus animaciones",
+  "coverAlt": "Ilustración de una calle de Vice City con decenas de peatones distintos animados de forma individual",
+  "tags": [
+    "NPC",
+    "Rockstar Games",
+    "Leonida",
+    "Bloomberg",
+    "Mundo abierto"
+  ],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Bloomberg — The Making of Grand Theft Auto VI",
+      "url": "https://www.bloomberg.com/features/2026-grand-theft-auto-6-making-of/"
+    },
+    {
+      "name": "Wccftech — Rockstar's Phil Hooker Lost Two Hours To GTA 6's NPCs After A Road Rage Spat Derailed His Story Mission",
+      "url": "https://wccftech.com/rockstars-phil-hooker-lost-two-hours-gta-6s-npcs-derailed-story-mission/"
+    },
+    {
+      "name": "Vandal — GTA 6 impresiona por sus gráficos y Rockstar da la clave: duplica las animaciones de Red Dead Redemption 2",
+      "url": "https://vandal.elespanol.com/noticia/2026240012/gta-6-impresiona-por-sus-graficos-y-rockstar-da-la-clave-duplica-las-animaciones-de-red-dead-redemption-2/"
+    },
+    {
+      "name": "Vandal — Rockstar confía en que GTA 6 'difumine la línea' entre contenido principal y secundario",
+      "url": "https://vandal.elespanol.com/noticia/2026280030/rockstar-confia-en-que-gta-6-difumine-la-linea-entre-contenido-principal-y-secundario/"
+    }
+  ]
+}
