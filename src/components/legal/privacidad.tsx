@@ -304,7 +304,7 @@ export function LegalPrivacy() {
               href={`mailto:${CONTACT_EMAIL}`}
               className="text-cyan-400 underline"
             >
-              contacto@gtavidaily.com
+              {CONTACT_EMAIL}
             </a>
             . Si consideras que no hemos respetado tus derechos, tienes
             derecho a presentar una reclamación ante la Agencia Española de
@@ -390,7 +390,7 @@ export function LegalPrivacy() {
               href={`mailto:${CONTACT_EMAIL}`}
               className="text-cyan-400 underline"
             >
-              contacto@gtavidaily.com
+              {CONTACT_EMAIL}
             </a>
             .
           </p>

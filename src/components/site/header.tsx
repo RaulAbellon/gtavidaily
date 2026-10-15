@@ -9,15 +9,25 @@ import { getPopulatedCategories } from "@/lib/queries";
  * (`<Link>`), el buscador es un formulario GET y el menú móvil usa `<details>`,
  * así que no necesita JavaScript.
  *
- * Además de las secciones, hay dos páginas de consulta que conviene tener a
- * mano todo el año: `/cronologia` y `/desbloqueo`. Viven en su propia franja,
- * separadas de los enlaces de sección, para que no desaparezcan entre las
- * categorías y para no comprimir la barra principal en pantallas de 1024 px,
- * que es justo el ancho en el que entra la navegación de escritorio.
+ * `/cronologia` y `/desbloqueo` no son dos páginas más: son los dos activos que
+ * solo tiene este medio y estaban enterrados en el pie. Por eso van en **dos
+ * sitios**: como enlace propio en la barra principal (con etiqueta corta, para
+ * que quepan a 1024 px) y en la franja de consulta de debajo, con el nombre
+ * completo y el buscador al lado. En el menú móvil aparecen igual.
  */
 const CONSULTAS = [
-  { href: "/cronologia", label: "Cronología de GTA VI", Icon: History },
-  { href: "/desbloqueo", label: "Hora de desbloqueo por países", Icon: Timer },
+  {
+    href: "/cronologia",
+    label: "Cronología de GTA VI",
+    short: "Cronología",
+    Icon: History,
+  },
+  {
+    href: "/desbloqueo",
+    label: "Hora de desbloqueo por países",
+    short: "Desbloqueo",
+    Icon: Timer,
+  },
 ] as const;
 
 export function Header() {
@@ -64,6 +74,16 @@ export function Header() {
           >
             Todas las noticias
           </NavLink>
+          {CONSULTAS.map(({ href, short, Icon }) => (
+            <NavLink
+              key={href}
+              href={href}
+              className="inline-flex items-center gap-1.5 rounded-md border border-pink-500/30 bg-pink-500/10 px-3 py-2 text-sm font-semibold transition-colors"
+            >
+              <Icon className="h-4 w-4 text-pink-400" aria-hidden="true" />
+              {short}
+            </NavLink>
+          ))}
         </nav>
       </div>
 

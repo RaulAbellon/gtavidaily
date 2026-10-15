@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Calendar, Clock, FileText, Tag, User } from "lucide-react";
+import { AlertTriangle, Calendar, Clock, FileText, Tag, User } from "lucide-react";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { RichText } from "@/components/site/rich-text";
 import { ArticleGrid } from "@/components/site/article-grid";
@@ -13,6 +13,7 @@ import {
   getRelatedArticles,
   type Article,
 } from "@/lib/data";
+import { getCorreccionesDeArticulo } from "@/lib/correcciones";
 import { countWords, citableSources, getAllArticleSlugs } from "@/lib/queries";
 import {
   ARTICLE_IMAGE_HEIGHT,
@@ -109,6 +110,9 @@ export default async function ArticlePage({ params }: PageProps) {
   const category = getCategoryBySlug(article.category);
   const related = getRelatedArticles(article.slug, article.category, 3);
   const sources = citableSources(article);
+  // Nota de corrección al pie: lo que se promete en `/correcciones` tiene que
+  // verse en el artículo afectado, no solo en el registro.
+  const correcciones = getCorreccionesDeArticulo(article.slug);
   const published = new Date(article.publishedAt).toLocaleDateString("es-ES", {
     year: "numeric",
     month: "long",
@@ -268,6 +272,46 @@ export default async function ArticlePage({ params }: PageProps) {
           <p className="mt-4 border-t border-white/5 pt-3 text-xs text-zinc-500">
             Este artículo se basa en información pública de las fuentes citadas.
             Los análisis y opiniones son propios de {SITE_NAME}.
+          </p>
+        </section>
+      )}
+
+      {correcciones.length > 0 && (
+        <section
+          className="mt-8 rounded-xl border border-amber-500/20 bg-amber-500/5 p-6"
+          aria-labelledby="correcciones-articulo"
+        >
+          <h2
+            id="correcciones-articulo"
+            className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-amber-300"
+          >
+            <AlertTriangle className="h-4 w-4" aria-hidden="true" />
+            Correcciones de este artículo
+          </h2>
+          <ul className="space-y-3">
+            {correcciones.map((correction) => (
+              <li
+                key={correction.id}
+                className="text-sm leading-relaxed text-zinc-300"
+              >
+                <time dateTime={correction.date} className="font-semibold text-white">
+                  {correction.dateLabel}
+                </time>
+                {" · "}
+                {correction.fix}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 border-t border-white/5 pt-3 text-xs text-zinc-400">
+            El registro completo, con lo que decía el texto antes de corregirse y
+            cómo comprobarlo, está en el{" "}
+            <Link
+              href="/correcciones"
+              className="font-semibold text-pink-400 underline-offset-2 hover:underline"
+            >
+              registro público de correcciones
+            </Link>
+            .
           </p>
         </section>
       )}

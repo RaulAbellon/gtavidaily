@@ -102,7 +102,7 @@ export function LegalDmca() {
               href={`mailto:${CONTACT_EMAIL}`}
               className="text-cyan-400 underline"
             >
-              contacto@gtavidaily.com
+              {CONTACT_EMAIL}
             </a>{" "}
             con el asunto &quot;DMCA Notice&quot;.
           </p>

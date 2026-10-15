@@ -22,7 +22,7 @@ export function LegalContact() {
 
     <div className="mt-6 grid gap-3 sm:grid-cols-2">
       <a
-        href="mailto:contacto@gtavidaily.com"
+        href={`mailto:${CONTACT_EMAIL}`}
         className="flex items-center gap-3 rounded-lg border border-white/5 bg-zinc-900/40 p-4 transition-colors hover:border-pink-500/40"
       >
         <Mail className="h-5 w-5 text-pink-500" aria-hidden="true" />

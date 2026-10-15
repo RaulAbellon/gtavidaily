@@ -25,9 +25,18 @@ export const SITE_DESCRIPTION =
 export const SITE_LOCALE = "es_ES";
 export const SITE_LANGUAGE = "es";
 
-/** Email de contacto real mostrado en las páginas legales y en el formulario. */
+/**
+ * Email de contacto real mostrado en las páginas legales y en el formulario.
+ *
+ * Ojo con el valor por defecto: `gtavidaily.com` **no tiene registro MX**, así
+ * que `contacto@gtavidaily.com` rebota. La dirección que funciona de verdad es
+ * la de Gmail, y es la única que se publica en todo el sitio (legales, pie,
+ * contacto, DMCA y `security.txt`). Para tener correo propio en el dominio hay
+ * que configurar MX (y SPF/DKIM) en el DNS primero; hasta entonces, no se
+ * anuncia ninguna dirección del dominio.
+ */
 export const CONTACT_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contacto@gtavidaily.com";
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL || "gtavidaily.contacto@gmail.com";
 
 /**
  * Identidad editorial. Antes había cuatro autores inventados con fotografías
@@ -79,9 +88,33 @@ export const STATIC_ROUTES = [
   { path: "/cronologia", title: "Cronología de GTA VI" },
   { path: "/desbloqueo", title: "Hora de desbloqueo por países" },
   { path: "/sobre", title: "Sobre nosotros" },
+  { path: "/politica-editorial", title: "Política editorial" },
+  { path: "/correcciones", title: "Correcciones" },
+  { path: "/financiacion", title: "Cómo nos financiamos" },
+  { path: "/equipo", title: "Quién hace el sitio" },
   { path: "/contacto", title: "Contacto" },
   { path: "/aviso-legal", title: "Aviso legal" },
   { path: "/privacidad", title: "Política de privacidad" },
   { path: "/cookies", title: "Política de cookies" },
   { path: "/dmca", title: "DMCA y derechos de autor" },
 ] as const;
+
+export type StaticRoutePath = (typeof STATIC_ROUTES)[number]["path"];
+
+/**
+ * Páginas de confianza: quién está detrás del medio, con qué criterio publica,
+ * cómo se financia y cómo se corrige. Se enlazan juntas en el pie y desde
+ * `/sobre` porque no tienen sentido sueltas.
+ */
+export const TRUST_ROUTES: { path: StaticRoutePath; title: string }[] = [
+  { path: "/sobre", title: "Sobre nosotros" },
+  { path: "/politica-editorial", title: "Política editorial" },
+  { path: "/correcciones", title: "Correcciones" },
+  { path: "/financiacion", title: "Cómo nos financiamos" },
+  { path: "/equipo", title: "Quién hace el sitio" },
+];
+
+/** Título público de una ruta estática, para los enlaces del pie. */
+export function staticRouteTitle(path: StaticRoutePath): string {
+  return STATIC_ROUTES.find((route) => route.path === path)?.title ?? path;
+}

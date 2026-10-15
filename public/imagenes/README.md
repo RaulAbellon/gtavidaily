@@ -12,26 +12,40 @@ La carpeta tiene dos orígenes distintos, y conviene no confundirlos:
 
 ## Material oficial de Rockstar (`oficiales/`)
 
-**Tenemos permiso por escrito de Take-Two Interactive para usar el material
-oficial que Rockstar publica en su apartado de medios.** El permiso se solicitó
-por correo a `copyright@take2games.com` (el envío está documentado en
-`CORREO-TAKE-TWO.md`) y Take-Two respondió autorizando el uso editorial de
-capturas, arte y wallpapers del hub oficial.
+> **Corrección importante (14 de octubre de 2026).** Una versión anterior de este
+> fichero afirmaba que teníamos **permiso por escrito** de Take-Two y citaba como
+> prueba `CORREO-TAKE-TWO.md`. **Eso no era cierto**: ese documento es un
+> borrador que nunca se envió desde este repositorio y no conservamos ninguna
+> autorización escrita. La afirmación se ha retirado.
 
-**La condición que puso Take-Two es una sola: citar que la imagen es oficial de
-GTA VI o de su desarrolladora.** Por eso `imageCredit` es literalmente:
+**La base real del uso es esta**: todo el material procede del **hub de medios
+oficial** <https://www.rockstargames.com/VI/media>, que Rockstar publica
+expresamente para descarga y compartición, y usamos una parte mínima con
+**crédito visible y enlace a la fuente**. Es la práctica estándar de la prensa
+especializada.
 
-```
-Imagen oficial de GTA VI · © Rockstar Games
-```
+**Lo que sí mantenemos, por criterio propio:**
 
-Ese texto no es una fórmula de estilo nuestra: reproduce la condición que ellos
-pidieron. **No lo reformules ni lo acortes.** El correo con la autorización se
-conserva como prueba; ante cualquier reclamación, esa es la documentación que se
-aporta.
+1. **Crédito siempre**, con esta fórmula literal:
+   ```
+   Imagen oficial de GTA VI · © Rockstar Games
+   ```
+   No acreditamos una condición impuesta por nadie: lo hacemos porque el material
+   no es nuestro y hay que decir de quién es.
+2. **Enlace a la fuente** (`imageSource`) a la página oficial concreta de la que
+   sale cada pieza.
+3. **Copia local, nunca enlace en caliente** a los servidores de Rockstar.
+4. **Criterio editorial**: una imagen oficial nunca ilustra rumores, especulación,
+   filtraciones, conflictos laborales ni sucesos negativos. Daría a entender que
+   Rockstar respalda la pieza.
+5. **Sin alteraciones**: no se recorta el significado ni se añaden logotipos.
+6. **Solo material publicado oficialmente.** Nada filtrado ni de previews privadas.
+7. **Retirada inmediata** si Rockstar o Take-Two lo piden, en cualquier momento,
+   sin necesidad de justificación.
 
-- **Fecha del permiso:** 22 de septiembre de 2026 (respuesta de Take-Two).
-- **Fecha de importación de la biblioteca:** 24 de septiembre de 2026.
+**Pendiente**: si en algún momento se consigue autorización escrita, se documentará
+aquí con su fecha y se conservará el original. Hasta entonces, este fichero no debe
+afirmar que existe.
 
 ### De dónde sale cada pieza
 
@@ -74,7 +88,8 @@ node verify-official-images.mjs         # comprueba el estado real del repo
 
 ### Reglas de uso que aplicamos
 
-1. **Crédito siempre, con la fórmula que exige Take-Two**:
+1. **Crédito siempre**, con esta fórmula (de criterio propio, porque el material no
+   es nuestro; no reproduce ninguna condición impuesta):
    `imageCredit` es literalmente `Imagen oficial de GTA VI · © Rockstar Games`, y
    `imageSource` apunta a la página oficial concreta de la que sale la pieza.
 2. **Copia local, nunca enlace en caliente** a los servidores de Rockstar. Las
@@ -104,9 +119,9 @@ node verify-official-images.mjs         # comprueba el estado real del repo
 
 Este es un **sitio fan no oficial**. Distinguimos dos casos:
 
-1. **Material oficial de Rockstar/Take-Two** (`oficiales/`): está autorizado por
-   escrito, se acredita con la fórmula exacta que exige Take-Two y se le enlaza
-   la fuente. Ver la sección de arriba.
+1. **Material oficial de Rockstar/Take-Two** (`oficiales/`): procede del hub de
+   medios que Rockstar publica para compartir, se acredita con la fórmula de
+   crédito y se le enlaza la fuente. Ver la sección de arriba.
 2. **Cualquier otra imagen con derechos**: no se usa. Capturas de otros medios,
    material filtrado, arte de terceros o imágenes cuyo origen no se pueda
    documentar quedan fuera. Muchos medios lo prohíben expresamente y su uso no

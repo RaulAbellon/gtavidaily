@@ -20,7 +20,7 @@ NEXTJS_ENV=development
 #
 # NEXT_PUBLIC_SITE_URL=https://gtavidaily.com
 # NEXT_PUBLIC_ADSENSE_CLIENT=ca-pub-6098877112141110
-# NEXT_PUBLIC_CONTACT_EMAIL=contacto@gtavidaily.com
+# NEXT_PUBLIC_CONTACT_EMAIL=gtavidaily.contacto@gmail.com
 # NEXT_PUBLIC_LEGAL_EMAIL=gtavidaily.contacto@gmail.com
 # NEXT_PUBLIC_LEGAL_NAME=Raul Abellon Losa
 # NEXT_PUBLIC_LEGAL_TAX_ID=71183429F

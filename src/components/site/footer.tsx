@@ -3,13 +3,7 @@ import { Brand } from "@/components/site/brand";
 import { CookieSettingsLink } from "@/components/consent/cookie-settings-link";
 import { LaunchAlertForm } from "@/components/site/launch-alert-form";
 import { getPopulatedCategories } from "@/lib/queries";
-import {
-  CONTACT_EMAIL,
-  EDITORIAL_NAME,
-  LEGAL_OWNER,
-  SITE_NAME,
-  STATIC_ROUTES,
-} from "@/lib/site";
+import { CONTACT_EMAIL, EDITORIAL_NAME, LEGAL_OWNER, SITE_NAME } from "@/lib/site";
 
 export function Footer() {
   const categories = getPopulatedCategories();
@@ -19,7 +13,7 @@ export function Footer() {
   return (
     <footer className="mt-auto border-t border-pink-500/20 bg-zinc-950">
       <div className="mx-auto max-w-7xl px-4 py-12">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-7">
           <div className="col-span-2 lg:col-span-2">
             <Brand />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-400">
@@ -30,10 +24,11 @@ export function Footer() {
               Sitio fan no oficial. Grand Theft Auto, GTA, Vice City y Rockstar
               Games son marcas registradas de Take-Two Interactive Software,
               Inc. No estamos afiliados ni patrocinados por Rockstar Games ni
-              Take-Two. Las ilustraciones propias de este sitio están dibujadas
-              por nosotros pieza a pieza, no reutilizamos imágenes de terceros,
-              y cuando una pieza se ilustra con material oficial de Rockstar se
-              indica en el pie de la imagen con su crédito.
+              Take-Two. Las ilustraciones propias son ilustraciones
+              conceptuales generadas por el motor de portadas del sitio a partir
+              de una escena descrita para cada artículo: no son capturas del
+              juego. Cuando una pieza se ilustra con material oficial de Rockstar
+              se indica en el pie de la imagen con su crédito.
             </p>
           </div>
 
@@ -63,23 +58,91 @@ export function Footer() {
             </ul>
           </nav>
 
+          <nav aria-label="Sobre el medio">
+            <h2 className="mb-4 text-xs font-bold uppercase tracking-widest text-pink-400">
+              El medio
+            </h2>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <Link
+                  href="/sobre"
+                  className="text-zinc-400 transition-colors hover:text-white"
+                >
+                  Sobre nosotros
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/politica-editorial"
+                  className="text-zinc-400 transition-colors hover:text-white"
+                >
+                  Política editorial
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/correcciones"
+                  className="text-zinc-400 transition-colors hover:text-white"
+                >
+                  Correcciones
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/financiacion"
+                  className="text-zinc-400 transition-colors hover:text-white"
+                >
+                  Cómo nos financiamos
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/equipo"
+                  className="text-zinc-400 transition-colors hover:text-white"
+                >
+                  Quién hace el sitio
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
           <nav aria-label="Información legal">
             <h2 className="mb-4 text-xs font-bold uppercase tracking-widest text-pink-400">
               Legal
             </h2>
             <ul className="space-y-2.5 text-sm">
-              {STATIC_ROUTES.filter((route) => route.path !== "/contacto").map(
-                (route) => (
-                  <li key={route.path}>
-                    <Link
-                      href={route.path}
-                      className="text-zinc-400 transition-colors hover:text-white"
-                    >
-                      {route.title}
-                    </Link>
-                  </li>
-                ),
-              )}
+              <li>
+                <Link
+                  href="/aviso-legal"
+                  className="text-zinc-400 transition-colors hover:text-white"
+                >
+                  Aviso legal
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacidad"
+                  className="text-zinc-400 transition-colors hover:text-white"
+                >
+                  Política de privacidad
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/cookies"
+                  className="text-zinc-400 transition-colors hover:text-white"
+                >
+                  Política de cookies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dmca"
+                  className="text-zinc-400 transition-colors hover:text-white"
+                >
+                  DMCA y derechos de autor
+                </Link>
+              </li>
               <li>
                 <CookieSettingsLink className="text-zinc-400 transition-colors hover:text-white" />
               </li>

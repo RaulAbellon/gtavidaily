@@ -17,7 +17,7 @@
   "category": "noticias",
   "author": "redaccion",
   "publishedAt": "2026-09-16T09:00:00.000Z",
-  "updatedAt": "2026-10-12T23:00:00.000Z",
+  "updatedAt": "2026-10-14T22:00:00.000Z",
   "coverLabel": "El futuro de GTA Online",
   "coverAlt": "Ilustración de un garaje de Los Santos con un cartel que anuncia la llegada de GTA VI",
   "tags": [
@@ -55,9 +55,5 @@
       "name": "Polygon — Red Dead Redemption and GTA 4 will be affected by GameSpy server shutdown",
       "url": "https://www.polygon.com/2014/4/30/5667670/red-dead-redemption-and-gta-4-will-be-affected-by-gamespy-server/"
     }
-  ],
-  "image": "/imagenes/oficiales/vice-city-atardecer.jpg",
-  "imageAlt": "Captura de GTA VI: panorámica de Vice City al atardecer con un helicóptero sobre los rascacielos",
-  "imageCredit": "Imagen oficial de GTA VI · © Rockstar Games",
-  "imageSource": "https://www.rockstargames.com/VI/media/screenshots"
+  ]
 }

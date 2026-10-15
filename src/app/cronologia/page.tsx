@@ -18,6 +18,7 @@ import {
   CRONOLOGIA_STATUS_LABEL,
   CRONOLOGIA_UPDATED_AT,
   LUGARES_OFICIALES,
+  cronologiaCorteLabel,
   getCronologiaDesc,
   getCronologiaResumen,
   type CronologiaEvent,
@@ -226,7 +227,7 @@ export default function CronologiaPage() {
         <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-500">
           <span className="inline-flex items-center gap-1.5">
             <CalendarDays className="h-3.5 w-3.5" aria-hidden="true" />
-            Corte de datos: 30 de septiembre de 2026
+            Corte de datos: {cronologiaCorteLabel()}
           </span>
           <span className="inline-flex items-center gap-1.5">
             <Info className="h-3.5 w-3.5" aria-hidden="true" />
@@ -487,8 +488,7 @@ export default function CronologiaPage() {
         </p>
         <p className="mt-3 text-xs text-zinc-500">
           Mantenida por {EDITORIAL_NAME}. Última revisión completa de las
-          fuentes primarias: 30 de septiembre de 2026 ({CRONOLOGIA.length}{" "}
-          entradas).
+          fuentes: {cronologiaCorteLabel()} ({CRONOLOGIA.length} entradas).
         </p>
       </section>
     </div>

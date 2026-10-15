@@ -3,6 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   CRONOLOGIA,
+  CRONOLOGIA_UPDATED_AT,
   getCronologiaDesc,
   getCronologiaResumen,
 } from "@/lib/cronologia";
@@ -177,8 +178,9 @@ describe("cronología", () => {
     const claves = CRONOLOGIA.map((event) => `${event.date}|${event.title}`);
     expect(new Set(claves).size).toBe(claves.length);
     for (const event of CRONOLOGIA) {
-      // El corte de datos está declarado como 30-sep-2026: nada posterior.
-      expect(event.date <= "2026-09-30", event.title).toBe(true);
+      // La fecha de corte está declarada en `CRONOLOGIA_UPDATED_AT`: si se
+      // añade una entrada posterior sin moverla, esta prueba lo detecta.
+      expect(event.date <= CRONOLOGIA_UPDATED_AT, event.title).toBe(true);
     }
   });
 

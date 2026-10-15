@@ -93,6 +93,10 @@ describe("páginas legales", () => {
     { slug: "aviso-legal", component: "LegalNotice" },
     { slug: "dmca", component: "LegalDmca" },
     { slug: "contacto", component: "LegalContact" },
+    { slug: "politica-editorial", component: "LegalEditorialPolicy" },
+    { slug: "correcciones", component: "LegalCorrections" },
+    { slug: "financiacion", component: "LegalFunding" },
+    { slug: "equipo", component: "LegalTeam" },
   ];
 
   it("cada página tiene su propio componente de servidor", () => {

@@ -16,11 +16,13 @@
  * fuentes citadas en los artículos de `src/content/articles/`. No hay ninguna
  * línea que no esté en esa base o en una fuente enlazada aquí. Las URLs
  * primarias de Rockstar, Take-Two y Netflix se volvieron a comprobar el
- * 30 de septiembre de 2026 (responden 200).
+ * 30 de septiembre de 2026 (responden 200) y la lista se amplió el 14 de octubre
+ * de 2026 con lo publicado en octubre, cada línea con su fuente.
  *
  * Aviso de mantenimiento: este fichero **no se actualiza solo**. Cuando Rockstar
  * publique algo nuevo hay que añadir la entrada con su fuente y volver a pasar
- * `npm run check`.
+ * `npm run check`. La fecha de corte es `CRONOLOGIA_UPDATED_AT`: si se añade una
+ * entrada posterior sin moverla, `tests/consulta.test.ts` falla.
  */
 
 export type CronologiaStatus = "confirmado" | "reportado";
@@ -266,9 +268,173 @@ const FUENTES = {
     name: "Game Informer — «Grand Theft Auto VI – Welcome to Leonida» (portada del número 382, 29 de septiembre de 2026)",
     url: "https://gameinformer.com/feature/2026/09/29/grand-theft-auto-vi-welcome-to-leonida",
   },
+  musicaEmisoras: {
+    name: "Rockstar Games (Newswire) — «The Music of Grand Theft Auto VI: In-Game Radio Stations»",
+    url: "https://www.rockstargames.com/newswire/article/o3982oa93a23k4/the-music-of-grand-theft-auto-vi-in-game-radio-stations",
+    primary: true,
+  },
+  paginaMusica: {
+    name: "Rockstar Games — Grand Theft Auto VI: música y emisoras",
+    url: "https://www.rockstargames.com/VI/music",
+    primary: true,
+  },
+  galeriaCapturas: {
+    name: "Rockstar Games — galería oficial de capturas de GTA VI",
+    url: "https://www.rockstargames.com/VI/media/screenshots",
+    primary: true,
+  },
+  rockstarStore: {
+    name: "Rockstar Store — colección Grand Theft Auto VI (precios publicados)",
+    url: "https://store.rockstargames.com/grand-theft-auto-vi-collection",
+    primary: true,
+  },
+  gematsuEmisoras: {
+    name: "Gematsu — Grand Theft Auto VI previews six in-game radio stations",
+    url: "https://www.gematsu.com/2026/10/grand-theft-auto-vi-previews-six-in-game-radio-stations",
+  },
+  gtavicePegi: {
+    name: "GTAVice.net — las clasificaciones por edades aparecen en la publicidad de PlayStation",
+    url: "https://www.gtavice.net/news/gta-vi-ratings-appear-in-playstation-ads-across-multiple-regions",
+  },
+  notebookcheckPegi: {
+    name: "Notebookcheck — la ficha de PlayStation Store muestra las clasificaciones antes del lanzamiento",
+    url: "https://www.notebookcheck.com/GTA-6-PlayStation-Store-verraet-Altersfreigaben-vor-Release.1411263.0.html",
+  },
+  vandalActividades: {
+    name: "Vandal — minigolf, kayak y submarinismo entre las actividades repartidas por Leonida",
+    url: "https://vandal.elespanol.com/noticia/2026273004/gta-6-tendra-minigolf-kayak-submarinismo-y-muchas-mas-actividades-repartidas-por-leonida/",
+  },
+  varietyHouser: {
+    name: "Variety — Dan Houser sobre GTA 6, sus nuevos juegos y Absurd Ventures",
+    url: "https://variety.com/2026/gaming/news/rockstar-dan-houser-gta-6-new-games-absurd-ventures-1236894786/",
+  },
+  vgcHouser: {
+    name: "VGC — Dan Houser sigue sin ver GTA 6: «I will try and avoid it»",
+    url: "https://www.videogameschronicle.com/news/dan-houser-still-hasnt-seen-gta-6-i-will-try-and-avoid-it/",
+  },
+  nbcMiamiHeat: {
+    name: "NBC 6 South Florida — el Miami Heat organizará «A Night in Vice City» antes del lanzamiento",
+    url: "https://www.nbcmiami.com/news/sports/miami-heat/miami-heat-to-host-a-night-in-vice-city-before-gta-6-release/3867731/",
+  },
+  vgcMiamiHeat: {
+    name: "VGC — el Miami Heat se renombra como «Vice City» para la campaña de GTA 6",
+    url: "https://www.videogameschronicle.com/news/miami-heat-nba-team-to-rebrand-as-vice-city-in-gta-6-marketing-stunt/",
+  },
+  gamereactorCapturas: {
+    name: "Gamereactor — Rockstar añade cuatro imágenes nuevas a su campaña",
+    url: "https://www.gamereactor.eu/gta-6-screenshots-lucia-jason/",
+  },
+  kotakuXboxNube: {
+    name: "Kotaku — Xbox desmiente el reporte sobre derechos exclusivos de emisión en la nube",
+    url: "https://kotaku.com/xbox-lands-exclusive-streaming-rights-for-gta-6-at-launch-2000741146",
+  },
+  eurogamerXboxNube: {
+    name: "Eurogamer — Xbox niega haber adquirido derechos exclusivos de emisión en la nube de GTA 6",
+    url: "https://www.eurogamer.net/xbox-cloud-gta-6-streaming-rights",
+  },
+  vergeNube: {
+    name: "The Verge — el reporte inicial sobre los derechos de emisión en la nube",
+    url: "https://www.theverge.com/report/1005859/microsoft-xbox-gta-6-streaming-rights",
+  },
+  vandalMurales: {
+    name: "Vandal — la campaña de calle: anuncios en París, Nueva York y otros países",
+    url: "https://vandal.elespanol.com/noticia/2026280016/gta-6-ya-esta-conquistando-el-mundo-rockstar-prepara-grandes-anuncios-en-paris-nueva-york-y-otros-paises/",
+  },
+  notebookcheckMurales: {
+    name: "Notebookcheck — el mural de Nueva York abre la fase final de la campaña",
+    url: "https://www.notebookcheck.net/GTA-6-Huge-New-York-mural-apparently-kicks-off-final-marketing-phase.1414170.0.html",
+  },
+  yahooTVSpot: {
+    name: "Yahoo Tech — un spot de televisión aparece en la parrilla de una filial de Fox sin confirmar por Rockstar",
+    url: "https://tech.yahoo.com/gaming/articles/gta-6-tv-spot-just-235718617.html",
+  },
+  pcGamerFiltracion: {
+    name: "PC Gamer — el filtrador amenaza con publicar una build con el modo historia completo",
+    url: "https://www.pcgamer.com/games/grand-theft-auto/gta-6-leaker-threatens-to-upload-a-build-with-full-story-mode/",
+  },
+  techpowerupFiltracion: {
+    name: "TechPowerUp — el filtrador dice tener la build completa y amenaza con distribuirla",
+    url: "https://www.techpowerup.com/353589/gta-6-leaker-claims-to-have-full-build-threatens-to-release-it-unless-take-two-apologizes",
+  },
+  notebookcheckGameplay: {
+    name: "Notebookcheck — el material filtrado muestra carreras, primera persona y desnudos",
+    url: "https://www.notebookcheck.net/GTA-6-new-leaked-footage-shows-racing-first-person-mode-and-full-nudity.1419343.0.html",
+  },
+  rbcGameplay: {
+    name: "RBC-Ukraine — 25 minutos de gameplay filtrado en primera persona",
+    url: "https://www.rbc.ua/rus/news/hakeri-zlili-25-hvilin-geympleyu-gta-6-geymeriv-1791539126.html",
+  },
+  varietyNintendo: {
+    name: "Variety — entrevista a Devon Pritchard (Nintendo) sobre GTA 6 en Switch 2",
+    url: "https://variety.com/2026/gaming/news/legend-of-zelda-movie-gta-6-nintendo-devon-pritchard-interview-1236906466/",
+  },
+  vgcNintendo: {
+    name: "VGC — Nintendo no dice nada sobre una versión de GTA 6 para Switch 2",
+    url: "https://www.videogameschronicle.com/news/will-gta-6-make-its-way-to-switch-2-nintendo-isnt-saying/",
+  },
+  loveMagazine: {
+    name: "LOVE Magazine — «GTA VI: The American Dream» (entrevista a Rockstar Games)",
+    url: "https://lovemagazine.net/articles/gta-vi-the-american-dream",
+  },
+  gamingboltVoces: {
+    name: "GamingBolt — un equipo entero dedicado a escribir los diálogos del mundo abierto",
+    url: "https://gamingbolt.com/grand-theft-auto-6-had-entire-teams-dedicated-to-writing-for-open-world-npc-chatter",
+  },
+  gamesbeatPC: {
+    name: "GamesBeat — el informe que sitúa la versión de PC en el primer trimestre de 2027",
+    url: "https://gamesbeat.com/grand-theft-auto-vis-pc-release-is-slated-for-q1-2027/",
+  },
+  kotakuPC: {
+    name: "Kotaku — la versión de PC llegaría pocos meses después del lanzamiento en consola",
+    url: "https://kotaku.com/grand-theft-auto-gta6-pc-port-release-date-rumor-report-2000745274",
+  },
+  gtaviceBlimp: {
+    name: "GTAVice.net — el dirigible de Goodyear con la librea «Vice City» emprende el vuelo",
+    url: "https://www.gtavice.net/news/gta-6-vice-city-goodyear-blimp-takes-flight",
+  },
+  gtaboomBlimp: {
+    name: "GTA BOOM — cómo seguir el dirigible de GTA 6 de Ohio a Florida",
+    url: "https://www.gtaboom.com/a-gta-6-vice-city-blimp-is-flying-south-and-you-can-track-it-live-955f",
+  },
+  rockstarintelBlimp: {
+    name: "RockstarINTEL — el dirigible de Goodyear de GTA 6, de camino a Miami",
+    url: "https://rockstarintel.com/gta-6-goodyear-blimp-on-its-way-to-miami/",
+  },
+  univisionMiamiDade: {
+    name: "Univision Miami — Miami-Dade ya cobró por el letrero del Kaseya Center y frena el resto de la publicidad",
+    url: "https://www.univision.com/radio/miami-wamr-fm/miami-dade-exige-voto-trato-grand-theft-auto-vi",
+  },
+  themiamianMiamiDade: {
+    name: "The Miamian — la campaña «Vice City» de Miami-Dade, en peligro",
+    url: "https://www.themiamian.net/p/miami-dade-vice-city-campaign-in-peril",
+  },
+  khelnowPresupuesto: {
+    name: "Khel Now — el presupuesto de marketing de GTA 6 cifrado en 150 millones",
+    url: "https://khelnow.com/gaming/gta-6-reportedly-has-150-million-marketing-budget-202610",
+  },
+  bloombergMakingOf: {
+    name: "Bloomberg — «The Making of Grand Theft Auto VI»",
+    url: "https://www.bloomberg.com/features/2026-grand-theft-auto-6-making-of/",
+  },
+  eurogamerProjectAmericas: {
+    name: "Eurogamer — GTA 6 fue «Project Americas» y cubría el norte y el sur del país",
+    url: "https://www.eurogamer.net/gta-6-project-americas-rockstar-crunch-delays-leaks",
+  },
+  vandalProjectAmericas: {
+    name: "Vandal — Rockstar confirma que planeó incluir Norteamérica y Sudamérica",
+    url: "https://vandal.elespanol.com/noticia/2026287014/gta-6-iba-a-ser-mucho-mas-grande-rockstar-confirma-que-planeo-incluir-norteamerica-y-sudamerica/",
+  },
+  tresDJuegosMakingOf: {
+    name: "3DJuegos — ocho años de desarrollo y 3.000 millones de dólares en juego",
+    url: "https://www.3djuegos.com/juegos/grand-theft-auto-vi/noticias/ocho-anos-desarrollo-3-000-millones-dolares-juego-que-gta-6-ha-tardado-ver-luz",
+  },
+  vandalDesbloqueo: {
+    name: "Vandal — GTA 6 detalla el intercambio de armas en tiempo real entre Jason y Lucia",
+    url: "https://vandal.elespanol.com/noticia/2026258029/gta-6-no-es-cooperativo-pero-jason-y-lucia-podran-intercambiar-y-pasarse-armas-directamente-en-tiempo-real/",
+  },
 } as const satisfies Record<string, CronologiaSource>;
 
-export const CRONOLOGIA_UPDATED_AT = "2026-09-30";
+export const CRONOLOGIA_UPDATED_AT = "2026-10-14";
 
 export const CRONOLOGIA: CronologiaEvent[] = [
   {
@@ -817,11 +983,256 @@ export const CRONOLOGIA: CronologiaEvent[] = [
       "game-informer-382-clima-extremo-170-especies",
     ],
   },
+  {
+    date: "2026-10-01",
+    dateLabel: "1 de octubre de 2026",
+    title:
+      "La ficha europea de PlayStation Store muestra PEGI 18 sin anuncio de nadie",
+    detail:
+      "La clasificación por edades del juego aparece por primera vez ante el público en la ficha de PS Store que ve cualquier usuario europeo, y también impresa en la publicidad regional de Sony: PEGI 18 para Europa y Reino Unido, USK 18 en el anuncio alemán, D en el mexicano y X 18+ en el australiano. Lo enseña la tienda, no Rockstar ni el organismo clasificador, y por eso va como reportado: no hay ficha ni comunicado de PEGI ni de la ESRB.",
+    status: "reportado",
+    sources: [FUENTES.gtavicePegi, FUENTES.notebookcheckPegi],
+    related: ["gta-vi-clasificacion-edades-por-regiones-pegi"],
+  },
+  {
+    date: "2026-10-01",
+    dateLabel: "1 de octubre de 2026",
+    title:
+      "Game Informer 382 detalla las actividades de Leonida: caza, minigolf y kayak",
+    detail:
+      "El reportaje de portada del número 382, publicado el 29 de septiembre, describe actividades repartidas por el estado —caza con fauna rastreable, minigolf, kayak, submarinismo— además de las seis regiones. Son declaraciones de los responsables de Rockstar recogidas por la revista, no un comunicado de la compañía: la entrada va como «Hecho público» por eso.",
+    status: "confirmado",
+    evidence: "informado",
+    sources: [FUENTES.gameInformer382, FUENTES.vandalActividades],
+    related: ["gta-vi-caza-fauna-actividades-game-informer"],
+  },
+  {
+    date: "2026-10-03",
+    dateLabel: "3 de octubre de 2026",
+    title: "Dan Houser dice que no ha visto GTA VI y que piensa evitarlo",
+    detail:
+      "El cofundador de Rockstar, que dejó el estudio en 2020, explica en una entrevista con Variety que no ha visto el material del juego y que piensa seguir sin verlo: «I will try and avoid it». No es una declaración de la compañía ni afecta al desarrollo; es la posición personal de quien creó la saga, y se recoge como tal.",
+    status: "confirmado",
+    evidence: "informado",
+    sources: [FUENTES.varietyHouser, FUENTES.vgcHouser],
+    related: ["dan-houser-evita-ver-gta-vi"],
+  },
+  {
+    date: "2026-10-04",
+    dateLabel: "4 de octubre de 2026",
+    title:
+      "El Miami Heat jugará como «Vice City» la víspera del lanzamiento",
+    detail:
+      "El equipo de la NBA anuncia que su partido del 18 de noviembre se jugará bajo la marca «A Night in Vice City», con el pabellón y la camiseta adaptados. Lo anuncia el propio equipo y lo recogen varios medios, así que el hecho es público y verificable, aunque Rockstar no haya dicho nada al respecto: la campaña en Miami la llevan el condado y los socios, no el estudio.",
+    status: "confirmado",
+    evidence: "informado",
+    sources: [FUENTES.nbcMiamiHeat, FUENTES.vgcMiamiHeat],
+    related: ["miami-heat-vice-city-night-kaseya-center"],
+  },
+  {
+    date: "2026-10-05",
+    dateLabel: "5 de octubre de 2026",
+    title: "Rockstar añade nuevas capturas de Jason y Lucia a su galería",
+    detail:
+      "El hub oficial del juego incorpora nuevas imágenes de la pareja protagonista. Que la galería crece es un dato de la propia Rockstar y se puede comprobar en su web; que una de las capturas recrea la cafetería del material filtrado de 2022 es una lectura de los medios, no una confirmación de la compañía, y así se dice.",
+    status: "confirmado",
+    sources: [FUENTES.galeriaCapturas, FUENTES.gamereactorCapturas],
+    related: ["gta-vi-imagen-hanks-waffles-love-magazine-2022"],
+  },
+  {
+    date: "2026-10-07",
+    dateLabel: "7 de octubre de 2026",
+    title:
+      "Xbox desmiente que GTA VI vaya a poder jugarse en PC por la nube",
+    detail:
+      "Un reporte de The Verge afirma que Microsoft ha cerrado derechos de emisión en la nube del juego para el lanzamiento, lo que en la práctica lo haría jugable en PC a través de Xbox Cloud Gaming. Matthew Ball, director de estrategia de Xbox, lo desmiente públicamente y medios como Kotaku, Eurogamer y Vandal recogen la rectificación. No hay versión de PC anunciada por Rockstar.",
+    status: "confirmado",
+    evidence: "informado",
+    sources: [
+      FUENTES.vergeNube,
+      FUENTES.kotakuXboxNube,
+      FUENTES.eurogamerXboxNube,
+    ],
+    related: ["gta-vi-xbox-desmiente-nube-pc-lanzamiento"],
+  },
+  {
+    date: "2026-10-07",
+    dateLabel: "7 de octubre de 2026",
+    title:
+      "La campaña de calle arranca con murales en Nueva York y París",
+    detail:
+      "Aparece un mural de gran formato en Nueva York y se documentan reservas de espacios publicitarios en París y otras ciudades, además de un spot de televisión que figura en la parrilla de una filial de Fox sin que Rockstar lo haya anunciado. Nada de esto consta en un canal de la compañía, así que va como reportado.",
+    status: "reportado",
+    sources: [
+      FUENTES.vandalMurales,
+      FUENTES.notebookcheckMurales,
+      FUENTES.yahooTVSpot,
+    ],
+    related: ["gta-vi-murales-nueva-york-paris-campana"],
+  },
+  {
+    date: "2026-10-07",
+    dateLabel: "7 de octubre de 2026",
+    title:
+      "Rockstar detalla el cambio de personaje: sin cooperativo, con intercambio de armas",
+    detail:
+      "El material publicado y su cobertura especializada describen cómo se alterna entre Jason y Lucia y confirman que no es un modo cooperativo, pero que los dos protagonistas pueden pasarse armas en tiempo real. El detalle procede de la cobertura del Extended Look y de las explicaciones del estudio recogidas por medios, no de un comunicado; va como reportado.",
+    status: "reportado",
+    sources: [FUENTES.vandalDesbloqueo],
+    related: ["gta-vi-alternar-personajes-como-funciona"],
+  },
+  {
+    date: "2026-10-08",
+    dateLabel: "8 de octubre de 2026",
+    title: "Circulan unos 25 minutos de gameplay filtrado de una build de desarrollo",
+    detail:
+      "Aparece material inédito del juego con misiones, modificaciones de coche, carreras y un tramo en primera persona, además de desnudos integrales que el mundo del juego no parece registrar. La propia cobertura advierte de que parte de ese comportamiento encaja con una build de desarrollo y no con la versión final. Es material filtrado: no lo reproducimos ni lo enlazamos, y la descripción es lo que han publicado los medios.",
+    status: "reportado",
+    sources: [FUENTES.notebookcheckGameplay, FUENTES.rbcGameplay],
+    related: ["cyberleek-amenaza-publicar-build-completa-gta-vi"],
+  },
+  {
+    date: "2026-10-11",
+    dateLabel: "11 de octubre de 2026",
+    title: "Rockstar confirma seis emisoras de radio y sus locutores",
+    detail:
+      "El Newswire publica «The Music of Grand Theft Auto VI: In-Game Radio Stations»: seis diales confirmados, con nombres como Flash FM y con locutores anunciados por la propia compañía. Es la primera vez que Rockstar publica una lista de emisoras del juego; lo que sigue sin publicarse es el listado completo de canciones con licencia.",
+    status: "confirmado",
+    sources: [FUENTES.musicaEmisoras, FUENTES.paginaMusica, FUENTES.gematsuEmisoras],
+    related: [
+      "rockstar-desvela-seis-emisoras-radio-gta-vi",
+      "banda-sonora-gta-vi-emisoras-canciones",
+    ],
+  },
+  {
+    date: "2026-10-11",
+    dateLabel: "11 de octubre de 2026",
+    title:
+      "La tienda de Rockstar abre la colección de GTA VI, sin reserva del juego",
+    detail:
+      "La Rockstar Store pone a la venta la colección de merchandising del juego con precios publicados —camisetas desde 29,99 euros— y sin necesidad de reservar el juego para comprarla. Los precios y el catálogo constan en la propia tienda, que es la fuente primaria de esta línea.",
+    status: "confirmado",
+    sources: [FUENTES.rockstarStore],
+    related: ["rockstar-store-coleccion-gta-vi-precios-sin-reserva"],
+  },
+  {
+    date: "2026-10-11",
+    dateLabel: "11 de octubre de 2026",
+    title:
+      "El filtrador de agosto amenaza con publicar la build completa si no hay disculpas",
+    detail:
+      "El autor de la filtración de agosto publica un mensaje en su propia web en el que asegura tener una copia jugable con el modo historia completo y pone dos condiciones: que una criptomoneda vinculada a él alcance los 30 millones de dólares de capitalización, o que Take-Two saque una edición física con disco y pida disculpas públicas. La afirmación procede del propio interesado y no está verificada por nadie independiente; ni Rockstar ni Take-Two han respondido públicamente.",
+    status: "reportado",
+    sources: [FUENTES.pcGamerFiltracion, FUENTES.techpowerupFiltracion],
+    related: ["cyberleek-amenaza-publicar-build-completa-gta-vi"],
+  },
+  {
+    date: "2026-10-12",
+    dateLabel: "12 de octubre de 2026",
+    title:
+      "Nintendo responde por primera vez sobre GTA VI en Switch 2: «es una conversación para Rockstar»",
+    detail:
+      "Devon Pritchard, responsable de Nintendo of America, contesta en una entrevista con Variety sobre una posible versión para Switch 2 y traslada la decisión al estudio. No hay anuncio, ni fecha, ni confirmación de plataforma: la propia respuesta descarta cualquier lectura en firme.",
+    status: "confirmado",
+    evidence: "informado",
+    sources: [FUENTES.varietyNintendo, FUENTES.vgcNintendo],
+    related: ["nintendo-gta-vi-switch-2-nada-que-anunciar"],
+  },
+  {
+    date: "2026-10-12",
+    dateLabel: "12 de octubre de 2026",
+    title:
+      "LOVE Magazine publica la entrevista de Rockstar sobre las voces de fondo",
+    detail:
+      "La entrevista «GTA VI: The American Dream» recoge que el estudio mantiene un equipo dedicado a escribir los diálogos de los transeúntes y del mundo abierto, en lugar de generarlos al azar. Son declaraciones de Rockstar en una entrevista ajena a la compañía, así que van como «Hecho público» y no como documento oficial.",
+    status: "confirmado",
+    evidence: "informado",
+    sources: [FUENTES.loveMagazine, FUENTES.gamingboltVoces],
+    related: ["rockstar-equipo-guionistas-voces-de-fondo-gta-vi"],
+  },
+  {
+    date: "2026-10-13",
+    dateLabel: "13 de octubre de 2026",
+    title:
+      "El dirigible de Goodyear con la librea de Vice City vuela hacia Florida",
+    detail:
+      "Un dirigible de Goodyear con la marca de Vice City emprende el vuelo desde Ohio con destino a Florida, y varios medios publican cómo seguirlo en vuelo. Es un hecho público y observable —el aparato es rastreable y está fotografiado—, no un anuncio de Rockstar.",
+    status: "confirmado",
+    evidence: "informado",
+    sources: [
+      FUENTES.gtaviceBlimp,
+      FUENTES.gtaboomBlimp,
+      FUENTES.rockstarintelBlimp,
+    ],
+    related: ["gta-vi-dirigible-vice-city-goodyear-vuela-a-florida"],
+  },
+  {
+    date: "2026-10-13",
+    dateLabel: "13 de octubre de 2026",
+    title:
+      "Miami-Dade frena la campaña y cifra el marketing del juego en 150 millones",
+    detail:
+      "La cobertura local recoge que el condado ya ha cobrado por el letrero del Kaseya Center y que frena el resto de la publicidad a la espera de un voto, mientras varias piezas cifran el presupuesto de marketing del juego en unos 150 millones de dólares. La cifra no procede de Take-Two ni de Rockstar: es un dato reportado, y como tal se queda.",
+    status: "reportado",
+    sources: [
+      FUENTES.univisionMiamiDade,
+      FUENTES.themiamianMiamiDade,
+      FUENTES.khelnowPresupuesto,
+    ],
+    related: [
+      "gta-vi-miami-dade-frena-anuncios-presupuesto-marketing",
+      "miami-dade-turismo-gta-vi-campana-marketing",
+    ],
+  },
+  {
+    date: "2026-10-13",
+    dateLabel: "13 de octubre de 2026",
+    title: "Un informe sitúa la versión de PC en el primer trimestre de 2027",
+    detail:
+      "GamesBeat publica que el lanzamiento en PC está previsto para el primer trimestre de 2027, pocos meses después de la versión de consola, y varios medios lo replican. Es un reporte con fuentes propias: Rockstar no ha anunciado ninguna versión de PC ni una fecha, y la página oficial sigue sin mencionarla.",
+    status: "reportado",
+    sources: [FUENTES.gamesbeatPC, FUENTES.kotakuPC],
+    related: ["gta-vi-pc-primer-trimestre-2027-informe"],
+  },
+  {
+    date: "2026-10-14",
+    dateLabel: "14 de octubre de 2026",
+    title:
+      "Bloomberg publica la investigación sobre los ocho años de desarrollo",
+    detail:
+      "El reportaje «The Making of Grand Theft Auto VI» reconstruye ocho años de desarrollo: el proyecto nació como «Project Americas» y cubría amplias zonas del norte y el sur del continente antes de recortarse, hubo crunch y retrasos, el coste acumulado se sitúa en torno a 3.000 millones de dólares y el estudio abrió un equipo en Los Ángeles dedicado al comportamiento de los NPC. La investigación recoge además que Rockstar no quiere que su próximo juego vuelva a tardar ocho años. Es periodismo con fuentes propias, no un comunicado de la compañía, así que cada dato va como reportado.",
+    status: "reportado",
+    sources: [
+      FUENTES.bloombergMakingOf,
+      FUENTES.eurogamerProjectAmericas,
+      FUENTES.vandalProjectAmericas,
+      FUENTES.tresDJuegosMakingOf,
+    ],
+    related: [
+      "gta-vi-npc-estudio-los-angeles-comportamiento",
+      "gta-vi-project-americas-ocho-anos-desarrollo",
+      "rockstar-proximo-juego-tras-gta-vi-ocho-anos",
+    ],
+  },
 ];
 
 /** Eventos ordenados de más reciente a más antiguo. */
 export function getCronologiaDesc(): CronologiaEvent[] {
   return [...CRONOLOGIA].sort((a, b) => b.date.localeCompare(a.date));
+}
+
+/**
+ * Fecha de corte en texto, derivada de `CRONOLOGIA_UPDATED_AT`.
+ *
+ * La página la muestra en dos sitios, y escribirla a mano es exactamente cómo
+ * se queda desfasada: si se añade una entrada y no se toca la constante, el
+ * texto miente.
+ */
+export function cronologiaCorteLabel(): string {
+  return new Date(`${CRONOLOGIA_UPDATED_AT}T00:00:00.000Z`).toLocaleDateString(
+    "es-ES",
+    { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" },
+  );
 }
 
 /** Número de entradas confirmadas y reportadas, para el resumen de cabecera. */
@@ -872,7 +1283,7 @@ export const CRONOLOGIA_EXCLUIDO: { tema: string; motivo: string }[] = [
   {
     tema: "Fecha o anuncio de una versión de PC",
     motivo:
-      "No hay versión de PC anunciada. Las fechas que se publican son extrapolaciones del histórico de Rockstar.",
+      "No hay versión de PC anunciada. Desde el 13 de octubre de 2026 circula un informe periodístico que la sitúa en el primer trimestre de 2027 —está en la lista de abajo, marcado como reportado—, pero la página oficial del juego sigue sin mencionar la plataforma y cualquier fecha cerrada que se publique es una extrapolación, no un anuncio.",
   },
   {
     tema: "Nombre, fecha o existencia de un online de GTA VI",
@@ -892,12 +1303,12 @@ export const CRONOLOGIA_EXCLUIDO: { tema: string; motivo: string }[] = [
   {
     tema: "Clasificación por edades (ESRB/PEGI)",
     motivo:
-      "El comunicado del 24 de junio decía «is not yet rated» y no hay una clasificación publicada posterior.",
+      "El comunicado del 24 de junio decía «is not yet rated» y los organismos siguen sin publicar ficha: la ESRB no tiene entrada para el juego. Lo que sí existe desde principios de octubre es la etiqueta PEGI 18 que muestra la ficha europea de PlayStation Store y la publicidad regional de Sony, que es un metadato de tienda y no una clasificación anunciada por el organismo.",
   },
   {
-    tema: "Lista de emisoras de radio y banda sonora del juego",
+    tema: "Lista completa de canciones con licencia y banda sonora del juego",
     motivo:
-      "Se conocen las canciones usadas en el Extended Look, que es material promocional, pero no las emisoras del juego.",
+      "El 11 de octubre de 2026 Rockstar confirmó seis emisoras y sus locutores —esa línea está en la lista de abajo—, pero no ha publicado el repertorio de canciones con licencia ni un álbum de banda sonora del juego. Las canciones del Extended Look son material promocional y no equivalen a la lista del juego.",
   },
   {
     tema: "Programa oficial de creadores de Rockstar",
