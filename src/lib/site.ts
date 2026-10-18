@@ -49,13 +49,16 @@ export const EDITORIAL_NAME =
 
 /**
  * Identificación del responsable del tratamiento (art. 10 LSSI-CE y art. 13
- * RGPD). Son datos que solo el titular puede aportar: si no se configuran,
- * la página legal lo dice explícitamente en lugar de fingir una identidad.
+ * RGPD). Son datos públicos del medio: van aquí como valor por defecto para que
+ * cualquier build los incluya, se construya donde se construya. Estuvieron solo
+ * en variables de entorno y un build sin ellas (el del CI) publicó el sitio sin
+ * ellos, lo que además tumbó la verificación de Search Console.
  */
 export const LEGAL_OWNER = {
-  name: process.env.NEXT_PUBLIC_LEGAL_NAME || "",
-  taxId: process.env.NEXT_PUBLIC_LEGAL_TAX_ID || "",
-  address: process.env.NEXT_PUBLIC_LEGAL_ADDRESS || "",
+  name: process.env.NEXT_PUBLIC_LEGAL_NAME || "Raul Abellon Losa",
+  taxId: process.env.NEXT_PUBLIC_LEGAL_TAX_ID || "71183429F",
+  address:
+    process.env.NEXT_PUBLIC_LEGAL_ADDRESS || "Calle Esla 8 3B, 47140 Valladolid",
   email: process.env.NEXT_PUBLIC_LEGAL_EMAIL || CONTACT_EMAIL,
 };
 
@@ -63,15 +66,24 @@ export const isLegalOwnerComplete = Boolean(
   LEGAL_OWNER.name && LEGAL_OWNER.taxId && LEGAL_OWNER.address,
 );
 
-/** AdSense: solo se activa con un ID de cliente con formato válido. */
+/**
+ * AdSense: solo se activa con un ID de cliente con formato válido. El valor va
+ * por defecto en el código porque es público (viaja en el HTML): así un build
+ * sin variables de entorno no publica el sitio sin el cliente configurado.
+ */
 export const ADSENSE_CLIENT = (
-  process.env.NEXT_PUBLIC_ADSENSE_CLIENT || ""
+  process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-6098877112141110"
 ).trim();
 export const ADSENSE_ENABLED = /^ca-pub-\d{16}$/.test(ADSENSE_CLIENT);
 
-/** Token de Google Search Console (opcional, pero ahora sí se usa de verdad). */
+/**
+ * Token de Google Search Console. También público (va en una meta del <head>).
+ * Sin este valor por defecto, un build sin variables publica el sitio sin la
+ * etiqueta y Google termina retirando la verificación de la propiedad.
+ */
 export const GOOGLE_SITE_VERIFICATION = (
-  process.env.GOOGLE_SITE_VERIFICATION || ""
+  process.env.GOOGLE_SITE_VERIFICATION ||
+  "L5mhV_ec7wXJGWr6yV5DdFAVXbxkhj1A6HPX5oUhCVI"
 ).trim();
 
 /** ¿Se ha configurado la URL pública explícitamente? */
