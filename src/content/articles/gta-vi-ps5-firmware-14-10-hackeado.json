@@ -1,0 +1,54 @@
+{
+  "slug": "gta-vi-ps5-firmware-14-10-hackeado",
+  "title": "PS5: el firmware 14.10 ya está hackeado antes de GTA VI",
+  "excerpt": "Un desarrollador muestra el menú de depuración de la consola en la versión 14.10.00, la misma que, según un datamining, el juego pedirá para arrancar. No hay método público ni copia pirata.",
+  "content": [
+    "El firmware 14.10.00 de PlayStation 5 tiene un exploit de kernel, y es justo la versión que GTA VI pedirá para arrancar según el datamining que circula desde el 3 de octubre. Lo enseñó el 19 de octubre un desarrollador conocido como Gezine en un vídeo en el que se mueve por el menú de depuración de la consola; Engadget lo publicó al día siguiente. Abrir ese menú no significa que el juego esté roto ni, mucho menos, pirateado. Es el primer escalón de una cadena de tres.",
+    "Conviene separar lo visto de lo deducido. El vídeo muestra las Debug Settings, pantallas que en una consola de serie no aparecen sin acceso al núcleo del sistema. Gezine no ha publicado el método: contestó que pedirá la divulgación más adelante, según recoge Engadget, lo que encaja con reportarlo primero a un programa de recompensas. Sony no ha reconocido el hallazgo y mantiene abierto su bug bounty en HackerOne.",
+    "El segundo escalón es un exploit de hipervisor, la capa que hay por debajo del kernel y decide qué puede ejecutar el sistema. Ese no ha aparecido. Sin él no se arrancan copias no compradas de juegos, así que la conclusión práctica es la misma que hace un mes: no hay una vía abierta para jugar a GTA VI sin pagarlo. Y hay un detalle que complica aún más las cosas: la edición física es una caja con un código de descarga, no un disco.",
+    "Lo que sí cambia el vídeo es la lectura de la última actualización de Sony. La secuencia de versiones es esta:",
+    "16 de septiembre de 2026 — firmware 14.00.00 — Sony publica la actualización que, según Kotaku, es la primera que bloquea Relapse, el jailbreak que había funcionado hasta entonces.",
+    "29 de septiembre de 2026 — Relapse se hace público y funciona en consolas con la 13.60.00, de finales de julio, y con las anteriores.",
+    "1 de octubre de 2026 — firmware 14.10.00 — llega con más correcciones de seguridad y bloquea al menos temporalmente el método, según Notebookcheck.",
+    "3 de octubre de 2026 — un datamining de PlayStation Game Size sitúa la 14.10.00.00 como requisito del juego en su fecha de lanzamiento. Notebookcheck lo recoge ese día.",
+    "19 de octubre de 2026 — Gezine muestra el menú de depuración precisamente en la 14.10.00.",
+    "El requisito de firmware es lo que convierte este asunto en una noticia de GTA VI y no en una nota de seguridad. No lo han dicho ni Rockstar ni Sony: sale de leer los archivos de la ficha del juego. Encaja, eso sí, con la práctica de la plataforma, donde los lanzamientos grandes suelen exigir la versión más reciente del sistema. La diferencia con otras veces es que aquí la versión exigida es justo la que se acaba de comprometer.",
+    "Entre la 14.00 y la 14.10 pasaron quince días. Si el hallazgo se sostiene, el calendario de parches de Sony deja margen para otra actualización antes del 19 de noviembre, pero eso es una expectativa y no un anuncio: la compañía no ha dicho nada. Tampoco Rockstar, que no se ha pronunciado sobre el requisito ni sobre el vídeo.",
+    "Para quien vaya a jugar en PS5, la consecuencia es doméstica y no tiene nada que ver con la piratería. Una consola que lleve semanas o meses sin conectarse tendrá que actualizarse antes de abrir el juego, si se cumple ese requisito, y esa descarga conviene hacerla con margen, no el día 19 a las 23:58. Quien compre una consola de segunda mano con firmware antiguo se encontrará lo mismo: el juego no arrancaría hasta que el sistema esté al día.",
+    "Hay una tercera capa que estos días se mezcla con las otras dos en las conversaciones: el emulador. Que existan proyectos que ejecutan juegos de PS5 en PC no cambia el panorama a cuatro semanas del estreno. Quien sigue esos proyectos de cerca señala que GTA VI plantea retos técnicos mayores que su predecesor. No es una alternativa para el 19 de noviembre.",
+    "Lo que queda por ver es corto y comprobable. Si Gezine publica o reporta el método; si Sony responde con otra actualización antes del estreno; y si el requisito de firmware aparece en la ficha de la tienda o en la letra pequeña de la caja. Hasta entonces, lo confirmado es el vídeo del menú de depuración y la fecha: el 19 de noviembre de 2026, en PS5 y Xbox Series X|S.",
+    "El contexto de cada confirmación está en [la cronología](/cronologia); la hora a la que abre el juego en cada país, en [la tabla de desbloqueo](/desbloqueo); lo que se sabe de la conexión obligatoria, en [la guía para jugar sin conexión](/articulo/gta-vi-jugar-sin-conexion-y-que-exige-internet); y la lista de tareas previas, en [el checklist de la precarga](/articulo/checklist-antes-de-la-predescarga)."
+  ],
+  "category": "noticias",
+  "author": "redaccion",
+  "publishedAt": "2026-10-21T09:00:00.000Z",
+  "updatedAt": "2026-10-21T11:00:00.000Z",
+  "coverLabel": "Firmware 14.10 de PS5",
+  "coverAlt": "Portada generada con el rótulo Firmware 14.10 de PS5 sobre fondo oscuro",
+  "tags": ["GTA VI", "PS5", "firmware 14.10", "jailbreak", "Rockstar Games"],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "X — Gezine, vídeo del menú de depuración en PS5 14.10 (19 de octubre de 2026)",
+      "url": "https://x.com/gezine_dev/status/2112279793911968218"
+    },
+    {
+      "name": "X — PlayStation Game Size, datamining del requisito de firmware 14.10.00.00",
+      "url": "https://x.com/PlaystationSize/status/2106137775955231098"
+    },
+    {
+      "name": "Engadget — «The latest PlayStation firmware may have already been cracked ahead of GTA 6»",
+      "url": "https://www.engadget.com/2292388/playstation-5-hackers-crack-gta-6-firmware/"
+    },
+    {
+      "name": "Notebookcheck — «GTA 6 PS5 will require 14.10.00 firmware update on release date, blocking jailbreak»",
+      "url": "https://www.notebookcheck.net/GTA-6-blocks-PS5-jailbreak-and-piracy-on-release-date-requiring-14-10-00-firmware.1414828.0.html"
+    },
+    {
+      "name": "Kotaku — «A New PS5 Jailbreak May Have Just Opened The Floodgates To Piracy» (29 de septiembre de 2026)",
+      "url": "https://kotaku.com/new-ps5-jailbreak-exploit-works-on-systems-running-july-2026-firmware-2000738283"
+    }
+  ]
+}
