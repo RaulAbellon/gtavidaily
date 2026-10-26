@@ -79,6 +79,35 @@ async function readHeaderRules() {
   return rules;
 }
 
+/**
+ * Reglas de `public/_redirects`, con el mismo formato que entiende Cloudflare
+ * (`origen destino [código]`, código 302 por defecto). Solo se usan para que
+ * `npm start` reproduzca el comportamiento del CDN al comprobar las 301.
+ */
+async function readRedirectRules() {
+  let raw;
+  try {
+    raw = await readFile(path.join(root, "public", "_redirects"), "utf8");
+  } catch {
+    return [];
+  }
+
+  const rules = [];
+  for (const line of raw.split(/\r?\n/)) {
+    if (!line.trim() || line.trimStart().startsWith("#")) continue;
+    const [source, destination, code] = line.trim().split(/\s+/);
+    if (!source || !destination) continue;
+    rules.push({ source, destination, code: Number(code ?? "302") });
+  }
+  return rules;
+}
+
+/** Busca una redirección exacta para la ruta pedida. */
+function redirectFor(rules, pathname) {
+  const clean = pathname.replace(/\/+$/, "") || "/";
+  return rules.find((rule) => rule.source === pathname || rule.source === clean) ?? null;
+}
+
 function ruleMatches(pattern, pathname) {
   if (pattern.endsWith("*")) return pathname.startsWith(pattern.slice(0, -1));
   return pathname === pattern;
@@ -127,6 +156,7 @@ async function main() {
   }
 
   const rules = await readHeaderRules();
+  const redirects = await readRedirectRules();
   const notFoundPage = path.join(out, "404.html");
 
   const server = createServer(async (request, response) => {
@@ -134,8 +164,20 @@ async function main() {
     const pathname = url.pathname;
     const headers = headersFor(rules, pathname);
 
-    // Cloudflare no sirve `_headers` como fichero: aquí tampoco.
-    const file = pathname === "/_headers" ? null : await resolveFile(pathname);
+    // Las reglas de `_redirects` se aplican antes de resolver el activo, igual
+    // que en Cloudflare: una URL retirada devuelve 301 aunque ya no exista.
+    const redirect = redirectFor(redirects, pathname);
+    if (redirect) {
+      response.writeHead(redirect.code, { location: redirect.destination, ...headers });
+      response.end();
+      return;
+    }
+
+    // Cloudflare no sirve `_headers` ni `_redirects` como ficheros: aquí tampoco.
+    const file =
+      pathname === "/_headers" || pathname === "/_redirects"
+        ? null
+        : await resolveFile(pathname);
 
     if (file) {
       const body = await readFile(file);

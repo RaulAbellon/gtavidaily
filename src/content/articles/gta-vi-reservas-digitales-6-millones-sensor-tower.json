@@ -17,7 +17,7 @@
     "Tampoco hay cifra oficial. Ni Rockstar ni Take-Two han publicado un solo dato de reservas: lo que se lee son estimaciones de terceros. Y las proyecciones de la primera semana que se publicaron en julio —entre 37 y 51 millones de copias según Newzoo— miden otra cosa: unidades en siete días, no reservas acumuladas.",
     "Para el lector español, el dato cambia poco la decisión. Los precios siguen siendo 79,99 y 99,99 euros; el bono Vintage Vice City se mantiene hasta las 23:59:59 del 19 de noviembre, hora local; y la precarga abre el 12. Conviene vigilar si Take-Two da alguna cifra en su próxima llamada de resultados y si la caja con código mueve el reparto cuando llegue a las tiendas.",
     "Las cuentas se apoyan en dos precios confirmados y en dos estimaciones que no coinciden entre sí, y esa es la conclusión: el orden de magnitud es sólido —más de seis millones de copias y más de 550 millones de dólares antes de lanzar el juego— y el decimal no lo es. Cualquier titular que dé la cifra exacta elige una de las dos versiones sin decirlo.",
-    "Para seguir el hilo: [la comparativa de ediciones](/articulo/gta-vi-ultimate-o-estandar-que-edicion-comprar), [el precio por país](/articulo/precio-de-gta-vi-por-pais), [la respuesta de Xbox a los datos de reservas](/articulo/xbox-reservas-gta-vi-record-ps5) y [el plazo del bono de reserva](/articulo/gta-vi-fecha-limite-reserva-cambio-tiendas). Las horas de desbloqueo, en [la tabla por país](/desbloqueo)."
+    "Para seguir el hilo: [la comparativa de ediciones](/articulo/gta-vi-ediciones-precios-reservas-oficial), [el precio por país](/articulo/precio-de-gta-vi-por-pais), [la respuesta de Xbox a los datos de reservas](/articulo/xbox-reservas-gta-vi-record-ps5) y [el plazo del bono de reserva](/articulo/gta-vi-fecha-limite-reserva-cambio-tiendas). Las horas de desbloqueo, en [la tabla por país](/desbloqueo)."
   ],
   "category": "noticias",
   "author": "redaccion",
@@ -25,7 +25,14 @@
   "updatedAt": "2026-10-21T20:00:00.000Z",
   "coverLabel": "Reservas digitales de GTA VI",
   "coverAlt": "Portada generada con el rótulo Reservas digitales de GTA VI sobre fondo oscuro",
-  "tags": ["GTA VI", "reservas", "Sensor Tower", "PlayStation 5", "Xbox Series X|S", "Take-Two"],
+  "tags": [
+    "GTA VI",
+    "reservas",
+    "Sensor Tower",
+    "PlayStation 5",
+    "Xbox Series X|S",
+    "Take-Two"
+  ],
   "readingTime": 4,
   "featured": false,
   "trending": false,

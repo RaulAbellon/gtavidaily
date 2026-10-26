@@ -1,0 +1,29 @@
+# Redirecciones 301 de la consolidación editorial (26 de octubre de 2026).
+# Cloudflare Workers Static Assets las aplica antes de resolver el activo.
+# Cada URL retirada lleva a la canónica del grupo que cubría esa consulta.
+
+/articulo/gta-vi-campana-marketing-miami-vice-city-irl /articulo/gta-vi-miami-beach-campana-3-millones-debate 301
+/articulo/miami-dade-turismo-gta-vi-campana-marketing /articulo/gta-vi-miami-beach-campana-3-millones-debate 301
+/articulo/gta-vi-campana-controvertida-miami-beach-debate-publico /articulo/gta-vi-miami-beach-campana-3-millones-debate 301
+/articulo/gta-vi-requisitos-tecnicos-ps5-xbox-pro /articulo/gta-vi-rendimiento-por-consola-que-esperar 301
+/articulo/gta-vi-ps5-pro-funciones-confirmadas /articulo/gta-vi-rendimiento-por-consola-que-esperar 301
+/articulo/gta-vi-xbox-series-s-que-esperar /articulo/gta-vi-rendimiento-por-consola-que-esperar 301
+/articulo/gta-vi-cuenta-atras-48-dias-que-hacer-ahora /articulo/gta-vi-cuenta-atras-fechas-clave-19-noviembre 301
+/articulo/gta-vi-cuenta-atras-dos-meses-analisis /articulo/gta-vi-lanzamiento-19-noviembre-2026-oficial 301
+/articulo/que-sigue-sin-confirmarse-a-58-dias /articulo/gta-vi-lanzamiento-19-noviembre-2026-oficial 301
+/articulo/gta-vi-pre-carga-12-noviembre-confirmada /articulo/gta-vi-precarga-12-noviembre-que-preparar-antes 301
+/articulo/checklist-antes-de-la-predescarga /articulo/gta-vi-precarga-12-noviembre-que-preparar-antes 301
+/articulo/gta-vi-peso-instalacion-estimacion-tamano /articulo/gta-vi-almacenamiento-cuanto-ocupa-hacer-sitio 301
+/articulo/clima-dinamico-y-fauna-confirmados-en-gta-vi /articulo/game-informer-382-clima-extremo-170-especies 301
+/articulo/leonida-fauna-naturaleza-salvaje-gta-vi /articulo/game-informer-382-clima-extremo-170-especies 301
+/articulo/lucia-jason-protagonistas-historia-gta-vi /articulo/personajes-secundarios-gta-vi-cal-hampton-boobie-ike 301
+/articulo/spotify-rockstar-campana-gta-vi /articulo/album-gta-vi-41-millones-spotify-primeras-24-horas 301
+/articulo/banda-sonora-gta-vi-emisoras-canciones /articulo/rockstar-desvela-seis-emisoras-radio-gta-vi 301
+/articulo/gta-vi-pc-cuando-llegara-version-pc /articulo/gta-vi-pc-primer-trimestre-2027-informe 301
+/articulo/take-two-pc-plataforma-importante /articulo/gta-vi-pc-primer-trimestre-2027-informe 301
+/articulo/gta-vi-clasificacion-edades-esrb-pegi /articulo/gta-vi-clasificacion-edades-por-regiones-pegi 301
+/articulo/gta-vi-edicion-fisica-o-digital-antes-del-12-noviembre /articulo/gta-vi-edicion-fisica-sin-disco-que-compras 301
+/articulo/gta-vi-ultimate-o-estandar-que-edicion-comprar /articulo/gta-vi-ediciones-precios-reservas-oficial 301
+/articulo/gta-vi-como-evitar-spoilers-desbloqueo-por-paises /articulo/comunidad-gta-vi-en-espanol-y-antispolier 301
+/articulo/gta-vi-filtraciones-recientes-rockstar-responde /articulo/nuevas-mecanicas-gameplay-gta-vi-filtraciones 301
+/articulo/gta-vi-online-2027-ceo-de-twitch /articulo/gta-vi-online-modo-multijugador-novedades 301

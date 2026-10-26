@@ -39,6 +39,7 @@ const REQUIRED = [
   "news-sitemap.xml",
   "feed.xml",
   "_headers",
+  "_redirects",
   path.join(".well-known", "security.txt"),
 ];
 

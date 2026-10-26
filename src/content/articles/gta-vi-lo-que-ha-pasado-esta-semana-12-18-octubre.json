@@ -19,7 +19,7 @@
     "Sin verificar",
     "14-18 oct · «Rockstar admite que GTA VI no está acabado» · No verificado · Lo recogido dice que el estudio sigue puliendo; ninguna declaración afirma que falte contenido",
     "Toda la semana · Cifras del tamaño de descarga · No verificado · No existe una cifra oficial: Rockstar no la ha publicado y las que circulan son estimaciones o del filtrador",
-    "Hay un dato confirmado sin fecha en esta lista, porque no la tiene publicada. El ESRB califica GTA VI como Mature 17+ para PS5 y Xbox Series, con siete descriptores en su formulación original —Blood and Gore, Intense Violence, Mature Humor, Nudity, Strong Language, Strong Sexual Content y Use of Drugs and Alcohol— y con «In-Game Purchases» como elemento interactivo. La ficha no indica cuándo se asignó. Lo que sí cierra es una pregunta que este medio venía documentando: [el 15 de septiembre](/articulo/gta-vi-clasificacion-edades-esrb-pegi) el juego se vendía sin clasificación publicada y [el 1 de octubre](/articulo/gta-vi-clasificacion-edades-por-regiones-pegi) la PS Store europea mostró PEGI 18 sin anuncio de nadie.",
+    "Hay un dato confirmado sin fecha en esta lista, porque no la tiene publicada. El ESRB califica GTA VI como Mature 17+ para PS5 y Xbox Series, con siete descriptores en su formulación original —Blood and Gore, Intense Violence, Mature Humor, Nudity, Strong Language, Strong Sexual Content y Use of Drugs and Alcohol— y con «In-Game Purchases» como elemento interactivo. La ficha no indica cuándo se asignó. Lo que sí cierra es una pregunta que este medio venía documentando: [el 15 de septiembre](/articulo/gta-vi-clasificacion-edades-por-regiones-pegi) el juego se vendía sin clasificación publicada y [el 1 de octubre](/articulo/gta-vi-clasificacion-edades-por-regiones-pegi) la PS Store europea mostró PEGI 18 sin anuncio de nadie.",
     "Lo que hay que vigilar esta semana",
     "No hay ningún anuncio previsto, pero sí una fecha en el calendario. El 12 de noviembre abre la precarga digital y llega a las tiendas la caja con código de descarga, el mismo día: quien espere a tener el disco en la mano no jugará el 19 sin descargar antes. Entre el 12 y el 19 no queda margen para improvisar almacenamiento.",
     "El 19 de noviembre el desbloqueo es a medianoche local, no simultáneo: hay casi veinte horas entre Nueva Zelanda y el centro de México. [La tabla de desbloqueo por país](/articulo/gta-vi-hora-desbloqueo-por-pais) recoge las siete regiones comprobadas en tienda y [la página de desbloqueo](/desbloqueo) calcula el resto de husos, marcando cuáles están verificados.",
@@ -32,7 +32,13 @@
   "updatedAt": "2026-10-18T20:00:00.000Z",
   "coverLabel": "Semana del 12 al 18 de octubre",
   "coverAlt": "Portada generada con el rótulo Semana del 12 al 18 de octubre sobre fondo oscuro",
-  "tags": ["GTA VI", "resumen semanal", "cronología", "Rockstar Games", "ESRB"],
+  "tags": [
+    "GTA VI",
+    "resumen semanal",
+    "cronología",
+    "Rockstar Games",
+    "ESRB"
+  ],
   "readingTime": 4,
   "featured": false,
   "trending": false,

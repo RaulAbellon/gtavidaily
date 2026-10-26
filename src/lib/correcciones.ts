@@ -63,7 +63,7 @@ export const CORRECCIONES: Correction[] = [
     title: "Los huracanes de Leonida ya estaban confirmados",
     what: "La pieza del clima presentaba las tormentas tropicales y los huracanes como filtración y especulación de la comunidad, cuando el reportaje de portada de Game Informer 382 (29 de septiembre de 2026) ya los había confirmado con declaraciones del estudio.",
     fix: "Se reescribió el párrafo separando las dos cosas: lo confirmado —lluvia localizada y persistente, tormentas tropicales y huracanes— de lo que sigue abierto, que es la frecuencia de esos fenómenos y sus consecuencias jugables (si un huracán puede interrumpir una misión o cerrar carreteras). Esas consecuencias sí siguen sin fuente.",
-    articles: ["clima-dinamico-y-fauna-confirmados-en-gta-vi"],
+    articles: ["game-informer-382-clima-extremo-170-especies"],
     sources: [
       {
         name: "Game Informer — «Grand Theft Auto VI – Welcome to Leonida» (número 382, 29 de septiembre de 2026)",
@@ -80,8 +80,7 @@ export const CORRECCIONES: Correction[] = [
     fix: "Se reescribieron en pasado y sin cuenta atrás: una entradilla que caduca deja de ser cierta sin que nadie la toque, y es un error que el lector detecta antes que nosotros.",
     articles: [
       "analisis-extended-look-marketing-netflix-estrategia",
-      "clima-dinamico-y-fauna-confirmados-en-gta-vi",
-      "leonida-fauna-naturaleza-salvaje-gta-vi",
+      "game-informer-382-clima-extremo-170-especies",
       "gta-vi-precarga-12-noviembre-que-preparar-antes",
     ],
     sources: [
@@ -107,12 +106,10 @@ export const CORRECCIONES: Correction[] = [
       "el-lanzamiento-que-parara-el-mundo-laboral",
       "extended-look-analisis-implicaciones-marketing",
       "gta-vi-collectors-edition-filtracion",
-      "gta-vi-cuenta-atras-48-dias-que-hacer-ahora",
-      "gta-vi-cuenta-atras-dos-meses-analisis",
       "gta-vi-cuenta-atras-fechas-clave-19-noviembre",
-      "gta-vi-edicion-fisica-o-digital-antes-del-12-noviembre",
-      "gta-vi-ediciones-precios-reservas-oficial",
       "gta-vi-lanzamiento-19-noviembre-2026-oficial",
+      "gta-vi-edicion-fisica-sin-disco-que-compras",
+      "gta-vi-ediciones-precios-reservas-oficial",
       "gta-vi-pre-orden-25-junio-reservas-analisis",
       "gta-vi-screenshots-vintage-vice-city-pack",
       "rockstar-store-coleccion-gta-vi-precios-sin-reserva",
@@ -140,7 +137,7 @@ export const CORRECCIONES: Correction[] = [
     title: "La banda sonora: de «no hay lista de emisoras» a seis diales confirmados",
     what: "La pieza de música seguía afirmando que no existía una lista oficial de emisoras de radio del juego, algo que era cierto hasta el 11 de octubre.",
     fix: "Se reescribió con lo que Rockstar publicó ese día: seis emisoras confirmadas en el Newswire, con sus locutores, y la separación entre lo confirmado y lo que aún no se ha publicado (la lista completa de canciones con licencia).",
-    articles: ["banda-sonora-gta-vi-emisoras-canciones"],
+    articles: ["rockstar-desvela-seis-emisoras-radio-gta-vi"],
     sources: [
       {
         name: "Rockstar Games (Newswire) — «The Music of Grand Theft Auto VI: In-Game Radio Stations»",
@@ -161,7 +158,7 @@ export const CORRECCIONES: Correction[] = [
     fix: "Se aclaró en la cronología y en los artículos qué nombres están respaldados y por qué fuente, y se mantuvo fuera «Kelly County», que sigue circulando en guías de comunidad sin aparecer en material de Rockstar ni en el reportaje.",
     articles: [
       "analisis-trailer-2-gta-vi-detalles-ocultos",
-      "gta-vi-cuenta-atras-dos-meses-analisis",
+      "gta-vi-lanzamiento-19-noviembre-2026-oficial",
       "gta-vi-goodtime-state-caja-coleccionista-400-euros",
       "gta-vi-mapa-oficial-poster-sandbars-crude-islands",
       "mapa-leonida-vice-city-tamano-gta-vi",

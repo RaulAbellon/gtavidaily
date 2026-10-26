@@ -23,8 +23,8 @@ export function buildAdsTxt(client: string): string | null {
   if (!match) return null;
 
   return [
-    "# ads.txt — GTA VI Daily",
-    "# Generado desde NEXT_PUBLIC_ADSENSE_CLIENT: no editar a mano.",
+    "# ads.txt",
+    "# Generado en el build desde NEXT_PUBLIC_ADSENSE_CLIENT. No editar a mano.",
     `google.com, pub-${match[1]}, DIRECT, ${ADSENSE_TAG_ID}`,
     "",
   ].join("\n");

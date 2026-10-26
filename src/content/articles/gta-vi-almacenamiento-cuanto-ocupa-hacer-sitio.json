@@ -1,20 +1,22 @@
 {
   "slug": "gta-vi-almacenamiento-cuanto-ocupa-hacer-sitio",
-  "title": "Cuánto ocupa GTA VI y cómo hacer sitio antes de la predescarga",
-  "excerpt": "Rockstar no ha publicado el tamaño oficial, y las cifras que circulan son estimaciones. Lo que sí puedes hacer ya es preparar el disco: la predescarga abre el 12 de noviembre.",
+  "title": "Cuánto ocupa GTA VI y cómo hacer sitio antes de la precarga",
+  "excerpt": "Rockstar no ha publicado el tamaño oficial. Las estimaciones hablan de 100 a 130 GB de base y hasta 200 GB con extras. Lo que sí puedes hacer ya es preparar el disco.",
   "content": [
-    "Rockstar no ha publicado cuánto ocupa GTA VI. Lo único confirmado sobre este asunto es la fecha de la predescarga digital, el 12 de noviembre, una semana antes del lanzamiento. Todo lo demás son estimaciones.",
-    "Las cifras que están circulando conviene leerlas con esa etiqueta. Las estimaciones publicadas por medios especializados apuntan a una base de entre 100 y 130 GB, que podría acercarse a los 150-200 GB contando actualizaciones posteriores. Son cálculos de analistas, no datos de la compañía, y algunas de las cifras que corren por redes sociales (los famosos 250 GB) no tienen ninguna fuente detrás.",
+    "Rockstar no ha publicado cuánto ocupa GTA VI. Lo único confirmado sobre este asunto es la fecha de la predescarga digital, el 12 de noviembre, una semana antes del lanzamiento, y que la edición física es un código de descarga dentro de la caja, sin disco. Todo lo demás son estimaciones.",
+    "Las cifras que están circulando conviene leerlas con esa etiqueta. Una recopilación de Infobae de junio de 2026 sitúa la horquilla en 100 a 130 GB para la versión base y apunta a un escenario exigente de 150 a 200 GB si se incluyen audio sin comprimir y contenido adicional. Otras cifras, como los 250 GB que se repiten en foros y algún medio, no tienen respaldo de nadie: conviene tratarlas como lo que son, un cálculo de comunidad.",
+    "Para calibrar esos números sirve la propia historia de Rockstar. La versión de GTA V para PS5 ocupa alrededor de 87 GB, según las cifras recogidas por Infobae. Red Dead Redemption 2 declaró 99 GB de instalación en PS4 y 107 GB en Xbox One, aunque la versión digital de PS4 exigía 150 GB libres para descomprimir el archivo durante el proceso. Es decir: el dato de los 150 GB de RDR2 que suele citarse era espacio temporal, no peso final. Un salto hasta los 100-130 GB en GTA VI es plausible, pero sigue siendo una proyección.",
     "Hay un detalle que sorprende a mucha gente la primera vez que se queda sin espacio: el hueco que necesita la consola para instalar es mayor que el tamaño final del juego. PlayStation y Xbox reservan margen para descomprimir archivos durante la instalación y para el guardado, así que si el juego ocupa 130 GB puedes necesitar bastantes más libres para empezar. Dejar el disco al límite es la receta para un error de instalación a medianoche.",
     "El plan sensato es hacer limpieza antes del 12 de noviembre, no esa noche. Empieza por los juegos que no has abierto en meses: archivarlos o borrarlos no cuesta nada, porque puedes volver a descargarlos cuando quieras. Sigue por las capturas y los vídeos, que ocupan mucho más de lo que la gente cree. Y revisa las aplicaciones de vídeo y los juegos instalados que venían con la consola.",
     "Sobre ampliar el almacenamiento, conviene saber cómo funcionan las dos consolas, porque no son iguales. En PS5 puedes guardar juegos de PS5 en un disco externo por USB, pero no jugarlos desde ahí: hay que moverlos de vuelta al SSD interno. Para ampliar de verdad necesitas un SSD NVMe compatible con la ranura de expansión, y hay una lista oficial de modelos válidos. En Xbox Series, los juegos optimizados para la consola solo se ejecutan desde el SSD interno o desde la tarjeta de expansión propietaria; un disco USB sirve para juegos antiguos y para almacenar, no para jugar a los nuevos.",
-    "Con eso en la cabeza, la decisión depende de tu situación. Si te sobran 200 GB, no hagas nada. Si vas justo, borra lo que no juegas y espera: cuando Rockstar publique el tamaño real, sabrás exactamente cuánto necesitas. Y si estás pensando en comprar una tarjeta de expansión o un SSD, ese es precisamente el momento de hacerlo, no antes.",
-    "Actualizaremos esta guía con la cifra oficial en cuanto la compañía la publique. Hasta entonces, cualquier número que veas es una estimación, incluidos los de esta página."
+    "La capacidad de partida también importa. Una PS5 y una Xbox Series X tienen 1 TB de SSD nominal, pero el sistema operativo y las aplicaciones se comen una parte importante. En una Xbox Series S de 512 GB, una instalación de 130 GB deja la consola casi sin margen. Ahí es donde la diferencia entre modelos se nota más que en la resolución.",
+    "La precarga del 12 de noviembre convierte el tamaño en una cuestión de tiempo además de espacio. En una conexión de 100 Mbps, 130 GB tardan unas tres horas en condiciones teóricas óptimas; con 30 Mbps, el mismo archivo se va por encima de las nueve horas, y más si la red no acompaña. En la práctica, las velocidades de descarga de PlayStation Network y Xbox Live suelen quedar por debajo del ancho de banda contratado.",
+    "Con eso en la cabeza, la decisión depende de tu situación. Si te sobran 200 GB, no hagas nada. Si vas justo, borra lo que no juegas y espera: cuando Rockstar publique el tamaño real, sabrás exactamente cuánto necesitas. Y si estás pensando en comprar una tarjeta de expansión o un SSD, ese es precisamente el momento de hacerlo, no antes. Para seguir con el tema: [la precarga del 12 de noviembre](/articulo/gta-vi-precarga-12-noviembre-que-preparar-antes) y [el rendimiento por consola](/articulo/gta-vi-rendimiento-por-consola-que-esperar)."
   ],
   "category": "guias",
   "author": "redaccion",
   "publishedAt": "2026-09-15T13:30:00.000Z",
-  "updatedAt": "2026-09-15T13:30:00.000Z",
+  "updatedAt": "2026-10-26T10:00:00.000Z",
   "coverLabel": "Almacenamiento y espacio",
   "coverAlt": "Ilustración conceptual sobre el espacio de almacenamiento necesario para GTA VI",
   "tags": [
@@ -24,7 +26,7 @@
     "PS5",
     "Xbox Series"
   ],
-  "readingTime": 2,
+  "readingTime": 3,
   "featured": false,
   "trending": false,
   "sources": [
@@ -35,6 +37,14 @@
     {
       "name": "Infobae — Las cifras estimadas de espacio en disco",
       "url": "https://www.infobae.com/tecno/2026/06/30/gta-6-requerira-un-gran-espacio-en-disco-estas-son-las-cifras-estimadas-para-ps5-y-xbox-series/"
+    },
+    {
+      "name": "Game Informer — Rockstar Confirms Red Dead Redemption II Install Sizes, PS4 Digital Will Require 150GB",
+      "url": "https://gameinformer.com/2018/10/18/rockstar-confirms-red-dead-redemption-ii-install-sizes-ps4-digital-will-require-150gb"
+    },
+    {
+      "name": "Gematsu — Grand Theft Auto VI pricing, 'Ultimate Edition', and pre-order bonuses announced",
+      "url": "https://www.gematsu.com/2026/06/grand-theft-auto-vi-pricing-ultimate-edition-and-pre-order-bonuses-announced"
     }
   ],
   "image": "/imagenes/gta-vi-almacenamiento-cuanto-ocupa-hacer-sitio.jpg",

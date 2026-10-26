@@ -29,115 +29,90 @@ import a25 from "./gta-vi-imagen-hanks-waffles-love-magazine-2022.json";
 import a26 from "./miami-heat-vice-city-night-kaseya-center.json";
 import a27 from "./dan-houser-evita-ver-gta-vi.json";
 import a28 from "./gta-vi-efecto-laboral-jueves-19-noviembre.json";
-import a29 from "./gta-vi-cuenta-atras-48-dias-que-hacer-ahora.json";
-import a30 from "./gta-vi-clasificacion-edades-por-regiones-pegi.json";
-import a31 from "./gta-vi-caza-fauna-actividades-game-informer.json";
-import a32 from "./gta-vi-primeras-horas-relacion-detenciones-garaje.json";
-import a33 from "./guia-sacar-partido-a-leonida-clima-fauna-apps.json";
-import a34 from "./game-informer-382-clima-extremo-170-especies.json";
-import a35 from "./florida-como-mecanica-gta-vi-mapa-regiones-trafico.json";
-import a36 from "./leonida-fauna-naturaleza-salvaje-gta-vi.json";
-import a37 from "./gta-vi-precarga-12-noviembre-que-preparar-antes.json";
-import a38 from "./gta-vi-edicion-fisica-o-digital-antes-del-12-noviembre.json";
-import a39 from "./gta-vi-robar-coches-niveles-seguridad-herramientas.json";
-import a40 from "./clima-dinamico-y-fauna-confirmados-en-gta-vi.json";
-import a41 from "./game-informer-portada-gta-vi-numero-382.json";
-import a42 from "./gta-vi-cuenta-atras-fechas-clave-19-noviembre.json";
-import a43 from "./gta-vi-cajas-vacias-tiendas-que-son.json";
-import a44 from "./gta-vi-mapa-oficial-poster-sandbars-crude-islands.json";
-import a45 from "./xbox-reservas-gta-vi-record-ps5.json";
-import a46 from "./gta-vi-goodtime-state-caja-coleccionista-400-euros.json";
-import a47 from "./album-gta-vi-41-millones-spotify-primeras-24-horas.json";
-import a48 from "./merchandising-gta-vi-tokyo-game-show-reventa.json";
-import a49 from "./gta-vi-game-pass-ps-plus-suscripciones.json";
-import a50 from "./gta-vi-fecha-limite-reserva-cambio-tiendas.json";
-import a51 from "./wwe-abandona-marca-vice-city-gta-vi.json";
-import a52 from "./gta-vi-fuera-de-los-golden-joysticks-2026.json";
-import a53 from "./gta-vi-retargeting-animaciones-poblacion-npc.json";
-import a54 from "./rockstar-reglas-mods-gta-vi.json";
-import a55 from "./jugar-gta-vi-medianoche-19-noviembre-guia.json";
-import a56 from "./gta-vi-ps4-xbox-one-switch-2.json";
-import a57 from "./gta-vi-xbox-series-s-que-esperar.json";
-import a58 from "./pancarta-vice-city-kaseya-center-instalacion.json";
-import a59 from "./gta-vi-cuanto-dura-la-campana.json";
-import a60 from "./gta-vi-como-ganar-dinero.json";
-import a61 from "./gta-vi-trofeos-logros-platino.json";
-import a62 from "./gta-vi-sin-disco-segunda-mano-reventa.json";
-import a63 from "./donde-reservar-gta-vi-comparativa.json";
-import a64 from "./que-sigue-sin-confirmarse-a-58-dias.json";
-import a65 from "./checklist-antes-de-la-predescarga.json";
-import a66 from "./el-lanzamiento-que-parara-el-mundo-laboral.json";
-import a67 from "./rockstar-pide-a-los-actores-no-revelar-su-participacion.json";
-import a68 from "./gta-vi-collectors-edition-filtracion.json";
-import a69 from "./take-two-pc-plataforma-importante.json";
-import a70 from "./gta-vi-online-2027-ceo-de-twitch.json";
-import a71 from "./spotify-rockstar-campana-gta-vi.json";
-import a72 from "./comunidad-gta-vi-en-espanol-y-antispolier.json";
-import a73 from "./gta-online-no-muere-con-gta-vi.json";
-import a74 from "./gta-vi-accesibilidad-opciones-que-se-sabe.json";
-import a75 from "./gta-vi-cross-save-crossplay-guardado-estado.json";
-import a76 from "./gta-vi-mods-roleplay-ragemp-y-take-two.json";
-import a77 from "./gta-vi-que-puede-publicar-un-fansite.json";
-import a78 from "./precio-de-gta-vi-por-pais.json";
-import a79 from "./que-jugar-hasta-el-19-de-noviembre.json";
-import a80 from "./zelnick-el-hombre-que-puso-el-precio.json";
-import a81 from "./gta-vi-cuenta-atras-dos-meses-analisis.json";
-import a82 from "./gta-vi-sistemas-talleres-robos-entrevistas.json";
-import a83 from "./gta-vi-mandos-dualsense-y-tokyo-game-show.json";
-import a84 from "./gta-vi-cuanto-ha-costado-desarrollo.json";
-import a85 from "./gta-vi-marketing-playstation-xbox-asimetria.json";
-import a86 from "./gta-vi-despidos-proyecto-conflicto-laboral.json";
-import a87 from "./gta-vi-mes-gratis-gta-como-no-acabar-pagando.json";
-import a88 from "./gta-vi-como-evitar-spoilers-desbloqueo-por-paises.json";
-import a89 from "./gta-vi-almacenamiento-cuanto-ocupa-hacer-sitio.json";
-import a90 from "./gta-vi-take-two-citaciones-filtrador-microsoft-discord.json";
-import a91 from "./gta-vi-rendimiento-por-consola-que-esperar.json";
-import a92 from "./gta-vi-ultimate-o-estandar-que-edicion-comprar.json";
-import a93 from "./gta-vi-estafas-preventa-como-protegerse.json";
-import a94 from "./gta-vi-clasificacion-edades-esrb-pegi.json";
-import a95 from "./gta-vi-sin-doblaje-espanol-que-significa.json";
-import a96 from "./gta-vi-edicion-fisica-sin-disco-que-compras.json";
-import a97 from "./gta-vi-campana-controvertida-miami-beach-debate-publico.json";
-import a98 from "./gta-vi-brian-heder-jefe-contrabando-analisis.json";
-import a99 from "./gta-vi-publicadores-huyen-noviembre-septiembre-saturado.json";
-import a100 from "./gta-vi-miami-beach-campana-3-millones-debate.json";
-import a101 from "./gta-vi-lanzamiento-19-noviembre-2026-oficial.json";
-import a102 from "./gta-vi-pre-orden-25-junio-reservas-analisis.json";
-import a103 from "./gta-vi-take-two-marketing-summer-2026.json";
-import a104 from "./gta-vi-filtraciones-recientes-rockstar-responde.json";
-import a105 from "./miami-dade-turismo-gta-vi-campana-marketing.json";
-import a106 from "./gta-vi-lucia-caminos-primera-protagonista-femenina.json";
-import a107 from "./gta-vi-personajes-jason-duval-analisis.json";
-import a108 from "./gta-vi-impacto-economico-industria-videojuegos.json";
-import a109 from "./gta-vi-presiones-genero-mundos-abiertos-2026.json";
-import a110 from "./extended-look-analisis-implicaciones-marketing.json";
-import a111 from "./rockstar-29-nuevas-screenshots-jason-lucia.json";
-import a112 from "./analisis-trailer-2-gta-vi-detalles-ocultos.json";
-import a113 from "./rockstar-statement-nearly-there-noviembre-confirmado.json";
-import a114 from "./gta-vi-rage-engine-mejoras-tecnicas.json";
-import a115 from "./gta-vi-ps5-pro-funciones-confirmadas.json";
-import a116 from "./rockstar-90-screenshots-galeria-oficial.json";
-import a117 from "./gta-vi-peso-instalacion-estimacion-tamano.json";
-import a118 from "./gta-vi-pre-carga-12-noviembre-confirmada.json";
-import a119 from "./lucia-jason-protagonistas-historia-gta-vi.json";
-import a120 from "./gta-vi-campana-marketing-miami-vice-city-irl.json";
-import a121 from "./analisis-extended-look-marketing-netflix-estrategia.json";
-import a122 from "./gta-vi-screenshots-vintage-vice-city-pack.json";
-import a123 from "./rockstar-confirma-extended-look-netflix-agosto.json";
-import a124 from "./mapa-leonida-vice-city-tamano-gta-vi.json";
-import a125 from "./nuevas-mecanicas-gameplay-gta-vi-filtraciones.json";
-import a126 from "./gta-vi-pc-cuando-llegara-version-pc.json";
-import a127 from "./gta-vi-online-modo-multijugador-novedades.json";
-import a128 from "./filtracion-septiembre-2022-analisis-impacto.json";
-import a129 from "./banda-sonora-gta-vi-emisoras-canciones.json";
-import a130 from "./take-two-previsiones-financieras-gta-vi.json";
-import a131 from "./gta-vi-requisitos-tecnicos-ps5-xbox-pro.json";
-import a132 from "./gta-vi-ediciones-precios-reservas-oficial.json";
-import a133 from "./rockstar-games-historia-estudio-gta-vi.json";
-import a134 from "./gta-vi-competencia-mundos-abiertos-2026.json";
-import a135 from "./personajes-secundarios-gta-vi-cal-hampton-boobie-ike.json";
-import a136 from "./gta-vi-misiones-estructura-historia-atracos.json";
-import a137 from "./vice-city-miami-inspiracion-real-gta-vi.json";
+import a29 from "./gta-vi-clasificacion-edades-por-regiones-pegi.json";
+import a30 from "./gta-vi-caza-fauna-actividades-game-informer.json";
+import a31 from "./gta-vi-primeras-horas-relacion-detenciones-garaje.json";
+import a32 from "./guia-sacar-partido-a-leonida-clima-fauna-apps.json";
+import a33 from "./game-informer-382-clima-extremo-170-especies.json";
+import a34 from "./florida-como-mecanica-gta-vi-mapa-regiones-trafico.json";
+import a35 from "./gta-vi-precarga-12-noviembre-que-preparar-antes.json";
+import a36 from "./gta-vi-robar-coches-niveles-seguridad-herramientas.json";
+import a37 from "./game-informer-portada-gta-vi-numero-382.json";
+import a38 from "./gta-vi-cuenta-atras-fechas-clave-19-noviembre.json";
+import a39 from "./gta-vi-cajas-vacias-tiendas-que-son.json";
+import a40 from "./gta-vi-mapa-oficial-poster-sandbars-crude-islands.json";
+import a41 from "./xbox-reservas-gta-vi-record-ps5.json";
+import a42 from "./gta-vi-goodtime-state-caja-coleccionista-400-euros.json";
+import a43 from "./album-gta-vi-41-millones-spotify-primeras-24-horas.json";
+import a44 from "./merchandising-gta-vi-tokyo-game-show-reventa.json";
+import a45 from "./gta-vi-game-pass-ps-plus-suscripciones.json";
+import a46 from "./gta-vi-fecha-limite-reserva-cambio-tiendas.json";
+import a47 from "./wwe-abandona-marca-vice-city-gta-vi.json";
+import a48 from "./gta-vi-fuera-de-los-golden-joysticks-2026.json";
+import a49 from "./gta-vi-retargeting-animaciones-poblacion-npc.json";
+import a50 from "./rockstar-reglas-mods-gta-vi.json";
+import a51 from "./jugar-gta-vi-medianoche-19-noviembre-guia.json";
+import a52 from "./gta-vi-ps4-xbox-one-switch-2.json";
+import a53 from "./pancarta-vice-city-kaseya-center-instalacion.json";
+import a54 from "./gta-vi-cuanto-dura-la-campana.json";
+import a55 from "./gta-vi-como-ganar-dinero.json";
+import a56 from "./gta-vi-trofeos-logros-platino.json";
+import a57 from "./gta-vi-sin-disco-segunda-mano-reventa.json";
+import a58 from "./donde-reservar-gta-vi-comparativa.json";
+import a59 from "./el-lanzamiento-que-parara-el-mundo-laboral.json";
+import a60 from "./rockstar-pide-a-los-actores-no-revelar-su-participacion.json";
+import a61 from "./gta-vi-collectors-edition-filtracion.json";
+import a62 from "./comunidad-gta-vi-en-espanol-y-antispolier.json";
+import a63 from "./gta-online-no-muere-con-gta-vi.json";
+import a64 from "./gta-vi-accesibilidad-opciones-que-se-sabe.json";
+import a65 from "./gta-vi-cross-save-crossplay-guardado-estado.json";
+import a66 from "./gta-vi-mods-roleplay-ragemp-y-take-two.json";
+import a67 from "./gta-vi-que-puede-publicar-un-fansite.json";
+import a68 from "./precio-de-gta-vi-por-pais.json";
+import a69 from "./que-jugar-hasta-el-19-de-noviembre.json";
+import a70 from "./zelnick-el-hombre-que-puso-el-precio.json";
+import a71 from "./gta-vi-sistemas-talleres-robos-entrevistas.json";
+import a72 from "./gta-vi-mandos-dualsense-y-tokyo-game-show.json";
+import a73 from "./gta-vi-cuanto-ha-costado-desarrollo.json";
+import a74 from "./gta-vi-marketing-playstation-xbox-asimetria.json";
+import a75 from "./gta-vi-despidos-proyecto-conflicto-laboral.json";
+import a76 from "./gta-vi-mes-gratis-gta-como-no-acabar-pagando.json";
+import a77 from "./gta-vi-almacenamiento-cuanto-ocupa-hacer-sitio.json";
+import a78 from "./gta-vi-take-two-citaciones-filtrador-microsoft-discord.json";
+import a79 from "./gta-vi-rendimiento-por-consola-que-esperar.json";
+import a80 from "./gta-vi-estafas-preventa-como-protegerse.json";
+import a81 from "./gta-vi-sin-doblaje-espanol-que-significa.json";
+import a82 from "./gta-vi-edicion-fisica-sin-disco-que-compras.json";
+import a83 from "./gta-vi-brian-heder-jefe-contrabando-analisis.json";
+import a84 from "./gta-vi-publicadores-huyen-noviembre-septiembre-saturado.json";
+import a85 from "./gta-vi-miami-beach-campana-3-millones-debate.json";
+import a86 from "./gta-vi-lanzamiento-19-noviembre-2026-oficial.json";
+import a87 from "./gta-vi-pre-orden-25-junio-reservas-analisis.json";
+import a88 from "./gta-vi-take-two-marketing-summer-2026.json";
+import a89 from "./gta-vi-lucia-caminos-primera-protagonista-femenina.json";
+import a90 from "./gta-vi-personajes-jason-duval-analisis.json";
+import a91 from "./gta-vi-impacto-economico-industria-videojuegos.json";
+import a92 from "./gta-vi-presiones-genero-mundos-abiertos-2026.json";
+import a93 from "./extended-look-analisis-implicaciones-marketing.json";
+import a94 from "./rockstar-29-nuevas-screenshots-jason-lucia.json";
+import a95 from "./analisis-trailer-2-gta-vi-detalles-ocultos.json";
+import a96 from "./rockstar-statement-nearly-there-noviembre-confirmado.json";
+import a97 from "./gta-vi-rage-engine-mejoras-tecnicas.json";
+import a98 from "./rockstar-90-screenshots-galeria-oficial.json";
+import a99 from "./analisis-extended-look-marketing-netflix-estrategia.json";
+import a100 from "./gta-vi-screenshots-vintage-vice-city-pack.json";
+import a101 from "./rockstar-confirma-extended-look-netflix-agosto.json";
+import a102 from "./mapa-leonida-vice-city-tamano-gta-vi.json";
+import a103 from "./nuevas-mecanicas-gameplay-gta-vi-filtraciones.json";
+import a104 from "./gta-vi-online-modo-multijugador-novedades.json";
+import a105 from "./filtracion-septiembre-2022-analisis-impacto.json";
+import a106 from "./take-two-previsiones-financieras-gta-vi.json";
+import a107 from "./gta-vi-ediciones-precios-reservas-oficial.json";
+import a108 from "./rockstar-games-historia-estudio-gta-vi.json";
+import a109 from "./gta-vi-competencia-mundos-abiertos-2026.json";
+import a110 from "./personajes-secundarios-gta-vi-cal-hampton-boobie-ike.json";
+import a111 from "./gta-vi-misiones-estructura-historia-atracos.json";
+import a112 from "./vice-city-miami-inspiracion-real-gta-vi.json";
 
 export const articlesRaw = [
   a0,
@@ -253,29 +228,4 @@ export const articlesRaw = [
   a110,
   a111,
   a112,
-  a113,
-  a114,
-  a115,
-  a116,
-  a117,
-  a118,
-  a119,
-  a120,
-  a121,
-  a122,
-  a123,
-  a124,
-  a125,
-  a126,
-  a127,
-  a128,
-  a129,
-  a130,
-  a131,
-  a132,
-  a133,
-  a134,
-  a135,
-  a136,
-  a137,
 ];

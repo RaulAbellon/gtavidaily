@@ -519,10 +519,7 @@ export const CRONOLOGIA: CronologiaEvent[] = [
       "Rockstar lo anunció con un artículo propio en el Newswire: «Grand Theft Auto VI is now set to release on May 26, 2026. / We are very sorry that this is later than you expected… we need this extra time to deliver at the level of quality you expect and deserve.»",
     status: "confirmado",
     sources: [FUENTES.newswireRetraso1],
-    related: [
-      "gta-vi-lanzamiento-19-noviembre-2026-oficial",
-      "gta-vi-cuenta-atras-dos-meses-analisis",
-    ],
+    related: ["gta-vi-lanzamiento-19-noviembre-2026-oficial"],
   },
   {
     date: "2025-05-06",
@@ -637,8 +634,7 @@ export const CRONOLOGIA: CronologiaEvent[] = [
     sources: [FUENTES.comunicadoReservas, FUENTES.gematsu, FUENTES.igta],
     related: [
       "gta-vi-ediciones-precios-reservas-oficial",
-      "gta-vi-pre-carga-12-noviembre-confirmada",
-      "gta-vi-ultimate-o-estandar-que-edicion-comprar",
+      "gta-vi-precarga-12-noviembre-que-preparar-antes",
       "gta-vi-mes-gratis-gta-como-no-acabar-pagando",
     ],
   },
@@ -660,7 +656,7 @@ export const CRONOLOGIA: CronologiaEvent[] = [
         url: "https://gamingbolt.com/grand-theft-auto-6-supports-ps5-pro-confirms-playstation-store-listing",
       },
     ],
-    related: ["gta-vi-ps5-pro-funciones-confirmadas"],
+    related: ["gta-vi-rendimiento-por-consola-que-esperar"],
   },
   {
     date: "2026-06-25",
@@ -727,10 +723,7 @@ export const CRONOLOGIA: CronologiaEvent[] = [
       "Circulan alrededor de quince clips con robos de coches, tiroteos, combate cuerpo a cuerpo y detalles de mapa y emisoras. El filtrador afirma tener una build jugable completa y amenaza con revelar el final; esa afirmación procede de él y no está verificada.",
     status: "reportado",
     sources: [FUENTES.kotakuFiltracion26],
-    related: [
-      "nuevas-mecanicas-gameplay-gta-vi-filtraciones",
-      "gta-vi-filtraciones-recientes-rockstar-responde",
-    ],
+    related: ["nuevas-mecanicas-gameplay-gta-vi-filtraciones"],
   },
   {
     date: "2026-08-20",
@@ -786,10 +779,7 @@ export const CRONOLOGIA: CronologiaEvent[] = [
     status: "confirmado",
     evidence: "informado",
     sources: [FUENTES.computerbase, FUENTES.flowgames],
-    related: [
-      "gta-vi-rendimiento-por-consola-que-esperar",
-      "gta-vi-requisitos-tecnicos-ps5-xbox-pro",
-    ],
+    related: ["gta-vi-rendimiento-por-consola-que-esperar"],
   },
   {
     date: "2026-08-28",
@@ -863,7 +853,7 @@ export const CRONOLOGIA: CronologiaEvent[] = [
       "El sheriff Rosie Cordero-Stutz y el comisionado Juan Carlos Bermudez firman un comunicado conjunto pidiendo rechazar el uso de recursos e instalaciones públicas para promocionar el juego. Cordero-Stutz cierra con «Miami-Dade County is not Vice City».",
     status: "confirmado",
     sources: [FUENTES.miamidade, FUENTES.gtaviceMiami],
-    related: ["miami-dade-turismo-gta-vi-campana-marketing"],
+    related: ["gta-vi-miami-beach-campana-3-millones-debate"],
   },
   {
     date: "2026-09-08",
@@ -891,7 +881,7 @@ export const CRONOLOGIA: CronologiaEvent[] = [
     evidence: "informado",
     sources: [FUENTES.nmeHora, FUENTES.vandalHora],
     related: [
-      "gta-vi-como-evitar-spoilers-desbloqueo-por-paises",
+      "comunidad-gta-vi-en-espanol-y-antispolier",
       "jugar-gta-vi-medianoche-19-noviembre-guia",
       "gta-vi-lanzamiento-19-noviembre-2026-oficial",
     ],
@@ -924,10 +914,7 @@ export const CRONOLOGIA: CronologiaEvent[] = [
       FUENTES.kotakuMiami,
       FUENTES.gtaviceMiami,
     ],
-    related: [
-      "gta-vi-miami-beach-campana-3-millones-debate",
-      "gta-vi-campana-controvertida-miami-beach-debate-publico",
-    ],
+    related: ["gta-vi-miami-beach-campana-3-millones-debate"],
   },
   {
     date: "2026-09-10",
@@ -1099,10 +1086,7 @@ export const CRONOLOGIA: CronologiaEvent[] = [
       "El Newswire publica «The Music of Grand Theft Auto VI: In-Game Radio Stations»: seis diales confirmados, con nombres como Flash FM y con locutores anunciados por la propia compañía. Es la primera vez que Rockstar publica una lista de emisoras del juego; lo que sigue sin publicarse es el listado completo de canciones con licencia.",
     status: "confirmado",
     sources: [FUENTES.musicaEmisoras, FUENTES.paginaMusica, FUENTES.gematsuEmisoras],
-    related: [
-      "rockstar-desvela-seis-emisoras-radio-gta-vi",
-      "banda-sonora-gta-vi-emisoras-canciones",
-    ],
+    related: ["rockstar-desvela-seis-emisoras-radio-gta-vi"],
   },
   {
     date: "2026-10-11",
@@ -1181,7 +1165,7 @@ export const CRONOLOGIA: CronologiaEvent[] = [
     ],
     related: [
       "gta-vi-miami-dade-frena-anuncios-presupuesto-marketing",
-      "miami-dade-turismo-gta-vi-campana-marketing",
+      "gta-vi-miami-beach-campana-3-millones-debate",
     ],
   },
   {

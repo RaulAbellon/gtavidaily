@@ -17,7 +17,7 @@
     "Para quien vaya a jugar en PS5, la consecuencia es doméstica y no tiene nada que ver con la piratería. Una consola que lleve semanas o meses sin conectarse tendrá que actualizarse antes de abrir el juego, si se cumple ese requisito, y esa descarga conviene hacerla con margen, no el día 19 a las 23:58. Quien compre una consola de segunda mano con firmware antiguo se encontrará lo mismo: el juego no arrancaría hasta que el sistema esté al día.",
     "Hay una tercera capa que estos días se mezcla con las otras dos en las conversaciones: el emulador. Que existan proyectos que ejecutan juegos de PS5 en PC no cambia el panorama a cuatro semanas del estreno. Quien sigue esos proyectos de cerca señala que GTA VI plantea retos técnicos mayores que su predecesor. No es una alternativa para el 19 de noviembre.",
     "Lo que queda por ver es corto y comprobable. Si Gezine publica o reporta el método; si Sony responde con otra actualización antes del estreno; y si el requisito de firmware aparece en la ficha de la tienda o en la letra pequeña de la caja. Hasta entonces, lo confirmado es el vídeo del menú de depuración y la fecha: el 19 de noviembre de 2026, en PS5 y Xbox Series X|S.",
-    "El contexto de cada confirmación está en [la cronología](/cronologia); la hora a la que abre el juego en cada país, en [la tabla de desbloqueo](/desbloqueo); lo que se sabe de la conexión obligatoria, en [la guía para jugar sin conexión](/articulo/gta-vi-jugar-sin-conexion-y-que-exige-internet); y la lista de tareas previas, en [el checklist de la precarga](/articulo/checklist-antes-de-la-predescarga)."
+    "El contexto de cada confirmación está en [la cronología](/cronologia); la hora a la que abre el juego en cada país, en [la tabla de desbloqueo](/desbloqueo); lo que se sabe de la conexión obligatoria, en [la guía para jugar sin conexión](/articulo/gta-vi-jugar-sin-conexion-y-que-exige-internet); y la lista de tareas previas, en [el checklist de la precarga](/articulo/gta-vi-precarga-12-noviembre-que-preparar-antes)."
   ],
   "category": "noticias",
   "author": "redaccion",
@@ -25,7 +25,13 @@
   "updatedAt": "2026-10-21T11:00:00.000Z",
   "coverLabel": "Firmware 14.10 de PS5",
   "coverAlt": "Portada generada con el rótulo Firmware 14.10 de PS5 sobre fondo oscuro",
-  "tags": ["GTA VI", "PS5", "firmware 14.10", "jailbreak", "Rockstar Games"],
+  "tags": [
+    "GTA VI",
+    "PS5",
+    "firmware 14.10",
+    "jailbreak",
+    "Rockstar Games"
+  ],
   "readingTime": 4,
   "featured": false,
   "trending": false,

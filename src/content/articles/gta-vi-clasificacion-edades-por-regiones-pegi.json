@@ -1,7 +1,7 @@
 {
   "slug": "gta-vi-clasificacion-edades-por-regiones-pegi",
-  "title": "GTA VI ya muestra PEGI 18 en la PS Store europea, sin anuncio de Rockstar",
-  "excerpt": "La ficha europea del juego luce la etiqueta para mayores de 18 y Sony retiró un anuncio austral con X 18+. El ESRB sigue sin publicar ficha y Xbox mantiene un provisional.",
+  "title": "Clasificación por edades de GTA VI: PEGI 18 y el mapa regional",
+  "excerpt": "La ficha europea ya muestra PEGI 18 y los anuncios de Sony dejaron ver USK 18, D y un X 18+ retirado. El ESRB sigue sin publicar ficha y Xbox mantiene un provisional.",
   "content": [
     "GTA VI figura ya como PEGI 18 en la ficha de PlayStation Store que ve cualquier usuario europeo, y esa etiqueta llegó acompañada de clasificaciones regionales en publicidad de Sony: PEGI 18 para Europa y Reino Unido, USK 18 en el anuncio alemán, D en el mexicano y X 18+ en el australiano. Lo llamativo no es el contenido, que nadie discutía, sino quién lo ha enseñado primero. No fue Rockstar ni ningún organismo clasificador: fue la tienda.",
     "El hallazgo es del sitio especializado GTAVice.net, que rastreó los anuncios de la Ultimate Edition que PlayStation empezó a publicar el 26 de septiembre en Facebook e Instagram para varias regiones y encontró las etiquetas impresas en el propio creativo. El mismo medio comprobó que la etiqueta PEGI 18 aparecía también directamente en la ficha del juego de PlayStation Store, donde antes se leía como provisional. La publicidad australiana, la del X 18+, fue retirada el 29 de septiembre.",
@@ -9,27 +9,26 @@
     "En el resto de los casos, las etiquetas no sorprenden. PEGI 18 es la clasificación que la serie viene recibiendo en Europa desde hace años, y la D mexicana equivale a contenido solo para adultos. Ninguna de las dos implica recortes, y la ficha de producto de Rockstar no menciona diferencias de contenido por región.",
     "Hay dos huecos que conviene no rellenar a ojo. El primero es Estados Unidos. En la búsqueda pública del ESRB, el organismo que clasifica los videojuegos en ese país, GTA VI no tiene ficha: aparecen las entregas anteriores y sus ediciones definitivas, pero no una entrada del juego nuevo. Eso no significa que vaya a salir sin clasificar, sino que la ficha aún no es pública. En la tienda de Xbox, el hueco del aviso de clasificación lo ocupa de momento un texto provisional que apunta a Mature 17+, la categoría que la serie ha tenido siempre allí.",
     "El segundo hueco es Alemania, y aquí las fuentes no coinciden del todo. El anuncio alemán de PlayStation mostraba USK 18, que es la clasificación esperable, pero una de las coberturas que siguió el caso indicaba que no había información oficial sobre la clasificación alemana. Con el material disponible, lo sostenible es que el anuncio mostró USK 18 y que la USK no lo ha confirmado por su cuenta.",
-    "Merece la pena aclarar de dónde sale cada cosa. Las clasificaciones no las anuncia la tienda: las emite el organismo de cada territorio, y el editor decide cuándo lo comunica. Ni Rockstar ni Take-Two han publicado hasta hoy un anuncio de clasificaciones por región. Todo lo que se sabe viene de material de marketing de Sony, y eso incluye el antecedente de mayo de 2026, cuando un correo de PlayStation adelantó que el ESRB había asignado al juego la categoría M. Aquello tampoco apareció después en la web del ESRB.",
-    "¿Y por qué se habla de esto ahora y no en junio, cuando se abrieron las reservas? Porque en junio no había nada. El comunicado oficial del 24 de junio, el que fijó los precios de 79,99 y 99,99 dólares, decía que el juego todavía no estaba clasificado. A mes y medio del lanzamiento, que las etiquetas empiecen a asomar en tiendas y anuncios es la señal de que el proceso avanza de verdad.",
-    "Para el lector español, la consecuencia práctica es concreta. Un PEGI 18 significa que, en tienda física, el comercio debe comprobar la edad antes de vender o entregar el juego. En digital, quien controla es el sistema de control parental de la cuenta: en PS5 y Xbox, un menor con restricciones activas no podrá abrir el juego aunque esté comprado y descargado.",
-    "Si la compra depende de la clasificación, la recomendación no ha cambiado desde septiembre: esperar a la ficha oficial. Puedes comprobarlo tú mismo en dos minutos. Entra en el buscador del ESRB, escribe el nombre completo del juego y mira si ya aparece. Haz lo mismo en la web de PEGI. Cuando alguna de las dos devuelva ficha propia con descriptores de contenido, esa será la confirmación de verdad, y no una etiqueta impresa en un anuncio.",
-    "Mientras eso llega, el calendario no se mueve. GTA VI sale el 19 de noviembre de 2026 en PS5 y Xbox Series X|S, con la precarga digital abierta desde el 12 de noviembre y la edición física, que contiene un código de descarga y ningún disco, en tiendas ese mismo día.",
-    "Para seguir con el tema: [el estado de la clasificación por edades en septiembre](/articulo/gta-vi-clasificacion-edades-esrb-pegi), [las ediciones y sus precios oficiales](/articulo/gta-vi-ediciones-precios-reservas-oficial), [la lista de confirmaciones con su fuente](/cronologia) y [la tabla de horas de desbloqueo por país](/desbloqueo)."
+    "Que no haya ficha pública no significa que el juego vaya a salir sin clasificar ni que haya un problema de censura. El proceso se hace antes del lanzamiento, pero el editor decide cuándo se hace público el resultado. Publicarlo antes de tiempo revela contenido de la historia que Rockstar prefiere mantener cerrado. En Estados Unidos, el editor entrega al ESRB un cuestionario sobre todo el contenido relevante y un vídeo con el gameplay típico y las escenas más extremas; ese vídeo lo revisan al menos tres evaluadores, que proponen categoría y descriptores, y después hay una revisión de paridad con otros juegos similares. El resultado se comunica al editor, que puede aceptarlo o recortar el juego y volver a empezar.",
+    "En Alemania el criterio es más estricto. La USK exige una versión que se pueda completar de principio a fin antes de emitir su dictamen, según explicó su director general adjunto, Lorenzo von Petersdorff, a GamesWirtschaft. Mientras tanto, el sello es Rating Pending. La USK recomienda además a tiendas y plataformas tratar los títulos sin clasificar como si fueran USK 18. Ese consejo ya tiene efectos prácticos: una USK 18 obliga a comprobar el documento en la caja del establecimiento, y el comercio online alemán aplica un recargo de unos 5 euros por entrega con verificación de edad.",
+    "¿Y qué consecuencia tiene para ti? Tres prácticas. En tienda física, algunas cadenas piden identificación al recoger un título con clasificación alta, así que conviene llevar el documento. En consola, los controles parentales de PS5 y Xbox bloquearán el juego si la cuenta tiene restricciones por edad, y esa configuración depende de la clasificación que reciba. Y si compras para un menor, hoy la decisión es a ciegas: se sabe lo que ha sido siempre la saga, con violencia, lenguaje fuerte y drogas, y no lo que dirá la ficha oficial.",
+    "Merece la pena aclarar de dónde sale cada cosa. Las clasificaciones no las anuncia la tienda: las emite el organismo de cada territorio, y el editor decide cuándo lo comunica. Ni Rockstar ni Take-Two han publicado hasta hoy un anuncio de clasificaciones por región. Todo lo que se sabe viene de material de marketing de Sony, y eso incluye el antecedente de mayo de 2026, cuando un correo de PlayStation adelantó que el ESRB había asignado al juego la categoría M con violencia, lenguaje soez y desnudos. Aquello tampoco apareció después en la web del ESRB.",
+    "Mientras eso llega, el calendario no se mueve. GTA VI sale el 19 de noviembre de 2026 en PS5 y Xbox Series X|S, con la precarga digital abierta desde el 12 de noviembre y la edición física, que contiene un código de descarga y ningún disco, en tiendas ese mismo día. Si la compra depende de la clasificación, la recomendación no ha cambiado: esperar a la ficha oficial. Para seguir con el tema: [las ediciones y sus precios](/articulo/gta-vi-ediciones-precios-reservas-oficial) y [la hora de desbloqueo por país](/desbloqueo)."
   ],
   "category": "noticias",
   "author": "redaccion",
   "publishedAt": "2026-10-01T16:00:00.000Z",
-  "updatedAt": "2026-10-01T18:00:00.000Z",
+  "updatedAt": "2026-10-26T10:00:00.000Z",
   "coverLabel": "Clasificaciones por region",
   "coverAlt": "Portada generada con el rótulo Clasificaciones por region sobre fondo de Leonida",
   "tags": [
     "PEGI",
     "ESRB",
-    "clasificación por edades",
+    "Clasificación por edades",
     "PlayStation Store",
     "Familias"
   ],
-  "readingTime": 4,
+  "readingTime": 5,
   "featured": false,
   "trending": false,
   "sources": [
@@ -52,6 +51,21 @@
     {
       "name": "Business Wire China — comunicado de Take-Two: reservas, ediciones y precios de GTA VI",
       "url": "https://www.businesswirechina.com/en/news/63335.html"
+    },
+    {
+      "name": "GamesWirtschaft — La clasificación de edad de GTA 6",
+      "url": "https://www.gameswirtschaft.de/wirtschaft/grand-theft-auto-6-gta-6-altersfreigabe-140826/"
+    },
+    {
+      "name": "ESRB — Cómo funciona el proceso de clasificación",
+      "url": "https://www.esrb.org/ratings/ratings-process/"
+    },
+    {
+      "name": "GameGPU — El correo de PlayStation y la clasificación M",
+      "url": "https://de.gamegpu.com/news/igry/vozrastnoj-tsenz-gta-6-sostavit-17-let-na-osnove-dannykh-ot-playstation"
     }
-  ]
+  ],
+  "image": "/imagenes/gta-vi-clasificacion-edades-esrb-pegi.jpg",
+  "imageAlt": "Ilustración conceptual sobre la clasificación por edades pendiente de GTA VI",
+  "imageCredit": "Ilustración original de GTA VI Daily"
 }
