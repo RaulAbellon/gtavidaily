@@ -1,4 +1,4 @@
-import { History, Menu, Timer } from "lucide-react";
+import { History, Map as MapIcon, Menu, Timer } from "lucide-react";
 import { NavLink } from "@/components/site/nav-link";
 import { SearchForm } from "@/components/site/search-form";
 import { Brand } from "@/components/site/brand";
@@ -9,13 +9,25 @@ import { getPopulatedCategories } from "@/lib/queries";
  * (`<Link>`), el buscador es un formulario GET y el menú móvil usa `<details>`,
  * así que no necesita JavaScript.
  *
- * `/cronologia` y `/desbloqueo` no son dos páginas más: son los dos activos que
- * solo tiene este medio y estaban enterrados en el pie. Por eso van en **dos
- * sitios**: como enlace propio en la barra principal (con etiqueta corta, para
- * que quepan a 1024 px) y en la franja de consulta de debajo, con el nombre
- * completo y el buscador al lado. En el menú móvil aparecen igual.
+ * `/mapa`, `/cronologia` y `/desbloqueo` no son tres páginas más: son los
+ * activos que solo tiene este medio y estaban enterrados en el pie. Por eso van
+ * en **dos sitios**: como enlace propio en la barra principal (con etiqueta
+ * corta, para que quepan a 1280 px) y en la franja de consulta de debajo, con el
+ * nombre completo y el buscador al lado. En el menú móvil aparecen igual.
+ *
+ * La barra principal entra a partir de `xl`, no de `lg`. Con tres páginas de
+ * consulta, cinco categorías y «Todas las noticias», a 1024 px no cabe: el
+ * logotipo se comprimía (de 248 px a 82) y los enlaces partían en dos líneas.
+ * Entre 1024 y 1279 manda el menú desplegable, que lleva lo mismo, y la franja
+ * de consulta sigue a la vista.
  */
 const CONSULTAS = [
+  {
+    href: "/mapa",
+    label: "Mapa interactivo de Leonida",
+    short: "Mapa",
+    Icon: MapIcon,
+  },
   {
     href: "/cronologia",
     label: "Cronología de GTA VI",
@@ -49,7 +61,7 @@ export function Header() {
         <Brand />
 
         <nav
-          className="hidden items-center gap-1 lg:flex"
+          className="hidden items-center gap-1 xl:flex"
           aria-label="Navegación principal"
         >
           <NavLink
@@ -116,7 +128,7 @@ export function Header() {
         </div>
       </div>
 
-      <details className="border-t border-white/5 lg:hidden">
+      <details className="border-t border-white/5 xl:hidden">
         <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-sm font-medium text-zinc-200">
           <Menu className="h-4 w-4" aria-hidden="true" />
           Menú y búsqueda

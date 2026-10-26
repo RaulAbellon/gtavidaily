@@ -162,12 +162,13 @@ src/
 │  ├─ articulo/[slug]/           Artículos: generateStaticParams + generateMetadata
 │  ├─ categoria/[slug]/          Categorías
 │  ├─ buscar/                    Buscador estático: filtra en el cliente con indice.json
+│  ├─ mapa/                      Mapa interactivo de Leonida (SVG propio) + fichas de las seis regiones
 │  ├─ portadas/[slug]/           Portadas SVG de reserva, un fichero por artículo
 │  ├─ feed.xml/                  RSS 2.0 generado en el build
 │  ├─ news-sitemap.xml/          Sitemap de Google News (ventana de 48 h del build)
 │  ├─ sobre | contacto | privacidad | cookies | aviso-legal | dmca
 │  ├─ sitemap.ts | robots.ts     Generados desde la misma fuente de verdad
-│  └─ error.tsx | global-error.tsx | loading.tsx | not-found.tsx
+│  └─ error.tsx | global-error.tsx | not-found.tsx
 ├─ components/
 │  ├─ ads/                       Bloque publicitario condicionado al consentimiento
 │  ├─ consent/                   Banner, ajustes, señales de Consent Mode y hook
@@ -179,9 +180,19 @@ src/
    ├─ article-view.ts            Aplana un artículo para las tarjetas del cliente
    ├─ images.ts                  Imagen propia del artículo, portada de reserva y og:image
    ├─ cover.ts                   Motor de las portadas SVG (las sirve /portadas/<slug>.svg)
+   ├─ mapa.ts                    Datos del mapa (seis regiones, estados, fuentes) y su geometría
    ├─ site.ts                    Configuración del sitio (una sola fuente)
    └─ consent.ts                 Tipos y lógica pura del consentimiento
 ```
+
+**No hay `loading.tsx` en la raíz, y es a propósito.** Con `output: "export"`,
+un `loading.tsx` de segmento envuelve la página en un Suspense: el build pone el
+esqueleto en el HTML y deja el contenido real en un `<div hidden>` que solo
+aparece cuando el navegador ejecuta el script `$RC`. Con JavaScript desactivado
+—o en un rastreador que no lo ejecute— **todas** las páginas se quedaban en
+«Cargando contenido…». Sin ese fichero, cada página llega completa en el HTML.
+Si hace falta un esqueleto de carga, se pone **por segmento**
+(`src/app/noticias/loading.tsx`), nunca en la raíz.
 
 Además, fuera del repositorio y solo para trabajo de assets, `work/assets/`
 contiene el generador de la identidad visual y la herramienta de preparación de
@@ -229,6 +240,15 @@ Al añadir contenido nuevo, el criterio es:
 3. Mantener el aviso de sitio fan no oficial y las marcas registradas.
 4. No inventar datos para redondear un artículo: si falta información
    verificable, se publica menos y se dice lo que falta.
+
+**Los tres activos propios** son los que no existen en ningún otro sitio del
+nicho, y son los que la portada destaca:
+
+| Ruta | Qué aporta | De dónde sale |
+| --- | --- | --- |
+| `/mapa` | Esquema interactivo de Leonida con sus seis regiones, cada dato con su estado (confirmado, reportado, sin fuente) y la lista de lo que falta | `src/lib/mapa.ts`; geometría dibujada a mano, sin cartografía de terceros |
+| `/cronologia` | 41 entradas con fuente primaria y el estado de cada hecho | `src/lib/cronologia.ts` |
+| `/desbloqueo` | 35 husos con la hora de apertura y el cálculo explicado | `src/lib/desbloqueo.ts` |
 
 ## Identidad visual
 

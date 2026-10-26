@@ -46,6 +46,9 @@ const REQUIRED_ROUTES = [
   "/",
   "/noticias",
   "/buscar?q=lucia",
+  "/mapa",
+  "/cronologia",
+  "/desbloqueo",
   "/sobre",
   "/contacto",
   "/privacidad",
@@ -96,6 +99,27 @@ async function main() {
   const home = await get("/");
   if (home.body.includes("Vice City")) ok("la home incluye contenido en el HTML");
   else fail("SSR de la home", "no se encuentra el contenido en el HTML");
+
+  // El mapa tiene que leerse sin ejecutar nada: las seis fichas van en el flujo
+  // normal del documento, no en un `<div hidden>` que revele un script.
+  const mapa = await get("/mapa");
+  const regiones = [
+    "region-vice-city",
+    "region-leonida-keys",
+    "region-grassrivers",
+    "region-port-gellhorn",
+    "region-ambrosia",
+    "region-mount-kalaga",
+  ];
+  const faltan = regiones.filter((id) => !mapa.body.includes(`id="${id}"`));
+  if (mapa.status === 200 && faltan.length === 0 && !mapa.body.includes("aria-busy=\"true\"")) {
+    ok("el mapa llega completo en el HTML, sin JavaScript", `${regiones.length} regiones`);
+  } else {
+    fail(
+      "SSR del mapa",
+      `estado ${mapa.status}, faltan ${faltan.join(", ") || "ninguna"} o el contenido está oculto`,
+    );
+  }
 
   const sitemap = await get("/sitemap.xml");
   const urls = [...sitemap.body.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);

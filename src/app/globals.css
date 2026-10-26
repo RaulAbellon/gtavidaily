@@ -154,6 +154,23 @@
 
 /* Las utilidades .line-clamp-* que había aquí a mano ya vienen en Tailwind. */
 
+/* ============================================================
+   Mapa de Leonida (/mapa).
+   Las regiones del SVG son enlaces: con el teclado se llega a ellas con Tab y
+   se activan con Intro. `outline` no se pinta igual sobre formas SVG en todos
+   los navegadores, así que el foco se marca dos veces: con el anillo del
+   navegador en el enlace y con un trazo blanco en la forma. Solo aparece con
+   `:focus-visible`, así que el ratón no deja anillos por todas partes.
+   ============================================================ */
+.mapa-region:focus-visible {
+  outline: 2px solid oklch(0.97 0 0);
+  outline-offset: 3px;
+}
+.mapa-region:focus-visible .mapa-region-forma {
+  stroke: oklch(0.99 0 0);
+  stroke-width: 3.5;
+}
+
 @keyframes neon-pulse {
   0%,
   100% {

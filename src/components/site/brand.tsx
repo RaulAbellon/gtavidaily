@@ -14,7 +14,7 @@ export function Brand({ compact = false }: { compact?: boolean }) {
   return (
     <Link
       href="/"
-      className="group flex items-center"
+      className="group flex shrink-0 items-center"
       aria-label={`Ir al inicio de ${SITE_NAME}`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -156,6 +156,14 @@ export function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link
+                  href="/mapa"
+                  className="text-zinc-400 transition-colors hover:text-white"
+                >
+                  Mapa interactivo de Leonida
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/cronologia"
                   className="text-zinc-400 transition-colors hover:text-white"
                 >

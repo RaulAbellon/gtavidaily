@@ -97,6 +97,7 @@ export function absoluteUrl(path = "/"): string {
 
 /** Rutas de las páginas legales y estáticas, en un solo sitio. */
 export const STATIC_ROUTES = [
+  { path: "/mapa", title: "Mapa interactivo de Leonida" },
   { path: "/cronologia", title: "Cronología de GTA VI" },
   { path: "/desbloqueo", title: "Hora de desbloqueo por países" },
   { path: "/sobre", title: "Sobre nosotros" },

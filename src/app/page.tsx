@@ -5,6 +5,7 @@ import {
   ChevronRight,
   Flame,
   History,
+  Map as MapIcon,
   Newspaper,
   Timer,
   TrendingUp,
@@ -19,6 +20,7 @@ import {
 } from "@/lib/data";
 import { getCronologiaResumen } from "@/lib/cronologia";
 import { getUnlockTable } from "@/lib/desbloqueo";
+import { MAPA_FUENTES, MAPA_REGIONES } from "@/lib/mapa";
 import { getPopulatedCategories } from "@/lib/queries";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
@@ -36,10 +38,13 @@ export default function HomePage() {
   const trending = getTrendingArticles();
   const categories = getPopulatedCategories();
 
-  // Los dos activos propios del sitio. Las cifras se calculan, no se escriben a
-  // mano: si la cronología crece o cambia la tabla, la portada lo refleja sola.
+  // Los tres activos propios del sitio. Las cifras se calculan, no se escriben a
+  // mano: si la cronología crece, la tabla cambia o el mapa suma una fuente, la
+  // portada lo refleja sola.
   const cronologia = getCronologiaResumen();
   const husos = getUnlockTable().length;
+  const regiones = MAPA_REGIONES.length;
+  const fuentesMapa = MAPA_FUENTES.length;
 
   const hero = featured[0] ?? latest[0];
   const secondary = featured.slice(1, 3);
@@ -100,7 +105,32 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <Link
+            href="/mapa"
+            className="group flex flex-col rounded-xl border border-white/10 bg-zinc-950/50 p-5 transition-colors hover:border-pink-500/50"
+          >
+            <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-pink-400">
+              <MapIcon className="h-4 w-4" aria-hidden="true" />
+              Mapa interactivo de Leonida
+            </span>
+            <span className="mt-2 text-2xl font-black text-white">
+              {regiones} regiones · {fuentesMapa} fuentes
+            </span>
+            <span className="mt-2 text-sm leading-relaxed text-zinc-300">
+              Las seis regiones del estado sobre un esquema propio, cada dato con
+              su estado —confirmado, reportado o sin fuente— y lo que sigue sin
+              confirmar, listado aparte.
+            </span>
+            <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-pink-400">
+              Abrir el mapa
+              <ArrowRight
+                className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
+            </span>
+          </Link>
+
           <Link
             href="/cronologia"
             className="group flex flex-col rounded-xl border border-white/10 bg-zinc-950/50 p-5 transition-colors hover:border-pink-500/50"

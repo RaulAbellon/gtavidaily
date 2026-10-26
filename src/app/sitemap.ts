@@ -14,6 +14,18 @@ import { SITE_URL, STATIC_ROUTES } from "@/lib/site";
  */
 export const dynamic = "force-static";
 
+/**
+ * Prioridad de las rutas fijas no legales. Las tres páginas de datos propios
+ * (`/mapa`, `/cronologia`, `/desbloqueo`) son el contenido que no existe en
+ * ningún otro sitio del nicho, así que van por delante de las legales.
+ */
+const STATIC_PRIORITY: Record<string, number> = {
+  "/mapa": 0.7,
+  "/cronologia": 0.6,
+  "/desbloqueo": 0.6,
+  "/sobre": 0.4,
+};
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const latestArticleDate = articles.reduce<Date>((newest, article) => {
     const date = new Date(article.updatedAt ?? article.publishedAt);
@@ -38,7 +50,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.map((route) => ({
     url: `${SITE_URL}${route.path}`,
     changeFrequency: "yearly",
-    priority: route.path === "/sobre" ? 0.4 : 0.3,
+    // Las páginas de consulta y el mapa son el contenido propio que el sitio
+    // quiere que se rastree primero; el resto de rutas fijas son legales.
+    priority: STATIC_PRIORITY[route.path] ?? 0.3,
   }));
 
   const categoryEntries: MetadataRoute.Sitemap = categories.map((category) => ({
