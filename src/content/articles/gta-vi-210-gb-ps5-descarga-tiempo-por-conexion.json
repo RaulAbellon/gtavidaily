@@ -1,0 +1,54 @@
+{
+  "slug": "gta-vi-210-gb-ps5-descarga-tiempo-por-conexion",
+  "title": "GTA VI ocupará 210 GB en PS5: cuánto tarda la descarga según tu conexión",
+  "excerpt": "La cuenta que rastrea PSN sitúa el archivo en 210 GB y una fuente secundaria lo corrobora. No es oficial. El plazo de precarga da margen hasta a conexiones de 3 Mbps.",
+  "content": [
+    "La descarga de GTA VI en PS5 ocupará 210 GB, según PlayStation Game Size, la cuenta que lleva años rastreando los servidores de PlayStation Network. Lo publicó el 27 de octubre y el medio Insider Gaming aseguró que sus fuentes corroboran la cifra. Ni Rockstar ni Sony la han confirmado: es un dato de terceros, y llega después de meses de estimaciones que iban de 100 a 250 GB.",
+    "Hay que separar dos cosas. Los 210 GB son el tamaño de la descarga, no necesariamente el espacio que ocupará el juego instalado: como recuerda MuyComputer, parte del espacio que pide un instalador es temporal y el espacio final puede variar. Para organizarse, sin embargo, el número que sirve es el de la descarga, porque es el hueco que hay que tener libre antes de darle al botón.",
+    "La cifra también zanja una duda frecuente. Como la edición en caja no lleva disco, sino un código, no hay forma de esquivar la descarga: comprar el formato físico ahorra la descarga solo en apariencia, porque el código canjeado descarga exactamente lo mismo. Quien pensaba que la caja le iba a evitar 210 GB de internet se lleva una sorpresa.",
+    "La comparación con lo anterior ayuda a dimensionarla. GTA V llegó a PS5 con 86,8 GB, según Vandal, y hoy supera los 100 GB por el contenido de GTA Online. Los 210 GB son 2,4 veces ese tamaño de lanzamiento, o 123 GB más. Es la diferencia entre un juego que cabe en cualquier consola con algo de espacio y uno que obliga a decidir qué se borra.",
+    "El tiempo de descarga se calcula con una regla sencilla: 210 GB son 1.680.000 megabits. Estos son los tiempos a velocidad sostenida, sin contar la pérdida real de ancho de banda ni el resto de aparatos conectados en casa:",
+    "1 Gbps — 28 minutos.",
+    "600 Mbps — 47 minutos.",
+    "300 Mbps — 1 hora y 33 minutos.",
+    "100 Mbps — 4 horas y 40 minutos.",
+    "50 Mbps — 9 horas y 20 minutos.",
+    "30 Mbps — 15 horas y 34 minutos.",
+    "10 Mbps — 46 horas y 40 minutos.",
+    "La precarga abre el 12 de noviembre y el desbloqueo llega a medianoche local del 19. Entre una cosa y otra hay siete días, 168 horas. Para completar 210 GB en esa ventana hace falta un caudal sostenido de unos 2,8 Mbps: cualquier fibra doméstica lo cubre con holgura, y una conexión de 3 Mbps llegaría por los pelos. Lo que puede fallar no es la velocidad contratada, sino la que la consola consigue de verdad por Wi-Fi y la competencia con otras descargas y actualizaciones.",
+    "Ese margen es la razón de que la precarga exista. Quien deje la descarga para la noche del 18 se encontrará con 210 GB y una cola de servidores: a 100 Mbps son casi cinco horas, y el juego se abre a medianoche. La precarga no adelanta el acceso, pero evita que el estreno dependa de la conexión.",
+    "El espacio es el otro examen. En una Xbox Series S de 512 GB, el sistema deja 362 GB utilizables, según MuyComputer: 210 GB se comen el 58% y dejan 152 GB libres. En una PS5 de 1 TB nominal la descarga ocupa el 21%; en una PS5 Pro de 2 TB, el 10,5%. Son porcentajes sobre la capacidad comercial, no sobre el espacio libre real, que siempre es menor.",
+    "Hay una limitación de plataforma que conviene tener presente. En PS5, los juegos de PS5 no se ejecutan desde un disco externo por USB: se pueden almacenar ahí, pero hay que moverlos al SSD interno para jugarlos. En Xbox Series, los juegos optimizados solo corren desde el SSD interno o desde la tarjeta de expansión propietaria. Comprar un disco USB para GTA VI no resuelve el problema.",
+    "Con esos números, la lista de tareas antes del 12 de noviembre es corta. Liberar 210 GB reales, no 200; conectar la consola por cable si se puede, porque la PS5 tiene puerto Gigabit y el Wi-Fi pierde velocidad; pausar otras descargas y actualizaciones; dejar activadas las descargas en reposo; y no cancelar la precarga a medias, porque reanudar es más rápido que empezar de cero. Si la compra es la caja con código, el canje tiene que hacerse ese mismo día.",
+    "Queda lo que no se sabe. Rockstar no ha publicado el tamaño oficial; no hay dato de Xbox, aunque se espera similar; y no hay hora confirmada para el arranque de la precarga. Son tres huecos que pueden cerrarse en cualquier momento y que conviene vigilar en la ficha de la tienda, no en un foro.",
+    "Para seguir el tema: [la guía para hacer sitio en el disco](/articulo/gta-vi-almacenamiento-cuanto-ocupa-hacer-sitio), [qué dejar hecho antes de la precarga](/articulo/gta-vi-precarga-12-noviembre-que-preparar-antes), [la tabla de desbloqueo por país](/desbloqueo) y [la cronología](/cronologia)."
+  ],
+  "category": "noticias",
+  "author": "redaccion",
+  "publishedAt": "2026-10-29T09:00:00.000Z",
+  "updatedAt": "2026-10-29T11:00:00.000Z",
+  "coverLabel": "210 GB y tiempos de descarga",
+  "coverAlt": "Portada generada con el rótulo 210 GB y tiempos de descarga sobre fondo oscuro",
+  "tags": ["GTA VI", "210 GB", "precarga", "PS5", "almacenamiento", "descarga"],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Vandal — «GTA 6 ocupará más de 200 GB: filtran el tamaño del juego de Rockstar en PS5» (28 de octubre de 2026)",
+      "url": "https://vandal.elespanol.com/noticia/2026300042/desvelan-el-tamano-de-gta-6-en-ps5-estos-son-los-gb-que-ocupara-en-tu-ssd/"
+    },
+    {
+      "name": "Notebookcheck — «GTA 6 download size revealed ahead of pre-load date» (27 de octubre de 2026)",
+      "url": "https://www.notebookcheck.net/GTA-6-game-size-revealed-as-pre-load-commences-in-just-over-two-weeks.1435409.0.html"
+    },
+    {
+      "name": "MuyComputer — «La descarga de GTA VI ocupará 210 GB de espacio» (28 de octubre de 2026)",
+      "url": "https://www.muycomputer.com/2026/10/28/la-descarga-de-gta-vi-ocupara-210-gb-de-espacio/"
+    },
+    {
+      "name": "PlayStation Game Size — publicación del 27 de octubre de 2026 con el tamaño de descarga y las fechas de precarga y estreno",
+      "url": "https://x.com/PlaystationSize/status/2115129198851522905"
+    }
+  ]
+}
