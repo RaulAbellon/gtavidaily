@@ -148,7 +148,7 @@ function buildJsonLd() {
             name: "¿Cuándo empieza la precarga de GTA VI?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "El 12 de noviembre de 2026, una semana antes del lanzamiento. Rockstar lo confirmó en el comunicado de reservas del 24 de junio de 2026, y ese mismo día llega a las tiendas la edición física, que contiene un código de descarga y no un disco. La hora exacta de apertura de la descarga en cada tienda no se ha anunciado.",
+              text: "La de la compra digital, el 10 de noviembre de 2026: a medianoche local en PS5 y a las 00:00 GMT en Xbox Series X|S (01:00 en la España peninsular). Rockstar lo anunció en su Newswire el 3 de noviembre, adelantándola desde el 12. La edición física, que contiene un código de descarga y no un disco, mantiene el 12 de noviembre. La descarga ocupa hasta 212 GB.",
             },
           },
           {

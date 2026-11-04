@@ -97,6 +97,15 @@ const FUENTES = {
     url: "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
     primary: true,
   },
+  newswirePrecarga: {
+    name: "Rockstar Games (Newswire) — «Grand Theft Auto VI Pre-Load Begins on November 10»",
+    url: "https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
+    primary: true,
+  },
+  vandalPrecarga: {
+    name: "Vandal — «Podrás descargar GTA 6 antes: Rockstar adelanta la fecha de instalación en PS5 y XBOX Series»",
+    url: "https://vandal.elespanol.com/noticia/2026307028/podras-descargar-gta-6-antes-rockstar-adelanta-la-fecha-de-instalacion-en-ps5-y-xbox-series/",
+  },
   extendedLook: {
     name: "Rockstar Games — «Grand Theft Auto VI: An Extended Look»",
     url: "https://www.rockstargames.com/VI/an-extended-look",
@@ -434,7 +443,7 @@ const FUENTES = {
   },
 } as const satisfies Record<string, CronologiaSource>;
 
-export const CRONOLOGIA_UPDATED_AT = "2026-10-14";
+export const CRONOLOGIA_UPDATED_AT = "2026-11-03";
 
 export const CRONOLOGIA: CronologiaEvent[] = [
   {
@@ -629,7 +638,7 @@ export const CRONOLOGIA: CronologiaEvent[] = [
     dateLabel: "24 de junio de 2026",
     title: "Precios, ediciones, bonos y fecha de precarga: el comunicado clave",
     detail:
-      "Take-Two publica el comunicado de reservas. Confirma Standard a 79,99 USD y Ultimate a 99,99 USD, los dos únicos precios anunciados por la compañía; el Vintage Vice City Pack como bono de reserva; un mes gratis de GTA+ para las reservas digitales; que la edición física lleva un código de descarga y no un disco; y que la precarga empieza el 12 de noviembre de 2026.",
+      "Take-Two publica el comunicado de reservas. Confirma Standard a 79,99 USD y Ultimate a 99,99 USD, los dos únicos precios anunciados por la compañía; el Vintage Vice City Pack como bono de reserva; un mes gratis de GTA+ para las reservas digitales; que la edición física lleva un código de descarga y no un disco; y que la precarga digital empezará el 12 de noviembre de 2026, fecha que Rockstar adelantó al 10 el 3 de noviembre.",
     status: "confirmado",
     sources: [FUENTES.comunicadoReservas, FUENTES.gematsu, FUENTES.igta],
     related: [
@@ -1198,6 +1207,21 @@ export const CRONOLOGIA: CronologiaEvent[] = [
       "rockstar-proximo-juego-tras-gta-vi-ocho-anos",
     ],
   },
+  {
+    date: "2026-11-03",
+    dateLabel: "3 de noviembre de 2026",
+    title:
+      "Rockstar adelanta la precarga digital al 10 de noviembre y confirma 212 GB",
+    detail:
+      "El Newswire anuncia que la precarga de la compra digital empieza el 10 de noviembre, dos días antes de lo previsto: a medianoche local en PS5 y a las 00:00 GMT en Xbox Series X|S. La edición física, que es un código dentro de la caja, mantiene el 12 de noviembre. La compañía añade que la descarga ocupa «hasta 212 GB» y recomienda liberar espacio antes de empezar. No cambian el desbloqueo —medianoche local del 19— ni el plazo del bono Vintage Vice City, que sigue abierto hasta las 23:59:59 del 19.",
+    status: "confirmado",
+    sources: [FUENTES.newswirePrecarga, FUENTES.vandalPrecarga],
+    related: [
+      "gta-vi-precarga-12-noviembre-que-preparar-antes",
+      "gta-vi-210-gb-ps5-descarga-tiempo-por-conexion",
+      "gta-vi-esta-listo-que-falta-19-noviembre",
+    ],
+  },
 ];
 
 /** Eventos ordenados de más reciente a más antiguo. */
@@ -1250,14 +1274,14 @@ export const CRONOLOGIA_STATUS_LABEL: Record<CronologiaStatus, string> = {
  */
 export const CRONOLOGIA_EXCLUIDO: { tema: string; motivo: string }[] = [
   {
-    tema: "Tamaño de instalación o de descarga",
+    tema: "Espacio que ocupa el juego una vez instalado",
     motivo:
-      "Rockstar no ha publicado ninguna cifra. Lo que circula son estimaciones de comunidad, desde 100-130 GB hasta 250 GB, sin respaldo oficial.",
+      "Rockstar confirma «hasta 212 GB» de descarga, pero no el espacio final instalado ni el reparto por versión de consola. Las estimaciones de comunidad sobre el tamaño quedaron obsoletas el 3 de noviembre de 2026.",
   },
   {
-    tema: "Hora exacta a la que abre la precarga el 12 de noviembre",
+    tema: "Hora de la precarga en la Rockstar Games Store y en PC",
     motivo:
-      "La fecha del 12 de noviembre está confirmada en el comunicado de reservas; la hora de apertura en cada tienda no se ha anunciado.",
+      "Rockstar ha fijado medianoche local en PS5 y 00:00 GMT en Xbox Series X|S para el 10 de noviembre. No detalla la Rockstar Games Store ni una versión de PC, que además no existe todavía.",
   },
   {
     tema: "Resolución y modo a 60 fps",

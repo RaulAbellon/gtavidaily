@@ -118,8 +118,8 @@ export function LegalAbout() {
         </p>
         <p>
           Eso incluye decir lo que no se sabe. Cuando no hay fuente oficial para
-          un dato —el tamaño de la descarga, la hora exacta de la precarga, el
-          reparto de voces— lo escribimos como lo que es, en lugar de rellenarlo
+          un dato —el espacio final instalado, el reparto de voces, la fecha de
+          la versión de PC— lo escribimos como lo que es, en lugar de rellenarlo
           con una cifra que suene bien. Hay dos páginas que existen justo para
           eso: la{" "}
           <Link

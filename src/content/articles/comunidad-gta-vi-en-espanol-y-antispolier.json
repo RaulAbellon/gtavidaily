@@ -13,12 +13,12 @@
     "Conviene saber qué no sirve. En YouTube, la lista de palabras bloqueadas existe, pero es una herramienta para moderar los comentarios de tu propio canal, no para bloquear vídeos de otros. Como espectador no puedes filtrar por palabra clave en el feed. En X, la función de palabras silenciadas no ha podido verificarse: la página oficial de ayuda devuelve error y no se cita aquí como confirmada. En TikTok ocurre algo parecido: no se ha podido verificar que exista un filtro de términos aplicable a vídeos ajenos. En Discord, tampoco se ha localizado la documentación oficial de AutoMod y palabras bloqueadas.",
     "Queda lo que sí controlas en todas ellas. Los comentarios se evitan cerrándolos o no bajando a ellos, que es donde más gente suelta el detalle sin avisar. Las cuentas concretas se silencian de forma individual en todas las redes. Y en Discord, el servidor se silencia entero durante unos días, o se salen los canales de spoilers, que es la vía que documenta la propia aplicación. Es menos elegante que un filtro, pero funciona igual de bien.",
     "Hay que distinguir dos tipos de spoiler, porque no se combaten igual. El real, que viene de quien ya está jugando en otro huso horario, y el falso, que es la mayoría de lo que circula en esas primeras horas: finales inventados, capturas generadas con herramientas de imagen y vídeos que solo buscan clics. Si ves algo escandaloso en las primeras horas, la probabilidad de que sea inventado es alta.",
-    "Un último aviso práctico: la predescarga del 12 de noviembre permite descargar el juego, no jugarlo. Si alguien te dice que ya está jugando ese día, o vive en un país con desbloqueo anticipado que no existe, o te está vendiendo algo. El juego se abre a la hora que marca tu consola, ni un minuto antes. Con solo cuatro creadores confirmados en el programa de acceso, no hay manera de evitar todos los spoilers; lo que sí se puede evitar es el algoritmo, y eso se decide antes del 12 de noviembre."
+    "Un último aviso práctico: la predescarga del 10 de noviembre permite descargar el juego, no jugarlo. Si alguien te dice que ya está jugando ese día, o vive en un país con desbloqueo anticipado que no existe, o te está vendiendo algo. El juego se abre a la hora que marca tu consola, ni un minuto antes. Con solo cuatro creadores confirmados en el programa de acceso, no hay manera de evitar todos los spoilers; lo que sí se puede evitar es el algoritmo, y eso se decide antes del 10 de noviembre."
   ],
   "category": "guias",
   "author": "redaccion",
   "publishedAt": "2026-09-16T09:00:00.000Z",
-  "updatedAt": "2026-10-26T10:00:00.000Z",
+  "updatedAt": "2026-11-04T20:00:00.000Z",
   "coverLabel": "Comunidad y antiespoilers",
   "coverAlt": "Ilustración de una pantalla de móvil con filtros activados sobre el logotipo de GTA VI",
   "tags": [

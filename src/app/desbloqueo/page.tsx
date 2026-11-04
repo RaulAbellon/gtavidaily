@@ -25,7 +25,7 @@ import { EDITORIAL_NAME, SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = {
   title: "GTA VI: hora de desbloqueo por países el 19 de noviembre",
   description:
-    "El juego se abre a medianoche hora local del 19 de noviembre de 2026, no a una hora única: hasta 19 horas de diferencia entre Nueva Zelanda y México. Tabla por país y región con la referencia UTC, la hora en España y lo que sigue sin confirmar.",
+    "El juego se abre a medianoche hora local del 19 de noviembre de 2026, no a una hora única: hasta 19 horas de diferencia entre Nueva Zelanda y México. La precarga digital empieza el 10 de noviembre. Tabla por país y región con la referencia UTC, la hora en España y lo que sigue sin confirmar.",
   alternates: { canonical: "/desbloqueo" },
   keywords: [
     "hora de desbloqueo GTA VI",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description:
       "Tabla consultable con la hora de apertura de GTA VI en cada huso horario, la referencia UTC y la hora peninsular española, más lo que no está confirmado.",
     publishedTime: "2026-09-30T08:00:00.000Z",
-    modifiedTime: "2026-09-30T08:00:00.000Z",
+    modifiedTime: "2026-11-04T20:00:00.000Z",
   },
   twitter: {
     card: "summary_large_image",
@@ -63,6 +63,14 @@ const ARTICULOS_RELACIONADOS = [
 
 const FUENTES_HORA = [
   {
+    name: "Rockstar Games (Newswire) — «Grand Theft Auto VI Pre-Load Begins on November 10»",
+    url: "https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
+  },
+  {
+    name: "Vandal — «Podrás descargar GTA 6 antes: Rockstar adelanta la fecha de instalación en PS5 y XBOX Series»",
+    url: "https://vandal.elespanol.com/noticia/2026307028/podras-descargar-gta-6-antes-rockstar-adelanta-la-fecha-de-instalacion-en-ps5-y-xbox-series/",
+  },
+  {
     name: "NME — «Grand Theft Auto 6: what time does it launch worldwide?»",
     url: "https://www.nme.com/news/gaming-news/grand-theft-auto-6-what-time-launch-worldwide-3967520",
   },
@@ -71,7 +79,7 @@ const FUENTES_HORA = [
     url: "https://vandal.elespanol.com/noticia/2026250032/gta-6-confirma-la-hora-exacta-para-su-lanzamiento-en-espana-y-el-resto-del-mundo/",
   },
   {
-    name: "Gematsu — comunicado de reservas: la precarga abre el 12 de noviembre",
+    name: "Gematsu — comunicado de reservas del 24 de junio: la precarga se anunció entonces para el 12 de noviembre (dato superado el 3 de noviembre)",
     url: "https://www.gematsu.com/2026/06/grand-theft-auto-vi-pricing-ultimate-edition-and-pre-order-bonuses-announced",
   },
   {
@@ -100,7 +108,7 @@ function buildJsonLd(rows: ReturnType<typeof getUnlockTable>) {
           "Tabla de la hora de desbloqueo de Grand Theft Auto VI por país y región el 19 de noviembre de 2026, con la referencia UTC y la hora peninsular española.",
         inLanguage: "es",
         datePublished: "2026-09-30T08:00:00.000Z",
-        dateModified: "2026-09-30T08:00:00.000Z",
+        dateModified: "2026-11-04T20:00:00.000Z",
         isPartOf: { "@type": "WebSite", name: SITE_NAME, url: SITE_URL },
         publisher: { "@type": "Organization", name: EDITORIAL_NAME },
         citation: FUENTES_HORA.map((source) => source.url),
@@ -343,7 +351,7 @@ export default function DesbloqueoPage() {
           className="mb-3 flex items-center gap-2 text-2xl font-black text-white"
         >
           <Download className="h-5 w-5 text-cyan-400" aria-hidden="true" />
-          Lo que sí está confirmado del 12 de noviembre
+          Lo que sí está confirmado de la precarga
         </h2>
         <ul className="space-y-2 rounded-xl border border-white/5 bg-zinc-900/40 p-5 text-sm leading-relaxed text-zinc-300">
           <li className="flex items-start gap-2">
@@ -352,10 +360,11 @@ export default function DesbloqueoPage() {
               aria-hidden="true"
             />
             <span>
-              La precarga digital empieza el{" "}
-              <strong className="text-white">12 de noviembre de 2026</strong>,
-              una semana antes del lanzamiento, según el comunicado de reservas
-              del 24 de junio.
+              La precarga de la compra digital empieza el{" "}
+              <strong className="text-white">10 de noviembre de 2026</strong>: a
+              medianoche local en PS5 y a las 00:00 GMT en Xbox Series X|S
+              (01:00 en la España peninsular), según el Newswire de Rockstar del
+              3 de noviembre.
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -364,9 +373,21 @@ export default function DesbloqueoPage() {
               aria-hidden="true"
             />
             <span>
-              Ese mismo día llega a las tiendas la edición física, que contiene
-              un <strong className="text-white">código de descarga</strong> y no
-              un disco, precisamente para poder descargar con tiempo.
+              La <strong className="text-white">edición física</strong>, que
+              contiene un código de descarga y no un disco, mantiene el{" "}
+              <strong className="text-white">12 de noviembre</strong> en tiendas:
+              el adelanto del 10 no toca la caja.
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle2
+              className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-400"
+              aria-hidden="true"
+            />
+            <span>
+              Rockstar ha confirmado que la descarga ocupa{" "}
+              <strong className="text-white">hasta 212 GB</strong>. El tamaño
+              exacto depende del dispositivo.
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -386,8 +407,10 @@ export default function DesbloqueoPage() {
               aria-hidden="true"
             />
             <span>
-              No hay tamaño de descarga oficial. Las cifras que circulan son
-              estimaciones y no sirven para calcular si te cabe en el disco.
+              La fecha del 12 de noviembre solo sigue vigente para la caja: era
+              la fecha de la precarga digital en el comunicado de reservas del 24
+              de junio y quedó superada por el anuncio de Rockstar del 3 de
+              noviembre.
             </span>
           </li>
         </ul>

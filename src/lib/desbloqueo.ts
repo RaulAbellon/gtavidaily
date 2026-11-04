@@ -414,9 +414,9 @@ export const UNLOCK_EXTREMES = {
  */
 export const UNLOCK_PENDIENTE: { tema: string; detalle: string }[] = [
   {
-    tema: "La hora exacta de apertura de la precarga del 12 de noviembre",
+    tema: "La hora de apertura de la precarga en la Rockstar Games Store y en PC",
     detalle:
-      "La fecha está confirmada por Rockstar en el comunicado de reservas del 24 de junio. La hora a la que cada tienda habilita la descarga ese día no se ha anunciado, y puede no ser la misma en PlayStation Store, Microsoft Store y Rockstar Games Store.",
+      "Rockstar ha fijado la medianoche local del 10 de noviembre en PS5 y las 00:00 GMT en Xbox Series X|S. No ha detallado si la Rockstar Games Store o una futura versión de PC usarán la misma regla; la de PC, además, no existe todavía.",
   },
   {
     tema: "El reparto por husos de los territorios que no están en la tabla",
@@ -424,14 +424,14 @@ export const UNLOCK_PENDIENTE: { tema: string; detalle: string }[] = [
       "Solo se publican los husos cuyo desfase se puede sostener. Faltan deliberadamente territorios cuyo cambio de hora de noviembre no se ha podido comprobar.",
   },
   {
-    tema: "El tamaño de la descarga",
+    tema: "El espacio que ocupa instalado y el reparto por consola",
     detalle:
-      "No hay cifra oficial. Las estimaciones que circulan van de 100-130 GB a 250 GB y no sirven para planificar el día 12.",
+      "Rockstar confirma «hasta 212 GB» de descarga, pero no cuánto ocupa ya instalado ni cuánto cambia entre PS5, PS5 Pro, Xbox Series X y Series S.",
   },
   {
     tema: "Si la distinción entre husos se aplica igual en todas las tiendas",
     detalle:
-      "La confirmación de «medianoche local» procede de la ficha de PlayStation Store. La ficha de Xbox describe la compra como licencia digital y no publica un horario propio.",
+      "La regla de la precarga es medianoche local en PS5 y 00:00 GMT en Xbox Series X|S. Para el desbloqueo del 19, la confirmación de «medianoche local» procede de la ficha de PlayStation Store; la de Xbox no publica un horario propio.",
   },
   {
     tema: "Cambiar la región de la cuenta para jugar antes",
@@ -461,9 +461,14 @@ export const UNLOCK_FAQ: { question: string; answer: string }[] = [
       "Nueva Zelanda abre 12 horas antes que España peninsular, y el este de Australia 10. En el otro extremo, Estados Unidos (hora del Pacífico) abre 9 horas después que España y México (centro) 7 horas después. La tabla de esta página ordena todos los husos con la referencia UTC y la hora peninsular de cada uno.",
   },
   {
-    question: "¿Se puede jugar antes con la precarga del 12 de noviembre?",
+    question: "¿Cuándo se puede descargar GTA VI y cuánto ocupa?",
     answer:
-      "No. La precarga deja el juego descargado e instalado, pero no lo abre: el desbloqueo sigue siendo a medianoche local del 19. La precarga digital empieza el 12 de noviembre de 2026, y ese mismo día llega a las tiendas la edición física, que es un código de descarga dentro de la caja y no un disco.",
+      "La precarga de la compra digital arranca el 10 de noviembre de 2026: a medianoche local en PS5 y a las 00:00 GMT en Xbox Series X|S (01:00 en la España peninsular). La edición física, que es un código dentro de la caja, mantiene el 12 de noviembre. Rockstar ha confirmado que la descarga ocupa hasta 212 GB.",
+  },
+  {
+    question: "¿Se puede jugar antes con la precarga del 10 de noviembre?",
+    answer:
+      "No. La precarga deja el juego descargado e instalado, pero no lo abre: el desbloqueo sigue siendo a medianoche local del 19. La precarga digital empieza el 10 de noviembre de 2026 —medianoche local en PS5 y 00:00 GMT en Xbox Series X|S— y la edición física con código en caja llega a las tiendas el 12.",
   },
   {
     question: "¿Cambiar la región de la cuenta adelanta el desbloqueo?",
