@@ -1,0 +1,60 @@
+{
+  "slug": "analisis-gta-6-prensa-consenso-rendimiento-consolas",
+  "title": "GTA 6 en los análisis: consenso del 99 y lo que falla en cada consola",
+  "excerpt": "152 análisis y ninguno negativo: Metacritic da un 99. Digital Foundry mide 1440p y 30 fps en PS5, Pro y Series X, con Series S en 720p. Dónde duele y qué versión elegir.",
+  "content": [
+    "GTA VI tiene 152 análisis en Metacritic y ni uno solo es negativo. La media es 99, la misma que Ocarina of Time de 1998, y el cien por cien de las críticas registradas son positivas. Con esos números, la noticia ya no es la nota: es qué se repite en los elogios, qué se repite en las quejas y qué consola aguanta mejor el juego.",
+    "El consenso crítico es raro hasta para Rockstar. Variety señaló que el 99 empata con el Zelda de Nintendo 64 como la nota más alta del agregador, y recogió el diez de Game Informer, que describía el logro como la integración de mundo, actividades y narrativa en una sola fantasía criminal. En la misma pieza, IGN hablaba de una historia que se despliega como cuatro o cinco temporadas de televisión de prestigio.",
+    "La otra mitad del marcador cuenta algo distinto. La nota de usuarios está en 5,6 con 103.394 votaciones y un 43% de negativos, un desplome que empezó el mismo 20 de noviembre: TheGamer documentó entonces un 5,1 y una avalancha de reseñas negativas, muchas escritas por gente que reconocía no haber jugado. Los motivos que se repiten son los 30 FPS y el contenido de la relación entre Jason y Lucía, no fallos concretos del juego.",
+    "En lo técnico, Digital Foundry ha puesto cifras a lo que antes eran estimaciones. Su conclusión: el juego es un hito visual, pero el precio es un objetivo fijo de 30 FPS en las cuatro consolas y ninguna opción de 40 o 60. Linneman lo resume así: el objetivo de 30 FPS «compromete la respuesta absoluta» del control, y aun así lo considera un hito técnico de esta generación.",
+    "Los datos medidos, tras más de cien horas de pruebas repartidas entre Linneman y Oliver Mackenzie, ordenan la compra. PS5 y Xbox Series X comparten base: 2560x1440 internos sin resolución dinámica y escalado espacial a 4K con el TAA propio de Rockstar. No usan escaladores temporales, y la imagen sale más blanda que en Pro. El objetivo es 30 FPS; en exploración normal se sostiene, en conducción rápida hay caídas a la veintena alta y con explosivos se puede bajar a los 20.",
+    "PS5 Pro es la mejor versión, y no solo por potencia. Mantiene los 1440p internos, pero los reconstruye a 4K con PSSR y añade sombras con trazado de rayos que las otras consolas no tienen. Digital Foundry midió un bloqueo de 30 FPS constante durante unas 75 horas de partida estándar, con caídas puntuales a 24 FPS al reventar coches con lanzagranadas.",
+    "Xbox Series X tiene una ventaja que no es de imagen: puede meter el juego en un contenedor de 120 Hz con VRR a nivel de sistema, lo que suaviza la percepción del movimiento. En PS5 no hay opción de 120 Hz y el VRR del sistema solo actúa por encima de 48 FPS, así que no sirve en un juego de 30.",
+    "Xbox Series S es la excepción incómoda. Renderiza a 720p internos y escala a unos 1080p con FSR 4 —según Digital Foundry, el primer juego en usar el escalador nuevo en consolas Xbox—, mantiene la iluminación global y los reflejos con trazado de rayos, el pelo por mechones y casi todo el set visual, pero pasa amplias zonas entre 25 y 30 FPS, con combates densos en la veintena media y cifras por debajo de 20 cuando hay explosivos.",
+    "Hay más grietas medidas que titulares. La latencia de cámara en Series X ronda los 180 milisegundos de extremo a extremo, parecida a la de Red Dead Redemption 2; a alta velocidad aparece pop-in; las texturas pierden detalle en ángulos oblicuos; el viñeteado venía más fuerte de lo previsto y Rockstar lo ha reconocido como error; y el desenfoque de movimiento arranca en 3 sobre 10, así que es lo primero que conviene tocar en opciones.",
+    "La prensa española añade lo que no se mide. El análisis de Vandal califica Leonida como «el mejor mundo abierto que se ha hecho jamás en la historia de los videojuegos», señala el sigilo como la mecánica más floja, menciona físicas de colisión exageradas y recuerda que las voces son solo en inglés. Su partida se hizo en PS5 Pro, con una tasa de 30 FPS muy estable y caídas puntuales.",
+    "Qué hacer con todo esto. Si tienes PS5 Pro, ya estás en la mejor versión. Si tienes PS5 o Series X, la diferencia es de imagen y de mando: Vandal considera el DualSense la ventaja más palpable de PS5 frente a la consola de Microsoft. Si tienes Series S, el juego es el mismo con recortes claros. Ninguna versión corre a 60 y no hay parche que lo prometa; para el contexto de por qué se eligió el 30, [la pieza del 11 de noviembre](/articulo/gta-vi-30-fps-todas-consolas-ps5-pro-pssr) sigue siendo la referencia."
+  ],
+  "category": "noticias",
+  "author": "redaccion",
+  "publishedAt": "2026-11-23T14:00:00.000Z",
+  "updatedAt": "2026-11-23T16:00:00.000Z",
+  "coverLabel": "Consenso 99 y rendimiento",
+  "coverAlt": "Portada generada con cuatro siluetas de consola y una gráfica de fotogramas sobre fondo de neón",
+  "tags": [
+    "GTA VI",
+    "análisis",
+    "Digital Foundry",
+    "PS5 Pro",
+    "rendimiento"
+  ],
+  "readingTime": 4,
+  "featured": false,
+  "trending": false,
+  "sources": [
+    {
+      "name": "Digital Foundry — «GTA 6: PS5 vs PS5 Pro, Xbox Series X and Series S: Which Console Plays Best?», Oliver Mackenzie (18 de noviembre de 2026)",
+      "url": "https://www.digitalfoundry.net/features/gta-6-ps5-vs-ps5-pro-xbox-series-x-and-series-s-which-console-plays-best"
+    },
+    {
+      "name": "Digital Foundry — «Review: Grand Theft Auto 6: A Landmark Achievement That Redefines a Console Generation», John Linneman (18 de noviembre de 2026)",
+      "url": "https://www.digitalfoundry.net/reviews/grand-theft-auto-6-a-landmark-achievement-that-redefines-a-console-generation"
+    },
+    {
+      "name": "Vandal — «Análisis de GTA 6 libre de spoilers: El juego de nuestras vidas llega tras 13 años de espera» (18 de noviembre de 2026)",
+      "url": "https://vandal.elespanol.com/analisis/ps5/grand-theft-auto-vi/104222"
+    },
+    {
+      "name": "Metacritic — ficha de Grand Theft Auto VI (nota de crítica y de usuarios consultadas el 23 de noviembre de 2026)",
+      "url": "https://www.metacritic.com/game/grand-theft-auto-vi/"
+    },
+    {
+      "name": "Variety — «'GTA 6' Earns Rave Reviews and Lands 99 Metacritic Score, Tying for Highest-Rated Game of All Time» (20 de noviembre de 2026)",
+      "url": "https://variety.com/2026/digital/news/gta-6-reviews-highest-rated-video-game-1236951803/"
+    },
+    {
+      "name": "TheGamer — «GTA 6 Gets Review Bombed On Metacritic Right After Opening User Scores» (20 de noviembre de 2026)",
+      "url": "https://www.thegamer.com/grand-theft-auto-6-gta-review-bombing-user-score/"
+    }
+  ]
+}
